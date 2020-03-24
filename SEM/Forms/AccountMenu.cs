@@ -41,5 +41,11 @@ namespace SEM
             this.Hide();
             new Menu(c).Show();
         }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Register(c).Show();
+        }
     }
 }

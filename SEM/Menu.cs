@@ -42,12 +42,18 @@ namespace SEM
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Evaluate(c).Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }

@@ -66,6 +66,7 @@
             this.btnRegister.TabIndex = 2;
             this.btnRegister.Text = "Registrar Docente";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnRA
             // 

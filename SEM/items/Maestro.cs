@@ -31,6 +31,7 @@ namespace SEM.items
             set { alias = value; }
         }
         public Maestro(int id, String nombre, String apellido, String alias) {
+            this.id = id;
             this.alias = alias;
             this.apellido = apellido;
             this.nombre = nombre;

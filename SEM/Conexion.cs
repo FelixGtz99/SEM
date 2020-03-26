@@ -12,7 +12,8 @@ namespace SEM
     {
         private int userID = 0;
         private List<Maestro> Maestros=new List<Maestro>();
-
+        private List<Materia> Materias = new List<Materia>();
+        private List<Materia> Clases = new List<Materia>();
         public NpgsqlConnection con = new NpgsqlConnection();
         public int USER {
             get { return userID; }
@@ -22,6 +23,11 @@ namespace SEM
         {
             get { return Maestros; }
             set { Maestros = value; }
+        }
+        public List<Materia> CLASES
+        {
+            get { return Clases; }
+            set { Clases = value; }
         }
         public void iniciar() {
 
@@ -118,6 +124,45 @@ namespace SEM
                 }
             }
         } }
+        public void getMaterias()
+        {
+            String query = "SELECT id_materia, nombre_materia FROM materia ";
+            using (var cmd = new NpgsqlCommand(query, con))
+            {
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Materia m = new Materia(reader.GetInt32(0), reader.GetString(1));
+                        Materias.Add(m);
+                    }
+                }
+            }
+        }
+        public void getClases(int id)
+        {
+            Clases.Clear();
+            String query = "SELECT * FROM clases where docente=@i";
+            using (var cmd = new NpgsqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("i", id);
+                using (var reader = cmd.ExecuteReader())
+                {
+                   
+                    while (reader.Read())
+                    {
+                        foreach (Materia materia in Materias)
+                        { 
+                            if (reader.GetInt32(0) == materia.ID)
+                            {
+                                
+                                Clases.Add(materia);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     } 
 
 }

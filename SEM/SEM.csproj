@@ -91,6 +91,7 @@
       <DependentUpon>Evaluate.cs</DependentUpon>
     </Compile>
     <Compile Include="items\Maestro.cs" />
+    <Compile Include="items\Materia.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>

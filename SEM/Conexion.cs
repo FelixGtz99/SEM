@@ -163,6 +163,43 @@ namespace SEM
                 }
             }
         }
+        public int getLastEvaluacion() {
+            int id=0;
+            String query = "SELECT COUNT(*) FROM evaluacion";
+            using (var cmd =new NpgsqlCommand(query, con))
+            {
+                using (var reader=cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        id = reader.GetInt32(0);
+                    }
+                }
+            }
+            return id;
+        }
+        public void guardarEvaluacion(int idD, int idM, String Comen, int Calif) {
+            String query = "INSERT INTO evaluacion(id_usuario, id_docentes, id_materia, calificacion, comentario, id_evaluacion) VALUES(@id, @d, @m, @calif, @comen, @e); ";
+         
+            var IDE = getLastEvaluacion() + 1;
+            Console.WriteLine(idD.ToString());
+            Console.WriteLine(idM.ToString());
+
+                var cmd = new NpgsqlCommand(query, con);
+               
+                    cmd.Parameters.AddWithValue("id", userID);
+
+                    cmd.Parameters.AddWithValue("d", idD);
+                    cmd.Parameters.AddWithValue("m", idM);
+                    cmd.Parameters.AddWithValue("calif", Calif);
+                    cmd.Parameters.AddWithValue("comen", Comen);
+                    cmd.Parameters.AddWithValue("e", IDE);
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("va bine");
+               
+           
+
+        }
     } 
 
 }

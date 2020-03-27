@@ -16,7 +16,7 @@ namespace SEM
         Conexion c = null;
         public Evaluate(Conexion c)
         {
-          
+
             InitializeComponent();
             this.c = c;
             c.getMaestros();
@@ -24,38 +24,90 @@ namespace SEM
             CBMaestros();
             cbMaestro.SelectedIndex = 0;
             CBMaterias();
-            
+
         }
 
         private void cbMaestro_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             CBMaterias();
         }
         public void CBMaestros() {
-        foreach (Maestro maestro in c.MAESTROS)
-        {
-            cbMaestro.Items.Add(maestro.ToString());
+            foreach (Maestro maestro in c.MAESTROS)
+            {
+                cbMaestro.Items.Add(maestro.ToString());
 
             }
         }
+        public int getIDMaestro() {
+            int id = 0;
+            foreach (Maestro maestro in c.MAESTROS)
+            { 
+                if (maestro.ToString().Equals(cbMaestro.SelectedItem.ToString()))
+                {
+                    id = maestro.ID;
+
+                }
+            }
+
+           
+
+            return id;
+        }
+        public int getIDMateria()
+        {
+            int id = 0;
+            foreach (Materia materia in c.CLASES)
+            {
+                Console.WriteLine(materia.ToString());
+                Console.WriteLine(cbMateria.SelectedItem);
+                if (materia.ToString().Equals(cbMateria.SelectedItem.ToString()))
+                {
+              
+                    id = materia.ID;
+                    Console.WriteLine("Entra con " + id);
+                }
+            }
+
+
+
+            return id;
+        }
+
         public void CBMaterias()
         {
-            foreach (Maestro maestro in c.MAESTROS)
-            {
 
-                Console.WriteLine(maestro.ToString());
-                if (maestro.ToString().Equals(cbMaestro.SelectedItem))
-                {
-
-                    c.getClases(maestro.ID);
-                }
-
-            }
+            cbMateria.Items.Clear();
+            c.getClases(getIDMaestro());
             foreach (Materia materia in c.CLASES)
             {
                 cbMateria.Items.Add(materia);
-            } 
-           
+            }
+            
         }
+
+        private void cbMateria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var iDM = getIDMaestro(); 
+               var iDMat = getIDMateria();
+                c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
+                MessageBox.Show("Completado");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+            
+        }
+        
     }
 }

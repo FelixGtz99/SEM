@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
-
+using SEM.Forms;
 
 namespace SEM
 {
@@ -54,6 +54,12 @@ namespace SEM
         private void btnRegister_Click(object sender, EventArgs e)
         {
          
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Searcher(c).Show();
         }
     }
 }

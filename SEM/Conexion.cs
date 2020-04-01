@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 using SEM.items;
 
+
 namespace SEM
 {
     public class Conexion
     {
         private int userID = 0;
+        private String pass = "", nombre="",apellido="", correo="", carrera="";
+
         private List<Maestro> Maestros=new List<Maestro>();
         private List<Materia> Materias = new List<Materia>();
         private List<Materia> Clases = new List<Materia>();
@@ -19,6 +23,28 @@ namespace SEM
             get { return userID; }
             set { userID = value; }
         }
+        public string CARRERA
+        {
+            get { return carrera; }
+            set { carrera= value; }
+        }
+        public string NOMBRE
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+
+        public string APELLIDO
+        {
+            get { return apellido; }
+            set { apellido = value; }
+        }
+        public string CONTRA
+        {
+            get { return pass; }
+            set { pass = value; }
+        }
+
         public List<Maestro> MAESTROS
         {
             get { return Maestros; }
@@ -45,24 +71,30 @@ namespace SEM
             }
         }
 
-        public int Login(String email, String pass) {
+        public int Login(String email, String Pass) {
 
-            String query = "SELECT expediente FROM usuarios WHERE correo=@e and contraseña=@p ";
+            String query = "SELECT * FROM usuarios WHERE correo=@e and contraseña=@p ";
             using (var cmd = new NpgsqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("e", email);
-                cmd.Parameters.AddWithValue("p", pass);
+                cmd.Parameters.AddWithValue("p", Pass);
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
                         userID = reader.GetInt32(0);
+                        nombre = reader.GetString(1);
+                        apellido = reader.GetString(2);
+                        correo = reader.GetString(4);
+                        pass = reader.GetString(3);
+                        carrera = reader.GetString(5);
+
                     }
                 }
             }
             return userID;
         }
-        //Esta el metodo pero no esta utilizado 
+
         public Boolean CheckID(String id)
         {
             int exp = Int32.Parse(id);
@@ -72,7 +104,7 @@ namespace SEM
 
                 using (var reader = cmd.ExecuteReader())
                 {
-                    if (!reader.Read())
+                    if (reader.Read())
                     {
                         return true;
                     }
@@ -88,6 +120,11 @@ namespace SEM
             try
             {
                 userID = int.Parse(Expediente);
+                correo = Correo;
+                pass = Contraseña;
+                carrera = Carrera;
+                nombre = Nombre;
+                apellido = Apellido;
                 using (var cmd = new NpgsqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("e", userID);
@@ -200,6 +237,107 @@ namespace SEM
            
 
         }
+        public DataTable getEvaluacion() {
+            String query = "SELECT * FROM evaluacion";
+            var cmd = new NpgsqlCommand(query, con);
+            var datos = new NpgsqlDataAdapter(cmd);
+            DataTable data = new DataTable();
+            datos.Fill(data);
+            return data;
+        }
+
+        public DataTable verMaestros(String m)
+        {
+            String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes AND d.nombre LIKE @m GROUP BY(d.id_docente)";
+            var cmd = new NpgsqlCommand(query, con);
+            Console.WriteLine(query);
+            cmd.Parameters.AddWithValue("m", "%" + m + "%");
+            var datos = new NpgsqlDataAdapter(cmd);
+            DataTable data = new DataTable();
+            Console.WriteLine(data);
+            datos.Fill(data);
+            
+            return data;
+        }
+        public DataTable verMaterias(String m)
+        {
+            String query = "SELECT  nombre_materia as Materia FROM materia";
+            var cmd = new NpgsqlCommand(query, con);
+            Console.WriteLine(query);
+            cmd.Parameters.AddWithValue("m", "%" + m + "%");
+            var datos = new NpgsqlDataAdapter(cmd);
+            DataTable data = new DataTable();
+            Console.WriteLine(data);
+            datos.Fill(data);
+
+            return data;
+        }
+        public void ChangePass(String c)
+        {
+            String query = " UPDATE public.usuarios SET contraseña = @c   WHERE expediente = @id; ";
+            try
+            {
+                using (var cmd = new NpgsqlCommand(query, con))
+                {
+
+                    cmd.Parameters.AddWithValue("c", c);
+                    cmd.Parameters.AddWithValue("id", userID);
+
+                    cmd.ExecuteNonQueryAsync();
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+           
+        }
+        public void DeleteUser()
+        {
+            String query = " UPDATE public.evaluacion SET  id_usuario=0   WHERE id_usuario = @id; ";
+            try
+            {
+                var cmd = new NpgsqlCommand(query, con);
+                
+               cmd.Parameters.AddWithValue("id", userID);
+
+                    cmd.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            String query2 = " UPDATE public.votos SET  id_usuario=0   WHERE id_usuario = @id; ";
+            try
+            {
+                var cmd = new NpgsqlCommand(query2, con);
+                
+                    cmd.Parameters.AddWithValue("id", userID);
+
+                    cmd.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            String query3 =  "DELETE FROM public.usuarios WHERE expediente = @id; ";
+            try
+            {
+                var cmd = new NpgsqlCommand(query3, con);
+                
+                    cmd.Parameters.AddWithValue("id", userID);
+
+                    cmd.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+          
+        }
+
     } 
 
 }

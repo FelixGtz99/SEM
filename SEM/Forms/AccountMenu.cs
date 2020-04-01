@@ -17,16 +17,11 @@ namespace SEM
         {
             InitializeComponent();
             this.c = c;
-            if (c.USER == 0)
-            {
-                btnCerrar.Visible = false;
+            c.iniciar();
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            panel.Location=new Point((this.Width/2-panel.Width/2), (this.Height / 2 - panel.Height / 2));
 
-            }
-            else {
-                btnIngresar.Visible = false;
-                btnRegistrar.Visible = false;
-            
-            }
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

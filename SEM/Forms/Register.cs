@@ -17,6 +17,10 @@ namespace SEM
         {
             InitializeComponent();
             this.c = c;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+           // panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height / 2));
+            this.c = c;
             cbCarrera.SelectedIndex=0;
         }
 
@@ -32,6 +36,11 @@ namespace SEM
             {
                 Errores = "Nesesitas llenar todos los campos";
             }
+        
+            if (c.CheckID(Experiente))
+            {
+                Errores= Errores + Environment.NewLine + "Ya hay un usuario asociado a este experiente";
+            }
             if (Pass.Length < 9)
             {
                 Errores = Errores + Environment.NewLine + "La contraseña debe contar con almenos 9 caracteres";
@@ -40,12 +49,24 @@ namespace SEM
             {
                 Errores = Errores + Environment.NewLine + "El experiente debe ser puros numeros";
             }
+            if (Pass.Count(char.IsLower)<1)
+            {
+                Errores = Errores + Environment.NewLine + "La contraseña debe contener minusculas";
+            }
+            if (Pass.Count(char.IsUpper) < 1)
+            {
+                Errores = Errores + Environment.NewLine + "La contraseña debe contener mayusculas";
+            }
+           /* if (Pass.Count(char.is) < 2)
+            {
+                Errores = Errores + Environment.NewLine + "La contraseña debe contener caracteres especiales";
+            }*/
             if (!Experiente.StartsWith("21")) 
             {
                 Errores = Errores + Environment.NewLine + "Experiente no valido";
             }
-            int cp = Pass.Split('1','2','3','4','5','6','7','8','9').Length - 1;
-            if (cp<2)
+       
+            if (Pass.Count(char.IsDigit)<2)
             {
                 Errores = Errores + Environment.NewLine + "La contraseña debe de tener al menos 2 numeros";
             }
@@ -72,7 +93,7 @@ namespace SEM
                     c.RegisterUser(txtExperiente.Text, txtNombre.Text, txtApellido.Text, txtContraseña.Text, txtCorreo.Text, cbCarrera.SelectedItem.ToString());
                     MessageBox.Show("Registrado correctamente");
                     this.Hide();
-                    new Menu(c).Show();
+                    new AccountMenu(c).Show();
                 }
                 catch(Exception ex)
                 {
@@ -85,6 +106,11 @@ namespace SEM
             }
                         
         
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

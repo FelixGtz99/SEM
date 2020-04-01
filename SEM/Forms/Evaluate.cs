@@ -99,11 +99,15 @@ namespace SEM
                var iDMat = getIDMateria();
                 c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
                 MessageBox.Show("Completado");
+                this.Hide();
+                new Menu(c).Show();
+
+
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Error");
             }
             
             

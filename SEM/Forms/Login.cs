@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using SEM.Forms;
 namespace SEM
 {
     public partial class Login : Form
@@ -17,6 +17,9 @@ namespace SEM
         {
             InitializeComponent();
             this.c = c;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height / 2));
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,7 +38,7 @@ namespace SEM
             {
                 MessageBox.Show("Ingresaste correctamente");
                 this.Hide();
-                new Menu(c).Show();
+                new Searcher(c).Show();
             }
             else {
                 MessageBox.Show("Correo/Contraseña Incorrectos");

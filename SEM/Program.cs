@@ -17,7 +17,7 @@ namespace SEM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu(c));
+            Application.Run(new AccountMenu(c));
          
         }
     }

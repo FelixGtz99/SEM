@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using SEM.Forms;
 namespace SEM
 {
     public partial class AccountMenu : Form
@@ -34,7 +34,7 @@ namespace SEM
         {
             c.USER = 0;
             this.Hide();
-            new Menu(c).Show();
+            new Searcher(c).Show();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)

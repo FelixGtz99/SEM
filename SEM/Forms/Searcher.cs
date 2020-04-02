@@ -21,6 +21,11 @@ namespace SEM.Forms
             panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
             panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
               panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
+            if (c.USER==0)
+            {
+                btnEvaluate.Visible = false;
+                label1.Visible = false;
+            }
             label1.Text = "Hola " + c.NOMBRE + " " + c.APELLIDO;
         }
 

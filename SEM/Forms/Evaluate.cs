@@ -129,7 +129,7 @@ namespace SEM
                 c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
                 MessageBox.Show("Completado");
                 this.Hide();
-                new Menu(c).Show();
+                new AccountMenu(c).Show();
 
 
             }

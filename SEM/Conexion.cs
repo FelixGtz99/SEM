@@ -13,7 +13,7 @@ namespace SEM
     public class Conexion
     {
         private int userID = 0;
-        private String pass = "", nombre="",apellido="", correo="", carrera="";
+        private String pass = "", nombre="",apellido="", correo="", carrera="", SelectedTeacher="", SelectedClass="";
 
         private List<Maestro> Maestros=new List<Maestro>();
         private List<Materia> Materias = new List<Materia>();
@@ -44,7 +44,16 @@ namespace SEM
             get { return pass; }
             set { pass = value; }
         }
-
+        public string SMaestro
+        {
+            get { return SelectedTeacher; }
+            set { SelectedTeacher= value; }
+        }
+        public string SMateria
+        {
+            get { return SelectedClass; }
+            set { SelectedClass = value; }
+        }
         public List<Maestro> MAESTROS
         {
             get { return Maestros; }
@@ -54,6 +63,11 @@ namespace SEM
         {
             get { return Clases; }
             set { Clases = value; }
+        }
+        public List<Materia> MATERIAS
+        {
+            get { return Materias; }
+            set { Materias = value; }
         }
         public void iniciar() {
 

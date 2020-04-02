@@ -115,6 +115,7 @@
             this.Controls.Add(this.cbMaestro);
             this.Name = "Evaluate";
             this.Text = "Evaluate";
+            this.Load += new System.EventHandler(this.Evaluate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbCalificacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

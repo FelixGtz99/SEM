@@ -18,7 +18,7 @@ namespace SEM.Forms
             this.c = c;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height ));
+            panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
             panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
               panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
             label1.Text = "Hola " + c.NOMBRE + " " + c.APELLIDO;
@@ -63,6 +63,32 @@ namespace SEM.Forms
         {
             this.Hide();
             new EditAccount(c).Show();
+        }
+
+        private void btnEvaluate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Evaluate(c).Show();
+        }
+
+        private void data_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (cbEleccion.SelectedItem.ToString()=="Docente")
+            {
+                var index = e.RowIndex;
+                DataGridViewRow SelectedRow = data.Rows[index];
+                c.SMaestro = SelectedRow.Cells[0].Value.ToString();
+           
+           
+            }
+            else
+            {
+                var index = e.RowIndex;
+                DataGridViewRow SelectedRow = data.Rows[index];
+                c.SMateria = SelectedRow.Cells[0].Value.ToString();
+                Console.WriteLine("Entto aqi");
+            }
+           
         }
     }
 }

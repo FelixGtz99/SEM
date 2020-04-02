@@ -36,11 +36,14 @@ namespace SEM
             {
                 Errores = "Nesesitas llenar todos los campos";
             }
-        
-            if (c.CheckID(Experiente))
+            if (Experiente!="" && Experiente.All(char.IsDigit))
             {
-                Errores= Errores + Environment.NewLine + "Ya hay un usuario asociado a este experiente";
+                if (c.CheckID(Experiente))
+                {
+                    Errores = Errores + Environment.NewLine + "Ya hay un usuario asociado a este experiente";
+                }
             }
+            
             if (Pass.Length < 9)
             {
                 Errores = Errores + Environment.NewLine + "La contraseña debe contar con almenos 9 caracteres";
@@ -111,6 +114,12 @@ namespace SEM
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AccountMenu(c).Show();
         }
     }
 }

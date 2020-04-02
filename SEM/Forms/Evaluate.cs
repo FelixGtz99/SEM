@@ -14,6 +14,7 @@ namespace SEM
     public partial class Evaluate : Form
     {
         Conexion c = null;
+        static int idMaestro =0, idMateria=0;
         public Evaluate(Conexion c)
         {
 
@@ -22,8 +23,26 @@ namespace SEM
             c.getMaestros();
             c.getMaterias();
             CBMaestros();
-            cbMaestro.SelectedIndex = 0;
-            CBMaterias();
+            if (idMaestro != 0)
+            {
+                cbMaestro.SelectedIndex = idMaestro;
+                CBMaterias();
+            }
+            else {
+                int n = -1;
+                cbMateria.Items.Clear();
+             
+                foreach (Materia materia in c.MATERIAS)
+                {
+                    n++;
+                    cbMateria.Items.Add(materia.ToString());
+                    if (materia.ToString() == c.SMateria)
+                    {
+                        cbMateria.SelectedIndex = n;
+                    }
+                }
+            }
+            
 
         }
 
@@ -33,10 +52,15 @@ namespace SEM
             CBMaterias();
         }
         public void CBMaestros() {
+            int n = -1;
             foreach (Maestro maestro in c.MAESTROS)
             {
+                n++;
                 cbMaestro.Items.Add(maestro.ToString());
-
+                if (maestro.ToString() == c.SMaestro)
+                {
+                    idMaestro = n;
+                }
             }
         }
         public int getIDMaestro() {
@@ -76,12 +100,17 @@ namespace SEM
 
         public void CBMaterias()
         {
-
+            int n = -1;
             cbMateria.Items.Clear();
             c.getClases(getIDMaestro());
             foreach (Materia materia in c.CLASES)
             {
-                cbMateria.Items.Add(materia);
+                n++;
+                cbMateria.Items.Add(materia.ToString());
+                if (materia.ToString()==c.SMateria)
+                {
+                    idMateria = n;
+                }
             }
             
         }
@@ -111,6 +140,14 @@ namespace SEM
             }
             
             
+        }
+
+        private void Evaluate_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void CargarCBMaestro() { 
+        
         }
         
     }

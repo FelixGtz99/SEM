@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Searcher));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.data = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbEleccion = new System.Windows.Forms.ComboBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.btnEvaluate = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.panelCuenta = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelUniversidad = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.panel.SuspendLayout();
             this.panelCuenta.SuspendLayout();
@@ -68,6 +68,7 @@
             this.data.Name = "data";
             this.data.Size = new System.Drawing.Size(466, 387);
             this.data.TabIndex = 1;
+            this.data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellClick);
             this.data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellContentClick);
             // 
             // txtBuscar
@@ -94,6 +95,7 @@
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.Transparent;
+            this.panel.Controls.Add(this.btnEvaluate);
             this.panel.Controls.Add(this.txtBuscar);
             this.panel.Controls.Add(this.btnBuscar);
             this.panel.Controls.Add(this.cbEleccion);
@@ -103,6 +105,19 @@
             this.panel.Size = new System.Drawing.Size(863, 576);
             this.panel.TabIndex = 4;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            // 
+            // btnEvaluate
+            // 
+            this.btnEvaluate.BackColor = System.Drawing.Color.White;
+            this.btnEvaluate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnEvaluate.ForeColor = System.Drawing.Color.Black;
+            this.btnEvaluate.Location = new System.Drawing.Point(529, 227);
+            this.btnEvaluate.Name = "btnEvaluate";
+            this.btnEvaluate.Size = new System.Drawing.Size(191, 46);
+            this.btnEvaluate.TabIndex = 4;
+            this.btnEvaluate.Text = "Evaluar";
+            this.btnEvaluate.UseVisualStyleBackColor = false;
+            this.btnEvaluate.Click += new System.EventHandler(this.btnEvaluate_Click);
             // 
             // btnCerrar
             // 
@@ -160,16 +175,6 @@
             this.panelUniversidad.Size = new System.Drawing.Size(766, 322);
             this.panelUniversidad.TabIndex = 7;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.ImageLocation = "D:\\Programacion\\escudo.png";
-            this.pictureBox1.Location = new System.Drawing.Point(255, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 223);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -180,6 +185,15 @@
             this.label2.Size = new System.Drawing.Size(453, 51);
             this.label2.TabIndex = 1;
             this.label2.Text = "Universidad de sonora";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ImageLocation = "D:\\Programacion\\escudo.png";
+            this.pictureBox1.Location = new System.Drawing.Point(255, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(236, 223);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Searcher
             // 
@@ -218,5 +232,6 @@
         private System.Windows.Forms.Panel panelUniversidad;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnEvaluate;
     }
 }

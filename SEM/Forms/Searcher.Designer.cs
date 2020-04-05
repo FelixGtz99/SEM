@@ -115,7 +115,7 @@
             this.btnEvaluate.Name = "btnEvaluate";
             this.btnEvaluate.Size = new System.Drawing.Size(191, 46);
             this.btnEvaluate.TabIndex = 4;
-            this.btnEvaluate.Text = "Evaluar";
+            this.btnEvaluate.Text = "Ver";
             this.btnEvaluate.UseVisualStyleBackColor = false;
             this.btnEvaluate.Click += new System.EventHandler(this.btnEvaluate_Click);
             // 
@@ -206,6 +206,7 @@
             this.Controls.Add(this.panel);
             this.Name = "Searcher";
             this.Text = "Searcher";
+            this.Load += new System.EventHandler(this.Searcher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();

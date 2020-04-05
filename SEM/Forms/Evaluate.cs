@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEM.items;
+using SEM.Forms;
 
 namespace SEM
 {
@@ -27,6 +28,7 @@ namespace SEM
             {
                 cbMaestro.SelectedIndex = idMaestro;
                 CBMaterias();
+                cbMateria.SelectedIndex = idMateria;
             }
             else {
                 int n = -1;
@@ -146,6 +148,13 @@ namespace SEM
         {
 
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TeacherMenu(c).Show();
+        }
+
         private void CargarCBMaestro() { 
         
         }

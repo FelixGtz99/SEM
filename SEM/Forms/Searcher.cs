@@ -73,7 +73,7 @@ namespace SEM.Forms
         private void btnEvaluate_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Evaluate(c).Show();
+            new TeacherMenu(c).Show();
         }
 
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -94,6 +94,11 @@ namespace SEM.Forms
                 Console.WriteLine("Entto aqi");
             }
            
+        }
+
+        private void Searcher_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

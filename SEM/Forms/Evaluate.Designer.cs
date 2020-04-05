@@ -35,6 +35,10 @@
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tbCalificacion = new System.Windows.Forms.TrackBar();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.Maestro = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbCalificacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +97,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnGuardar.Location = new System.Drawing.Point(451, 672);
+            this.btnGuardar.Location = new System.Drawing.Point(512, 672);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(115, 39);
             this.btnGuardar.TabIndex = 6;
@@ -101,11 +105,54 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnRegresar.Location = new System.Drawing.Point(320, 672);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(115, 39);
+            this.btnRegresar.TabIndex = 7;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // Maestro
+            // 
+            this.Maestro.AutoSize = true;
+            this.Maestro.Location = new System.Drawing.Point(277, 42);
+            this.Maestro.Name = "Maestro";
+            this.Maestro.Size = new System.Drawing.Size(45, 13);
+            this.Maestro.TabIndex = 8;
+            this.Maestro.Text = "Maestro";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(280, 153);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Materia";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(280, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(399, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Este diseño solo elo utilize para probar funcionamento no es para nada definitivo" +
+    " xd";
+            // 
             // Evaluate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 775);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Maestro);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.tbCalificacion);
             this.Controls.Add(this.splitter2);
@@ -131,5 +178,9 @@
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.TrackBar tbCalificacion;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Label Maestro;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

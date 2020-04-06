@@ -39,8 +39,8 @@
             this.panelCuenta = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelUniversidad = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.panel.SuspendLayout();
             this.panelCuenta.SuspendLayout();
@@ -160,16 +160,6 @@
             this.panelUniversidad.Size = new System.Drawing.Size(766, 322);
             this.panelUniversidad.TabIndex = 7;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.ImageLocation = "D:\\Programacion\\escudo.png";
-            this.pictureBox1.Location = new System.Drawing.Point(255, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 223);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -181,17 +171,28 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Universidad de sonora";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImageLocation = "D:\\Programacion\\escudo.png";
+            this.pictureBox1.Location = new System.Drawing.Point(255, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(236, 223);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(1382, 1015);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelUniversidad);
             this.Controls.Add(this.panelCuenta);
             this.Controls.Add(this.panel);
             this.Name = "Searcher";
             this.Text = "Searcher";
+            this.Load += new System.EventHandler(this.Searcher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();

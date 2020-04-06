@@ -17,6 +17,18 @@ namespace SEM
         {
             InitializeComponent();
             this.c = c;
+            //Datos de la barra superior
+            this.ActiveControl = panel2;
+            btnClose.Height = panel2.Height;
+            btnClose.Location = new Point(this.Width - btnClose.Width, 0);
+            btnMin.Location = new Point(this.Width - btnClose.Width - btnMin.Width, 0);
+            btnMin.Height = panel2.Height;
+            panel2.Location = new Point(0, 0);
+            panel2.Width = this.Width;
+            //Datos del panel de Información
+            panel1.Height = this.Height - panel2.Height;
+            panel1.Width = this.Width / 4;
+            panel1.Location = new Point(0, panel2.Height);
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
            // panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height / 2));
@@ -109,6 +121,56 @@ namespace SEM
         }
 
         private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Errors_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtExperiente_KeyDown(object sender, KeyEventArgs e)
+        {
+           // String Expediente = txtExperiente.Text + e.KeyValue;
+            //if(Expediente !=""&& Expediente.All(char.IsDigit))
+           // {
+                //if (c.CheckID(Expediente))
+                //{
+                //  errors.Text = "Expediente inválido";
+                //}
+           //     errors.Text = "";
+                
+           // }
+           // else
+           // {
+            //    errors.Text = "Expediente inválido";
+           // }
+           // errors2.Text = Expediente;
+           // Expediente = txtExperiente.Text;
+        }
+
+        private void TxtExperiente_KeyUp(object sender, KeyEventArgs e)
+        {
+            String Expediente = txtExperiente.Text;
+            if (Expediente != "" && Expediente.All(char.IsDigit))
+            {
+                //if (c.CheckID(Expediente))
+                //{
+                //  errors.Text = "Expediente inválido";
+                //}
+                errors.Text = "";
+
+            }
+            else
+            {
+                errors.Text = "Expediente inválido";
+            }
+           // errors2.Text = Expediente;
+            Expediente = txtExperiente.Text;
+        }
+
+        private void Register_Load(object sender, EventArgs e)
         {
 
         }

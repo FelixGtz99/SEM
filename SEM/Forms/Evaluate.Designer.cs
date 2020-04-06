@@ -70,7 +70,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 775);
+            this.splitter1.Size = new System.Drawing.Size(3, 749);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
@@ -78,7 +78,7 @@
             // 
             this.splitter2.Location = new System.Drawing.Point(3, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(3, 775);
+            this.splitter2.Size = new System.Drawing.Size(3, 749);
             this.splitter2.TabIndex = 4;
             this.splitter2.TabStop = false;
             // 
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 775);
+            this.ClientSize = new System.Drawing.Size(1044, 749);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.tbCalificacion);
             this.Controls.Add(this.splitter2);

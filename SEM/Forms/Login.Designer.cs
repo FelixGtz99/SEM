@@ -34,9 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnAnonimo = new ePOSOne.btnProduct.Button_WOC();
+            this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLogin1 = new ePOSOne.btnProduct.Button_WOC();
             this.line2 = new System.Windows.Forms.Label();
             this.line1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,10 +49,6 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnAnonimo = new ePOSOne.btnProduct.Button_WOC();
-            this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLogin1 = new ePOSOne.btnProduct.Button_WOC();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -131,6 +131,69 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "¿Aún no tienes una cuenta?";
             // 
+            // btnAnonimo
+            // 
+            this.btnAnonimo.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnAnonimo.FlatAppearance.BorderSize = 0;
+            this.btnAnonimo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnonimo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnonimo.Location = new System.Drawing.Point(357, 606);
+            this.btnAnonimo.Name = "btnAnonimo";
+            this.btnAnonimo.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnAnonimo.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnAnonimo.Size = new System.Drawing.Size(311, 60);
+            this.btnAnonimo.TabIndex = 11;
+            this.btnAnonimo.Text = "Ingreso Anónimo";
+            this.btnAnonimo.TextColor = System.Drawing.Color.White;
+            this.btnAnonimo.UseVisualStyleBackColor = true;
+            this.btnAnonimo.Click += new System.EventHandler(this.BtnAnonimo_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(22, 606);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnRegistrar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnRegistrar.Size = new System.Drawing.Size(311, 60);
+            this.btnRegistrar.TabIndex = 10;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextColor = System.Drawing.Color.White;
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
+            // 
+            // btnLogin1
+            // 
+            this.btnLogin1.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnLogin1.FlatAppearance.BorderSize = 0;
+            this.btnLogin1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin1.Location = new System.Drawing.Point(154, 455);
+            this.btnLogin1.Name = "btnLogin1";
+            this.btnLogin1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnLogin1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnLogin1.Size = new System.Drawing.Size(390, 60);
+            this.btnLogin1.TabIndex = 9;
+            this.btnLogin1.Text = "Ingresar";
+            this.btnLogin1.TextColor = System.Drawing.Color.White;
+            this.btnLogin1.UseVisualStyleBackColor = true;
+            this.btnLogin1.Click += new System.EventHandler(this.BtnLogin1_Click);
+            // 
             // line2
             // 
             this.line2.BackColor = System.Drawing.Color.White;
@@ -159,6 +222,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 726);
             this.panel1.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.label8.Location = new System.Drawing.Point(128, 241);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(395, 33);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "sistema evaluador de maestros";
             // 
             // label7
             // 
@@ -247,80 +321,6 @@
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
-            // btnAnonimo
-            // 
-            this.btnAnonimo.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnAnonimo.FlatAppearance.BorderSize = 0;
-            this.btnAnonimo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnonimo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnonimo.Location = new System.Drawing.Point(357, 606);
-            this.btnAnonimo.Name = "btnAnonimo";
-            this.btnAnonimo.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnAnonimo.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnAnonimo.Size = new System.Drawing.Size(311, 60);
-            this.btnAnonimo.TabIndex = 11;
-            this.btnAnonimo.Text = "Ingreso Anónimo";
-            this.btnAnonimo.TextColor = System.Drawing.Color.White;
-            this.btnAnonimo.UseVisualStyleBackColor = true;
-            this.btnAnonimo.Click += new System.EventHandler(this.BtnAnonimo_Click);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnRegistrar.FlatAppearance.BorderSize = 0;
-            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(22, 606);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnRegistrar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnRegistrar.Size = new System.Drawing.Size(311, 60);
-            this.btnRegistrar.TabIndex = 10;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.TextColor = System.Drawing.Color.White;
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
-            // 
-            // btnLogin1
-            // 
-            this.btnLogin1.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnLogin1.FlatAppearance.BorderSize = 0;
-            this.btnLogin1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin1.Location = new System.Drawing.Point(154, 455);
-            this.btnLogin1.Name = "btnLogin1";
-            this.btnLogin1.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnLogin1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnLogin1.Size = new System.Drawing.Size(390, 60);
-            this.btnLogin1.TabIndex = 9;
-            this.btnLogin1.Text = "Ingresar";
-            this.btnLogin1.TextColor = System.Drawing.Color.White;
-            this.btnLogin1.UseVisualStyleBackColor = true;
-            this.btnLogin1.Click += new System.EventHandler(this.BtnLogin1_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label8.Location = new System.Drawing.Point(128, 241);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(395, 33);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "sistema evaluador de maestros";
             // 
             // Login
             // 

@@ -117,10 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>1. Aceptación de los términos
+Al momento de empezar a utilizar cualquiera de los servicios proporcionados por nuestro Sistema de Evaluación de Docentes (\"SEM\"), usted acepta y está sujeto a los siguientes términos y condiciones presentados a continuación (\"Términos del Sistema\").
+Cualquier cambio o funcionalidad que sea agregada al servicio actual en el futuro, también estará sujeta a sus correspondientes términos de servicio. SEM se reservará el derecho de actualizar y cambiar estos términos y condiciones en cualquier momento que se considere pertinente, usted se verá notificado de estos cambios al momento de registrarse en la aplicación. Sin embargo, si usted continúa utilizando el sistema después de una actualización o modificación de los términos del servicio, significa que usted está de acuerdo con los mismos. Le recomendamos revisar periódicamente los términos de servicio para saber si algún cambio en los mismos tendrá un impacto sobre su experiencia en la aplicación.
+
+    2. Condiciones para la Creación de una cuenta
+2.1. Usted deberá ser mayor de 18 años
+2.2. Usted debe proporcionar su nombre completo de acuerdo con como aparece en su identificación oficial, fecha de nacimiento, una dirección de correo electrónico institucional válida y cualquier otro tipo de información necesaria para completar los campos del formulario solicitado durante el proceso de creación de una cuenta.
+2.3. Usted será responsable de mantener su usuario y contraseña de forma segura. El equipo de desarrollo de SEM no puede y no será responsable por daños o pérdidas ocasionados por no recordar o mantener la seguridad de su usuario y/o contraseña.
+ 2.4. Usted no podrá usar el servicio para fines ilícitos considerados ilegales, no autorizados o que violen cualquier instancia dentro del marco legal jurídico en la república mexicana.
+2.5. Usted es responsable de toda información o contenido que decida subir a la aplicación. No podrá transmitir o cargar en el sistema cualquier tipo de contenido de naturaleza negativa o destructiva que intente de cualquier forma agredir, insultar, discriminar, y atentar hacia la integridad física o moral de algún docente, de ser así nos veremos obligados a eliminar este contenido malicioso, o bien los usuarios lo harán de esta forma.
+2.5. Usted es responsable de toda información o contenido que decida subir a la aplicación. No podrá transmitir o cargar en el sistema cualquier tipo de contenido de naturaleza negativa o destructiva que intente de cualquier forma agredir, insultar, discriminar, y atentar hacia la integridad física o moral de algún docente, de ser así nos veremos obligados a eliminar este contenido malicioso, o bien los usuarios lo harán de esta forma.
+2.6. Cualquier tipo de violación u omisión a los términos y condiciones del sistema SEM serán castigados con sanciones que van desde 2 a 5 años de cárcel o bien una multa federal de $200,000 siguiendo el código penal federal, esto de acuerdo con la Ley Reglamentaria del artículo 27 constitucional según estipula el orden jurídico nacional mexicano.
+
+    3. Descripción Funcional del Sistema
+3.1. Usted será capaz de registrar docentes en el sistema.
+3.2. Usted tendrá la opción de elegir si realizar una búsqueda de algún docente o materia.
+3.3. Usted será capaz de realizar evaluaciones a maestros, Se deberá ingresar un texto donde se vea expresada su opinión de forma respetuosa, y posteriormente asignar una calificación para el desempeño del docente que va en escala del 1 al 10.
+3.4. Usted tendrá la posibilidad de calificar las reviews/opiniones de los otros alumnos, pudiendo dar me gusta o no me gusta en estas mismas.
+</value>
+  </data>
 </root>

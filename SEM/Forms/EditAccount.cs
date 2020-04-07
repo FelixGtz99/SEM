@@ -174,5 +174,10 @@ namespace SEM.Forms
                 MessageBox.Show("Contraseña Incorrecta");
             }
         }
+
+        private void BtnComfirPass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SEM.Forms;
 
 namespace SEM
 {
@@ -17,7 +18,7 @@ namespace SEM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AccountMenu(c));
+            Application.Run(new Login(c));
          
         }
     }

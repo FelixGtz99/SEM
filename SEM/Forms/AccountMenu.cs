@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SEM.Forms;
+
 namespace SEM
 {
     public partial class AccountMenu : Form
@@ -18,10 +18,19 @@ namespace SEM
             InitializeComponent();
             this.c = c;
             c.iniciar();
-            c.getMaestros();
-            c.getMaterias();
-            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            //this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+           // this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.BackColor = Color.FromArgb(33, 33, 33);
+            btnAnonimo.BackColor = Color.FromArgb(48, 48, 48);
+            btnIngresar.BackColor = Color.FromArgb(48, 48, 48);
+            btnRegistrar.BackColor = Color.FromArgb(48, 48, 48);
+            this.ActiveControl = panel1;
+            btnClose.Height = panel1.Height;
+            btnClose.Location = new Point(this.Width - btnClose.Width,0);
+            btnMin.Location = new Point(this.Width - btnClose.Width - btnMin.Width,0);
+            btnMin.Height = panel1.Height;
+            panel1.Location = new Point(0, 0);
+            panel1.Width = this.Width;
             panel.Location=new Point((this.Width/2-panel.Width/2), (this.Height / 2 - panel.Height / 2));
 
         }
@@ -36,13 +45,28 @@ namespace SEM
         {
             c.USER = 0;
             this.Hide();
-            new Searcher(c).Show();
+            new Menu(c).Show();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             this.Hide();
             new Register(c).Show();
+        }
+
+        private void AccountMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

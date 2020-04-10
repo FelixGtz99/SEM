@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 using SEM.items;
+using System.Collections;
 
 
 namespace SEM
@@ -73,7 +74,7 @@ namespace SEM
 
             try
             {
-                con.ConnectionString = "Username = AdminDB; Password=1234; Host = localhost; Port = 5432; Database = SEM";
+                con.ConnectionString = "Username = usr217210185; Password=pw217210185; Host = localhost; Port = 5432; Database = SEM";
                 con.Open();
                 Console.WriteLine("Conexion hecha correctamente");
 
@@ -428,6 +429,8 @@ namespace SEM
             return data;
         }
     } 
+
+
 
 }
 

@@ -108,7 +108,28 @@ namespace SEM
             }
             return userID;
         }
+        public Boolean CheckEnail(String email)
+        {
 
+            String query = "SELECT * FROM usuarios WHERE correo=@e";
+            using (var cmd = new NpgsqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("e", email);
+               
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return true;
+
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            }
+            
+        }
         public Boolean CheckID(String id)
         {
             int exp = Int32.Parse(id);

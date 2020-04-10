@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 using SEM.items;
-using System.Collections;
 
 
 namespace SEM
@@ -14,7 +13,7 @@ namespace SEM
     public class Conexion
     {
         private int userID = 0;
-        private String pass = "", nombre="",apellido="", correo="", carrera="";
+        private String pass = "", nombre="",apellido="", correo="", carrera="", SelectedTeacher="", SelectedClass="";
 
         private List<Maestro> Maestros=new List<Maestro>();
         private List<Materia> Materias = new List<Materia>();
@@ -45,7 +44,16 @@ namespace SEM
             get { return pass; }
             set { pass = value; }
         }
-
+        public string SMaestro
+        {
+            get { return SelectedTeacher; }
+            set { SelectedTeacher= value; }
+        }
+        public string SMateria
+        {
+            get { return SelectedClass; }
+            set { SelectedClass = value; }
+        }
         public List<Maestro> MAESTROS
         {
             get { return Maestros; }
@@ -56,11 +64,16 @@ namespace SEM
             get { return Clases; }
             set { Clases = value; }
         }
+        public List<Materia> MATERIAS
+        {
+            get { return Materias; }
+            set { Materias = value; }
+        }
         public void iniciar() {
 
             try
             {
-                con.ConnectionString = "Username = usr217210185; Password=pw217210185; Host = localhost; Port = 5432; Database = SEM";
+                con.ConnectionString = "Username = Sebas; Password=sebas1699; Host = localhost; Port = 5432; Database = dbsimp";
                 con.Open();
                 Console.WriteLine("Conexion hecha correctamente");
 
@@ -273,6 +286,20 @@ namespace SEM
 
             return data;
         }
+        public DataTable verClases(int i)
+        {
+            String query = "SELECT m.nombre_materia as Materia FROM materia m, clases c WHERE m.id_materia=c.materria AND c.docente=@id";
+            var cmd = new NpgsqlCommand(query, con);
+            Console.WriteLine(query);
+            cmd.Parameters.AddWithValue("id",  i );
+            var datos = new NpgsqlDataAdapter(cmd);
+            DataTable data = new DataTable();
+            Console.WriteLine(data);
+            datos.Fill(data);
+
+            return data;
+        }
+
         public void ChangePass(String c)
         {
             String query = " UPDATE public.usuarios SET contraseña = @c   WHERE expediente = @id; ";
@@ -338,10 +365,48 @@ namespace SEM
             }
           
         }
+        public int getIDMaestro() {
+            int id=0;
+            foreach (Maestro maestro in MAESTROS)
+            {
+                if (maestro.ToString().Equals(SMaestro))
+                {
+                    id = maestro.ID;
+                }
+            }
 
+            return id;
+        }
+        public int getIDMateria()
+        {
+            int id = 0;
+            foreach (Materia materia in Materias)
+            {
+                if (materia.ToString().Equals(SMateria))
+                {
+                    id = materia.ID;
+                }
+            }
+
+            return id;
+        }
+        public DataTable verEvaluaciones()
+        {
+            Console.WriteLine(getIDMateria());
+            Console.WriteLine(getIDMaestro());
+            String query = "SELECT comentario, calificacion, likes AS Me_gusta, dislikes AS No_me_gusta FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM";
+            var cmd = new NpgsqlCommand(query, con);
+            Console.WriteLine(query);
+            cmd.Parameters.AddWithValue("idD", getIDMaestro());
+            cmd.Parameters.AddWithValue("idM", getIDMateria());
+            var datos = new NpgsqlDataAdapter(cmd);
+            DataTable data = new DataTable();
+            Console.WriteLine(data);
+            datos.Fill(data);
+
+            return data;
+        }
     } 
-
-
 
 }
 

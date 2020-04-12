@@ -18,6 +18,19 @@ namespace SEM.Forms
          
             InitializeComponent();
             this.c = c;
+            //Datos de la barra superior
+            this.ActiveControl = panel2;
+            btnClose.Height = panel2.Height;
+            btnClose.Location = new Point(this.Width - btnClose.Width, 0);
+            btnMin.Location = new Point(this.Width - btnClose.Width - btnMin.Width, 0);
+            btnMin.Height = panel2.Height;
+            panel2.Location = new Point(0, 0);
+            panel2.Width = this.Width;
+            //Datos del panel de Información
+            panel1.Height = this.Height - panel2.Height;
+            panel1.Width = this.Width / 4;
+            panel1.Location = new Point(0, panel2.Height);
+
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             lbCarrera.Text = c.CARRERA;

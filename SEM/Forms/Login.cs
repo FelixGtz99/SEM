@@ -17,7 +17,9 @@ namespace SEM
         public Login(Conexion c)
         {
             InitializeComponent();
+
             this.c = c;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             c.iniciar();
             //Datos de la barra superior
             this.ActiveControl = panel2;

@@ -18,6 +18,8 @@ namespace SEM
         {
             InitializeComponent();
             this.c = c;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;
@@ -30,8 +32,8 @@ namespace SEM
             panel1.Height = this.Height - panel2.Height;
             panel1.Width = this.Width / 4;
             panel1.Location = new Point(0, panel2.Height);
-            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            
+            
             //Datos del panel de Actividad
             panel.Height = this.Height * 10 / 17;
             panel.Width = this.Width * 3 / 4;

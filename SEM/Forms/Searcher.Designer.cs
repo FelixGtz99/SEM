@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Searcher));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.data = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbEleccion = new System.Windows.Forms.ComboBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.btnVer = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.panelCuenta = new System.Windows.Forms.Panel();
@@ -41,6 +41,7 @@
             this.panelUniversidad = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.panel.SuspendLayout();
             this.panelCuenta.SuspendLayout();
@@ -68,6 +69,7 @@
             this.data.Name = "data";
             this.data.Size = new System.Drawing.Size(466, 387);
             this.data.TabIndex = 1;
+            this.data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellClick);
             this.data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellContentClick);
             // 
             // txtBuscar
@@ -94,6 +96,7 @@
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.Transparent;
+            this.panel.Controls.Add(this.btnVer);
             this.panel.Controls.Add(this.txtBuscar);
             this.panel.Controls.Add(this.btnBuscar);
             this.panel.Controls.Add(this.cbEleccion);
@@ -103,6 +106,19 @@
             this.panel.Size = new System.Drawing.Size(863, 576);
             this.panel.TabIndex = 4;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.White;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnVer.ForeColor = System.Drawing.Color.Black;
+            this.btnVer.Location = new System.Drawing.Point(529, 232);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(191, 46);
+            this.btnVer.TabIndex = 4;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnCerrar
             // 
@@ -173,7 +189,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImageLocation = "D:\\Programacion\\escudo.png";
             this.pictureBox1.Location = new System.Drawing.Point(255, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -181,12 +196,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnRA
+            // 
+            this.btnRA.BackColor = System.Drawing.Color.White;
+            this.btnRA.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnRA.ForeColor = System.Drawing.Color.Black;
+            this.btnRA.Location = new System.Drawing.Point(-26, 159);
+            this.btnRA.Name = "btnRA";
+            this.btnRA.Size = new System.Drawing.Size(191, 62);
+            this.btnRA.TabIndex = 5;
+            this.btnRA.Text = "Actividad Reciente";
+            this.btnRA.UseVisualStyleBackColor = false;
+            this.btnRA.Click += new System.EventHandler(this.btnRA_Click);
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.btnRA);
             this.Controls.Add(this.panelUniversidad);
             this.Controls.Add(this.panelCuenta);
             this.Controls.Add(this.panel);
@@ -219,5 +248,7 @@
         private System.Windows.Forms.Panel panelUniversidad;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnRA;
     }
 }

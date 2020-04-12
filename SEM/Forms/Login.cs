@@ -19,6 +19,8 @@ namespace SEM
             InitializeComponent();
             this.c = c;
             c.iniciar();
+            c.getMaestros();
+            c.getMaterias();
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;

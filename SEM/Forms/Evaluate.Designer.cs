@@ -35,6 +35,7 @@
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tbCalificacion = new System.Windows.Forms.TrackBar();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbCalificacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnGuardar.Location = new System.Drawing.Point(451, 672);
+            this.btnGuardar.Location = new System.Drawing.Point(366, 672);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(115, 39);
             this.btnGuardar.TabIndex = 6;
@@ -101,11 +102,23 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnRegresar.Location = new System.Drawing.Point(553, 672);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(115, 39);
+            this.btnRegresar.TabIndex = 7;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+           this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
+            // 
             // Evaluate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 749);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.tbCalificacion);
             this.Controls.Add(this.splitter2);
@@ -130,5 +143,6 @@
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.TrackBar tbCalificacion;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

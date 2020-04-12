@@ -72,6 +72,7 @@
             this.data.Size = new System.Drawing.Size(668, 475);
             this.data.TabIndex = 2;
             this.data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellClick);
+            this.data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellContentClick);
             // 
             // button1
             // 
@@ -142,6 +143,7 @@
             this.btnLike.TabIndex = 3;
             this.btnLike.Text = "Me Gusta";
             this.btnLike.UseVisualStyleBackColor = true;
+            this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
             // 
             // btnDislike
             // 
@@ -152,6 +154,7 @@
             this.btnDislike.TabIndex = 4;
             this.btnDislike.Text = "No me gusta";
             this.btnDislike.UseVisualStyleBackColor = true;
+            this.btnDislike.Click += new System.EventHandler(this.btnDislike_Click);
             // 
             // TeacherMenu
             // 

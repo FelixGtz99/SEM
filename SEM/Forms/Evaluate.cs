@@ -27,7 +27,7 @@ namespace SEM
             if (idMaestro != 0)
             {
                 cbMaestro.SelectedIndex = idMaestro;
-                CBMaterias();
+               CBMaterias();
                 cbMateria.SelectedIndex = idMateria;
             }
             else {
@@ -131,7 +131,7 @@ namespace SEM
                 c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
                 MessageBox.Show("Completado");
                 this.Hide();
-                new AccountMenu(c).Show();
+                new Searcher(c).Show();
 
 
             }
@@ -150,6 +150,12 @@ namespace SEM
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TeacherMenu(c).Show();
+        }
+
+        private void btnRegresar_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             new TeacherMenu(c).Show();

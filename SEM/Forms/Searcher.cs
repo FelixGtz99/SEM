@@ -22,6 +22,7 @@ namespace SEM.Forms
             panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
               panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
             label1.Text = "Hola " + c.NOMBRE + " " + c.APELLIDO;
+            btnVer.Visible = false;
         }
 
         private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,6 +32,7 @@ namespace SEM.Forms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            btnVer.Visible = true;
             if (cbEleccion.SelectedItem.ToString()=="Docente")
             {
                 data.DataSource = c.verMaestros(txtBuscar.Text);
@@ -68,6 +70,37 @@ namespace SEM.Forms
         private void Searcher_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TeacherMenu(c).Show();
+        }
+
+        private void data_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (cbEleccion.SelectedItem.ToString() == "Docente")
+            {
+                var index = e.RowIndex;
+                DataGridViewRow SelectedRow = data.Rows[index];
+                c.SMaestro = SelectedRow.Cells[0].Value.ToString();
+
+
+            }
+            else
+            {
+                var index = e.RowIndex;
+                DataGridViewRow SelectedRow = data.Rows[index];
+                c.SMateria = SelectedRow.Cells[0].Value.ToString();
+                Console.WriteLine("Entto aqi");
+            }
+        }
+
+        private void btnRA_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RA(c).Show();
         }
     }
 }

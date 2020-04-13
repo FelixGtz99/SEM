@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRA = new System.Windows.Forms.Button();
+            this.btnRegistrarD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.panel.SuspendLayout();
             this.panelCuenta.SuspendLayout();
@@ -209,12 +210,26 @@
             this.btnRA.UseVisualStyleBackColor = false;
             this.btnRA.Click += new System.EventHandler(this.btnRA_Click);
             // 
+            // btnRegistrarD
+            // 
+            this.btnRegistrarD.BackColor = System.Drawing.Color.White;
+            this.btnRegistrarD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnRegistrarD.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrarD.Location = new System.Drawing.Point(-23, 241);
+            this.btnRegistrarD.Name = "btnRegistrarD";
+            this.btnRegistrarD.Size = new System.Drawing.Size(191, 62);
+            this.btnRegistrarD.TabIndex = 8;
+            this.btnRegistrarD.Text = "Registrar Docente";
+            this.btnRegistrarD.UseVisualStyleBackColor = false;
+            this.btnRegistrarD.Click += new System.EventHandler(this.btnRegistrarD_Click);
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.btnRegistrarD);
             this.Controls.Add(this.btnRA);
             this.Controls.Add(this.panelUniversidad);
             this.Controls.Add(this.panelCuenta);
@@ -250,5 +265,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnRA;
+        private System.Windows.Forms.Button btnRegistrarD;
     }
 }

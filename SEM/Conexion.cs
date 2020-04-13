@@ -188,6 +188,7 @@ namespace SEM
 
         //Crea una lista con los maestros
         public void getMaestros() {
+            Maestros.Clear();
             String query = "SELECT * FROM docentes ";
             using (var cmd = new NpgsqlCommand(query, con))
             {
@@ -259,8 +260,8 @@ namespace SEM
         }
         //Guarda la evaluacion
         public void guardarEvaluacion(int idD, int idM, String Comen, int Calif) {
-            String query = "INSERT INTO evaluacion(id_usuario, id_docentes, id_materia, calificacion, comentario, id_evaluacion, likes, dislikes) VALUES(@id, @d, @m, @calif, @comen, @e, 0, 0); ";
-         
+            String query = "INSERT INTO evaluacion(id_usuario, id_docentes, id_materia, calificacion, comentario, id_evaluacion, likes, dislikes, fecha) VALUES(@id, @d, @m, @calif, @comen, @e, 0, 0, @date); ";
+            var date = DateTime.Now;
             var IDE = getLastEvaluacion() + 1;
             Console.WriteLine(idD.ToString());
             Console.WriteLine(idM.ToString());
@@ -274,6 +275,7 @@ namespace SEM
                     cmd.Parameters.AddWithValue("calif", Calif);
                     cmd.Parameters.AddWithValue("comen", Comen);
                     cmd.Parameters.AddWithValue("e", IDE);
+            cmd.Parameters.AddWithValue("date",date);
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("va bine");
                
@@ -434,7 +436,7 @@ namespace SEM
         {
             Console.WriteLine(getIDMateria());
             Console.WriteLine(getIDMaestro());
-            String query = "SELECT comentario, calificacion, likes AS Me_gusta, dislikes AS No_me_gusta FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM";
+            String query = "SELECT comentario, calificacion, likes AS Me_gusta, dislikes AS No_me_gusta, fecha FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluaciom DESC";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("idD", getIDMaestro());
@@ -610,7 +612,7 @@ namespace SEM
         //ver la actividad reciente
         public DataTable verRA()
         {
-            String query = "SELECT (d.nombre || d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
+            String query = "SELECT (d.nombre || d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes, e.fecha FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
             var cmd = new NpgsqlCommand(query, con);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
@@ -618,7 +620,37 @@ namespace SEM
             datos.Fill(data);
             return data;
         }
-   
+        //Registrar Docente
+        public void guardarDocente(String nombre, String apellido, String alias, List<Materia> m) {
+            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias) VALUES(@id, @n, @a, @alias); ";
+            
+            var IDD = MAESTROS.Count + 1;
+        
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("n", nombre);
+            cmd.Parameters.AddWithValue("a", apellido);
+            cmd.Parameters.AddWithValue("alias", alias);
+            cmd.Parameters.AddWithValue("id", IDD);
+            cmd.ExecuteNonQuery();
+            foreach (Materia materia in m)
+            {
+                guardarClaseDocente(materia.ID, IDD);
+            }
+
+        }
+        //Guardar Las clases asignadas al docente
+        public void guardarClaseDocente(int idM, int idD) {
+            String query = "INSERT INTO clases(materria, docente) VALUES(@idM, @idD); ";
+
+
+            var cmd = new NpgsqlCommand(query, con);
+          
+            cmd.Parameters.AddWithValue("idM", idM);
+            cmd.Parameters.AddWithValue("idD", idD);
+            cmd.ExecuteNonQuery();
+
+
+        }
     }
     } 
 

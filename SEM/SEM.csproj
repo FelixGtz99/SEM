@@ -145,6 +145,12 @@
     <Compile Include="Forms\Terminos.Designer.cs">
       <DependentUpon>Terminos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TeacherRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherRegister.Designer.cs">
+      <DependentUpon>TeacherRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="items\Maestro.cs" />
     <Compile Include="items\Materia.cs" />
     <Compile Include="Menu.cs">
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Terminos.resx">
       <DependentUpon>Terminos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherRegister.resx">
+      <DependentUpon>TeacherRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

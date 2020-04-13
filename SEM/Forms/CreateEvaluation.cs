@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SEM.Forms
 {
-    public partial class RegisterTeacher : Form
+    public partial class CreateEvaluation : Form
     {
-        public RegisterTeacher()
+        public CreateEvaluation()
         {
             InitializeComponent();
             //Datos de la barra superior
@@ -23,11 +23,9 @@ namespace SEM.Forms
             btnMin.Height = panel2.Height;
             panel2.Location = new Point(0, 0);
             panel2.Width = this.Width;
-
-            listBox1.HorizontalScrollbar = true;
         }
 
-        private void RegisterTeacher_Load(object sender, EventArgs e)
+        private void CreateEvaluation_Load(object sender, EventArgs e)
         {
 
         }

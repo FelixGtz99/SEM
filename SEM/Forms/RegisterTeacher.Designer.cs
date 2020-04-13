@@ -32,7 +32,6 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,7 +47,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbEscuela = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
+            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -107,26 +114,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(364, 727);
             this.panel1.TabIndex = 23;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
-            this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(28, 510);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnVolver.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnVolver.Size = new System.Drawing.Size(298, 60);
-            this.btnVolver.TabIndex = 14;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.TextColor = System.Drawing.Color.White;
-            this.btnVolver.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -211,7 +198,7 @@
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelApellido.ForeColor = System.Drawing.Color.White;
-            this.labelApellido.Location = new System.Drawing.Point(945, 278);
+            this.labelApellido.Location = new System.Drawing.Point(448, 399);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(82, 24);
             this.labelApellido.TabIndex = 29;
@@ -225,7 +212,7 @@
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellido.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.ForeColor = System.Drawing.Color.DimGray;
-            this.txtApellido.Location = new System.Drawing.Point(949, 327);
+            this.txtApellido.Location = new System.Drawing.Point(452, 440);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(387, 25);
             this.txtApellido.TabIndex = 30;
@@ -234,7 +221,7 @@
             // lineApellido
             // 
             this.lineApellido.BackColor = System.Drawing.Color.White;
-            this.lineApellido.Location = new System.Drawing.Point(946, 355);
+            this.lineApellido.Location = new System.Drawing.Point(449, 468);
             this.lineApellido.Name = "lineApellido";
             this.lineApellido.Size = new System.Drawing.Size(392, 3);
             this.lineApellido.TabIndex = 31;
@@ -256,7 +243,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(448, 429);
+            this.label1.Location = new System.Drawing.Point(448, 515);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 24);
             this.label1.TabIndex = 33;
@@ -269,7 +256,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(452, 478);
+            this.textBox1.Location = new System.Drawing.Point(452, 551);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(387, 25);
             this.textBox1.TabIndex = 34;
@@ -278,7 +265,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(449, 506);
+            this.label2.Location = new System.Drawing.Point(449, 579);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(392, 3);
             this.label2.TabIndex = 35;
@@ -288,11 +275,117 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(398, 487);
+            this.label3.Location = new System.Drawing.Point(398, 554);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 22);
             this.label3.TabIndex = 36;
             this.label3.Text = "?";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(398, 443);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(22, 22);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "?";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(938, 278);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 24);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Materias";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(891, 331);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(22, 22);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "?";
+            // 
+            // cbEscuela
+            // 
+            this.cbEscuela.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbEscuela.BackColor = System.Drawing.Color.White;
+            this.cbEscuela.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEscuela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbEscuela.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEscuela.ForeColor = System.Drawing.Color.DimGray;
+            this.cbEscuela.FormattingEnabled = true;
+            this.cbEscuela.Items.AddRange(new object[] {
+            "Ingeneria En Sistemas De Informacion"});
+            this.cbEscuela.Location = new System.Drawing.Point(942, 327);
+            this.cbEscuela.Name = "cbEscuela";
+            this.cbEscuela.Size = new System.Drawing.Size(387, 32);
+            this.cbEscuela.TabIndex = 41;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Items.AddRange(new object[] {
+            "Materia 1",
+            "Materia 2",
+            "Materia 3"});
+            this.listBox1.Location = new System.Drawing.Point(951, 436);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(378, 148);
+            this.listBox1.TabIndex = 46;
+            // 
+            // button_WOC2
+            // 
+            this.button_WOC2.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
+            this.button_WOC2.Enabled = false;
+            this.button_WOC2.FlatAppearance.BorderSize = 0;
+            this.button_WOC2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC2.Location = new System.Drawing.Point(1159, 374);
+            this.button_WOC2.Name = "button_WOC2";
+            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.button_WOC2.Size = new System.Drawing.Size(170, 49);
+            this.button_WOC2.TabIndex = 45;
+            this.button_WOC2.Text = "Remover";
+            this.button_WOC2.TextColor = System.Drawing.Color.White;
+            this.button_WOC2.UseVisualStyleBackColor = true;
+            // 
+            // button_WOC1
+            // 
+            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.button_WOC1.Enabled = false;
+            this.button_WOC1.FlatAppearance.BorderSize = 0;
+            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC1.Location = new System.Drawing.Point(942, 374);
+            this.button_WOC1.Name = "button_WOC1";
+            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.button_WOC1.Size = new System.Drawing.Size(170, 49);
+            this.button_WOC1.TabIndex = 44;
+            this.button_WOC1.Text = "Añadir";
+            this.button_WOC1.TextColor = System.Drawing.Color.White;
+            this.button_WOC1.UseVisualStyleBackColor = true;
             // 
             // btnRegistrar
             // 
@@ -315,12 +408,39 @@
             this.btnRegistrar.TextColor = System.Drawing.Color.White;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(28, 510);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnVolver.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnVolver.Size = new System.Drawing.Size(298, 60);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = true;
+            // 
             // RegisterTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button_WOC2);
+            this.Controls.Add(this.button_WOC1);
+            this.Controls.Add(this.cbEscuela);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -372,5 +492,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private ePOSOne.btnProduct.Button_WOC btnRegistrar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbEscuela;
+        private ePOSOne.btnProduct.Button_WOC button_WOC1;
+        private ePOSOne.btnProduct.Button_WOC button_WOC2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

@@ -109,6 +109,12 @@
     <Compile Include="Forms\Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\CreateEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateEvaluation.Designer.cs">
+      <DependentUpon>CreateEvaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="Forms\Evaluate.Designer.cs">
       <DependentUpon>Evaluate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Evaluations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Evaluations.Designer.cs">
+      <DependentUpon>Evaluations.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RegisterTeacher.cs">
       <SubType>Form</SubType>
@@ -164,11 +176,17 @@
     <EmbeddedResource Include="Forms\AccountMenu.resx">
       <DependentUpon>AccountMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateEvaluation.resx">
+      <DependentUpon>CreateEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditAccount.resx">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Evaluate.resx">
       <DependentUpon>Evaluate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Evaluations.resx">
+      <DependentUpon>Evaluations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterTeacher.resx">
       <DependentUpon>RegisterTeacher.cs</DependentUpon>

@@ -24,7 +24,12 @@ namespace SEM.Forms
             lbMateria.Visible = false;
             panel2.Visible = false;
             clases();
-            
+            c.SMateria = "Ninguna we xd";
+            if (c.USER==0)
+            {
+                button1.Visible = false;
+              
+            }
         }
 
         private void TeacherMenu_Load(object sender, EventArgs e)
@@ -45,77 +50,137 @@ namespace SEM.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (c.checkUserEvaluation())
+            if (c.SMateria == "Ninguna we xd")
             {
-                Console.WriteLine("Ya existe");
-                MessageBox.Show("Ya Evaluaste a este maestro en esta clase");
+                MessageBox.Show("No has seleccionado ningua a evaluar");
             }
             else {
-                Console.WriteLine("No exite");
-                this.Hide();
-                new Evaluate(c).Show();
-            } }
+                if (c.checkUserEvaluation())
+                {
+                    Console.WriteLine("Ya existe");
+                    MessageBox.Show("Ya Evaluaste a este maestro en esta clase");
+                }
+                else
+                {
+                    Console.WriteLine("No exite");
+                    this.Hide();
+                    new Evaluate(c).Show();
+                }
+            }
+           }
 
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-      
-            if (panel1.Visible)
+            try
             {
-                var index = e.RowIndex;
-                DataGridViewRow SelectedRow = data.Rows[index];
-                c.SMateria = SelectedRow.Cells[0].Value.ToString();
-            }
-            if (panel2.Visible)
-            {
-                var index = e.RowIndex;
-                DataGridViewRow SelectedRow = data.Rows[index];
-                Comentario = SelectedRow.Cells[0].Value.ToString();
-                Calificacion= SelectedRow.Cells[1].Value.ToString();
-            }
+                if (panel1.Visible)
+                {
+                    var index = e.RowIndex;
+                    DataGridViewRow SelectedRow = data.Rows[index];
+                    c.SMateria = SelectedRow.Cells[0].Value.ToString();
+                }
+                if (panel2.Visible)
+                {
+                    var index = e.RowIndex;
+                    DataGridViewRow SelectedRow = data.Rows[index];
+                    Comentario = SelectedRow.Cells[0].Value.ToString();
+                    Calificacion = SelectedRow.Cells[1].Value.ToString();
+                }
 
+            }
+            catch (Exception)
+            {
+
+                
+            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            lbMateria.Text = c.SMateria;
-            label3.Visible = true;
-            lbMateria.Visible = true;
-            data.DataSource = c.verEvaluaciones();
-            panel1.Visible = false;
-            panel2.Visible = true;
+            if (c.SMateria == "Ninguna we xd")
+            {
+                MessageBox.Show("No has seleccionado ninguna mataeria a evaluar");
+            }
+            else
+            {
+                lbMateria.Text = c.SMateria;
+                label3.Visible = true;
+                lbMateria.Visible = true;
+                data.DataSource = c.verEvaluaciones();
+                panel1.Visible = false;
+                if (c.USER!=0)
+                {
+                    panel2.Visible = true;
+                }
+                
+            }
         }
 
         private void btnLike_Click(object sender, EventArgs e)
         {
-            int id = c.getIDEvaluacion(Comentario, Calificacion);
-          
-            if (c.chechUserVote(id))
+            if (Calificacion.Equals(" "))
             {
-                MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+                MessageBox.Show("No has seleccionado ninguna evaluacion");
             }
-            else {
-         
-                c.updateLikes(c.getLikes(id), id);
-                c.updateVotos(id);
-                data.DataSource = c.verEvaluaciones();
+            else
+            {
+                int id = c.getIDEvaluacion(Comentario, Calificacion);
 
+                if (c.chechUserVote(id))
+                {
+                    MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+                }
+                else
+                {
+
+                    c.updateLikes(c.getLikes(id), id);
+                    c.updateVotos(id);
+                    data.DataSource = c.verEvaluaciones();
+
+                }
             }
         }
 
         private void btnDislike_Click(object sender, EventArgs e)
         {
-            int id = c.getIDEvaluacion(Comentario, Calificacion);
-
-            if (c.chechUserVote(id))
+            if (Calificacion.Equals(" "))
             {
-                MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+                MessageBox.Show("No has seleccionado ninguna evaluacion");
             }
             else
             {
+                int id = c.getIDEvaluacion(Comentario, Calificacion);
 
-                c.updateDislikes(c.getDislikes(id), id);
-                c.updateVotos(id);
-                data.DataSource = c.verEvaluaciones();
+                if (c.chechUserVote(id))
+                {
+                    MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+                }
+                else
+                {
+
+                    c.updateDislikes(c.getDislikes(id), id);
+                    c.updateVotos(id);
+                    data.DataSource = c.verEvaluaciones();
+
+                }
+            }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            if (panel1.Visible)
+            {
+                this.Hide();
+                new Searcher(c).Show();
+            }
+            if (panel2.Visible)
+            {
+                clases();
+                panel2.Visible = false;
+                panel1.Visible = true;
+                label3.Visible = false;
+                lbMateria.Visible = false;
 
             }
         }

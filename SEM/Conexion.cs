@@ -295,10 +295,10 @@ namespace SEM
             String query = "Select * From evaluacion where";
 
         }*/
-        //Crea una tabla con todos los maestros y su promedio
+        //Crea una tabla con todos los maestros y su promedio Corregir el tema de que puedas buscar por apellido
         public DataTable verMaestros(String m)
         {
-            String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes AND d.nombre LIKE @m GROUP BY(d.id_docente)";
+            String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m)  GROUP BY(d.id_docente)";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("m", "%" + m + "%");
@@ -436,7 +436,7 @@ namespace SEM
         {
             Console.WriteLine(getIDMateria());
             Console.WriteLine(getIDMaestro());
-            String query = "SELECT comentario, calificacion, likes AS Me_gusta, dislikes AS No_me_gusta, fecha FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluaciom DESC";
+            String query = "SELECT comentario, calificacion, likes AS Me_gusta, dislikes AS No_me_gusta, fecha FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluacion DESC";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("idD", getIDMaestro());
@@ -612,7 +612,7 @@ namespace SEM
         //ver la actividad reciente
         public DataTable verRA()
         {
-            String query = "SELECT (d.nombre || d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes, e.fecha FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
+            String query = "SELECT (d.nombre |' ' | d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes, e.fecha FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
             var cmd = new NpgsqlCommand(query, con);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();

@@ -83,6 +83,8 @@ namespace SEM.Forms
             else
             {
                 c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias);
+                this.Hide();
+                new Searcher(c).Show();
             }
         }
     }

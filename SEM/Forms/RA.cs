@@ -19,6 +19,12 @@ namespace SEM.Forms
             this.c = c;
             InitializeComponent();
             data.DataSource = c.verRA();
+            if (c.USER==0)
+            {
+                btnLike.Visible = false;
+                btnDislike.Visible = false;
+
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

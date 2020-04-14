@@ -21,8 +21,7 @@ namespace SEM
 
             InitializeComponent();
             this.c = c;
-            c.getMaestros();
-            c.getMaterias();
+        
             CBMaestros();
             if (idMaestro != 0)
             {

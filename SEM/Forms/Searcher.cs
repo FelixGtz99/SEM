@@ -25,6 +25,13 @@ namespace SEM.Forms
               panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
             label1.Text = "Hola " + c.NOMBRE + " " + c.APELLIDO;
             btnVer.Visible = false;
+            cbEleccion.SelectedIndex =0;
+            c.SMaestro = "Ninguno we xd";
+            c.SMateria = "Ninguna we xd";
+            if (c.USER==0)
+            {
+                btnRegistrarD.Visible = false;
+            }
         }
 
         private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,13 +55,14 @@ namespace SEM.Forms
 
         private void cbEleccion_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            c.SMaestro = "Ninguno we xd";
+            c.SMateria = "Ninguna we xd";
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AccountMenu(c).Show();
+            new Login(c).Show();
 
         }
 
@@ -76,27 +84,56 @@ namespace SEM.Forms
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new TeacherMenu(c).Show();
+            if (cbEleccion.SelectedItem.ToString().Equals("Docente"))
+            {
+                if (c.SMaestro == "Ninguno we xd")
+                {
+                    MessageBox.Show("No has seleccionado ningun maestro");
+                }
+                else {
+                    this.Hide();
+                    new TeacherMenu(c).Show();
+                }
+            }
+            if (cbEleccion.SelectedItem.ToString().Equals("Materia"))
+            {
+                if (c.SMateria == "Ninguna we xd")
+                {
+                    MessageBox.Show("No has seleccionado ningun maestro");
+                }
+                else
+                {
+                 
+                }
+            }
+
         }
 
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cbEleccion.SelectedItem.ToString() == "Docente")
+            try
             {
-                var index = e.RowIndex;
-                DataGridViewRow SelectedRow = data.Rows[index];
-                c.SMaestro = SelectedRow.Cells[0].Value.ToString();
+                if (cbEleccion.SelectedItem.ToString() == "Docente")
+                {
+                    var index = e.RowIndex;
+                    DataGridViewRow SelectedRow = data.Rows[index];
+                    c.SMaestro = SelectedRow.Cells[0].Value.ToString();
 
 
+                }
+                else
+                {
+                    var index = e.RowIndex;
+                    DataGridViewRow SelectedRow = data.Rows[index];
+                    c.SMateria = SelectedRow.Cells[0].Value.ToString();
+                    Console.WriteLine("Entto aqi");
+                }
             }
-            else
+            catch (Exception)
             {
-                var index = e.RowIndex;
-                DataGridViewRow SelectedRow = data.Rows[index];
-                c.SMateria = SelectedRow.Cells[0].Value.ToString();
-                Console.WriteLine("Entto aqi");
+
             }
+            
         }
 
         private void btnRA_Click(object sender, EventArgs e)

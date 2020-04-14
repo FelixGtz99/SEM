@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLike = new System.Windows.Forms.Button();
             this.btnDislike = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,7 +67,11 @@
             // 
             // data
             // 
+            this.data.AllowUserToAddRows = false;
+            this.data.AllowUserToDeleteRows = false;
+            this.data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data.Location = new System.Drawing.Point(144, 139);
             this.data.Name = "data";
             this.data.Size = new System.Drawing.Size(668, 475);
@@ -156,11 +161,23 @@
             this.btnDislike.UseVisualStyleBackColor = true;
             this.btnDislike.Click += new System.EventHandler(this.btnDislike_Click);
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnRegresar.Location = new System.Drawing.Point(346, 696);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(152, 46);
+            this.btnRegresar.TabIndex = 5;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // TeacherMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 754);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbMateria);
@@ -192,5 +209,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnLike;
         private System.Windows.Forms.Button btnDislike;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

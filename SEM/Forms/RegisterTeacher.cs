@@ -25,9 +25,24 @@ namespace SEM.Forms
             panel2.Width = this.Width;
 
             listBox1.HorizontalScrollbar = true;
+
+            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            var path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, label6.Width, label3.Height);
+            this.label3.Region = new Region(path);
+            this.label4.Region = new Region(path);
+            this.label6.Region = new Region(path);
+            this.helpNombre.Region = new Region(path);
+
         }
 
         private void RegisterTeacher_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRegistrar_Click(object sender, EventArgs e)
         {
 
         }

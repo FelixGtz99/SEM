@@ -19,7 +19,7 @@ namespace SEM
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login(c));
-            Application.Run(new Evaluations());
+            Application.Run(new EditAccount(c));
         }
     }
 }

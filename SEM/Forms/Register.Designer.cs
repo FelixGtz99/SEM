@@ -42,6 +42,22 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.cbCarrera = new System.Windows.Forms.ComboBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.helpContraseña = new System.Windows.Forms.Label();
+            this.helpEmail = new System.Windows.Forms.Label();
+            this.helpNombre = new System.Windows.Forms.Label();
+            this.helpEscuela = new System.Windows.Forms.Label();
+            this.helpExpediente = new System.Windows.Forms.Label();
+            this.labelEConfirmar = new System.Windows.Forms.Label();
+            this.lineConfirmar = new System.Windows.Forms.Label();
+            this.lineContraseña = new System.Windows.Forms.Label();
+            this.lineCorreo = new System.Windows.Forms.Label();
+            this.lineApellido = new System.Windows.Forms.Label();
+            this.lineNombre = new System.Windows.Forms.Label();
+            this.lineExpediente = new System.Windows.Forms.Label();
+            this.labelConfirmar = new System.Windows.Forms.Label();
+            this.txtConContra = new System.Windows.Forms.TextBox();
+            this.labelEscuela = new System.Windows.Forms.Label();
+            this.cbEscuela = new System.Windows.Forms.ComboBox();
             this.errors = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
@@ -55,23 +71,7 @@
             this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.cbEscuela = new System.Windows.Forms.ComboBox();
-            this.labelEscuela = new System.Windows.Forms.Label();
-            this.txtConContra = new System.Windows.Forms.TextBox();
-            this.labelConfirmar = new System.Windows.Forms.Label();
-            this.lineExpediente = new System.Windows.Forms.Label();
-            this.lineNombre = new System.Windows.Forms.Label();
-            this.lineApellido = new System.Windows.Forms.Label();
-            this.lineCorreo = new System.Windows.Forms.Label();
-            this.lineConfirmar = new System.Windows.Forms.Label();
-            this.labelEConfirmar = new System.Windows.Forms.Label();
-            this.helpExpediente = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.helpEscuela = new System.Windows.Forms.Label();
-            this.helpNombre = new System.Windows.Forms.Label();
-            this.helpEmail = new System.Windows.Forms.Label();
-            this.helpContraseña = new System.Windows.Forms.Label();
-            this.lineContraseña = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -271,6 +271,183 @@
             this.panel.Size = new System.Drawing.Size(972, 443);
             this.panel.TabIndex = 14;
             // 
+            // helpContraseña
+            // 
+            this.helpContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpContraseña.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpContraseña.Location = new System.Drawing.Point(28, 543);
+            this.helpContraseña.Name = "helpContraseña";
+            this.helpContraseña.Size = new System.Drawing.Size(25, 25);
+            this.helpContraseña.TabIndex = 29;
+            this.helpContraseña.Text = "?";
+            this.helpContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpContraseña, "Por seguridad, tu contraseña no puede tener menos de 9 caracteres, entre los cual" +
+        "es debe incluirse al menos una mayúscula, una minúscula y dos números.");
+            // 
+            // helpEmail
+            // 
+            this.helpEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpEmail.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpEmail.Location = new System.Drawing.Point(28, 428);
+            this.helpEmail.Name = "helpEmail";
+            this.helpEmail.Size = new System.Drawing.Size(25, 25);
+            this.helpEmail.TabIndex = 28;
+            this.helpEmail.Text = "?";
+            this.helpEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpEmail, "Este es el correo que te proporcionan en tu escuela.");
+            // 
+            // helpNombre
+            // 
+            this.helpNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpNombre.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpNombre.Location = new System.Drawing.Point(28, 312);
+            this.helpNombre.Name = "helpNombre";
+            this.helpNombre.Size = new System.Drawing.Size(25, 25);
+            this.helpNombre.TabIndex = 27;
+            this.helpNombre.Text = "?";
+            this.helpNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpNombre, "Tus nombres y apellidos no pueden contener números.");
+            // 
+            // helpEscuela
+            // 
+            this.helpEscuela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpEscuela.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpEscuela.Location = new System.Drawing.Point(28, 66);
+            this.helpEscuela.Name = "helpEscuela";
+            this.helpEscuela.Size = new System.Drawing.Size(25, 25);
+            this.helpEscuela.TabIndex = 26;
+            this.helpEscuela.Text = "?";
+            this.helpEscuela.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpEscuela, "Selecciona la Escuela en que estudias y tu carrera. Deben estar previamente regis" +
+        "trados por una persona responsable para poder registrarte. Consulta las autorida" +
+        "des de tu carrera.");
+            // 
+            // helpExpediente
+            // 
+            this.helpExpediente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpExpediente.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpExpediente.Location = new System.Drawing.Point(28, 193);
+            this.helpExpediente.Name = "helpExpediente";
+            this.helpExpediente.Size = new System.Drawing.Size(25, 25);
+            this.helpExpediente.TabIndex = 25;
+            this.helpExpediente.Text = "?";
+            this.helpExpediente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpExpediente, "Este es el número con el que te identificas en tu escuela, debe contener solament" +
+        "e números.");
+            // 
+            // labelEConfirmar
+            // 
+            this.labelEConfirmar.AutoSize = true;
+            this.labelEConfirmar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.labelEConfirmar.Location = new System.Drawing.Point(532, 515);
+            this.labelEConfirmar.Name = "labelEConfirmar";
+            this.labelEConfirmar.Size = new System.Drawing.Size(215, 18);
+            this.labelEConfirmar.TabIndex = 24;
+            this.labelEConfirmar.Text = "Las contraseñas no coinciden";
+            // 
+            // lineConfirmar
+            // 
+            this.lineConfirmar.BackColor = System.Drawing.Color.White;
+            this.lineConfirmar.Location = new System.Drawing.Point(530, 564);
+            this.lineConfirmar.Name = "lineConfirmar";
+            this.lineConfirmar.Size = new System.Drawing.Size(392, 3);
+            this.lineConfirmar.TabIndex = 23;
+            // 
+            // lineContraseña
+            // 
+            this.lineContraseña.BackColor = System.Drawing.Color.White;
+            this.lineContraseña.Location = new System.Drawing.Point(81, 564);
+            this.lineContraseña.Name = "lineContraseña";
+            this.lineContraseña.Size = new System.Drawing.Size(392, 3);
+            this.lineContraseña.TabIndex = 22;
+            // 
+            // lineCorreo
+            // 
+            this.lineCorreo.BackColor = System.Drawing.Color.White;
+            this.lineCorreo.Location = new System.Drawing.Point(81, 456);
+            this.lineCorreo.Name = "lineCorreo";
+            this.lineCorreo.Size = new System.Drawing.Size(392, 3);
+            this.lineCorreo.TabIndex = 21;
+            // 
+            // lineApellido
+            // 
+            this.lineApellido.BackColor = System.Drawing.Color.White;
+            this.lineApellido.Location = new System.Drawing.Point(532, 341);
+            this.lineApellido.Name = "lineApellido";
+            this.lineApellido.Size = new System.Drawing.Size(392, 3);
+            this.lineApellido.TabIndex = 20;
+            // 
+            // lineNombre
+            // 
+            this.lineNombre.BackColor = System.Drawing.Color.White;
+            this.lineNombre.Location = new System.Drawing.Point(81, 341);
+            this.lineNombre.Name = "lineNombre";
+            this.lineNombre.Size = new System.Drawing.Size(392, 3);
+            this.lineNombre.TabIndex = 19;
+            // 
+            // lineExpediente
+            // 
+            this.lineExpediente.BackColor = System.Drawing.Color.White;
+            this.lineExpediente.Location = new System.Drawing.Point(81, 220);
+            this.lineExpediente.Name = "lineExpediente";
+            this.lineExpediente.Size = new System.Drawing.Size(392, 3);
+            this.lineExpediente.TabIndex = 18;
+            // 
+            // labelConfirmar
+            // 
+            this.labelConfirmar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelConfirmar.AutoSize = true;
+            this.labelConfirmar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConfirmar.ForeColor = System.Drawing.Color.White;
+            this.labelConfirmar.Location = new System.Drawing.Point(530, 491);
+            this.labelConfirmar.Name = "labelConfirmar";
+            this.labelConfirmar.Size = new System.Drawing.Size(216, 24);
+            this.labelConfirmar.TabIndex = 17;
+            this.labelConfirmar.Text = "Confirmar Contraseña";
+            // 
+            // txtConContra
+            // 
+            this.txtConContra.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtConContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtConContra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConContra.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConContra.ForeColor = System.Drawing.Color.DimGray;
+            this.txtConContra.Location = new System.Drawing.Point(532, 542);
+            this.txtConContra.Name = "txtConContra";
+            this.txtConContra.PasswordChar = '*';
+            this.txtConContra.Size = new System.Drawing.Size(387, 25);
+            this.txtConContra.TabIndex = 16;
+            this.txtConContra.Text = "placeholder";
+            // 
+            // labelEscuela
+            // 
+            this.labelEscuela.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelEscuela.AutoSize = true;
+            this.labelEscuela.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEscuela.ForeColor = System.Drawing.Color.White;
+            this.labelEscuela.Location = new System.Drawing.Point(86, 20);
+            this.labelEscuela.Name = "labelEscuela";
+            this.labelEscuela.Size = new System.Drawing.Size(204, 24);
+            this.labelEscuela.TabIndex = 13;
+            this.labelEscuela.Text = "Institución Educativa";
+            // 
+            // cbEscuela
+            // 
+            this.cbEscuela.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbEscuela.BackColor = System.Drawing.Color.White;
+            this.cbEscuela.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEscuela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbEscuela.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEscuela.ForeColor = System.Drawing.Color.DimGray;
+            this.cbEscuela.FormattingEnabled = true;
+            this.cbEscuela.Items.AddRange(new object[] {
+            "Ingeneria En Sistemas De Informacion"});
+            this.cbEscuela.Location = new System.Drawing.Point(86, 66);
+            this.cbEscuela.Name = "cbEscuela";
+            this.cbEscuela.Size = new System.Drawing.Size(387, 32);
+            this.cbEscuela.TabIndex = 12;
+            // 
             // errors
             // 
             this.errors.AutoSize = true;
@@ -445,184 +622,12 @@
             this.linkLabel1.Text = " términos y condiciones";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
-            // cbEscuela
-            // 
-            this.cbEscuela.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbEscuela.BackColor = System.Drawing.Color.White;
-            this.cbEscuela.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEscuela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbEscuela.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEscuela.ForeColor = System.Drawing.Color.DimGray;
-            this.cbEscuela.FormattingEnabled = true;
-            this.cbEscuela.Items.AddRange(new object[] {
-            "Ingeneria En Sistemas De Informacion"});
-            this.cbEscuela.Location = new System.Drawing.Point(86, 66);
-            this.cbEscuela.Name = "cbEscuela";
-            this.cbEscuela.Size = new System.Drawing.Size(387, 32);
-            this.cbEscuela.TabIndex = 12;
-            // 
-            // labelEscuela
-            // 
-            this.labelEscuela.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelEscuela.AutoSize = true;
-            this.labelEscuela.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEscuela.ForeColor = System.Drawing.Color.White;
-            this.labelEscuela.Location = new System.Drawing.Point(86, 20);
-            this.labelEscuela.Name = "labelEscuela";
-            this.labelEscuela.Size = new System.Drawing.Size(204, 24);
-            this.labelEscuela.TabIndex = 13;
-            this.labelEscuela.Text = "Institución Educativa";
-            // 
-            // txtConContra
-            // 
-            this.txtConContra.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtConContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.txtConContra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConContra.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConContra.ForeColor = System.Drawing.Color.DimGray;
-            this.txtConContra.Location = new System.Drawing.Point(534, 542);
-            this.txtConContra.Name = "txtConContra";
-            this.txtConContra.PasswordChar = '*';
-            this.txtConContra.Size = new System.Drawing.Size(387, 25);
-            this.txtConContra.TabIndex = 16;
-            this.txtConContra.Text = "placeholder";
-            // 
-            // labelConfirmar
-            // 
-            this.labelConfirmar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelConfirmar.AutoSize = true;
-            this.labelConfirmar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConfirmar.ForeColor = System.Drawing.Color.White;
-            this.labelConfirmar.Location = new System.Drawing.Point(530, 491);
-            this.labelConfirmar.Name = "labelConfirmar";
-            this.labelConfirmar.Size = new System.Drawing.Size(216, 24);
-            this.labelConfirmar.TabIndex = 17;
-            this.labelConfirmar.Text = "Confirmar Contraseña";
-            // 
-            // lineExpediente
-            // 
-            this.lineExpediente.BackColor = System.Drawing.Color.White;
-            this.lineExpediente.Location = new System.Drawing.Point(81, 220);
-            this.lineExpediente.Name = "lineExpediente";
-            this.lineExpediente.Size = new System.Drawing.Size(392, 3);
-            this.lineExpediente.TabIndex = 18;
-            // 
-            // lineNombre
-            // 
-            this.lineNombre.BackColor = System.Drawing.Color.White;
-            this.lineNombre.Location = new System.Drawing.Point(81, 341);
-            this.lineNombre.Name = "lineNombre";
-            this.lineNombre.Size = new System.Drawing.Size(392, 3);
-            this.lineNombre.TabIndex = 19;
-            // 
-            // lineApellido
-            // 
-            this.lineApellido.BackColor = System.Drawing.Color.White;
-            this.lineApellido.Location = new System.Drawing.Point(532, 341);
-            this.lineApellido.Name = "lineApellido";
-            this.lineApellido.Size = new System.Drawing.Size(392, 3);
-            this.lineApellido.TabIndex = 20;
-            // 
-            // lineCorreo
-            // 
-            this.lineCorreo.BackColor = System.Drawing.Color.White;
-            this.lineCorreo.Location = new System.Drawing.Point(81, 456);
-            this.lineCorreo.Name = "lineCorreo";
-            this.lineCorreo.Size = new System.Drawing.Size(392, 3);
-            this.lineCorreo.TabIndex = 21;
-            // 
-            // lineConfirmar
-            // 
-            this.lineConfirmar.BackColor = System.Drawing.Color.White;
-            this.lineConfirmar.Location = new System.Drawing.Point(529, 575);
-            this.lineConfirmar.Name = "lineConfirmar";
-            this.lineConfirmar.Size = new System.Drawing.Size(392, 3);
-            this.lineConfirmar.TabIndex = 23;
-            // 
-            // labelEConfirmar
-            // 
-            this.labelEConfirmar.AutoSize = true;
-            this.labelEConfirmar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.labelEConfirmar.Location = new System.Drawing.Point(532, 515);
-            this.labelEConfirmar.Name = "labelEConfirmar";
-            this.labelEConfirmar.Size = new System.Drawing.Size(215, 18);
-            this.labelEConfirmar.TabIndex = 24;
-            this.labelEConfirmar.Text = "Las contraseñas no coinciden";
-            // 
-            // helpExpediente
-            // 
-            this.helpExpediente.AutoSize = true;
-            this.helpExpediente.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.helpExpediente.Location = new System.Drawing.Point(28, 193);
-            this.helpExpediente.Name = "helpExpediente";
-            this.helpExpediente.Size = new System.Drawing.Size(22, 22);
-            this.helpExpediente.TabIndex = 25;
-            this.helpExpediente.Text = "?";
-            this.toolTip1.SetToolTip(this.helpExpediente, "Este es el número con el que te identificas en tu escuela, debe contener solament" +
-        "e números.");
-            // 
             // toolTip1
             // 
             this.toolTip1.AutoPopDelay = 15000;
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 100;
             this.toolTip1.Tag = "";
-            // 
-            // helpEscuela
-            // 
-            this.helpEscuela.AutoSize = true;
-            this.helpEscuela.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.helpEscuela.Location = new System.Drawing.Point(28, 66);
-            this.helpEscuela.Name = "helpEscuela";
-            this.helpEscuela.Size = new System.Drawing.Size(22, 22);
-            this.helpEscuela.TabIndex = 26;
-            this.helpEscuela.Text = "?";
-            this.toolTip1.SetToolTip(this.helpEscuela, "Selecciona la Escuela en que estudias y tu carrera. Deben estar previamente regis" +
-        "trados por una persona responsable para poder registrarte. Consulta las autorida" +
-        "des de tu carrera.");
-            // 
-            // helpNombre
-            // 
-            this.helpNombre.AutoSize = true;
-            this.helpNombre.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.helpNombre.Location = new System.Drawing.Point(28, 312);
-            this.helpNombre.Name = "helpNombre";
-            this.helpNombre.Size = new System.Drawing.Size(22, 22);
-            this.helpNombre.TabIndex = 27;
-            this.helpNombre.Text = "?";
-            this.toolTip1.SetToolTip(this.helpNombre, "Tus nombres y apellidos no pueden contener números.");
-            // 
-            // helpEmail
-            // 
-            this.helpEmail.AutoSize = true;
-            this.helpEmail.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.helpEmail.Location = new System.Drawing.Point(28, 428);
-            this.helpEmail.Name = "helpEmail";
-            this.helpEmail.Size = new System.Drawing.Size(22, 22);
-            this.helpEmail.TabIndex = 28;
-            this.helpEmail.Text = "?";
-            this.toolTip1.SetToolTip(this.helpEmail, "Este es el correo que te proporcionan en tu escuela.");
-            // 
-            // helpContraseña
-            // 
-            this.helpContraseña.AutoSize = true;
-            this.helpContraseña.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.helpContraseña.Location = new System.Drawing.Point(28, 543);
-            this.helpContraseña.Name = "helpContraseña";
-            this.helpContraseña.Size = new System.Drawing.Size(22, 22);
-            this.helpContraseña.TabIndex = 29;
-            this.helpContraseña.Text = "?";
-            this.toolTip1.SetToolTip(this.helpContraseña, "Por seguridad, tu contraseña no puede tener menos de 9 caracteres, entre los cual" +
-        "es debe incluirse al menos una mayúscula, una minúscula y dos números.");
-            // 
-            // lineContraseña
-            // 
-            this.lineContraseña.BackColor = System.Drawing.Color.White;
-            this.lineContraseña.Location = new System.Drawing.Point(81, 564);
-            this.lineContraseña.Name = "lineContraseña";
-            this.lineContraseña.Size = new System.Drawing.Size(392, 3);
-            this.lineContraseña.TabIndex = 22;
             // 
             // Register
             // 

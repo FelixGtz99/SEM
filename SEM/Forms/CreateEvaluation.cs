@@ -23,9 +23,27 @@ namespace SEM.Forms
             btnMin.Height = panel2.Height;
             panel2.Location = new Point(0, 0);
             panel2.Width = this.Width;
+
+            var path = new System.Drawing.Drawing2D.GraphicsPath();
+
+            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            path.AddEllipse(0, 0, label6.Width, label6.Height);
+            this.label6.Region = new Region(path);
+            this.label3.Region = new Region(path);
+            this.label11.Region = new Region(path);
+            this.label13.Region = new Region(path);
+
+
+
         }
 
         private void CreateEvaluation_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
 
         }

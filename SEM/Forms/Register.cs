@@ -57,6 +57,16 @@ namespace SEM
             this.txtContraseña.LostFocus += Contraseña_LostFocus;
             this.txtConContra.LostFocus += Confirmar_LostFocus;
 
+            var path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, helpEscuela.Width, helpEscuela.Height);
+            this.helpEscuela.Region = new Region(path);
+            this.helpExpediente.Region = new Region(path);
+            this.helpNombre.Region = new Region(path);
+            var path2 = new System.Drawing.Drawing2D.GraphicsPath();
+            path2.AddEllipse(0, 0, helpEmail.Width, helpEmail.Height);
+            this.helpEmail.Region = new Region(path2);
+            this.helpContraseña.Region = new Region(path2);
+
             
 
 

@@ -451,7 +451,7 @@ namespace SEM
         {
             Console.WriteLine(getIDMateria());
             Console.WriteLine(getIDMaestro());
-            String query = "SELECT comentario, calificacion, likes AS Me_gusta, dislikes AS No_me_gusta, fecha FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluacion DESC";
+            String query = "SELECT fecha AS \"Fecha\", comentario AS \"Comentario\", calificacion AS \"Calificacion\", likes AS \"Me gusta\", dislikes AS \"No me gusta\" FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluacion DESC";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("idD", getIDMaestro());
@@ -634,7 +634,7 @@ namespace SEM
         //ver la actividad reciente
         public DataTable verRA()
         {
-            String query = "SELECT (d.nombre |' ' | d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes, e.fecha FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
+            String query = "SELECT (d.nombre || ' ' || d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes, e.fecha FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
             var cmd = new NpgsqlCommand(query, con);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();

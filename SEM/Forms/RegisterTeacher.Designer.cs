@@ -32,6 +32,7 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,18 +46,17 @@
             this.lineApellido = new System.Windows.Forms.Label();
             this.helpNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAlias = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbEscuela = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
-            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
+            this.cbMaterias = new System.Windows.Forms.ComboBox();
+            this.listMaterias = new System.Windows.Forms.ListBox();
+            this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
             this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -118,6 +118,14 @@
             this.panel1.Size = new System.Drawing.Size(364, 727);
             this.panel1.TabIndex = 23;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(53, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnVolver
             // 
             this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
@@ -137,6 +145,7 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // label8
             // 
@@ -206,6 +215,7 @@
             this.txtNombre.Size = new System.Drawing.Size(387, 25);
             this.txtNombre.TabIndex = 27;
             this.txtNombre.Text = "¿Cómo se llama tu maestro?";
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lineNombre
             // 
@@ -273,18 +283,18 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Alias";
             // 
-            // textBox1
+            // txtAlias
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(452, 551);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(387, 25);
-            this.textBox1.TabIndex = 34;
-            this.textBox1.Text = "¿Tiene algún apodo?";
+            this.txtAlias.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtAlias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtAlias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAlias.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlias.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAlias.Location = new System.Drawing.Point(452, 551);
+            this.txtAlias.Name = "txtAlias";
+            this.txtAlias.Size = new System.Drawing.Size(387, 25);
+            this.txtAlias.TabIndex = 34;
+            this.txtAlias.Text = "¿Tiene algún apodo?";
             // 
             // label2
             // 
@@ -341,83 +351,78 @@
             this.label6.Text = "?";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cbEscuela
+            // cbMaterias
             // 
-            this.cbEscuela.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbEscuela.BackColor = System.Drawing.Color.White;
-            this.cbEscuela.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEscuela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbEscuela.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEscuela.ForeColor = System.Drawing.Color.DimGray;
-            this.cbEscuela.FormattingEnabled = true;
-            this.cbEscuela.Items.AddRange(new object[] {
-            "Ingeneria En Sistemas De Informacion"});
-            this.cbEscuela.Location = new System.Drawing.Point(942, 327);
-            this.cbEscuela.Name = "cbEscuela";
-            this.cbEscuela.Size = new System.Drawing.Size(387, 32);
-            this.cbEscuela.TabIndex = 41;
+            this.cbMaterias.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbMaterias.BackColor = System.Drawing.Color.White;
+            this.cbMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMaterias.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaterias.ForeColor = System.Drawing.Color.DimGray;
+            this.cbMaterias.FormattingEnabled = true;
+            this.cbMaterias.Items.AddRange(new object[] {
+            ""});
+            this.cbMaterias.Location = new System.Drawing.Point(942, 327);
+            this.cbMaterias.Name = "cbMaterias";
+            this.cbMaterias.Size = new System.Drawing.Size(387, 32);
+            this.cbMaterias.TabIndex = 41;
             // 
-            // listBox1
+            // listMaterias
             // 
-            this.listBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Items.AddRange(new object[] {
-            "Materia 1",
-            "Materia 2",
-            "Materia 3"});
-            this.listBox1.Location = new System.Drawing.Point(951, 436);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(378, 148);
-            this.listBox1.TabIndex = 46;
+            this.listMaterias.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listMaterias.FormattingEnabled = true;
+            this.listMaterias.ItemHeight = 18;
+            this.listMaterias.Location = new System.Drawing.Point(951, 436);
+            this.listMaterias.Name = "listMaterias";
+            this.listMaterias.Size = new System.Drawing.Size(378, 148);
+            this.listMaterias.TabIndex = 46;
             // 
-            // button_WOC2
+            // btnQuitar
             // 
-            this.button_WOC2.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
-            this.button_WOC2.Enabled = false;
-            this.button_WOC2.FlatAppearance.BorderSize = 0;
-            this.button_WOC2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC2.Location = new System.Drawing.Point(1159, 374);
-            this.button_WOC2.Name = "button_WOC2";
-            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.button_WOC2.Size = new System.Drawing.Size(170, 49);
-            this.button_WOC2.TabIndex = 45;
-            this.button_WOC2.Text = "Remover";
-            this.button_WOC2.TextColor = System.Drawing.Color.White;
-            this.button_WOC2.UseVisualStyleBackColor = true;
+            this.btnQuitar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnQuitar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
+            this.btnQuitar.FlatAppearance.BorderSize = 0;
+            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitar.Location = new System.Drawing.Point(1159, 374);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnQuitar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnQuitar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnQuitar.Size = new System.Drawing.Size(170, 49);
+            this.btnQuitar.TabIndex = 45;
+            this.btnQuitar.Text = "Remover";
+            this.btnQuitar.TextColor = System.Drawing.Color.White;
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
-            // button_WOC1
+            // btnAñadir
             // 
-            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.button_WOC1.Enabled = false;
-            this.button_WOC1.FlatAppearance.BorderSize = 0;
-            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC1.Location = new System.Drawing.Point(942, 374);
-            this.button_WOC1.Name = "button_WOC1";
-            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.button_WOC1.Size = new System.Drawing.Size(170, 49);
-            this.button_WOC1.TabIndex = 44;
-            this.button_WOC1.Text = "Añadir";
-            this.button_WOC1.TextColor = System.Drawing.Color.White;
-            this.button_WOC1.UseVisualStyleBackColor = true;
+            this.btnAñadir.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAñadir.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnAñadir.FlatAppearance.BorderSize = 0;
+            this.btnAñadir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAñadir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAñadir.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadir.Location = new System.Drawing.Point(942, 374);
+            this.btnAñadir.Name = "btnAñadir";
+            this.btnAñadir.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnAñadir.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnAñadir.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnAñadir.Size = new System.Drawing.Size(170, 49);
+            this.btnAñadir.TabIndex = 44;
+            this.btnAñadir.Text = "Añadir";
+            this.btnAñadir.TextColor = System.Drawing.Color.White;
+            this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.BorderColor = System.Drawing.Color.Transparent;
             this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnRegistrar.Enabled = false;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -435,31 +440,23 @@
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(53, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // RegisterTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button_WOC2);
-            this.Controls.Add(this.button_WOC1);
-            this.Controls.Add(this.cbEscuela);
+            this.Controls.Add(this.listMaterias);
+            this.Controls.Add(this.btnQuitar);
+            this.Controls.Add(this.btnAñadir);
+            this.Controls.Add(this.cbMaterias);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAlias);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.helpNombre);
             this.Controls.Add(this.lineApellido);
@@ -504,17 +501,17 @@
         private System.Windows.Forms.Label lineApellido;
         private System.Windows.Forms.Label helpNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAlias;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private ePOSOne.btnProduct.Button_WOC btnRegistrar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbEscuela;
-        private ePOSOne.btnProduct.Button_WOC button_WOC1;
-        private ePOSOne.btnProduct.Button_WOC button_WOC2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ComboBox cbMaterias;
+        private ePOSOne.btnProduct.Button_WOC btnAñadir;
+        private ePOSOne.btnProduct.Button_WOC btnQuitar;
+        private System.Windows.Forms.ListBox listMaterias;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -137,7 +137,7 @@ namespace SEM
         {
             c.USER = 0;
             this.Hide();
-            new Menu(c).Show();
+            new Searcher(c).Show();
         }
 
         private void BtnMin_Click(object sender, EventArgs e)

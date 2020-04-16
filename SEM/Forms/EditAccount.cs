@@ -173,7 +173,7 @@ namespace SEM.Forms
                     c.DeleteUser();
                     MessageBox.Show("Usuario eliminado correctamente");
                     this.Hide();
-                    new AccountMenu(c).Show();
+                    new Login(c).Show();
                 }
                 catch (Exception ex)
                 {

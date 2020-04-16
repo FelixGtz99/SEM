@@ -60,10 +60,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.helpContraseña = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtNpass = new System.Windows.Forms.TextBox();
             this.lineContraseña = new System.Windows.Forms.Label();
             this.labelConfirmar = new System.Windows.Forms.Label();
-            this.txtConContra = new System.Windows.Forms.TextBox();
+            this.txtCPass = new System.Windows.Forms.TextBox();
             this.lineConfirmar = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.labelACarrera = new System.Windows.Forms.Label();
@@ -72,16 +72,16 @@
             this.cbCarrera = new System.Windows.Forms.ComboBox();
             this.helpCarrera = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.helpConfirm = new System.Windows.Forms.Label();
             this.btnGuardar = new ePOSOne.btnProduct.Button_WOC();
             this.btnEliminar = new ePOSOne.btnProduct.Button_WOC();
             this.helpDelete = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.panelOpciones.SuspendLayout();
             this.panelCarrera.SuspendLayout();
             this.panelBorrar.SuspendLayout();
@@ -361,6 +361,7 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // label8
             // 
@@ -472,19 +473,19 @@
             this.helpContraseña.TabIndex = 30;
             this.helpContraseña.Text = "?";
             // 
-            // txtContraseña
+            // txtNpass
             // 
-            this.txtContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.txtContraseña.Location = new System.Drawing.Point(477, 281);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(387, 25);
-            this.txtContraseña.TabIndex = 31;
-            this.txtContraseña.Text = "placeholder";
+            this.txtNpass.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtNpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtNpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNpass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNpass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNpass.Location = new System.Drawing.Point(477, 281);
+            this.txtNpass.Name = "txtNpass";
+            this.txtNpass.PasswordChar = '*';
+            this.txtNpass.Size = new System.Drawing.Size(387, 25);
+            this.txtNpass.TabIndex = 31;
+            this.txtNpass.Text = "placeholder";
             // 
             // lineContraseña
             // 
@@ -506,19 +507,19 @@
             this.labelConfirmar.TabIndex = 33;
             this.labelConfirmar.Text = "Confirmar Contraseña";
             // 
-            // txtConContra
+            // txtCPass
             // 
-            this.txtConContra.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtConContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.txtConContra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConContra.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConContra.ForeColor = System.Drawing.Color.DimGray;
-            this.txtConContra.Location = new System.Drawing.Point(938, 285);
-            this.txtConContra.Name = "txtConContra";
-            this.txtConContra.PasswordChar = '*';
-            this.txtConContra.Size = new System.Drawing.Size(387, 25);
-            this.txtConContra.TabIndex = 34;
-            this.txtConContra.Text = "placeholder";
+            this.txtCPass.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtCPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCPass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCPass.Location = new System.Drawing.Point(938, 285);
+            this.txtCPass.Name = "txtCPass";
+            this.txtCPass.PasswordChar = '*';
+            this.txtCPass.Size = new System.Drawing.Size(387, 25);
+            this.txtCPass.TabIndex = 34;
+            this.txtCPass.Text = "placeholder";
             // 
             // lineConfirmar
             // 
@@ -613,19 +614,19 @@
             this.label11.TabIndex = 42;
             this.label11.Text = "Para guardar cualquier cambio es necesario introducir tu contraseña actual";
             // 
-            // textBox1
+            // txtPass
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(477, 561);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(387, 25);
-            this.textBox1.TabIndex = 43;
-            this.textBox1.Text = "placeholder";
+            this.txtPass.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPass.Location = new System.Drawing.Point(477, 561);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(387, 25);
+            this.txtPass.TabIndex = 43;
+            this.txtPass.Text = "placeholder";
             // 
             // label12
             // 
@@ -665,6 +666,7 @@
             this.btnGuardar.Text = "Guardar Cambios";
             this.btnGuardar.TextColor = System.Drawing.Color.White;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -685,6 +687,7 @@
             this.btnEliminar.Text = "Eliminar Cuenta Permanentemente";
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // helpDelete
             // 
@@ -704,8 +707,19 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(408, 164);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(930, 161);
+            this.panel3.Size = new System.Drawing.Size(435, 59);
             this.panel3.TabIndex = 49;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(12, 21);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(21, 22);
+            this.label14.TabIndex = 52;
+            this.label14.Text = "+";
             // 
             // panel4
             // 
@@ -714,7 +728,7 @@
             this.panel4.Controls.Add(this.label10);
             this.panel4.Location = new System.Drawing.Point(408, 331);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(930, 165);
+            this.panel4.Size = new System.Drawing.Size(435, 74);
             this.panel4.TabIndex = 50;
             // 
             // label13
@@ -727,17 +741,6 @@
             this.label13.Size = new System.Drawing.Size(21, 22);
             this.label13.TabIndex = 51;
             this.label13.Text = "+";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(12, 21);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(21, 22);
-            this.label14.TabIndex = 52;
-            this.label14.Text = "+";
             // 
             // EditAccount
             // 
@@ -752,7 +755,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.helpConfirm);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.helpCarrera);
             this.Controls.Add(this.cbCarrera);
@@ -760,10 +763,10 @@
             this.Controls.Add(this.labelCarrera);
             this.Controls.Add(this.labelACarrera);
             this.Controls.Add(this.lineConfirmar);
-            this.Controls.Add(this.txtConContra);
+            this.Controls.Add(this.txtCPass);
             this.Controls.Add(this.labelConfirmar);
             this.Controls.Add(this.lineContraseña);
-            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtNpass);
             this.Controls.Add(this.helpContraseña);
             this.Controls.Add(this.labelContraseña);
             this.Controls.Add(this.label9);
@@ -825,10 +828,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelContraseña;
         private System.Windows.Forms.Label helpContraseña;
-        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtNpass;
         private System.Windows.Forms.Label lineContraseña;
         private System.Windows.Forms.Label labelConfirmar;
-        private System.Windows.Forms.TextBox txtConContra;
+        private System.Windows.Forms.TextBox txtCPass;
         private System.Windows.Forms.Label lineConfirmar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelACarrera;
@@ -837,7 +840,7 @@
         private System.Windows.Forms.ComboBox cbCarrera;
         private System.Windows.Forms.Label helpCarrera;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label helpConfirm;
         private ePOSOne.btnProduct.Button_WOC btnGuardar;

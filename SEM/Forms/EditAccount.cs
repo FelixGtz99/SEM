@@ -192,5 +192,73 @@ namespace SEM.Forms
         {
 
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (c.CONTRA == txtPass.Text)
+            {
+                if (txtPass.Text == txtCPass.Text)
+                {
+                    MessageBox.Show("No puede ser la misma contraseña");
+                }
+                else
+                {
+                    String check = validarContra(txtNewContra.Text);
+                    if (check == " ")
+                    {
+                        try
+                        {
+                            c.ChangePass(txtNewContra.Text);
+                            this.Hide();
+                            MessageBox.Show("Cambios hechos correctamente");
+                            new Searcher(c).Show();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(check);
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Contraseña Incorrecta");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (txtPass.Text == c.CONTRA)
+            {
+                try
+                {
+                    c.DeleteUser();
+                    MessageBox.Show("Usuario eliminado correctamente");
+                    this.Hide();
+                    new Login(c).Show();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Contraseña Incorrecta");
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Searcher(c).Show();
+        }
     }
 }

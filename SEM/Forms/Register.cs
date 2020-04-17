@@ -78,7 +78,7 @@ namespace SEM
         
             if (c.CheckID(Experiente))
             {
-                Errores= Errores + Environment.NewLine + "Ya hay un usuario asociado a este experiente";
+                Errores= Errores + Environment.NewLine + "Ya hay un usuario asociado a este expediente";
             }
             if (Pass.Length < 9)
             {
@@ -86,7 +86,7 @@ namespace SEM
             }
             if (!Experiente.Any(char.IsDigit))
             {
-                Errores = Errores + Environment.NewLine + "El experiente debe ser puros numeros";
+                Errores = Errores + Environment.NewLine + "El expediente debe ser contener solo numeros";
             }
             if (Pass.Count(char.IsLower)<1)
             {

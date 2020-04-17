@@ -464,14 +464,15 @@
             // 
             // helpContraseña
             // 
-            this.helpContraseña.AutoSize = true;
+            this.helpContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.helpContraseña.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpContraseña.ForeColor = System.Drawing.Color.White;
             this.helpContraseña.Location = new System.Drawing.Point(408, 277);
             this.helpContraseña.Name = "helpContraseña";
-            this.helpContraseña.Size = new System.Drawing.Size(22, 22);
+            this.helpContraseña.Size = new System.Drawing.Size(25, 25);
             this.helpContraseña.TabIndex = 30;
             this.helpContraseña.Text = "?";
+            this.helpContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtNpass
             // 
@@ -594,14 +595,15 @@
             // 
             // helpCarrera
             // 
-            this.helpCarrera.AutoSize = true;
+            this.helpCarrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.helpCarrera.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpCarrera.ForeColor = System.Drawing.Color.White;
             this.helpCarrera.Location = new System.Drawing.Point(408, 450);
             this.helpCarrera.Name = "helpCarrera";
-            this.helpCarrera.Size = new System.Drawing.Size(22, 22);
+            this.helpCarrera.Size = new System.Drawing.Size(25, 25);
             this.helpCarrera.TabIndex = 41;
             this.helpCarrera.Text = "?";
+            this.helpCarrera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -638,14 +640,15 @@
             // 
             // helpConfirm
             // 
-            this.helpConfirm.AutoSize = true;
+            this.helpConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.helpConfirm.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpConfirm.ForeColor = System.Drawing.Color.White;
             this.helpConfirm.Location = new System.Drawing.Point(408, 561);
             this.helpConfirm.Name = "helpConfirm";
-            this.helpConfirm.Size = new System.Drawing.Size(22, 22);
+            this.helpConfirm.Size = new System.Drawing.Size(25, 25);
             this.helpConfirm.TabIndex = 45;
             this.helpConfirm.Text = "?";
+            this.helpConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnGuardar
             // 
@@ -691,14 +694,15 @@
             // 
             // helpDelete
             // 
-            this.helpDelete.AutoSize = true;
+            this.helpDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.helpDelete.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpDelete.ForeColor = System.Drawing.Color.White;
             this.helpDelete.Location = new System.Drawing.Point(408, 702);
             this.helpDelete.Name = "helpDelete";
-            this.helpDelete.Size = new System.Drawing.Size(22, 22);
+            this.helpDelete.Size = new System.Drawing.Size(25, 25);
             this.helpDelete.TabIndex = 48;
             this.helpDelete.Text = "?";
+            this.helpDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 

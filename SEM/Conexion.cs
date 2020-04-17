@@ -259,7 +259,7 @@ namespace SEM
             datos.Fill(data);
             return data;
         }
-
+        //abc
         public DataTable verMaestros(String m)
         {
             String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes AND d.nombre LIKE @m GROUP BY(d.id_docente)";

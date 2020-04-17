@@ -116,5 +116,13 @@ namespace SEM.Forms
         {
 
         }
+
+        private void txtNombre_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text== "¿Cómo se llama tu maestro?")
+            {
+                txtNombre.Text = " ";
+            }
+        }
     }
 }

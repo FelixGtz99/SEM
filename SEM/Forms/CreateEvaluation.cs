@@ -120,9 +120,9 @@ namespace SEM.Forms
                 c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
                 //MessageBox.Show("Completado");
                 SemBox sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
-                sb.Show();
                 this.Hide();
                 new Searcher(c).Show();
+                sb.Show();
 
 
             }
@@ -145,6 +145,16 @@ namespace SEM.Forms
         {
             this.Hide();
             new Searcher(c).Show();
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

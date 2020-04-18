@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
             this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,6 +90,7 @@
             this.btnMin.TabIndex = 4;
             this.btnMin.Text = "_";
             this.btnMin.UseVisualStyleBackColor = false;
+            this.btnMin.Click += new System.EventHandler(this.BtnMin_Click);
             // 
             // btnClose
             // 
@@ -104,6 +107,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // panel1
             // 
@@ -271,6 +275,7 @@
             this.helpNombre.TabIndex = 32;
             this.helpNombre.Text = "?";
             this.helpNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpNombre, "Trata de incluir ambos nombres para ser más específico");
             // 
             // label1
             // 
@@ -315,6 +320,7 @@
             this.label3.Size = new System.Drawing.Size(25, 25);
             this.label3.TabIndex = 36;
             this.label3.Text = "?";
+            this.toolTip1.SetToolTip(this.label3, "No insertes nada ofensivo.");
             // 
             // label4
             // 
@@ -327,6 +333,7 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.label4, "Verifica que los datos que incluyes sean correctos");
             // 
             // label5
             // 
@@ -351,6 +358,7 @@
             this.label6.TabIndex = 40;
             this.label6.Text = "?";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.label6, "¿Cuáles materias da este maestro?");
             // 
             // cbMaterias
             // 
@@ -514,5 +522,6 @@
         private ePOSOne.btnProduct.Button_WOC btnQuitar;
         private System.Windows.Forms.ListBox listMaterias;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

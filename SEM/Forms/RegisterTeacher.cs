@@ -43,6 +43,78 @@ namespace SEM.Forms
             {
                 cbMaterias.Items.Add(materia.ToString());
             }
+
+            //Eventos para cambiar el estado de los inputs
+            txtNombre.GotFocus += Nombre_GotFocus;
+            txtApellido.GotFocus += Apellido_GotFocus;
+            txtAlias.GotFocus += Alias_GotFocus;
+            txtNombre.LostFocus += Nombre_LostFocus;
+            txtApellido.LostFocus += Apellido_LostFocus;
+            txtAlias.LostFocus += Alias_LostFocus;
+
+        }
+
+        private void Nombre_GotFocus(object sender, EventArgs e)
+        {
+            lineNombre.BackColor = Color.FromArgb(13, 70, 255);
+            labelNombre.ForeColor = Color.FromArgb(13, 70, 255);
+            txtNombre.ForeColor = Color.White;
+            if (txtNombre.Text == "¿Cómo se llama tu maestro?")
+            {
+                txtNombre.Text = "";
+            }
+        }
+        private void Nombre_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                txtNombre.Text = "¿Cómo se llama tu maestro?";
+            }
+            txtNombre.ForeColor = Color.DimGray;
+            lineNombre.BackColor = Color.White;
+            labelNombre.ForeColor = Color.White;
+        }
+
+        private void Apellido_GotFocus(object sender, EventArgs e)
+        {
+            lineApellido.BackColor = Color.FromArgb(13, 70, 255);
+            labelApellido.ForeColor = Color.FromArgb(13, 70, 255);
+            txtApellido.ForeColor = Color.White;
+            if (txtApellido.Text == "¿Cómo se apellida?")
+            {
+                txtApellido.Text = "";
+            }
+        }
+        private void Apellido_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtApellido.Text))
+            {
+                txtApellido.Text = "¿Cómo se apellida?";
+            }
+            txtApellido.ForeColor = Color.DimGray;
+            lineApellido.BackColor = Color.White;
+            labelApellido.ForeColor = Color.White;
+        }
+
+        private void Alias_GotFocus(object sender, EventArgs e)
+        {
+            label2.BackColor = Color.FromArgb(13, 70, 255);
+            label1.ForeColor = Color.FromArgb(13, 70, 255);
+            txtAlias.ForeColor = Color.White;
+            if (txtAlias.Text == "¿Tiene algún apodo?")
+            {
+                txtAlias.Text = "";
+            }
+        }
+        private void Alias_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAlias.Text))
+            {
+                txtAlias.Text = "¿Tiene algún apodo?";
+            }
+            txtAlias.ForeColor = Color.DimGray;
+            label2.BackColor = Color.White;
+            label1.ForeColor = Color.White;
         }
 
         private void RegisterTeacher_Load(object sender, EventArgs e)
@@ -127,6 +199,16 @@ namespace SEM.Forms
             {
                 txtNombre.Text = " ";
             }
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

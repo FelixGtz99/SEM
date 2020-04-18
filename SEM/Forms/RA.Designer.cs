@@ -40,12 +40,12 @@
             // 
             this.data.AllowUserToAddRows = false;
             this.data.AllowUserToDeleteRows = false;
-            this.data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.data.Location = new System.Drawing.Point(121, 105);
+            this.data.Location = new System.Drawing.Point(204, 104);
             this.data.Name = "data";
-            this.data.Size = new System.Drawing.Size(439, 465);
+            this.data.Size = new System.Drawing.Size(834, 465);
             this.data.TabIndex = 0;
             this.data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellClick);
             this.data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellContentClick);
@@ -53,16 +53,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 47);
+            this.label1.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(201, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(350, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Actividad Reciente";
             // 
             // btnLike
             // 
             this.btnLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnLike.Location = new System.Drawing.Point(676, 163);
+            this.btnLike.Location = new System.Drawing.Point(1123, 205);
             this.btnLike.Name = "btnLike";
             this.btnLike.Size = new System.Drawing.Size(157, 49);
             this.btnLike.TabIndex = 2;
@@ -73,7 +75,7 @@
             // btnDislike
             // 
             this.btnDislike.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnDislike.Location = new System.Drawing.Point(676, 245);
+            this.btnDislike.Location = new System.Drawing.Point(1123, 395);
             this.btnDislike.Name = "btnDislike";
             this.btnDislike.Size = new System.Drawing.Size(157, 56);
             this.btnDislike.TabIndex = 3;
@@ -84,7 +86,7 @@
             // btnRegresar
             // 
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnRegresar.Location = new System.Drawing.Point(676, 559);
+            this.btnRegresar.Location = new System.Drawing.Point(68, 593);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(157, 56);
             this.btnRegresar.TabIndex = 4;
@@ -96,14 +98,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 743);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.ClientSize = new System.Drawing.Size(1350, 747);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnDislike);
             this.Controls.Add(this.btnLike);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.data);
             this.Name = "RA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RA";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

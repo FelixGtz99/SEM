@@ -26,8 +26,8 @@ namespace SEM.Forms
             switch (tipo)
             {
                 case "short":
-                    this.Width = 400;
-                    this.Height = 240;
+                    this.Width = 600;
+                    this.Height = 360;
                     titleLabel.Text = titulo;
                     defButton.Text = textoBoton;
                     defButton.ButtonColor = Color.FromArgb(13, 70, 255);
@@ -52,8 +52,8 @@ namespace SEM.Forms
                     defButton.Location = new Point(this.Width / 2 - defButton.Width / 2, this.Height * 5 / 6);
                     break;
                 case "shorterror":
-                    this.Width = 400;
-                    this.Height = 240;
+                    this.Width = 600;
+                    this.Height = 360;
                     titleLabel.Text = titulo;
                     defButton.Text = textoBoton;
                     defButton.ButtonColor = Color.FromArgb(255, 13, 70);

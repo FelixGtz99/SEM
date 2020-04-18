@@ -20,9 +20,12 @@ namespace SEM.Forms
          
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
-            panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
-              panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
+            //panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
+            //panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
+            // panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
+            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
             label1.Text = "Hola " + c.NOMBRE + " " + c.APELLIDO;
             btnVer.Visible = false; btnEvaluar.Visible = false;
             cbEleccion.SelectedIndex =0;

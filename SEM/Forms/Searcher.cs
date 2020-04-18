@@ -17,8 +17,7 @@ namespace SEM.Forms
         {
             InitializeComponent();
             this.c = c;
-            c.getMaestros();
-            c.getMaterias();
+         
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
@@ -77,6 +76,7 @@ namespace SEM.Forms
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            c.USER = 0;
             this.Hide();
             new Login(c).Show();
 

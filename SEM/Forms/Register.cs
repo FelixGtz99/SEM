@@ -87,7 +87,10 @@ namespace SEM
             {
                 Errores = "Nesesitas llenar todos los campos";
             }
-        
+            if (txtContraseña.Text!=txtConContra.Text)
+            {
+                Errores = Errores + Environment.NewLine + "Las contraseñas son diferentes";
+            }
             if (c.CheckID(Experiente))
             {
                 Errores= Errores + Environment.NewLine + "Ya hay un usuario asociado a este experiente";

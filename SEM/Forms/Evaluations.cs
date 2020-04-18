@@ -44,6 +44,12 @@ namespace SEM.Forms
             var path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, label6.Width, label6.Height);
             this.label6.Region = new Region(path);
+            if (c.USER==0)
+
+            {
+                button_WOC1.Visible = false;
+                button_WOC2.Visible = false;
+            }
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

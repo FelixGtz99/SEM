@@ -68,12 +68,16 @@ namespace SEM.Forms
             }
             if (!Errores.Equals(" "))
             {
-                MessageBox.Show(Errores);
+                //MessageBox.Show(Errores);
+                SemBox sb = new SemBox("longerror", "Error en el regisro", Errores, "Aceptar");
+                sb.Show();
             }
             else
             {
                 c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias);
-                MessageBox.Show("Guardado Correctamente");
+                //MessageBox.Show("Guardado Correctamente");
+                SemBox sb = new SemBox("short", "Maestro registrado correctamente", "", "Aceptar");
+                sb.Show();
                 this.Hide();
                 new Searcher(c).Show();
             }

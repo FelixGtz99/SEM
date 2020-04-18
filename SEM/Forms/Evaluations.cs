@@ -78,7 +78,9 @@ namespace SEM.Forms
         {
             if (Calificacion.Equals(" "))
             {
-                MessageBox.Show("No has seleccionado ninguna evaluacion");
+                //MessageBox.Show("No has seleccionado ninguna evaluacion");
+                SemBox sb = new SemBox("shorterror", "No has seleccionado ninguna evaluación", "", "Aceptar");
+                sb.Show();
             }
             else
             {
@@ -86,7 +88,9 @@ namespace SEM.Forms
 
                 if (c.chechUserVote(id))
                 {
-                    MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+                    //MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+                    SemBox sb = new SemBox("shorterror", "No puedes votar por esta evaluación otra vez", "", "Aceptar");
+                    sb.Show();
                 }
                 else
                 {
@@ -109,7 +113,9 @@ namespace SEM.Forms
         {
             if (Calificacion.Equals(" "))
             {
-                MessageBox.Show("No has seleccionado ninguna evaluacion");
+                //MessageBox.Show("No has seleccionado ninguna evaluacion");
+                SemBox sb = new SemBox("shorterror", "No has seleccionado ninguna evaluación", "", "Aceptar");
+                sb.Show();
             }
             else
             {
@@ -117,7 +123,9 @@ namespace SEM.Forms
 
                 if (c.chechUserVote(id))
                 {
-                    MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+                    //MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+                    SemBox sb = new SemBox("shorterror", "No puedes votar por esta evaluación otra vez", "", "Aceptar");
+                    sb.Show();
                 }
                 else
                 {

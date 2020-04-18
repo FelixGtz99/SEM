@@ -118,7 +118,9 @@ namespace SEM.Forms
                 var iDM = getIDMaestro();
                 var iDMat = getIDMateria();
                 c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
-                MessageBox.Show("Completado");
+                //MessageBox.Show("Completado");
+                SemBox sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
+                sb.Show();
                 this.Hide();
                 new Menu(c).Show();
 
@@ -127,7 +129,9 @@ namespace SEM.Forms
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                MessageBox.Show("Error");
+                //MessageBox.Show("Error");
+                SemBox sb = new SemBox("short", "Ha ocurrido un error","", "Aceptar");
+                sb.Show();
             }
 
         }

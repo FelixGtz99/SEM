@@ -90,7 +90,9 @@ namespace SEM.Forms
             {
                 if (txtContra.Text==txtNewContra.Text)
                 {
-                    MessageBox.Show("No puede ser la misma contraseña");
+                    //MessageBox.Show("No puede ser la misma contraseña");
+                    SemBox sb = new SemBox("shorterror", "No puede ser la misma contraseña", "", "Aceptar");
+                    sb.Show();
                 }
                 else
                 {
@@ -101,7 +103,9 @@ namespace SEM.Forms
                         {
                             c.ChangePass(txtNewContra.Text);
                             this.Hide();
-                            MessageBox.Show("Contraseña cambiada satisfactoriamente");
+                            //MessageBox.Show("Contraseña cambiada satisfactoriamente");
+                            SemBox sb = new SemBox("short", "Contraseña cambiada satisfactoriamente", "", "Aceptar");
+                            sb.Show();
                             new Searcher(c).Show();
                         }
                         catch (Exception ex) {
@@ -110,14 +114,18 @@ namespace SEM.Forms
                         }
                     else
                     {
-                        MessageBox.Show(check);
+                        //MessageBox.Show(check);
+                        SemBox sb = new SemBox("longerror", "Error al guardar", check, "Aceptar");
+                        sb.Show();
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("Contraseña Incorrecta");
+                //MessageBox.Show("Contraseña Incorrecta");
+                SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
+                sb.Show();
             }
         }
         public String validarContra(String Pass)
@@ -171,9 +179,14 @@ namespace SEM.Forms
                 try
                 {
                     c.DeleteUser();
-                    MessageBox.Show("Usuario eliminado correctamente");
+                    //MessageBox.Show("Usuario eliminado correctamente");
                     this.Hide();
                     new Login(c).Show();
+                    SemBox sb = new SemBox("long", "Has eliminado tu cuenta",
+                        "¡Te vamos a extrañar!\r\n" +
+                        "Considera regresar alguna vez.",
+                        "Aceptar");
+                    sb.Show();
                 }
                 catch (Exception ex)
                 {
@@ -184,7 +197,9 @@ namespace SEM.Forms
             }
             else
             {
-                MessageBox.Show("Contraseña Incorrecta");
+                //MessageBox.Show("Contraseña Incorrecta");
+                SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
+                sb.Show();
             }
         }
 
@@ -199,7 +214,9 @@ namespace SEM.Forms
             {
                 if (txtPass.Text == txtCPass.Text)
                 {
-                    MessageBox.Show("No puede ser la misma contraseña");
+                    //MessageBox.Show("No puede ser la misma contraseña");
+                    SemBox sb = new SemBox("shorterror", "No puede ser la misma contraseña", "", "Aceptar");
+                    sb.Show();
                 }
                 else
                 {
@@ -210,8 +227,10 @@ namespace SEM.Forms
                         {
                             c.ChangePass(txtNewContra.Text);
                             this.Hide();
-                            MessageBox.Show("Cambios hechos correctamente");
+                            //MessageBox.Show("Cambios hechos correctamente");
                             new Searcher(c).Show();
+                            SemBox sb = new SemBox("short", "Se han guardado los cambios", "", "Aceptar");
+                            sb.Show();
                         }
                         catch (Exception ex)
                         {
@@ -220,14 +239,18 @@ namespace SEM.Forms
                     }
                     else
                     {
-                        MessageBox.Show(check);
+                        //MessageBox.Show(check);
+                        SemBox sb = new SemBox("longerror", "Error al guardar", check, "Aceptar");
+                        sb.Show();
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("Contraseña Incorrecta");
+                //MessageBox.Show("Contraseña Incorrecta");
+                SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
+                sb.Show();
             }
         }
 
@@ -238,9 +261,14 @@ namespace SEM.Forms
                 try
                 {
                     c.DeleteUser();
-                    MessageBox.Show("Usuario eliminado correctamente");
+                    //MessageBox.Show("Usuario eliminado correctamente");
                     this.Hide();
                     new Login(c).Show();
+                    SemBox sb = new SemBox("long", "Has eliminado tu cuenta",
+                        "¡Te vamos a extrañar!\r\n" +
+                        "Considera regresar alguna vez.",
+                        "Aceptar");
+                    sb.Show();
                 }
                 catch (Exception ex)
                 {
@@ -251,7 +279,9 @@ namespace SEM.Forms
             }
             else
             {
-                MessageBox.Show("Contraseña Incorrecta");
+                //MessageBox.Show("Contraseña Incorrecta");
+                SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
+                sb.Show();
             }
         }
 

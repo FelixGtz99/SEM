@@ -122,7 +122,7 @@ namespace SEM.Forms
                 SemBox sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
                 sb.Show();
                 this.Hide();
-                new Menu(c).Show();
+                new Searcher(c).Show();
 
 
             }

@@ -256,7 +256,7 @@ namespace SEM.Forms
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == c.CONTRA)
+            /*if (textBox1.Text == c.CONTRA)
             {
                 try
                 {
@@ -282,7 +282,7 @@ namespace SEM.Forms
                 //MessageBox.Show("Contraseña Incorrecta");
                 SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
                 sb.Show();
-            }
+            }*/
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -303,10 +303,10 @@ namespace SEM.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label16.Visible = true;
+            //label16.Visible = true;
             helpDelete.Visible = true;
-            textBox1.Visible = true;
-            label15.Visible = true;
+           // textBox1.Visible = true;
+            //label15.Visible = true;
             btnEliminar.Visible = true;
 
         }
@@ -358,24 +358,24 @@ namespace SEM.Forms
             {
                 labelContraseña.Visible = true;
                 txtNpass.Visible = true;
-                label18.Visible = true;
+                //label18.Visible = true;
                 helpContraseña.Visible = true;
                 txtCPass.Visible = true;
                 labelConfirmar.Visible = true;
                 lineConfirmar.Visible = true;
-                btnChangeCarrera.Location = new Point(65, 248);
+               // btnChangeCarrera.Location = new Point(65, 248);
                 panel3.Location = new Point(34, 324);
             }
             else
             {
                 labelContraseña.Visible = false;
                 txtNpass.Visible = false;
-                label18.Visible = false;
+                //label18.Visible = false;
                 helpContraseña.Visible = false;
                 txtCPass.Visible = false;
                 labelConfirmar.Visible = false;
                 lineConfirmar.Visible = false;
-                btnChangeCarrera.Location = new Point(63, 187);
+               // btnChangeCarrera.Location = new Point(63, 187);
                 panel3.Location = new Point(34, 275);
             }
         }

@@ -116,14 +116,17 @@ namespace SEM
         {
             if (c.Login(txtEmail.Text, txtPass.Text) != 0)
             {
-                MessageBox.Show("Ingresaste correctamente");
+                
                 this.Hide();
                 new Searcher(c).Show();
+                SemBox sb = new SemBox("short", "¡Bienvenido de vuelta!", "", "Aceptar");
+                sb.Show();
             }
             else
             {
-                MessageBox.Show("Correo/Contraseña Incorrectos");
-
+                //MessageBox.Show("Correo/Contraseña Incorrectos");
+                SemBox sb = new SemBox("longerror", "Datos incorrectos", "Parece que tu correo o\r\ntu contraseña son\r\nerróneos. Intenta de nuevo", "Aceptar");
+                sb.Show();
             }
         }
 

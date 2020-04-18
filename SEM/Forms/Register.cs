@@ -389,19 +389,32 @@ namespace SEM
                 try
                 {
                     c.RegisterUser(txtExpediente.Text, txtNombre.Text, txtApellido.Text, txtContraseña.Text, txtCorreo.Text, cbCarrera.SelectedItem.ToString());
-                    MessageBox.Show("Registrado correctamente");
+                    //MessageBox.Show("Registrado correctamente");
+                    
                     this.Hide();
-                    new AccountMenu(c).Show();
+                    new Searcher(c).Show();
+                    SemBox sb = new SemBox("long", "¡Bienvenido a SEM!",
+                        "Hola, bienvenido al Sistema Evaluador de Maestros\r\n" +
+                        "aquí podrás evaluar los distintos maestros con los\r\n" +
+                        "que hayas llevado clases con el objetivo de ayudar\r\n" +
+                        "a otros estudiantes en su toma de decisiones, y\r\n" +
+                        "claro, tú también serás ayudado. SEM es completamente\r\n" +
+                        "anónimo, no te preocupes porque te puedan delatar.\r\n" +
+                        "Solo recuerda en todo momento mantener el respeto.", "Aceptar");
+                    sb.Show();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
+                    SemBox sb = new SemBox("long", "Parece que hubo un error", ex.Message, "Aceptar");
+                    sb.Show();
                 }
             }
             else
             {
-
-                MessageBox.Show(check);
+                SemBox sb = new SemBox("long", "No has completado correctamente tu registro", check, "Aceptar");
+                sb.Show();
+                //MessageBox.Show(check);
             }
         }
 

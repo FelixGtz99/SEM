@@ -43,18 +43,28 @@ namespace SEM.Forms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-        
-            btnEvaluar.Visible = true;
-            if (c.USER!=0)
+            btnVer.Visible = false;
+
+            if (c.USER != 0)
             {
+                btnEvaluar.Visible = true;
                 if (cbEleccion.SelectedItem.ToString() == "Materia")
                 {
-                    btnVer.Visible = false;
+
+
                 }
-                else {
+                else
+                {
+
                     btnVer.Visible = true;
                 }
-                
+
+            }
+            else {
+                if (cbEleccion.SelectedItem.ToString() != "Materia")
+                {
+                    btnVer.Visible = true;
+                }
             }
             if (cbEleccion.SelectedItem.ToString()=="Docente")
             {

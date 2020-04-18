@@ -233,7 +233,7 @@ namespace SEM.Forms
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtPass.Text == c.CONTRA)
+            if (textBox1.Text == c.CONTRA)
             {
                 try
                 {
@@ -282,6 +282,11 @@ namespace SEM.Forms
         }
 
         private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
         {
 
         }

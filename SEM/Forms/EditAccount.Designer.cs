@@ -88,6 +88,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panelOpciones.SuspendLayout();
             this.panelCarrera.SuspendLayout();
             this.panelBorrar.SuspendLayout();
@@ -608,7 +609,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(61, 468);
+            this.label11.Location = new System.Drawing.Point(55, 448);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(711, 24);
             this.label11.TabIndex = 42;
@@ -621,17 +622,18 @@
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPass.Location = new System.Drawing.Point(81, 530);
+            this.txtPass.Location = new System.Drawing.Point(75, 510);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(387, 25);
             this.txtPass.TabIndex = 43;
             this.txtPass.Text = "placeholder";
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(79, 558);
+            this.label12.Location = new System.Drawing.Point(73, 538);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(392, 3);
             this.label12.TabIndex = 44;
@@ -641,7 +643,7 @@
             this.helpConfirm.AutoSize = true;
             this.helpConfirm.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpConfirm.ForeColor = System.Drawing.Color.White;
-            this.helpConfirm.Location = new System.Drawing.Point(43, 533);
+            this.helpConfirm.Location = new System.Drawing.Point(43, 513);
             this.helpConfirm.Name = "helpConfirm";
             this.helpConfirm.Size = new System.Drawing.Size(22, 22);
             this.helpConfirm.TabIndex = 45;
@@ -656,7 +658,7 @@
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(564, 514);
+            this.btnGuardar.Location = new System.Drawing.Point(558, 494);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnGuardar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
@@ -677,7 +679,7 @@
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(540, 721);
+            this.btnEliminar.Location = new System.Drawing.Point(540, 711);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnEliminar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
@@ -774,7 +776,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(14)))), ((int)(((byte)(70)))));
             this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(59, 602);
+            this.button1.Location = new System.Drawing.Point(50, 579);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(314, 44);
             this.button1.TabIndex = 53;
@@ -787,7 +789,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(61, 675);
+            this.label16.Location = new System.Drawing.Point(55, 666);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(445, 24);
             this.label16.TabIndex = 54;
@@ -797,6 +799,7 @@
             // panel5
             // 
             this.panel5.AutoScroll = true;
+            this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.label18);
             this.panel5.Controls.Add(this.txtNpass);
             this.panel5.Controls.Add(this.label12);
@@ -842,6 +845,18 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(392, 3);
             this.label18.TabIndex = 55;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(919, 778);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(3, 2);
+            this.label19.TabIndex = 56;
+            this.label19.Text = "?";
+            this.label19.Visible = false;
             // 
             // EditAccount
             // 
@@ -939,5 +954,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }

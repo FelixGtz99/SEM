@@ -290,5 +290,74 @@ namespace SEM.Forms
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (labelACarrera.Visible == false)
+            {
+                labelACarrera.Visible = true;
+                helpCarrera.Visible = true;
+                labelCarrera.Visible = true;
+                labelNCarrera.Visible = true;
+                cbCarrera.Visible = true;
+                
+            }
+            else
+            {
+                labelACarrera.Visible = false;
+                helpCarrera.Visible = false;
+                labelCarrera.Visible = false;
+                labelNCarrera.Visible = false;
+                cbCarrera.Visible = false;
+            }    
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            if (labelContraseña.Visible == false)
+            {
+                labelContraseña.Visible = true;
+                txtNpass.Visible = true;
+                label18.Visible = true;
+                helpContraseña.Visible = true;
+                txtCPass.Visible = true;
+                labelConfirmar.Visible = true;
+                lineConfirmar.Visible = true;
+                btnChangeCarrera.Location = new Point(65, 248);
+                panel3.Location = new Point(34, 324);
+            }
+            else
+            {
+                labelContraseña.Visible = false;
+                txtNpass.Visible = false;
+                label18.Visible = false;
+                helpContraseña.Visible = false;
+                txtCPass.Visible = false;
+                labelConfirmar.Visible = false;
+                lineConfirmar.Visible = false;
+                btnChangeCarrera.Location = new Point(63, 187);
+                panel3.Location = new Point(34, 275);
+            }
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label10_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

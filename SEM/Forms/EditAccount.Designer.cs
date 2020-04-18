@@ -39,6 +39,8 @@
             this.lbCarrera = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelBorrar = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtContraBorrar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
@@ -57,7 +59,6 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.helpContraseña = new System.Windows.Forms.Label();
             this.txtNpass = new System.Windows.Forms.TextBox();
@@ -81,14 +82,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btnChangeCarrera = new System.Windows.Forms.Button();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.btnChangePass = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnChangePass = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.btnChangeCarrera = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panelOpciones.SuspendLayout();
             this.panelCarrera.SuspendLayout();
             this.panelBorrar.SuspendLayout();
@@ -96,8 +96,8 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelOpciones
@@ -226,6 +226,25 @@
             this.panelBorrar.Name = "panelBorrar";
             this.panelBorrar.Size = new System.Drawing.Size(693, 128);
             this.panelBorrar.TabIndex = 3;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(-145, 187);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(392, 3);
+            this.label17.TabIndex = 55;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(-128, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(326, 37);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Cambiar contraseña";
             // 
             // txtContraBorrar
             // 
@@ -421,6 +440,7 @@
             this.btnMin.TabIndex = 4;
             this.btnMin.Text = "_";
             this.btnMin.UseVisualStyleBackColor = false;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
             // btnClose
             // 
@@ -437,6 +457,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label9
             // 
@@ -448,17 +469,6 @@
             this.label9.Size = new System.Drawing.Size(672, 68);
             this.label9.TabIndex = 25;
             this.label9.Text = "Configuración de cuenta";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(-128, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(326, 37);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Cambiar contraseña";
             // 
             // labelContraseña
             // 
@@ -784,56 +794,29 @@
             this.panel5.TabIndex = 55;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // label17
+            // panel4
             // 
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(-145, 187);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(392, 3);
-            this.label17.TabIndex = 55;
+            this.panel4.Controls.Add(this.label16);
+            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.helpDelete);
+            this.panel4.Controls.Add(this.btnEliminar);
+            this.panel4.Location = new System.Drawing.Point(37, 646);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(885, 129);
+            this.panel4.TabIndex = 63;
             // 
-            // label18
+            // panel3
             // 
-            this.label18.BackColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(75, 204);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(392, 3);
-            this.label18.TabIndex = 55;
-            this.label18.Visible = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(919, 778);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(3, 2);
-            this.label19.TabIndex = 56;
-            this.label19.Text = "?";
-            this.label19.Visible = false;
-            // 
-            // btnChangeCarrera
-            // 
-            this.btnChangeCarrera.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnChangeCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnChangeCarrera.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeCarrera.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnChangeCarrera.Location = new System.Drawing.Point(65, 248);
-            this.btnChangeCarrera.Name = "btnChangeCarrera";
-            this.btnChangeCarrera.Size = new System.Drawing.Size(299, 54);
-            this.btnChangeCarrera.TabIndex = 58;
-            this.btnChangeCarrera.Text = "+ CAMBIAR CARRERA";
-            this.btnChangeCarrera.UseVisualStyleBackColor = false;
-            this.btnChangeCarrera.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 780);
-            this.splitter1.TabIndex = 59;
-            this.splitter1.TabStop = false;
+            this.panel3.Controls.Add(this.labelACarrera);
+            this.panel3.Controls.Add(this.labelCarrera);
+            this.panel3.Controls.Add(this.helpCarrera);
+            this.panel3.Controls.Add(this.labelNCarrera);
+            this.panel3.Controls.Add(this.cbCarrera);
+            this.panel3.Location = new System.Drawing.Point(34, 324);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(827, 100);
+            this.panel3.TabIndex = 61;
             // 
             // btnChangePass
             // 
@@ -849,29 +832,48 @@
             this.btnChangePass.UseVisualStyleBackColor = false;
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
-            // panel3
+            // splitter1
             // 
-            this.panel3.Controls.Add(this.labelACarrera);
-            this.panel3.Controls.Add(this.labelCarrera);
-            this.panel3.Controls.Add(this.helpCarrera);
-            this.panel3.Controls.Add(this.labelNCarrera);
-            this.panel3.Controls.Add(this.cbCarrera);
-            this.panel3.Location = new System.Drawing.Point(34, 324);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(827, 100);
-            this.panel3.TabIndex = 61;
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 780);
+            this.splitter1.TabIndex = 59;
+            this.splitter1.TabStop = false;
             // 
-            // panel4
+            // btnChangeCarrera
             // 
-            this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.helpDelete);
-            this.panel4.Controls.Add(this.btnEliminar);
-            this.panel4.Location = new System.Drawing.Point(37, 646);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(885, 129);
-            this.panel4.TabIndex = 63;
+            this.btnChangeCarrera.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnChangeCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnChangeCarrera.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeCarrera.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnChangeCarrera.Location = new System.Drawing.Point(65, 248);
+            this.btnChangeCarrera.Name = "btnChangeCarrera";
+            this.btnChangeCarrera.Size = new System.Drawing.Size(299, 54);
+            this.btnChangeCarrera.TabIndex = 58;
+            this.btnChangeCarrera.Text = "+ CAMBIAR CARRERA";
+            this.btnChangeCarrera.UseVisualStyleBackColor = false;
+            this.btnChangeCarrera.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(919, 778);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(3, 2);
+            this.label19.TabIndex = 56;
+            this.label19.Text = "?";
+            this.label19.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(75, 204);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(392, 3);
+            this.label18.TabIndex = 55;
+            this.label18.Visible = false;
             // 
             // EditAccount
             // 
@@ -898,10 +900,10 @@
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -61,7 +61,6 @@
             this.labelContraseña = new System.Windows.Forms.Label();
             this.helpContraseña = new System.Windows.Forms.Label();
             this.txtNpass = new System.Windows.Forms.TextBox();
-            this.lineContraseña = new System.Windows.Forms.Label();
             this.labelConfirmar = new System.Windows.Forms.Label();
             this.txtCPass = new System.Windows.Forms.TextBox();
             this.lineConfirmar = new System.Windows.Forms.Label();
@@ -86,6 +85,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panelOpciones.SuspendLayout();
             this.panelCarrera.SuspendLayout();
             this.panelBorrar.SuspendLayout();
@@ -94,6 +96,7 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelOpciones
@@ -213,6 +216,7 @@
             // 
             // panelBorrar
             // 
+            this.panelBorrar.Controls.Add(this.label17);
             this.panelBorrar.Controls.Add(this.txtContraBorrar);
             this.panelBorrar.Controls.Add(this.label3);
             this.panelBorrar.Controls.Add(this.button10);
@@ -397,7 +401,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1366, 41);
+            this.panel2.Size = new System.Drawing.Size(1357, 41);
             this.panel2.TabIndex = 24;
             // 
             // btnMin
@@ -448,7 +452,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(35, 11);
+            this.label4.Location = new System.Drawing.Point(43, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(326, 37);
             this.label4.TabIndex = 26;
@@ -460,7 +464,7 @@
             this.labelContraseña.AutoSize = true;
             this.labelContraseña.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelContraseña.ForeColor = System.Drawing.Color.White;
-            this.labelContraseña.Location = new System.Drawing.Point(477, 212);
+            this.labelContraseña.Location = new System.Drawing.Point(37, 127);
             this.labelContraseña.Name = "labelContraseña";
             this.labelContraseña.Size = new System.Drawing.Size(185, 24);
             this.labelContraseña.TabIndex = 27;
@@ -471,7 +475,7 @@
             this.helpContraseña.AutoSize = true;
             this.helpContraseña.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpContraseña.ForeColor = System.Drawing.Color.White;
-            this.helpContraseña.Location = new System.Drawing.Point(445, 255);
+            this.helpContraseña.Location = new System.Drawing.Point(37, 181);
             this.helpContraseña.Name = "helpContraseña";
             this.helpContraseña.Size = new System.Drawing.Size(22, 22);
             this.helpContraseña.TabIndex = 30;
@@ -484,20 +488,12 @@
             this.txtNpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNpass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNpass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNpass.Location = new System.Drawing.Point(486, 252);
+            this.txtNpass.Location = new System.Drawing.Point(75, 178);
             this.txtNpass.Name = "txtNpass";
             this.txtNpass.PasswordChar = '*';
             this.txtNpass.Size = new System.Drawing.Size(387, 25);
             this.txtNpass.TabIndex = 31;
             this.txtNpass.Text = "placeholder";
-            // 
-            // lineContraseña
-            // 
-            this.lineContraseña.BackColor = System.Drawing.Color.White;
-            this.lineContraseña.Location = new System.Drawing.Point(483, 278);
-            this.lineContraseña.Name = "lineContraseña";
-            this.lineContraseña.Size = new System.Drawing.Size(392, 3);
-            this.lineContraseña.TabIndex = 32;
             // 
             // labelConfirmar
             // 
@@ -505,7 +501,7 @@
             this.labelConfirmar.AutoSize = true;
             this.labelConfirmar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirmar.ForeColor = System.Drawing.Color.White;
-            this.labelConfirmar.Location = new System.Drawing.Point(943, 212);
+            this.labelConfirmar.Location = new System.Drawing.Point(514, 127);
             this.labelConfirmar.Name = "labelConfirmar";
             this.labelConfirmar.Size = new System.Drawing.Size(216, 24);
             this.labelConfirmar.TabIndex = 33;
@@ -518,7 +514,7 @@
             this.txtCPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCPass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCPass.Location = new System.Drawing.Point(947, 256);
+            this.txtCPass.Location = new System.Drawing.Point(518, 176);
             this.txtCPass.Name = "txtCPass";
             this.txtCPass.PasswordChar = '*';
             this.txtCPass.Size = new System.Drawing.Size(387, 25);
@@ -528,7 +524,7 @@
             // lineConfirmar
             // 
             this.lineConfirmar.BackColor = System.Drawing.Color.White;
-            this.lineConfirmar.Location = new System.Drawing.Point(944, 278);
+            this.lineConfirmar.Location = new System.Drawing.Point(515, 204);
             this.lineConfirmar.Name = "lineConfirmar";
             this.lineConfirmar.Size = new System.Drawing.Size(392, 3);
             this.lineConfirmar.TabIndex = 35;
@@ -550,7 +546,7 @@
             this.labelACarrera.AutoSize = true;
             this.labelACarrera.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelACarrera.ForeColor = System.Drawing.Color.White;
-            this.labelACarrera.Location = new System.Drawing.Point(473, 367);
+            this.labelACarrera.Location = new System.Drawing.Point(37, 327);
             this.labelACarrera.Name = "labelACarrera";
             this.labelACarrera.Size = new System.Drawing.Size(150, 24);
             this.labelACarrera.TabIndex = 37;
@@ -562,7 +558,7 @@
             this.labelCarrera.AutoSize = true;
             this.labelCarrera.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCarrera.ForeColor = System.Drawing.Color.DimGray;
-            this.labelCarrera.Location = new System.Drawing.Point(473, 410);
+            this.labelCarrera.Location = new System.Drawing.Point(77, 375);
             this.labelCarrera.Name = "labelCarrera";
             this.labelCarrera.Size = new System.Drawing.Size(96, 24);
             this.labelCarrera.TabIndex = 38;
@@ -574,7 +570,7 @@
             this.labelNCarrera.AutoSize = true;
             this.labelNCarrera.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNCarrera.ForeColor = System.Drawing.Color.White;
-            this.labelNCarrera.Location = new System.Drawing.Point(934, 367);
+            this.labelNCarrera.Location = new System.Drawing.Point(514, 330);
             this.labelNCarrera.Name = "labelNCarrera";
             this.labelNCarrera.Size = new System.Drawing.Size(154, 24);
             this.labelNCarrera.TabIndex = 39;
@@ -591,7 +587,7 @@
             this.cbCarrera.FormattingEnabled = true;
             this.cbCarrera.Items.AddRange(new object[] {
             "Ingeneria En Sistemas De Informacion"});
-            this.cbCarrera.Location = new System.Drawing.Point(938, 402);
+            this.cbCarrera.Location = new System.Drawing.Point(518, 372);
             this.cbCarrera.Name = "cbCarrera";
             this.cbCarrera.Size = new System.Drawing.Size(387, 32);
             this.cbCarrera.TabIndex = 40;
@@ -601,7 +597,7 @@
             this.helpCarrera.AutoSize = true;
             this.helpCarrera.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpCarrera.ForeColor = System.Drawing.Color.White;
-            this.helpCarrera.Location = new System.Drawing.Point(439, 412);
+            this.helpCarrera.Location = new System.Drawing.Point(37, 376);
             this.helpCarrera.Name = "helpCarrera";
             this.helpCarrera.Size = new System.Drawing.Size(22, 22);
             this.helpCarrera.TabIndex = 41;
@@ -612,7 +608,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(464, 470);
+            this.label11.Location = new System.Drawing.Point(61, 468);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(711, 24);
             this.label11.TabIndex = 42;
@@ -625,7 +621,7 @@
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPass.Location = new System.Drawing.Point(477, 512);
+            this.txtPass.Location = new System.Drawing.Point(81, 530);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(387, 25);
@@ -635,7 +631,7 @@
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(478, 538);
+            this.label12.Location = new System.Drawing.Point(79, 558);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(392, 3);
             this.label12.TabIndex = 44;
@@ -645,7 +641,7 @@
             this.helpConfirm.AutoSize = true;
             this.helpConfirm.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpConfirm.ForeColor = System.Drawing.Color.White;
-            this.helpConfirm.Location = new System.Drawing.Point(439, 515);
+            this.helpConfirm.Location = new System.Drawing.Point(43, 533);
             this.helpConfirm.Name = "helpConfirm";
             this.helpConfirm.Size = new System.Drawing.Size(22, 22);
             this.helpConfirm.TabIndex = 45;
@@ -660,7 +656,7 @@
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(947, 512);
+            this.btnGuardar.Location = new System.Drawing.Point(564, 514);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnGuardar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
@@ -680,13 +676,13 @@
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(924, 679);
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(540, 721);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnEliminar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
             this.btnEliminar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnEliminar.Size = new System.Drawing.Size(389, 60);
+            this.btnEliminar.Size = new System.Drawing.Size(382, 48);
             this.btnEliminar.TabIndex = 47;
             this.btnEliminar.Text = "Eliminar Cuenta Permanentemente";
             this.btnEliminar.TextColor = System.Drawing.Color.White;
@@ -699,7 +695,7 @@
             this.helpDelete.AutoSize = true;
             this.helpDelete.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpDelete.ForeColor = System.Drawing.Color.White;
-            this.helpDelete.Location = new System.Drawing.Point(439, 717);
+            this.helpDelete.Location = new System.Drawing.Point(46, 730);
             this.helpDelete.Name = "helpDelete";
             this.helpDelete.Size = new System.Drawing.Size(22, 22);
             this.helpDelete.TabIndex = 48;
@@ -711,9 +707,9 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(417, 136);
+            this.panel3.Location = new System.Drawing.Point(30, 34);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(435, 66);
+            this.panel3.Size = new System.Drawing.Size(435, 67);
             this.panel3.TabIndex = 49;
             // 
             // label14
@@ -721,7 +717,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(12, 21);
+            this.label14.Location = new System.Drawing.Point(13, 24);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(21, 22);
             this.label14.TabIndex = 52;
@@ -732,7 +728,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.label10);
-            this.panel4.Location = new System.Drawing.Point(417, 299);
+            this.panel4.Location = new System.Drawing.Point(33, 243);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(435, 54);
             this.panel4.TabIndex = 50;
@@ -753,12 +749,12 @@
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(475, 705);
+            this.textBox1.Location = new System.Drawing.Point(83, 721);
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(387, 25);
+            this.textBox1.Size = new System.Drawing.Size(387, 20);
             this.textBox1.TabIndex = 51;
             this.textBox1.Text = "placeholder";
             this.textBox1.UseSystemPasswordChar = true;
@@ -767,7 +763,7 @@
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(472, 736);
+            this.label15.Location = new System.Drawing.Point(78, 753);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(392, 3);
             this.label15.TabIndex = 52;
@@ -778,7 +774,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(14)))), ((int)(((byte)(70)))));
             this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(443, 595);
+            this.button1.Location = new System.Drawing.Point(59, 602);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(314, 44);
             this.button1.TabIndex = 53;
@@ -791,47 +787,72 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(445, 665);
+            this.label16.Location = new System.Drawing.Point(61, 675);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(452, 24);
+            this.label16.Size = new System.Drawing.Size(445, 24);
             this.label16.TabIndex = 54;
-            this.label16.Text = "Confirmar tu contraseña para eliminar la cuenta\r\n";
+            this.label16.Text = "Confirma tu contraseña para eliminar la cuenta\r\n";
             this.label16.Visible = false;
+            // 
+            // panel5
+            // 
+            this.panel5.AutoScroll = true;
+            this.panel5.Controls.Add(this.label18);
+            this.panel5.Controls.Add(this.txtNpass);
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.helpConfirm);
+            this.panel5.Controls.Add(this.btnEliminar);
+            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.txtPass);
+            this.panel5.Controls.Add(this.panel3);
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Controls.Add(this.label11);
+            this.panel5.Controls.Add(this.label16);
+            this.panel5.Controls.Add(this.labelNCarrera);
+            this.panel5.Controls.Add(this.cbCarrera);
+            this.panel5.Controls.Add(this.helpCarrera);
+            this.panel5.Controls.Add(this.btnGuardar);
+            this.panel5.Controls.Add(this.labelCarrera);
+            this.panel5.Controls.Add(this.helpDelete);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.lineConfirmar);
+            this.panel5.Controls.Add(this.labelACarrera);
+            this.panel5.Controls.Add(this.labelContraseña);
+            this.panel5.Controls.Add(this.helpContraseña);
+            this.panel5.Controls.Add(this.txtCPass);
+            this.panel5.Controls.Add(this.labelConfirmar);
+            this.panel5.Location = new System.Drawing.Point(384, 122);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(961, 648);
+            this.panel5.TabIndex = 55;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(-145, 187);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(392, 3);
+            this.label17.TabIndex = 55;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(75, 204);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(392, 3);
+            this.label18.TabIndex = 55;
             // 
             // EditAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1366, 788);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.helpDelete);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.helpConfirm);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.helpCarrera);
-            this.Controls.Add(this.cbCarrera);
-            this.Controls.Add(this.labelNCarrera);
-            this.Controls.Add(this.labelCarrera);
-            this.Controls.Add(this.labelACarrera);
-            this.Controls.Add(this.lineConfirmar);
-            this.Controls.Add(this.txtCPass);
-            this.Controls.Add(this.labelConfirmar);
-            this.Controls.Add(this.lineContraseña);
-            this.Controls.Add(this.txtNpass);
-            this.Controls.Add(this.helpContraseña);
-            this.Controls.Add(this.labelContraseña);
+            this.ClientSize = new System.Drawing.Size(1357, 788);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditAccount";
             this.Text = "EditAccount";
@@ -849,6 +870,8 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -889,7 +912,6 @@
         private System.Windows.Forms.Label labelContraseña;
         private System.Windows.Forms.Label helpContraseña;
         private System.Windows.Forms.TextBox txtNpass;
-        private System.Windows.Forms.Label lineContraseña;
         private System.Windows.Forms.Label labelConfirmar;
         private System.Windows.Forms.TextBox txtCPass;
         private System.Windows.Forms.Label lineConfirmar;
@@ -914,5 +936,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }

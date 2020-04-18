@@ -17,8 +17,7 @@ namespace SEM.Forms
         {
             InitializeComponent();
             this.c = c;
-            c.getMaestros();
-            c.getMaterias();
+         
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
@@ -44,18 +43,28 @@ namespace SEM.Forms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-        
-            btnEvaluar.Visible = true;
-            if (c.USER!=0)
+            btnVer.Visible = false;
+
+            if (c.USER != 0)
             {
+                btnEvaluar.Visible = true;
                 if (cbEleccion.SelectedItem.ToString() == "Materia")
                 {
-                    btnVer.Visible = false;
+
+
                 }
-                else {
+                else
+                {
+
                     btnVer.Visible = true;
                 }
-                
+
+            }
+            else {
+                if (cbEleccion.SelectedItem.ToString() != "Materia")
+                {
+                    btnVer.Visible = true;
+                }
             }
             if (cbEleccion.SelectedItem.ToString()=="Docente")
             {
@@ -77,6 +86,7 @@ namespace SEM.Forms
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            c.USER = 0;
             this.Hide();
             new Login(c).Show();
 

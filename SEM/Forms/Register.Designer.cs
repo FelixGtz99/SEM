@@ -442,7 +442,7 @@
             this.cbEscuela.ForeColor = System.Drawing.Color.DimGray;
             this.cbEscuela.FormattingEnabled = true;
             this.cbEscuela.Items.AddRange(new object[] {
-            "Ingeneria En Sistemas De Informacion"});
+            "Universidad de Sonora"});
             this.cbEscuela.Location = new System.Drawing.Point(90, 66);
             this.cbEscuela.Name = "cbEscuela";
             this.cbEscuela.Size = new System.Drawing.Size(387, 32);

@@ -16,6 +16,9 @@ namespace SEM
         [STAThread]
         static void Main()
         {
+            c.iniciar();
+            c.getMaestros();
+            c.getMaterias();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login(c));

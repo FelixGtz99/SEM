@@ -325,7 +325,7 @@ namespace SEM
         //Crea todas las tablas con sus materias
         public DataTable verMaterias(String m)
         {
-            String query = "SELECT  nombre_materia as Materia FROM materia";
+            String query = "SELECT  nombre_materia as Materia FROM materia WHERE nombre_materia LIKE @m";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("m", "%" + m + "%");

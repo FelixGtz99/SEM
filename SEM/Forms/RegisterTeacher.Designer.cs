@@ -215,6 +215,7 @@
             this.txtNombre.Size = new System.Drawing.Size(387, 25);
             this.txtNombre.TabIndex = 27;
             this.txtNombre.Text = "¿Cómo se llama tu maestro?";
+            this.txtNombre.Click += new System.EventHandler(this.txtNombre_Click);
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lineNombre

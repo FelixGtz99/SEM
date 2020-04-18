@@ -359,18 +359,18 @@ namespace SEM
 
 
             txtConContra.ForeColor = Color.DimGray;
-            if(txtConContra.Text != txtContraseña.Text)
+            /*if(txtConContra.Text != txtContraseña.Text)
             {
                 labelEConfirmar.ForeColor = Color.Red;
                 lineConfirmar.BackColor = Color.Red;
                 labelConfirmar.ForeColor = Color.Red;
-            }
-            else
-            {
+            }*/
+           // else
+            //{
                 labelEConfirmar.ForeColor = Color.FromArgb(48, 48, 48);
                 lineConfirmar.BackColor = Color.White;
                 labelConfirmar.ForeColor = Color.White;
-            }
+         //   }
         }
 
         private void BtnLogin1_Click(object sender, EventArgs e)

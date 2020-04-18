@@ -151,6 +151,12 @@
     <Compile Include="Forms\SemBox.Designer.cs">
       <DependentUpon>SemBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\temp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\temp.Designer.cs">
+      <DependentUpon>temp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Terminos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SemBox.resx">
       <DependentUpon>SemBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\temp.resx">
+      <DependentUpon>temp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Terminos.resx">
       <DependentUpon>Terminos.cs</DependentUpon>

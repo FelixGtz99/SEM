@@ -443,7 +443,7 @@
             this.cbEscuela.FormattingEnabled = true;
             this.cbEscuela.Items.AddRange(new object[] {
             "Ingeneria En Sistemas De Informacion"});
-            this.cbEscuela.Location = new System.Drawing.Point(86, 66);
+            this.cbEscuela.Location = new System.Drawing.Point(90, 66);
             this.cbEscuela.Name = "cbEscuela";
             this.cbEscuela.Size = new System.Drawing.Size(387, 32);
             this.cbEscuela.TabIndex = 12;

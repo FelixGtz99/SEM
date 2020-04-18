@@ -260,5 +260,30 @@ namespace SEM.Forms
             this.Hide();
             new Searcher(c).Show();
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label16.Visible = true;
+            helpDelete.Visible = true;
+            textBox1.Visible = true;
+            label15.Visible = true;
+            btnEliminar.Visible = true;
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

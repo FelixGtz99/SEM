@@ -101,7 +101,6 @@
             this.labelApellido.TabIndex = 1;
             this.labelApellido.Text = "Apellido";
             this.labelApellido.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelApellido.Click += new System.EventHandler(this.label2_Click);
             // 
             // labelExpediente
             // 
@@ -161,7 +160,7 @@
             this.txtExpediente.Location = new System.Drawing.Point(86, 192);
             this.txtExpediente.Name = "txtExpediente";
             this.txtExpediente.Size = new System.Drawing.Size(387, 25);
-            this.txtExpediente.TabIndex = 6;
+            this.txtExpediente.TabIndex = 3;
             this.txtExpediente.Text = "Clave, Matrícula, etc.";
             this.txtExpediente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtExperiente_KeyDown);
             this.txtExpediente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtExperiente_KeyUp);
@@ -176,7 +175,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(86, 428);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(387, 25);
-            this.txtCorreo.TabIndex = 7;
+            this.txtCorreo.TabIndex = 6;
             this.txtCorreo.Text = "Correo institucional.";
             // 
             // txtNombre
@@ -189,7 +188,7 @@
             this.txtNombre.Location = new System.Drawing.Point(86, 312);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(387, 25);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 4;
             this.txtNombre.Text = "¿Cómo te llamas?";
             // 
             // txtApellido
@@ -202,7 +201,7 @@
             this.txtApellido.Location = new System.Drawing.Point(535, 312);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(387, 25);
-            this.txtApellido.TabIndex = 9;
+            this.txtApellido.TabIndex = 5;
             this.txtApellido.Text = "¿Cómo te apellidas?";
             // 
             // txtContraseña
@@ -216,7 +215,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(387, 25);
-            this.txtContraseña.TabIndex = 10;
+            this.txtContraseña.TabIndex = 7;
             this.txtContraseña.Text = "placeholder";
             // 
             // cbCarrera
@@ -233,7 +232,7 @@
             this.cbCarrera.Location = new System.Drawing.Point(535, 66);
             this.cbCarrera.Name = "cbCarrera";
             this.cbCarrera.Size = new System.Drawing.Size(387, 32);
-            this.cbCarrera.TabIndex = 11;
+            this.cbCarrera.TabIndex = 2;
             // 
             // panel
             // 
@@ -268,7 +267,7 @@
             this.panel.Controls.Add(this.txtCorreo);
             this.panel.Location = new System.Drawing.Point(382, 201);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(972, 443);
+            this.panel.Size = new System.Drawing.Size(972, 432);
             this.panel.TabIndex = 14;
             // 
             // helpContraseña
@@ -417,7 +416,7 @@
             this.txtConContra.Name = "txtConContra";
             this.txtConContra.PasswordChar = '*';
             this.txtConContra.Size = new System.Drawing.Size(387, 25);
-            this.txtConContra.TabIndex = 16;
+            this.txtConContra.TabIndex = 8;
             this.txtConContra.Text = "placeholder";
             // 
             // labelEscuela
@@ -446,7 +445,7 @@
             this.cbEscuela.Location = new System.Drawing.Point(90, 66);
             this.cbEscuela.Name = "cbEscuela";
             this.cbEscuela.Size = new System.Drawing.Size(387, 32);
-            this.cbEscuela.TabIndex = 12;
+            this.cbEscuela.TabIndex = 1;
             // 
             // errors
             // 
@@ -480,7 +479,8 @@
             this.btnMin.Location = new System.Drawing.Point(1129, 4);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(55, 35);
-            this.btnMin.TabIndex = 4;
+            this.btnMin.TabIndex = 0;
+            this.btnMin.TabStop = false;
             this.btnMin.Text = "_";
             this.btnMin.UseVisualStyleBackColor = false;
             this.btnMin.Click += new System.EventHandler(this.BtnMin_Click);
@@ -497,7 +497,8 @@
             this.btnClose.Location = new System.Drawing.Point(1191, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(55, 35);
-            this.btnClose.TabIndex = 3;
+            this.btnClose.TabIndex = 0;
+            this.btnClose.TabStop = false;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
@@ -528,7 +529,7 @@
             this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
             this.btnVolver.OnHoverTextColor = System.Drawing.Color.Gainsboro;
             this.btnVolver.Size = new System.Drawing.Size(298, 60);
-            this.btnVolver.TabIndex = 14;
+            this.btnVolver.TabIndex = 12;
             this.btnVolver.Text = "Volver";
             this.btnVolver.TextColor = System.Drawing.Color.White;
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -579,7 +580,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.btnRegistrar.Enabled = false;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -592,10 +593,11 @@
             this.btnRegistrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
             this.btnRegistrar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
             this.btnRegistrar.Size = new System.Drawing.Size(298, 60);
-            this.btnRegistrar.TabIndex = 15;
+            this.btnRegistrar.TabIndex = 11;
             this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.TextColor = System.Drawing.Color.White;
+            this.btnRegistrar.TextColor = System.Drawing.Color.Silver;
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.EnabledChanged += new System.EventHandler(this.BtnRegistrar_EnabledChanged);
             this.btnRegistrar.Click += new System.EventHandler(this.Button_WOC1_Click);
             // 
             // checkBox1
@@ -604,7 +606,7 @@
             this.checkBox1.Location = new System.Drawing.Point(757, 664);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(264, 26);
-            this.checkBox1.TabIndex = 25;
+            this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "Leí y acepté los";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
@@ -617,7 +619,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(884, 666);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(171, 18);
-            this.linkLabel1.TabIndex = 26;
+            this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = " términos y condiciones";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
@@ -625,9 +627,13 @@
             // toolTip1
             // 
             this.toolTip1.AutoPopDelay = 15000;
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
             this.toolTip1.ReshowDelay = 100;
             this.toolTip1.Tag = "";
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Ayuda";
             // 
             // Register
             // 

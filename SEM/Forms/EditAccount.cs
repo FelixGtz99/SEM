@@ -592,5 +592,37 @@ namespace SEM.Forms
         {
             Application.Exit();
         }
+
+        private void TxtPass_TextChanged_1(object sender, EventArgs e)
+        {
+            if(txtPass.Text == "")
+            {
+                btnGuardar.Enabled = false;
+                btnGuardar.ButtonColor = Color.FromArgb(130, 170,255);
+                btnGuardar.TextColor = Color.Silver;
+            }
+            else
+            {
+                btnGuardar.Enabled = true;
+                btnGuardar.ButtonColor = Color.FromArgb(13,70,255);
+                btnGuardar.TextColor = Color.White;
+            }
+        }
+
+        private void TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                btnEliminar.Enabled = false;
+                btnEliminar.ButtonColor = Color.FromArgb(255,130, 170);
+                btnEliminar.TextColor = Color.Silver;
+            }
+            else
+            {
+                btnEliminar.Enabled = true;
+                btnEliminar.ButtonColor = Color.FromArgb(255,13, 70);
+                btnEliminar.TextColor = Color.White;
+            }
+        }
     }
 }

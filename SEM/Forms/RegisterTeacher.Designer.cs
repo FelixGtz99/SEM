@@ -398,7 +398,7 @@
             this.btnQuitar.Location = new System.Drawing.Point(1159, 374);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnQuitar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnQuitar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
             this.btnQuitar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
             this.btnQuitar.Size = new System.Drawing.Size(170, 49);
             this.btnQuitar.TabIndex = 45;
@@ -448,6 +448,15 @@
             this.btnRegistrar.TextColor = System.Drawing.Color.White;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 15000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Ayuda";
             // 
             // RegisterTeacher
             // 

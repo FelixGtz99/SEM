@@ -46,33 +46,7 @@ namespace SEM
 
         }
 
-        
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
+               
 
         private void txtEmail_GotFocus(object sender, EventArgs e)
         {
@@ -88,10 +62,26 @@ namespace SEM
         {
             if (string.IsNullOrWhiteSpace(txtEmail.Text)){
                 txtEmail.Text = "ejemplo@escuela.com";
+                txtEmail.ForeColor = Color.DimGray;
+                line1.BackColor = Color.White;
+                label1.ForeColor = Color.White;
+                errorEmail.Visible = false;
+            } else if (c.CheckEmail(txtEmail.Text)) 
+            {
+                txtEmail.ForeColor = Color.DimGray;
+                line1.BackColor = Color.White;
+                label1.ForeColor = Color.White;
+                errorEmail.Visible = false;
             }
-            txtEmail.ForeColor = Color.DimGray;
-            line1.BackColor = Color.White;
-            label1.ForeColor = Color.White;
+            else
+            {
+                txtEmail.ForeColor = Color.DimGray;
+                line1.BackColor = Color.FromArgb(255,13,70);
+                label1.ForeColor = Color.FromArgb(255,13,70);
+                errorEmail.Text = "Correo electrónico no registrado";
+                errorEmail.Visible = true;
+            }
+            
         }
         private void txtPass_GotFocus(object sender, EventArgs e)
         {
@@ -105,21 +95,93 @@ namespace SEM
         }
         private void txtPass_LostFocus(object sender, EventArgs e)
         {
-            line2.BackColor = Color.White;
-            label2.ForeColor = Color.White;
+            if (string.IsNullOrWhiteSpace(txtPass.Text))
+            {
+                errorPass.Text = "Introduce una contraseña";
+                line2.BackColor = Color.FromArgb(255,13,70);
+                label2.ForeColor = Color.FromArgb(255,13,70);
+                errorPass.Visible = true;
+            }
+            else
+            {
+                line2.BackColor = Color.White;
+                label2.ForeColor = Color.White;
+                errorPass.Visible = false;
+            }
+            
 
             
             txtPass.ForeColor = Color.DimGray;
+            
         }
 
         private void BtnLogin1_Click(object sender, EventArgs e)
         {
-            if (c.Login(txtEmail.Text, txtPass.Text) != 0)
+            if (string.IsNullOrWhiteSpace(txtPass.Text) || txtPass.Text == "placeholder")
+            {
+                errorPass.Text = "Introduce una contraseña";
+                line2.BackColor = Color.FromArgb(255, 13, 70);
+                label2.ForeColor = Color.FromArgb(255, 13, 70);
+                errorPass.Visible = true;
+                if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                {
+                    line1.BackColor = Color.FromArgb(255, 13, 70);
+                    label1.ForeColor = Color.FromArgb(255, 13, 70);
+                    errorEmail.Text = "Introduce un correo electrónico";
+                    errorEmail.Visible = true;
+                }
+                else if (!c.CheckEmail(txtEmail.Text))
+                {
+                    line1.BackColor = Color.FromArgb(255, 13, 70);
+                    label1.ForeColor = Color.FromArgb(255, 13, 70);
+                    errorEmail.Text = "Correo electrónico no registrado";
+                    errorEmail.Visible = true;
+                }
+            }
+            else
+            {
+                errorPass.Visible = false;
+                if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                {
+                    line1.BackColor = Color.FromArgb(255, 13, 70);
+                    label1.ForeColor = Color.FromArgb(255, 13, 70);
+                    errorEmail.Text = "Introduce un correo electrónico";
+                    txtPass.Text = "";
+                    errorEmail.Visible = true;
+                }
+                else if (!c.CheckEmail(txtEmail.Text))
+                {
+                    line1.BackColor = Color.FromArgb(255, 13, 70);
+                    label1.ForeColor = Color.FromArgb(255, 13, 70);
+                    errorEmail.Text = "Correo electrónico no registrado";
+                    txtPass.Text = "";
+                    errorEmail.Visible = true;
+                } else if (c.Login(txtEmail.Text, txtPass.Text) != 0)
+                {
+                    this.Hide();
+                    new Searcher(c).Show();
+                    SemBox sb = new SemBox("short", "¡Bienvenido de regreso!", "", "Aceptar");
+                    sb.Show();
+                }
+                else
+                {
+                    line1.BackColor = Color.FromArgb(255, 13, 70);
+                    label1.ForeColor = Color.FromArgb(255, 13, 70);
+                    errorEmail.Text = "Correo y contraseña no coinciden";
+                    errorEmail.Visible = true;
+                    txtPass.Text = "";
+                }
+            }
+            
+            
+            
+
+            /*if (c.Login(txtEmail.Text, txtPass.Text) != 0)
             {
                 
                 this.Hide();
                 new Searcher(c).Show();
-                SemBox sb = new SemBox("short", "¡Bienvenido de vuelta!", "", "Aceptar");
+                SemBox sb = new SemBox("short", "¡Bienvenido de regreso!", "", "Aceptar");
                 sb.Show();
             }
             else
@@ -127,7 +189,7 @@ namespace SEM
                 //MessageBox.Show("Correo/Contraseña Incorrectos");
                 SemBox sb = new SemBox("longerror", "Datos incorrectos", "Parece que tu correo o\r\ntu contraseña son\r\nerróneos. Intenta de nuevo", "Aceptar");
                 sb.Show();
-            }
+            }*/
         }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
@@ -151,6 +213,14 @@ namespace SEM
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void TxtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                BtnLogin1_Click(this, new EventArgs());
+            }
         }
     }
 }

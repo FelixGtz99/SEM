@@ -23,6 +23,7 @@ namespace SEM.Forms
             this.titulo = title;
             this.mensaje = message;
             this.textoBoton = btntext;
+            defButton.GotFocus += btn_Focus;
             switch (tipo)
             {
                 case "short":
@@ -82,7 +83,7 @@ namespace SEM.Forms
             }
             defButton.Focus();
             //Datos de la barra superior
-            this.ActiveControl = panel2;
+            //this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;
             btnClose.Location = new Point(this.Width - btnClose.Width, 0);
             panel2.Location = new Point(0, 0);
@@ -108,5 +109,12 @@ namespace SEM.Forms
                 defButton.PerformClick();
             }
         }
+        private void btn_Focus(object sender, EventArgs e)
+        {
+           /* defButton.FlatAppearance.BorderSize = 5;
+            defButton.FlatAppearance.BorderColor = (Color.FromArgb(13, 166, 255));
+            */
+        }
+
     }
 }

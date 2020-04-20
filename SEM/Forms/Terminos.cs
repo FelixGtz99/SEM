@@ -16,11 +16,13 @@ namespace SEM.Forms
         {
             InitializeComponent();
             //Datos de la barra superior
-            this.ActiveControl = panel2;
+            //this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;
             btnClose.Location = new Point(this.Width - btnClose.Width, 0);
             panel2.Location = new Point(0, 0);
             panel2.Width = this.Width;
+
+            btnVolver.Focus();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

@@ -33,10 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
+            this.errorPass = new System.Windows.Forms.Label();
+            this.errorEmail = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAnonimo = new ePOSOne.btnProduct.Button_WOC();
-            this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLogin1 = new ePOSOne.btnProduct.Button_WOC();
             this.line2 = new System.Windows.Forms.Label();
             this.line1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,6 +48,9 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnAnonimo = new ePOSOne.btnProduct.Button_WOC();
+            this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLogin1 = new ePOSOne.btnProduct.Button_WOC();
             this.panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,11 +62,12 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEmail.Location = new System.Drawing.Point(154, 294);
+            this.txtEmail.Location = new System.Drawing.Point(154, 268);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(389, 25);
             this.txtEmail.TabIndex = 0;
             this.txtEmail.Text = "ejemplo@escuela.com";
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEmail_KeyDown);
             // 
             // txtPass
             // 
@@ -72,39 +75,40 @@
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPass.Location = new System.Drawing.Point(154, 398);
+            this.txtPass.Location = new System.Drawing.Point(154, 387);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(389, 25);
             this.txtPass.TabIndex = 1;
             this.txtPass.Text = "placeholder";
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEmail_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(150, 248);
+            this.label1.Location = new System.Drawing.Point(150, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Correo Electrónico";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(150, 352);
+            this.label2.Location = new System.Drawing.Point(150, 341);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "Contraseña";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.errorPass);
+            this.panel.Controls.Add(this.errorEmail);
             this.panel.Controls.Add(this.label3);
             this.panel.Controls.Add(this.btnAnonimo);
             this.panel.Controls.Add(this.btnRegistrar);
@@ -117,8 +121,32 @@
             this.panel.Controls.Add(this.txtEmail);
             this.panel.Location = new System.Drawing.Point(682, 41);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(688, 726);
+            this.panel.Size = new System.Drawing.Size(685, 726);
             this.panel.TabIndex = 6;
+            // 
+            // errorPass
+            // 
+            this.errorPass.AutoSize = true;
+            this.errorPass.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
+            this.errorPass.Location = new System.Drawing.Point(151, 428);
+            this.errorPass.Name = "errorPass";
+            this.errorPass.Size = new System.Drawing.Size(91, 18);
+            this.errorPass.TabIndex = 14;
+            this.errorPass.Text = "Placeholder";
+            this.errorPass.Visible = false;
+            // 
+            // errorEmail
+            // 
+            this.errorEmail.AutoSize = true;
+            this.errorEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
+            this.errorEmail.Location = new System.Drawing.Point(151, 309);
+            this.errorEmail.Name = "errorEmail";
+            this.errorEmail.Size = new System.Drawing.Size(91, 18);
+            this.errorEmail.TabIndex = 13;
+            this.errorEmail.Text = "Placeholder";
+            this.errorEmail.Visible = false;
             // 
             // label3
             // 
@@ -131,73 +159,10 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "¿Aún no tienes una cuenta?";
             // 
-            // btnAnonimo
-            // 
-            this.btnAnonimo.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnAnonimo.FlatAppearance.BorderSize = 0;
-            this.btnAnonimo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnonimo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnonimo.Location = new System.Drawing.Point(357, 606);
-            this.btnAnonimo.Name = "btnAnonimo";
-            this.btnAnonimo.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnAnonimo.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnAnonimo.Size = new System.Drawing.Size(311, 60);
-            this.btnAnonimo.TabIndex = 11;
-            this.btnAnonimo.Text = "Ingreso Anónimo";
-            this.btnAnonimo.TextColor = System.Drawing.Color.White;
-            this.btnAnonimo.UseVisualStyleBackColor = true;
-            this.btnAnonimo.Click += new System.EventHandler(this.BtnAnonimo_Click);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnRegistrar.FlatAppearance.BorderSize = 0;
-            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(22, 606);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnRegistrar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnRegistrar.Size = new System.Drawing.Size(311, 60);
-            this.btnRegistrar.TabIndex = 10;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.TextColor = System.Drawing.Color.White;
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
-            // 
-            // btnLogin1
-            // 
-            this.btnLogin1.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnLogin1.FlatAppearance.BorderSize = 0;
-            this.btnLogin1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin1.Location = new System.Drawing.Point(154, 455);
-            this.btnLogin1.Name = "btnLogin1";
-            this.btnLogin1.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnLogin1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnLogin1.Size = new System.Drawing.Size(390, 60);
-            this.btnLogin1.TabIndex = 9;
-            this.btnLogin1.Text = "Ingresar";
-            this.btnLogin1.TextColor = System.Drawing.Color.White;
-            this.btnLogin1.UseVisualStyleBackColor = true;
-            this.btnLogin1.Click += new System.EventHandler(this.BtnLogin1_Click);
-            // 
             // line2
             // 
             this.line2.BackColor = System.Drawing.Color.White;
-            this.line2.Location = new System.Drawing.Point(151, 426);
+            this.line2.Location = new System.Drawing.Point(151, 415);
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(392, 3);
             this.line2.TabIndex = 7;
@@ -205,7 +170,7 @@
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.White;
-            this.line1.Location = new System.Drawing.Point(151, 322);
+            this.line1.Location = new System.Drawing.Point(151, 296);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(392, 3);
             this.line1.TabIndex = 6;
@@ -301,6 +266,7 @@
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(55, 35);
             this.btnMin.TabIndex = 4;
+            this.btnMin.TabStop = false;
             this.btnMin.Text = "_";
             this.btnMin.UseVisualStyleBackColor = false;
             this.btnMin.Click += new System.EventHandler(this.BtnMin_Click);
@@ -318,9 +284,73 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(55, 35);
             this.btnClose.TabIndex = 3;
+            this.btnClose.TabStop = false;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // btnAnonimo
+            // 
+            this.btnAnonimo.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnAnonimo.FlatAppearance.BorderSize = 0;
+            this.btnAnonimo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnonimo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnonimo.Location = new System.Drawing.Point(357, 606);
+            this.btnAnonimo.Name = "btnAnonimo";
+            this.btnAnonimo.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnAnonimo.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnAnonimo.Size = new System.Drawing.Size(311, 60);
+            this.btnAnonimo.TabIndex = 11;
+            this.btnAnonimo.Text = "Ingreso Anónimo";
+            this.btnAnonimo.TextColor = System.Drawing.Color.White;
+            this.btnAnonimo.UseVisualStyleBackColor = true;
+            this.btnAnonimo.Click += new System.EventHandler(this.BtnAnonimo_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(22, 606);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnRegistrar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnRegistrar.Size = new System.Drawing.Size(311, 60);
+            this.btnRegistrar.TabIndex = 10;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextColor = System.Drawing.Color.White;
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
+            // 
+            // btnLogin1
+            // 
+            this.btnLogin1.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnLogin1.FlatAppearance.BorderSize = 0;
+            this.btnLogin1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin1.Location = new System.Drawing.Point(154, 455);
+            this.btnLogin1.Name = "btnLogin1";
+            this.btnLogin1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnLogin1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnLogin1.Size = new System.Drawing.Size(390, 60);
+            this.btnLogin1.TabIndex = 9;
+            this.btnLogin1.Text = "Ingresar";
+            this.btnLogin1.TextColor = System.Drawing.Color.White;
+            this.btnLogin1.UseVisualStyleBackColor = true;
+            this.btnLogin1.Click += new System.EventHandler(this.BtnLogin1_Click);
             // 
             // Login
             // 
@@ -337,7 +367,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SEM";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Login_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -370,5 +399,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label errorPass;
+        private System.Windows.Forms.Label errorEmail;
     }
 }

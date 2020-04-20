@@ -89,7 +89,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;

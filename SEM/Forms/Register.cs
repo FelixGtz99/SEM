@@ -75,10 +75,7 @@ namespace SEM
             cbCarrera.SelectedIndex=0;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         public String validarCampos(String email, String Experiente, String Pass, String Carrera, String nombre, String Apellido)
         {
 
@@ -137,35 +134,9 @@ namespace SEM
             return Errores;
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-           String check= validarCampos(txtCorreo.Text, txtExpediente.Text, txtContraseña.Text, cbCarrera.SelectedItem.ToString(), txtNombre.Text, txtApellido.Text);
-            if (check == " ")
-            {
-                try
-                {
-                    c.RegisterUser(txtExpediente.Text, txtNombre.Text, txtApellido.Text, txtContraseña.Text, txtCorreo.Text, cbCarrera.SelectedItem.ToString());
-                    MessageBox.Show("Registrado correctamente");
-                    this.Hide();
-                    new AccountMenu(c).Show();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else {
-
-                MessageBox.Show(check);
-            }
-                        
         
-        }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Errors_Click(object sender, EventArgs e)
         {
@@ -442,5 +413,20 @@ namespace SEM
                 btnRegistrar.Enabled = true;
             }
         }
+
+        private void BtnRegistrar_EnabledChanged(object sender, EventArgs e)
+        {
+            if(btnRegistrar.Enabled == true)
+            {
+                btnRegistrar.ButtonColor = Color.FromArgb(13, 70, 255);
+                btnRegistrar.TextColor = Color.White;
+            }
+            else
+            {
+                btnRegistrar.ButtonColor = Color.FromArgb(130, 170, 255);
+                btnRegistrar.TextColor = Color.Silver;
+            }
+        }
+        
     }
 }

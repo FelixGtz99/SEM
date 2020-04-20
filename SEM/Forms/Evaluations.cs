@@ -47,15 +47,14 @@ namespace SEM.Forms
             if (c.USER==0)
 
             {
-                button_WOC1.Visible = false;
-                button_WOC2.Visible = false;
+                likeBtn.Visible = false;
+                dislikeBtn.Visible = false;
             }
+            /*panel2.Focus();
+            dataGridView1.ClearSelection();*/
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void Evaluations_Load(object sender, EventArgs e)
         {
@@ -160,6 +159,12 @@ namespace SEM.Forms
             DataGridViewRow SelectedRow = dataGridView1.Rows[index];
             Comentario = SelectedRow.Cells[1].Value.ToString();
             Calificacion = SelectedRow.Cells[2].Value.ToString();
+            likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
+            likeBtn.TextColor = Color.White;
+            dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
+            dislikeBtn.TextColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1,120,213);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
         }
     }
 }

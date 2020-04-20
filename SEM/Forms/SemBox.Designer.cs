@@ -31,8 +31,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.defButton = new ePOSOne.btnProduct.Button_WOC();
             this.messageText = new System.Windows.Forms.RichTextBox();
+            this.defButton = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,9 +74,21 @@
             this.titleLabel.TabIndex = 27;
             this.titleLabel.Text = "Placeholder";
             // 
+            // messageText
+            // 
+            this.messageText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.messageText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.messageText.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageText.ForeColor = System.Drawing.Color.White;
+            this.messageText.Location = new System.Drawing.Point(137, 157);
+            this.messageText.Name = "messageText";
+            this.messageText.Size = new System.Drawing.Size(576, 180);
+            this.messageText.TabIndex = 28;
+            this.messageText.Text = "";
+            // 
             // defButton
             // 
-            this.defButton.BorderColor = System.Drawing.Color.Transparent;
+            this.defButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.defButton.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.defButton.FlatAppearance.BorderSize = 0;
             this.defButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -95,16 +107,6 @@
             this.defButton.UseVisualStyleBackColor = true;
             this.defButton.Click += new System.EventHandler(this.DefButton_Click);
             this.defButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DefButton_KeyDown);
-            // 
-            // messageText
-            // 
-            this.messageText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.messageText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.messageText.Location = new System.Drawing.Point(137, 157);
-            this.messageText.Name = "messageText";
-            this.messageText.Size = new System.Drawing.Size(576, 180);
-            this.messageText.TabIndex = 28;
-            this.messageText.Text = "";
             // 
             // SemBox
             // 

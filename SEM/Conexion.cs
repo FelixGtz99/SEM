@@ -14,7 +14,7 @@ namespace SEM
     public class Conexion
     {
         private int userID = 0;
-        private String pass = "", nombre = "", apellido = "", correo = "", carrera = "", SelectedTeacher = "", SelectedClass = "";
+        private String  pass = "", nombre = "", apellido = "", correo = "", carrera = "", SelectedTeacher = "", SelectedClass = "";
 
         private List<Maestro> Maestros = new List<Maestro>();
         private List<Materia> Materias = new List<Materia>();
@@ -56,6 +56,7 @@ namespace SEM
             get { return SelectedClass; }
             set { SelectedClass = value; }
         }
+   
         public List<Maestro> MAESTROS
         {
             get { return Maestros; }
@@ -645,7 +646,7 @@ namespace SEM
         //Registrar Docente
         public void guardarDocente(String nombre, String apellido, String alias, List<Materia> m)
         {
-            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias) VALUES(@id, @n, @a, @alias); ";
+            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias, img) VALUES(@id, @n, @a, @alias,@img); ";
 
             var IDD = MAESTROS.Count + 1;
 
@@ -654,6 +655,7 @@ namespace SEM
             cmd.Parameters.AddWithValue("a", apellido);
             cmd.Parameters.AddWithValue("alias", alias);
             cmd.Parameters.AddWithValue("id", IDD);
+            cmd.Parameters.AddWithValue("img", "no");
             cmd.ExecuteNonQuery();
             foreach (Materia materia in m)
             {
@@ -675,7 +677,25 @@ namespace SEM
 
 
         }
+        public String getImgM() {
+            String query = "SELECT img FROM docentes WHERE id_docente=@id";
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("id", getIDMaestro());
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    return reader.GetString(0);
+                }
+                else
+                {
+                    return "null";
+                }
+
+            }
+        }    
     }
+    
 }
 
 

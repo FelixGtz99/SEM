@@ -33,6 +33,9 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbEleccion = new System.Windows.Forms.ComboBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnRegistrarD = new System.Windows.Forms.Button();
             this.btnEvaluar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -43,14 +46,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRA = new System.Windows.Forms.Button();
-            this.btnRegistrarD = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.panel.SuspendLayout();
             this.panelCuenta.SuspendLayout();
             this.panelUniversidad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -120,6 +122,41 @@
             this.panel.Size = new System.Drawing.Size(941, 576);
             this.panel.TabIndex = 4;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(158, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tipo de Búsqueda";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 18);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Búsqueda";
+            // 
+            // btnRegistrarD
+            // 
+            this.btnRegistrarD.BackColor = System.Drawing.Color.White;
+            this.btnRegistrarD.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarD.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrarD.Location = new System.Drawing.Point(672, 426);
+            this.btnRegistrarD.Name = "btnRegistrarD";
+            this.btnRegistrarD.Size = new System.Drawing.Size(191, 62);
+            this.btnRegistrarD.TabIndex = 8;
+            this.btnRegistrarD.Text = "Registrar Docente";
+            this.btnRegistrarD.UseVisualStyleBackColor = false;
+            this.btnRegistrarD.Click += new System.EventHandler(this.btnRegistrarD_Click);
             // 
             // btnEvaluar
             // 
@@ -234,47 +271,21 @@
             this.btnRA.UseVisualStyleBackColor = false;
             this.btnRA.Click += new System.EventHandler(this.btnRA_Click);
             // 
-            // btnRegistrarD
+            // pictureBox2
             // 
-            this.btnRegistrarD.BackColor = System.Drawing.Color.White;
-            this.btnRegistrarD.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarD.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarD.Location = new System.Drawing.Point(672, 426);
-            this.btnRegistrarD.Name = "btnRegistrarD";
-            this.btnRegistrarD.Size = new System.Drawing.Size(191, 62);
-            this.btnRegistrarD.TabIndex = 8;
-            this.btnRegistrarD.Text = "Registrar Docente";
-            this.btnRegistrarD.UseVisualStyleBackColor = false;
-            this.btnRegistrarD.Click += new System.EventHandler(this.btnRegistrarD_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 18);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Búsqueda";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(158, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 18);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tipo de Búsqueda";
+            this.pictureBox2.Location = new System.Drawing.Point(1295, 128);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(320, 240);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1350, 747);
+            this.ClientSize = new System.Drawing.Size(1633, 747);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnRA);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEditar);
@@ -296,6 +307,7 @@
             this.panelUniversidad.ResumeLayout(false);
             this.panelUniversidad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +332,6 @@
         private System.Windows.Forms.Button btnEvaluar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

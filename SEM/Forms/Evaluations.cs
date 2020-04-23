@@ -40,6 +40,7 @@ namespace SEM.Forms
             //dataGridView1.Columns[4].Width = dataGridView1.Width / 9;
 
             pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            imgMaestro.ImageLocation = c.getImgM();
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             var path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, label6.Width, label6.Height);

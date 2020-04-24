@@ -162,8 +162,10 @@ namespace SEM.Forms
             Calificacion = SelectedRow.Cells[2].Value.ToString();
             likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
             likeBtn.TextColor = Color.White;
+            likeBtn.Enabled = true;
             dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
             dislikeBtn.TextColor = Color.White;
+            dislikeBtn.Enabled = true;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1,120,213);
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
         }

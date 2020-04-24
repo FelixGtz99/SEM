@@ -39,8 +39,9 @@ namespace SEM.Forms
             this.label11.Region = new Region(path);
             this.label13.Region = new Region(path);
 
-           
-           
+            txtComentarios.GotFocus += Comment_GotFocus;
+            txtComentarios.LostFocus += Comment_LostFocus;
+            
             CBMaestros();
             cbMaestro.SelectedIndex = n;
             CBMaterias();
@@ -139,6 +140,7 @@ namespace SEM.Forms
         private void cbMaestro_SelectedIndexChanged(object sender, EventArgs e)
         {
             CBMaterias();
+            this.checkFields();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -155,6 +157,49 @@ namespace SEM.Forms
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void TxtComentarios_TextChanged(object sender, EventArgs e)
+        {
+            //limitWarning.Visible = true;
+            limitWarning.Text = "Tienes " + (txtComentarios.MaxLength - txtComentarios.TextLength) + " caracteres restantes.";
+            this.checkFields();
+        }
+
+        private void Comment_GotFocus(object sender, EventArgs e)
+        {
+            limitWarning.Visible = true;
+        }
+
+        private void Comment_LostFocus(object sender, EventArgs e)
+        {
+            limitWarning.Visible = false;
+
+            this.checkFields();
+        }
+
+        
+
+
+        private void checkFields()
+        {
+            if(string.IsNullOrWhiteSpace(txtComentarios.Text) || cbMaestro.SelectedIndex == -1 || cbMateria.SelectedIndex == -1)
+            {
+                btnGuardar.Enabled = false;
+                btnGuardar.ButtonColor = Color.FromArgb(130, 170, 255);
+                btnGuardar.TextColor = Color.Silver;
+            }
+            else
+            {
+                btnGuardar.Enabled = true;
+                btnGuardar.ButtonColor = Color.FromArgb(13, 70, 255);
+                btnGuardar.TextColor = Color.White;
+            }
+        }
+
+        private void CbMateria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.checkFields();
         }
     }
 }

@@ -170,7 +170,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(448, 101);
+            this.label9.Location = new System.Drawing.Point(564, 101);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(242, 68);
             this.label9.TabIndex = 26;
@@ -181,7 +181,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(456, 189);
+            this.label1.Location = new System.Drawing.Point(572, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 24);
             this.label1.TabIndex = 28;
@@ -281,6 +281,7 @@
             // 
             this.dislikeBtn.BorderColor = System.Drawing.Color.Transparent;
             this.dislikeBtn.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(170)))));
+            this.dislikeBtn.Enabled = false;
             this.dislikeBtn.FlatAppearance.BorderSize = 0;
             this.dislikeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.dislikeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -302,6 +303,7 @@
             // 
             this.likeBtn.BorderColor = System.Drawing.Color.Transparent;
             this.likeBtn.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.likeBtn.Enabled = false;
             this.likeBtn.FlatAppearance.BorderSize = 0;
             this.likeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.likeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -321,9 +323,10 @@
             // 
             // imgMaestro
             // 
-            this.imgMaestro.Location = new System.Drawing.Point(926, 47);
+            this.imgMaestro.Location = new System.Drawing.Point(407, 113);
             this.imgMaestro.Name = "imgMaestro";
-            this.imgMaestro.Size = new System.Drawing.Size(320, 240);
+            this.imgMaestro.Size = new System.Drawing.Size(100, 100);
+            this.imgMaestro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgMaestro.TabIndex = 48;
             this.imgMaestro.TabStop = false;
             // 

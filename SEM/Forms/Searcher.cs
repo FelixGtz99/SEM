@@ -74,6 +74,7 @@ namespace SEM.Forms
             if (cbEleccion.SelectedItem.ToString()=="Docente")
             {
                 data.DataSource = c.verMaestros(txtBuscar.Text);
+                data.Columns["Promedio"].DefaultCellStyle.Format = "N2";
 
             }
             if (cbEleccion.SelectedItem.ToString() == "Materia")

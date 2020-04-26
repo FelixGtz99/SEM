@@ -312,7 +312,7 @@ namespace SEM
         //Crea una tabla con todos los maestros y su promedio Corregir el tema de que puedas buscar por apellido
         public DataTable verMaestros(String m)
         {
-            String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m)  GROUP BY(d.id_docente)";
+            String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio, COUNT(e.calificacion) AS \"Cantidad de Evaluaciones\" FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes  AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m)  GROUP BY(d.id_docente) UNION ALL SELECT (d.nombre || ' ' || d.apellido) as Maestro, 0 as Promedio, 0 FROM docentes d WHERE d.id_docente  NOT IN (SELECT e.id_docentes FROM evaluacion e) AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m)";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("m", "%" + m + "%");
@@ -644,7 +644,7 @@ namespace SEM
             return data;
         }
         //Registrar Docente
-        public void guardarDocente(String nombre, String apellido, String alias, List<Materia> m)
+        public void guardarDocente(String nombre, String apellido, String alias, List<Materia> m) 
         {
             String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias, img) VALUES(@id, @n, @a, @alias,@img); ";
 

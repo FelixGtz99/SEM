@@ -96,7 +96,7 @@ namespace SEM.Forms
                 if (c.chechUserVote(id))
                 {
                     //MessageBox.Show("No puedes votar otra vez por esta evaluacion");
-                    SemBox sb = new SemBox("shorterror", "No puedes votar por esta evaluación otra vez", "", "Aceptar");
+                    SemBox sb = new SemBox("shorterror", "Ya realizaste tu voto en esta evaluación", "", "Aceptar");
                     sb.Show();
                 }
                 else
@@ -131,7 +131,7 @@ namespace SEM.Forms
                 if (c.chechUserVote(id))
                 {
                     //MessageBox.Show("No puedes votar otra vez por esta evaluacion");
-                    SemBox sb = new SemBox("shorterror", "No puedes votar por esta evaluación otra vez", "", "Aceptar");
+                    SemBox sb = new SemBox("shorterror", "Ya realizaste tu voto en esta evaluación", "", "Aceptar");
                     sb.Show();
                 }
                 else

@@ -167,6 +167,8 @@ namespace SEM.Forms
                     Materias.Add(materia);
                 }
             }
+            cbMaterias.Items.Remove(m);
+        
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -184,6 +186,7 @@ namespace SEM.Forms
                     Materias.Remove(materia);
                 }
             }
+            cbMaterias.Items.Add(listMaterias.SelectedItem.ToString());
             var index = listMaterias.SelectedIndex;
             listMaterias.Items.RemoveAt(index);
         }

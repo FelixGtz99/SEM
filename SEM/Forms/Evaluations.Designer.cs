@@ -49,6 +49,7 @@
             this.dislikeBtn = new ePOSOne.btnProduct.Button_WOC();
             this.likeBtn = new ePOSOne.btnProduct.Button_WOC();
             this.imgMaestro = new System.Windows.Forms.PictureBox();
+            this.btnADD = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -330,12 +331,34 @@
             this.imgMaestro.TabIndex = 48;
             this.imgMaestro.TabStop = false;
             // 
+            // btnADD
+            // 
+            this.btnADD.BorderColor = System.Drawing.Color.Transparent;
+            this.btnADD.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.btnADD.FlatAppearance.BorderSize = 0;
+            this.btnADD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnADD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADD.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADD.Location = new System.Drawing.Point(1303, 298);
+            this.btnADD.Name = "btnADD";
+            this.btnADD.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnADD.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnADD.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnADD.Size = new System.Drawing.Size(51, 49);
+            this.btnADD.TabIndex = 49;
+            this.btnADD.Text = "+";
+            this.btnADD.TextColor = System.Drawing.Color.Silver;
+            this.btnADD.UseVisualStyleBackColor = true;
+            this.btnADD.Click += new System.EventHandler(this.button_WOC1_Click_1);
+            // 
             // Evaluations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnADD);
             this.Controls.Add(this.imgMaestro);
             this.Controls.Add(this.dislikeBtn);
             this.Controls.Add(this.likeBtn);
@@ -383,5 +406,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox imgMaestro;
+        private ePOSOne.btnProduct.Button_WOC btnADD;
     }
 }

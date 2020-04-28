@@ -50,6 +50,7 @@ namespace SEM.Forms
             {
                 likeBtn.Visible = false;
                 dislikeBtn.Visible = false;
+                btnADD.Visible = false;
             }
             /*panel2.Focus();
             dataGridView1.ClearSelection();*/
@@ -152,6 +153,12 @@ namespace SEM.Forms
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button_WOC1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new EditTeacher(c).Show();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

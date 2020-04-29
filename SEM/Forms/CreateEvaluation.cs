@@ -131,7 +131,7 @@ namespace SEM.Forms
             {
                 Console.WriteLine(ex.Message);
                 //MessageBox.Show("Error");
-                SemBox sb = new SemBox("short", "Ha ocurrido un error","", "Aceptar");
+                SemBox sb = new SemBox("long", "Ha ocurrido un error",ex.Message, "Aceptar");
                 sb.Show();
             }
 

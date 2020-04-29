@@ -68,6 +68,7 @@ namespace SEM.Forms
                 likeBtn.Visible = false;
                 dislikeBtn.Visible = false;
                 btnADD.Visible = false;
+                btnEvaluate.Visible = false;
             }
 
             c.getClases(c.getIDMaestro());

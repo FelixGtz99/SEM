@@ -69,11 +69,14 @@ namespace SEM.Forms
                 dislikeBtn.Visible = false;
                 btnADD.Visible = false;
             }
+
+            c.getClases(c.getIDMaestro());
+
             /*panel2.Focus();
             dataGridView1.ClearSelection();*/
         }
 
-        
+
 
         private void Evaluations_Load(object sender, EventArgs e)
         {

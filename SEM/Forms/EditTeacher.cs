@@ -19,7 +19,16 @@ namespace SEM.Forms
         {
             this.c = c;
             InitializeComponent();
-            titleLabel.Text = c.SMaestro;
+            //Datos de la barra superior
+            //this.ActiveControl = panel2;
+            btnClose.Height = panel2.Height;
+            btnClose.Location = new Point(this.Width - btnClose.Width, 0);
+            panel2.Location = new Point(0, 0);
+            panel2.Width = this.Width;
+
+            titleBox.SelectAll();
+            titleBox.SelectionAlignment = HorizontalAlignment.Center;
+            titleBox.Text = c.SMaestro;
             listMaterias.Items.Clear();
             //c.getClases(c.getIDMaestro());
             foreach (Materia materia in c.MATERIAS)
@@ -32,7 +41,13 @@ namespace SEM.Forms
                 //Mexicanada ¿Donde?
                 listMaterias.Items.Add(materia);
             }
-       
+
+            //Datos del tooltip
+            var path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, helpAdd.Width, helpAdd.Height);
+            this.helpAdd.Region = new Region(path);
+
+
 
         }
 
@@ -55,6 +70,11 @@ namespace SEM.Forms
           
             listMaterias.Items.Add(m);
             cbMaterias.Items.Remove(m);
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

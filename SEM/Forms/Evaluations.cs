@@ -177,8 +177,18 @@ namespace SEM.Forms
 
         private void button_WOC1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            new EditTeacher(c).Show();
+            //this.Hide();
+            var et = new EditTeacher(c);
+            et.Shown += (o, args) => { this.Enabled = false; };
+            et.FormClosed += (o, args) => {
+                this.Enabled = true;
+                this.c.getClases(c.getIDMaestro());
+                dataGridView2.DataSource = c.verMateriasM();
+                dataGridView2.Refresh();
+            };
+            et.Show();
+            //new EditTeacher(c).Show();
+
         }
 
         private void DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)

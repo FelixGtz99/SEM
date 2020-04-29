@@ -358,7 +358,7 @@ namespace SEM
         public DataTable verMateriasM()
         {
             String query = "SELECT (SELECT nombre_materia AS Materia FROM materia WHERE materia.id_materia = evaluacion.id_materia GROUP BY(id_materia)) AS \"Materia\", AVG(calificacion) AS \"Promedio\" FROM evaluacion WHERE id_docentes = @doc GROUP BY(id_materia) " +
-                 "UNION ALL SELECT (SELECT nombre_materia AS Materia FROM materia WHERE materia.id_materia = clases.materria) AS \"Materia\", 0 AS \"Promedio\" FROM clases WHERE docente = @doc";
+                 "UNION ALL SELECT (SELECT nombre_materia AS Materia FROM materia WHERE materia.id_materia = clases.materria) AS \"Materia\", 0 AS \"Promedio\" FROM clases WHERE docente = @doc AND clases.materria NOT IN(SELECT id_materia FROM evaluacion)";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("doc", getIDMaestro());

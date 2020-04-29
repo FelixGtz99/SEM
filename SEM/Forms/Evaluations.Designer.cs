@@ -31,30 +31,43 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbMateria = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.imgMaestro = new System.Windows.Forms.PictureBox();
+            this.panelEvaluaciones = new System.Windows.Forms.Panel();
+            this.panelMaterias = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.materiaLabel = new System.Windows.Forms.Label();
+            this.btnMaterias = new ePOSOne.btnProduct.Button_WOC();
             this.dislikeBtn = new ePOSOne.btnProduct.Button_WOC();
             this.likeBtn = new ePOSOne.btnProduct.Button_WOC();
-            this.imgMaestro = new System.Windows.Forms.PictureBox();
             this.btnADD = new ePOSOne.btnProduct.Button_WOC();
+            this.btnEvaluations = new ePOSOne.btnProduct.Button_WOC();
+            this.btnEvaluate = new ePOSOne.btnProduct.Button_WOC();
+            this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMaestro)).BeginInit();
+            this.panelEvaluaciones.SuspendLayout();
+            this.panelMaterias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -123,27 +136,6 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // btnVolver
-            // 
-            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
-            this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(28, 510);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnVolver.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnVolver.Size = new System.Drawing.Size(298, 60);
-            this.btnVolver.TabIndex = 14;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.TextColor = System.Drawing.Color.White;
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -193,35 +185,18 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(456, 310);
+            this.label2.Location = new System.Drawing.Point(64, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(269, 24);
             this.label2.TabIndex = 29;
             this.label2.Text = "Evaluaciones de la materia:";
-            // 
-            // cbMateria
-            // 
-            this.cbMateria.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbMateria.BackColor = System.Drawing.Color.White;
-            this.cbMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbMateria.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMateria.ForeColor = System.Drawing.Color.DimGray;
-            this.cbMateria.FormattingEnabled = true;
-            this.cbMateria.Items.AddRange(new object[] {
-            "Ingeneria En Sistemas De Informacion"});
-            this.cbMateria.Location = new System.Drawing.Point(894, 307);
-            this.cbMateria.Name = "cbMateria";
-            this.cbMateria.Size = new System.Drawing.Size(387, 32);
-            this.cbMateria.TabIndex = 43;
-            this.cbMateria.SelectedIndexChanged += new System.EventHandler(this.cbMateria_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(403, 312);
+            this.label6.Location = new System.Drawing.Point(11, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 25);
             this.label6.TabIndex = 44;
@@ -260,12 +235,12 @@
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.dataGridView1.Location = new System.Drawing.Point(460, 383);
+            this.dataGridView1.Location = new System.Drawing.Point(68, 110);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(821, 155);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -278,6 +253,139 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Ayuda";
             // 
+            // imgMaestro
+            // 
+            this.imgMaestro.Location = new System.Drawing.Point(407, 113);
+            this.imgMaestro.Name = "imgMaestro";
+            this.imgMaestro.Size = new System.Drawing.Size(100, 100);
+            this.imgMaestro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgMaestro.TabIndex = 48;
+            this.imgMaestro.TabStop = false;
+            // 
+            // panelEvaluaciones
+            // 
+            this.panelEvaluaciones.Controls.Add(this.materiaLabel);
+            this.panelEvaluaciones.Controls.Add(this.btnMaterias);
+            this.panelEvaluaciones.Controls.Add(this.label2);
+            this.panelEvaluaciones.Controls.Add(this.label6);
+            this.panelEvaluaciones.Controls.Add(this.dislikeBtn);
+            this.panelEvaluaciones.Controls.Add(this.dataGridView1);
+            this.panelEvaluaciones.Controls.Add(this.likeBtn);
+            this.panelEvaluaciones.Location = new System.Drawing.Point(459, 238);
+            this.panelEvaluaciones.Name = "panelEvaluaciones";
+            this.panelEvaluaciones.Size = new System.Drawing.Size(965, 416);
+            this.panelEvaluaciones.TabIndex = 50;
+            this.panelEvaluaciones.Visible = false;
+            // 
+            // panelMaterias
+            // 
+            this.panelMaterias.Controls.Add(this.label3);
+            this.panelMaterias.Controls.Add(this.btnADD);
+            this.panelMaterias.Controls.Add(this.label4);
+            this.panelMaterias.Controls.Add(this.btnEvaluations);
+            this.panelMaterias.Controls.Add(this.dataGridView2);
+            this.panelMaterias.Controls.Add(this.btnEvaluate);
+            this.panelMaterias.Location = new System.Drawing.Point(389, 326);
+            this.panelMaterias.Name = "panelMaterias";
+            this.panelMaterias.Size = new System.Drawing.Size(965, 425);
+            this.panelMaterias.TabIndex = 51;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(66, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 24);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Materias impartidas";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(14, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 25);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "?";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.label4, "Estas son las materias que se han registrado como clases de este maestro. Si cons" +
+        "ideras que falta alguna da click en agregar materia.");
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToOrderColumns = true;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.dataGridView2.Location = new System.Drawing.Point(68, 82);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(821, 246);
+            this.dataGridView2.TabIndex = 45;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellClick);
+            // 
+            // materiaLabel
+            // 
+            this.materiaLabel.AutoSize = true;
+            this.materiaLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materiaLabel.ForeColor = System.Drawing.Color.White;
+            this.materiaLabel.Location = new System.Drawing.Point(518, 12);
+            this.materiaLabel.Name = "materiaLabel";
+            this.materiaLabel.Size = new System.Drawing.Size(120, 24);
+            this.materiaLabel.TabIndex = 49;
+            this.materiaLabel.Text = "Placeholder";
+            // 
+            // btnMaterias
+            // 
+            this.btnMaterias.BorderColor = System.Drawing.Color.Transparent;
+            this.btnMaterias.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnMaterias.FlatAppearance.BorderSize = 0;
+            this.btnMaterias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMaterias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaterias.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaterias.Location = new System.Drawing.Point(399, 342);
+            this.btnMaterias.Name = "btnMaterias";
+            this.btnMaterias.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnMaterias.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnMaterias.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnMaterias.Size = new System.Drawing.Size(205, 49);
+            this.btnMaterias.TabIndex = 48;
+            this.btnMaterias.Text = "Ver Materias";
+            this.btnMaterias.TextColor = System.Drawing.Color.White;
+            this.btnMaterias.UseVisualStyleBackColor = true;
+            this.btnMaterias.Click += new System.EventHandler(this.BtnMaterias_Click);
+            // 
             // dislikeBtn
             // 
             this.dislikeBtn.BorderColor = System.Drawing.Color.Transparent;
@@ -288,7 +396,7 @@
             this.dislikeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.dislikeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dislikeBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dislikeBtn.Location = new System.Drawing.Point(976, 650);
+            this.dislikeBtn.Location = new System.Drawing.Point(568, 271);
             this.dislikeBtn.Name = "dislikeBtn";
             this.dislikeBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.dislikeBtn.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
@@ -310,7 +418,7 @@
             this.likeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.likeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.likeBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.likeBtn.Location = new System.Drawing.Point(652, 650);
+            this.likeBtn.Location = new System.Drawing.Point(264, 271);
             this.likeBtn.Name = "likeBtn";
             this.likeBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.likeBtn.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
@@ -322,35 +430,91 @@
             this.likeBtn.UseVisualStyleBackColor = true;
             this.likeBtn.Click += new System.EventHandler(this.button_WOC1_Click);
             // 
-            // imgMaestro
-            // 
-            this.imgMaestro.Location = new System.Drawing.Point(407, 113);
-            this.imgMaestro.Name = "imgMaestro";
-            this.imgMaestro.Size = new System.Drawing.Size(100, 100);
-            this.imgMaestro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgMaestro.TabIndex = 48;
-            this.imgMaestro.TabStop = false;
-            // 
             // btnADD
             // 
             this.btnADD.BorderColor = System.Drawing.Color.Transparent;
-            this.btnADD.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.btnADD.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.btnADD.FlatAppearance.BorderSize = 0;
             this.btnADD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnADD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnADD.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADD.Location = new System.Drawing.Point(1303, 298);
+            this.btnADD.Location = new System.Drawing.Point(710, 2);
             this.btnADD.Name = "btnADD";
             this.btnADD.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnADD.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
             this.btnADD.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnADD.Size = new System.Drawing.Size(51, 49);
+            this.btnADD.Size = new System.Drawing.Size(222, 49);
             this.btnADD.TabIndex = 49;
-            this.btnADD.Text = "+";
-            this.btnADD.TextColor = System.Drawing.Color.Silver;
+            this.btnADD.Text = "Agregar Materia";
+            this.btnADD.TextColor = System.Drawing.Color.White;
             this.btnADD.UseVisualStyleBackColor = true;
             this.btnADD.Click += new System.EventHandler(this.button_WOC1_Click_1);
+            // 
+            // btnEvaluations
+            // 
+            this.btnEvaluations.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEvaluations.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.btnEvaluations.Enabled = false;
+            this.btnEvaluations.FlatAppearance.BorderSize = 0;
+            this.btnEvaluations.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEvaluations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEvaluations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvaluations.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvaluations.Location = new System.Drawing.Point(549, 349);
+            this.btnEvaluations.Name = "btnEvaluations";
+            this.btnEvaluations.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnEvaluations.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnEvaluations.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnEvaluations.Size = new System.Drawing.Size(205, 49);
+            this.btnEvaluations.TabIndex = 47;
+            this.btnEvaluations.Text = "Ver evaluaciones";
+            this.btnEvaluations.TextColor = System.Drawing.Color.Silver;
+            this.btnEvaluations.UseVisualStyleBackColor = true;
+            this.btnEvaluations.Click += new System.EventHandler(this.BtnEvaluations_Click);
+            // 
+            // btnEvaluate
+            // 
+            this.btnEvaluate.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEvaluate.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.btnEvaluate.Enabled = false;
+            this.btnEvaluate.FlatAppearance.BorderSize = 0;
+            this.btnEvaluate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEvaluate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEvaluate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvaluate.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvaluate.Location = new System.Drawing.Point(260, 349);
+            this.btnEvaluate.Name = "btnEvaluate";
+            this.btnEvaluate.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnEvaluate.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnEvaluate.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnEvaluate.Size = new System.Drawing.Size(170, 49);
+            this.btnEvaluate.TabIndex = 46;
+            this.btnEvaluate.Text = "Evaluar";
+            this.btnEvaluate.TextColor = System.Drawing.Color.Silver;
+            this.btnEvaluate.UseVisualStyleBackColor = true;
+            this.btnEvaluate.Click += new System.EventHandler(this.BtnEvaluate_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(28, 510);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnVolver.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnVolver.Size = new System.Drawing.Size(298, 60);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // Evaluations
             // 
@@ -358,14 +522,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.btnADD);
+            this.Controls.Add(this.panelEvaluaciones);
+            this.Controls.Add(this.panelMaterias);
             this.Controls.Add(this.imgMaestro);
-            this.Controls.Add(this.dislikeBtn);
-            this.Controls.Add(this.likeBtn);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbMateria);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
@@ -381,6 +540,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMaestro)).EndInit();
+            this.panelEvaluaciones.ResumeLayout(false);
+            this.panelEvaluaciones.PerformLayout();
+            this.panelMaterias.ResumeLayout(false);
+            this.panelMaterias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +562,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbMateria;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private ePOSOne.btnProduct.Button_WOC likeBtn;
@@ -406,6 +569,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox imgMaestro;
+        private System.Windows.Forms.Panel panelEvaluaciones;
+        private System.Windows.Forms.Panel panelMaterias;
+        private System.Windows.Forms.Label label3;
         private ePOSOne.btnProduct.Button_WOC btnADD;
+        private System.Windows.Forms.Label label4;
+        private ePOSOne.btnProduct.Button_WOC btnEvaluations;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private ePOSOne.btnProduct.Button_WOC btnEvaluate;
+        private ePOSOne.btnProduct.Button_WOC btnMaterias;
+        private System.Windows.Forms.Label materiaLabel;
     }
 }

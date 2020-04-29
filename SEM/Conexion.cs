@@ -328,6 +328,8 @@ namespace SEM
         public DataTable verMaestros(String m)
         {
             String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio, COUNT(e.calificacion) AS \"Cantidad de Evaluaciones\" FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes  AND ((d.nombre ||' '|| d.apellido) LIKE @m OR alias LIKE @m)  GROUP BY(d.id_docente) UNION ALL SELECT (d.nombre || ' ' || d.apellido) as Maestro, 0 as Promedio, 0 FROM docentes d WHERE d.id_docente  NOT IN (SELECT e.id_docentes FROM evaluacion e) AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m)";
+            //String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio, COUNT(e.calificacion) AS \"Cantidad de Evaluaciones\" FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes  AND ((d.nombre ||' '|| d.apellido) LIKE @m OR alias LIKE @m)  GROUP BY(d.id_docente)  UNION ALL SELECT (d.nombre || ' ' || d.apellido) as Maestro, 0 as Promedio, 0 FROM docentes d WHERE d.id_docente  NOT IN (SELECT e.id_docentes FROM evaluacion e) AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m)";
+
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("m", "%" + m + "%");
@@ -350,6 +352,19 @@ namespace SEM
             Console.WriteLine(data);
             datos.Fill(data);
 
+            return data;
+        }
+        //Materias de un maestro
+        public DataTable verMateriasM()
+        {
+            String query = "SELECT (SELECT nombre_materia AS Materia FROM materia WHERE materia.id_materia = evaluacion.id_materia GROUP BY(id_materia)) AS Materia, AVG(calificacion) AS Promedio FROM evaluacion WHERE id_docentes = @doc GROUP BY(id_materia)";
+            var cmd = new NpgsqlCommand(query, con);
+            Console.WriteLine(query);
+            cmd.Parameters.AddWithValue("doc", getIDMaestro());
+            var datos = new NpgsqlDataAdapter(cmd);
+            DataTable data = new DataTable();
+            Console.WriteLine(data);
+            datos.Fill(data);
             return data;
         }
         //Crea una tabla con laas clases del maestro seleccionado

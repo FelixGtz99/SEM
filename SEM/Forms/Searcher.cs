@@ -28,8 +28,6 @@ namespace SEM.Forms
 
             label1.Text = "Hola " + c.NOMBRE + " " + c.APELLIDO;
             btnVer.Visible = false; btnEvaluar.Visible = false;
-            pictureBox2.ImageLocation = "https://fotos.subefotos.com/c69f8a79966a083429e639a56a9faf0do.jpg";
-         //   pictureBox2.Image = Image.FromFile("https://ibb.co/ct2RWNH");
             cbEleccion.SelectedIndex =0;
             c.SMaestro = "Ninguno we xd";
             c.SMateria = "Ninguna we xd";
@@ -75,11 +73,14 @@ namespace SEM.Forms
             {
                 data.DataSource = c.verMaestros(txtBuscar.Text);
                 data.Columns["Promedio"].DefaultCellStyle.Format = "N2";
+                data.Sort(this.data.Columns["maestro"], ListSortDirection.Ascending);
 
             }
             if (cbEleccion.SelectedItem.ToString() == "Materia")
             {
                 data.DataSource = c.verMaterias(txtBuscar.Text);
+                data.Sort(this.data.Columns["materia"], ListSortDirection.Ascending);
+
             }
             // data.DataSource = c.getEvaluacion();
         }

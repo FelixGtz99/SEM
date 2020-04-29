@@ -27,17 +27,22 @@ namespace SEM.Forms
             btnMin.Height = panel2.Height;
             panel2.Location = new Point(0, 0);
             panel2.Width = this.Width;
+
+            //Datos del panel de materias y evaluaciones
+            panelEvaluaciones.Location = panelMaterias.Location;
+            dataGridView2.DataSource = c.verMateriasM();
+
             label1.Text = c.SMaestro;
-            CBMaterias();
+            /*CBMaterias();
             cbMateria.SelectedIndex = 0;
             c.SMateria = cbMateria.SelectedItem.ToString();
            dataGridView1.DataSource= c.verEvaluaciones();
-           
-            //dataGridView1.Columns[0].Width = dataGridView1.Width / 9;
-            //dataGridView1.Columns[1].Width = dataGridView1.Width*33 / 72;
-           // dataGridView1.Columns[2].Width = dataGridView1.Width / 8;
-            //dataGridView1.Columns[3].Width = dataGridView1.Width / 9;
-            //dataGridView1.Columns[4].Width = dataGridView1.Width / 9;
+           */
+            /*dataGridView1.Columns[0].Width = dataGridView1.Width / 9;
+            dataGridView1.Columns[1].Width = dataGridView1.Width*33 / 72;
+            dataGridView1.Columns[2].Width = dataGridView1.Width / 8;
+            dataGridView1.Columns[3].Width = dataGridView1.Width / 9;
+            dataGridView1.Columns[4].Width = dataGridView1.Width / 9;*/
 
             pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
             string urlImg = c.getImgM();
@@ -51,9 +56,12 @@ namespace SEM.Forms
 
             }
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
+            //Para darle la forma circular a los tooltips
             var path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, label6.Width, label6.Height);
             this.label6.Region = new Region(path);
+            this.label4.Region = new Region(path);
             if (c.USER==0)
 
             {
@@ -71,7 +79,7 @@ namespace SEM.Forms
         {
 
         }
-        public void CBMaterias()
+       /* public void CBMaterias()
         {
 
             cbMateria.Items.Clear();
@@ -81,14 +89,14 @@ namespace SEM.Forms
                 cbMateria.Items.Add(materia);
             }
 
-        }
+        }*/
 
-        private void cbMateria_SelectedIndexChanged(object sender, EventArgs e)
+       /* private void cbMateria_SelectedIndexChanged(object sender, EventArgs e)
         {
             c.SMateria = cbMateria.SelectedItem.ToString();
         
             dataGridView1.DataSource = c.verEvaluaciones();
-        }
+        }*/
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
@@ -170,6 +178,66 @@ namespace SEM.Forms
             new EditTeacher(c).Show();
         }
 
+        private void DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var index = e.RowIndex;
+            DataGridViewRow SelectedRow = dataGridView2.Rows[index];
+            c.SMateria = SelectedRow.Cells[0].Value.ToString();
+            
+            btnEvaluate.ButtonColor = Color.FromArgb(13, 70, 255);
+            btnEvaluate.TextColor = Color.White;
+            btnEvaluate.Enabled = true;
+            btnEvaluations.ButtonColor = Color.FromArgb(13, 70, 255);
+            btnEvaluations.TextColor = Color.White;
+            btnEvaluations.Enabled = true;
+            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1, 120, 213);
+            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.White;
+        }
+
+        private void BtnEvaluate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new CreateEvaluation(c).Show();
+        }
+
+        private void BtnEvaluations_Click(object sender, EventArgs e)
+        {
+            panelEvaluaciones.Location = panelMaterias.Location;
+            panelMaterias.Visible = false;
+            panelEvaluaciones.Visible = true;
+            materiaLabel.Text = c.SMateria;
+            btnEvaluate.ButtonColor = Color.FromArgb(130, 170, 255);
+            btnEvaluate.TextColor = Color.Silver;
+            btnEvaluate.Enabled = false;
+            btnEvaluations.ButtonColor = Color.FromArgb(130, 170, 255);
+            btnEvaluations.TextColor = Color.Silver;
+            btnEvaluations.Enabled = false;
+            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.White;
+            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.DimGray;
+            dataGridView1.DataSource = c.verEvaluaciones();
+            dataGridView1.Columns[0].Width = dataGridView1.Width / 9;
+            dataGridView1.Columns[1].Width = dataGridView1.Width * 33 / 72;
+            dataGridView1.Columns[2].Width = dataGridView1.Width / 8;
+            dataGridView1.Columns[3].Width = dataGridView1.Width / 9;
+            dataGridView1.Columns[4].Width = dataGridView1.Width / 9;
+
+        }
+
+        private void BtnMaterias_Click(object sender, EventArgs e)
+        {
+            panelMaterias.Visible = true;
+            panelEvaluaciones.Visible = false;
+            likeBtn.TextColor = Color.Silver;
+            likeBtn.ButtonColor = Color.FromArgb(130, 170, 255);
+            likeBtn.Enabled = false;
+            dislikeBtn.ButtonColor = Color.FromArgb(255, 130, 170);
+            dislikeBtn.TextColor = Color.Silver;
+            dislikeBtn.Enabled = false;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DimGray;
+            dataGridView2.DataSource = c.verMateriasM();
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -186,6 +254,7 @@ namespace SEM.Forms
                 dislikeBtn.Enabled = true;
                 dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1, 120, 213);
                 dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+                
             }
             catch (Exception)
             {

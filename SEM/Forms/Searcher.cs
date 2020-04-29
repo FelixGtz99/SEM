@@ -203,7 +203,8 @@ namespace SEM.Forms
                 }
                 else
                 {
-
+                    this.Hide();
+                    new CreateEvaluation(c).Show();
                 }
             }
 

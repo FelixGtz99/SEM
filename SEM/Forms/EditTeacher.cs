@@ -28,7 +28,7 @@ namespace SEM.Forms
             }
             foreach (Materia materia in c.CLASES)
             {
-                cbMaterias.Items.Remove(materia);
+                cbMaterias.Items.Remove(materia.ToString());
                 //Mexicanada ¿Donde?
                 listMaterias.Items.Add(materia);
             }

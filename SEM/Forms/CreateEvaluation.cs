@@ -118,13 +118,19 @@ namespace SEM.Forms
             {
                 var iDM = getIDMaestro();
                 var iDMat = getIDMateria();
-                c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
-                //MessageBox.Show("Completado");
-                SemBox sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
-                this.Hide();
-                new Searcher(c).Show();
-                sb.Show();
-
+                if (c.checkEvaluaciones(iDM, iDMat))
+                {
+                    new SemBox("short", "Ya has evaluado este clase", "", "Aceptar").Show();
+                }
+                else
+                {
+                    c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
+                    //MessageBox.Show("Completado");
+                    SemBox sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
+                    this.Hide();
+                    new Searcher(c).Show();
+                    sb.Show();
+                }
 
             }
             catch (Exception ex)

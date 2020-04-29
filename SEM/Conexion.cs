@@ -305,10 +305,25 @@ namespace SEM
             datos.Fill(data);
             return data;
         }
-        /*public Boolean chexkEvaluaciones(int id) {
-            String query = "Select * From evaluacion where";
-
-        }*/
+        public Boolean checkEvaluaciones(int idD, int idM) {
+            String query = "Select * From evaluacion where id_usuario=@id AND id_docentes=@d AND id_materia= @m";
+           
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("id", userID);
+            cmd.Parameters.AddWithValue("d", idD);
+            cmd.Parameters.AddWithValue("m", idM);
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                reader.Close();
+                return true;
+            }
+            else {
+                reader.Close();
+                return false;
+            }
+           
+        }
         //Crea una tabla con todos los maestros y su promedio Corregir el tema de que puedas buscar por apellido
         public DataTable verMaestros(String m)
         {

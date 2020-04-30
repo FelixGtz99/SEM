@@ -467,7 +467,7 @@ namespace SEM
         {
             Console.WriteLine(getIDMateria());
             Console.WriteLine(getIDMaestro());
-            String query = "SELECT fecha AS \"Fecha\", comentario AS \"Comentario\", calificacion AS \"Calificacion\", likes AS \"Me gusta\", dislikes AS \"No me gusta\" FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluacion DESC";
+            String query = "SELECT id_evaluacion, fecha AS \"Fecha\", comentario AS \"Comentario\", calificacion AS \"Calificacion\", likes AS \"Me gusta\", dislikes AS \"No me gusta\" FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluacion DESC";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("idD", getIDMaestro());
@@ -501,28 +501,7 @@ namespace SEM
                 }
             }
         }
-        //Busca el id de la evaluacion hecha
-        public int getIDEvaluacion(String Comentario, String Calificacion)
-        {
-            Console.WriteLine("Entro al check");
-            int id = 0;
-            String query = "SELECT id_evaluacion FROM evaluacion WHERE  id_docentes=@idD AND id_materia=@idM AND comentario=@co AND calificacion=@ca";
-            var cmd = new NpgsqlCommand(query, con);
-            cmd.Parameters.AddWithValue("co", Comentario);
-            cmd.Parameters.AddWithValue("ca", Int32.Parse(Calificacion));
-            cmd.Parameters.AddWithValue("idD", getIDMaestro());
-            cmd.Parameters.AddWithValue("idM", getIDMateria());
-            using (var reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    id = reader.GetInt32(0);
-
-                }
-
-            }
-            return id;
-        }
+       
         //Buscar si el usuario voto
         public Boolean chechUserVote(int id)
         {
@@ -594,6 +573,7 @@ namespace SEM
                 cmd.Parameters.AddWithValue("id", id);
 
                 cmd.ExecuteNonQuery();
+                
 
             }
             catch (Exception ex)
@@ -650,7 +630,7 @@ namespace SEM
         //ver la actividad reciente
         public DataTable verRA()
         {
-            String query = "SELECT (d.nombre || ' ' || d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes, e.fecha FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
+            String query = "SELECT e.id_evaluacion, (d.nombre || ' ' || d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes, e.fecha FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
             var cmd = new NpgsqlCommand(query, con);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();

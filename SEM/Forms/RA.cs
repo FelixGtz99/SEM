@@ -13,12 +13,13 @@ namespace SEM.Forms
     public partial class RA : Form
     {
         Conexion c = null;
-        String Comentario = " ", Calificacion = " ";
+        String idEvaluacion = " ";
         public RA(Conexion c)
         {
             this.c = c;
             InitializeComponent();
             data.DataSource = c.verRA();
+            data.Columns["id_evaluacion"].Visible = false;
             if (c.USER==0)
             {
                 btnLike.Visible = false;
@@ -45,7 +46,7 @@ namespace SEM.Forms
 
         private void btnLike_Click(object sender, EventArgs e)
         {
-            int id = c.getIDEvaluacion(Comentario, Calificacion);
+            int id = int.Parse(idEvaluacion);
 
             if (c.chechUserVote(id))
             {
@@ -63,7 +64,7 @@ namespace SEM.Forms
 
         private void btnDislike_Click(object sender, EventArgs e)
         {
-            int id = c.getIDEvaluacion(Comentario, Calificacion);
+            int id = int.Parse(idEvaluacion);
 
             if (c.chechUserVote(id))
             {
@@ -83,10 +84,11 @@ namespace SEM.Forms
         {
             var index = e.RowIndex;
             DataGridViewRow SelectedRow = data.Rows[index];
-            c.SMateria = SelectedRow.Cells[0].Value.ToString();
-            c.SMaestro = SelectedRow.Cells[1].Value.ToString();
-            Comentario = SelectedRow.Cells[2].Value.ToString();
-            Calificacion = SelectedRow.Cells[3].Value.ToString();
+            idEvaluacion = SelectedRow.Cells[0].Value.ToString();
+            c.SMateria = SelectedRow.Cells[1].Value.ToString();
+            c.SMaestro = SelectedRow.Cells[2].Value.ToString();
+           // Comentario = SelectedRow.Cells[2].Value.ToString();
+            //Calificacion = SelectedRow.Cells[3].Value.ToString();
 
         }
     }

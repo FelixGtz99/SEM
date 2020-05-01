@@ -21,8 +21,8 @@ namespace SEM
             c.getMaterias();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login(c));
-            //Application.Run(new EditAccount(c));
+            //Application.Run(new Login(c));
+            Application.Run(new AdminPanel());
         }
     }
 }

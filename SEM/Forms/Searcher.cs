@@ -17,14 +17,30 @@ namespace SEM.Forms
         {
             InitializeComponent();
             this.c = c;
-         
+            
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+
+            //Datos de la barra superior
+            this.ActiveControl = panel2;
+            btnClose.Height = panel2.Height;
+            btnClose.Location = new Point(this.Width - btnClose.Width, 0);
+            btnMin.Location = new Point(this.Width - btnClose.Width - btnMin.Width, 0);
+            btnMin.Height = panel2.Height;
+            panel2.Location = new Point(0, 0);
+            panel2.Width = this.Width;
+
+            //Para darle la forma circular a los tooltips
+            var path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, searchBack1.Width, searchBack1.Height);
+            this.searchBack1.Region = new Region(path);
+            this.searchBack3.Region = new Region(path);
+
             //panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
             //panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
             // panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
-            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
 
             label1.Text = "Hola " + c.NOMBRE + " " + c.APELLIDO;
             btnVer.Visible = false; btnEvaluar.Visible = false;
@@ -209,5 +225,17 @@ namespace SEM.Forms
             }
 
         }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
 }

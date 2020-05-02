@@ -256,6 +256,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -288,6 +289,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\search-tool-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\signs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\user-close-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

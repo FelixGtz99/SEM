@@ -98,6 +98,12 @@ namespace SEM.Forms
                 data.Sort(this.data.Columns["materia"], ListSortDirection.Ascending);
 
             }
+            
+            foreach(DataGridViewColumn dgc in data.Columns)
+            {
+                
+                dgc.DividerWidth = 10;
+            }
             // data.DataSource = c.getEvaluacion();
         }
 

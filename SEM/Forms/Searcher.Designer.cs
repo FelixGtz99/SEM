@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbEleccion = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +55,8 @@
             this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelCuenta.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,14 +77,14 @@
             // cbEleccion
             // 
             this.cbEleccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEleccion.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEleccion.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEleccion.FormattingEnabled = true;
             this.cbEleccion.Items.AddRange(new object[] {
             "Docente",
             "Materia"});
-            this.cbEleccion.Location = new System.Drawing.Point(432, 274);
+            this.cbEleccion.Location = new System.Drawing.Point(616, 226);
             this.cbEleccion.Name = "cbEleccion";
-            this.cbEleccion.Size = new System.Drawing.Size(191, 33);
+            this.cbEleccion.Size = new System.Drawing.Size(191, 32);
             this.cbEleccion.TabIndex = 3;
             this.cbEleccion.SelectedIndexChanged += new System.EventHandler(this.cbEleccion_SelectedIndexChanged);
             // 
@@ -89,7 +93,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(428, 247);
+            this.label4.Location = new System.Drawing.Point(409, 235);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(177, 24);
             this.label4.TabIndex = 9;
@@ -100,7 +104,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(403, 74);
+            this.label3.Location = new System.Drawing.Point(426, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(256, 56);
             this.label3.TabIndex = 7;
@@ -174,7 +178,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.panel1.Controls.Add(this.btnRA);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.labelCarrera);
@@ -227,48 +231,79 @@
             this.btnRegistrarD.BackColor = System.Drawing.Color.White;
             this.btnRegistrarD.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarD.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarD.Location = new System.Drawing.Point(1030, 459);
+            this.btnRegistrarD.Location = new System.Drawing.Point(1149, 605);
             this.btnRegistrarD.Name = "btnRegistrarD";
             this.btnRegistrarD.Size = new System.Drawing.Size(191, 62);
             this.btnRegistrarD.TabIndex = 30;
             this.btnRegistrarD.Text = "Registrar Docente";
             this.btnRegistrarD.UseVisualStyleBackColor = false;
+            this.btnRegistrarD.Click += new System.EventHandler(this.btnRegistrarD_Click);
             // 
             // btnEvaluar
             // 
             this.btnEvaluar.BackColor = System.Drawing.Color.White;
             this.btnEvaluar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEvaluar.ForeColor = System.Drawing.Color.Black;
-            this.btnEvaluar.Location = new System.Drawing.Point(1030, 355);
+            this.btnEvaluar.Location = new System.Drawing.Point(1149, 404);
             this.btnEvaluar.Name = "btnEvaluar";
             this.btnEvaluar.Size = new System.Drawing.Size(191, 46);
             this.btnEvaluar.TabIndex = 29;
             this.btnEvaluar.Text = "Evaluar";
             this.btnEvaluar.UseVisualStyleBackColor = false;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnVer
             // 
             this.btnVer.BackColor = System.Drawing.Color.White;
             this.btnVer.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.Color.Black;
-            this.btnVer.Location = new System.Drawing.Point(1030, 275);
+            this.btnVer.Location = new System.Drawing.Point(1149, 296);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(191, 46);
             this.btnVer.TabIndex = 28;
             this.btnVer.Text = "Ver";
             this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // data
             // 
             this.data.AllowUserToAddRows = false;
             this.data.AllowUserToDeleteRows = false;
+            this.data.AllowUserToResizeColumns = false;
+            this.data.AllowUserToResizeRows = false;
             this.data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.data.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.data.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data.DefaultCellStyle = dataGridViewCellStyle2;
             this.data.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.data.Location = new System.Drawing.Point(492, 380);
+            this.data.EnableHeadersVisualStyles = false;
+            this.data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.data.Location = new System.Drawing.Point(381, 277);
+            this.data.MultiSelect = false;
             this.data.Name = "data";
+            this.data.RowHeadersVisible = false;
+            this.data.RowTemplate.DividerHeight = 10;
+            this.data.RowTemplate.Height = 45;
             this.data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data.Size = new System.Drawing.Size(466, 216);
+            this.data.Size = new System.Drawing.Size(741, 479);
             this.data.TabIndex = 27;
             // 
             // searchBack1
@@ -325,7 +360,7 @@
             // btnRA
             // 
             this.btnRA.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRA.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnRA.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.btnRA.FlatAppearance.BorderSize = 0;
             this.btnRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -336,18 +371,18 @@
             this.btnRA.Name = "btnRA";
             this.btnRA.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnRA.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnRA.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnRA.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btnRA.Size = new System.Drawing.Size(298, 60);
             this.btnRA.TabIndex = 20;
             this.btnRA.Text = "Actividad Reciente";
-            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.btnRA.UseVisualStyleBackColor = true;
             this.btnRA.Click += new System.EventHandler(this.btnRA_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnEditar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnEditar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -358,11 +393,11 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnEditar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnEditar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnEditar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btnEditar.Size = new System.Drawing.Size(298, 60);
             this.btnEditar.TabIndex = 19;
             this.btnEditar.Text = "Editar Cuenta";
-            this.btnEditar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnEditar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -377,7 +412,7 @@
             // btnCerrar
             // 
             this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnCerrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -388,13 +423,33 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnCerrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.btnCerrar.Size = new System.Drawing.Size(298, 60);
             this.btnCerrar.TabIndex = 14;
             this.btnCerrar.Text = "Cerrar Sesión";
-            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.Location = new System.Drawing.Point(361, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(3, 675);
+            this.label2.TabIndex = 34;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.Location = new System.Drawing.Point(361, 271);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(1004, 3);
+            this.label5.TabIndex = 35;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Searcher
             // 
@@ -402,6 +457,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnRegistrarD);
             this.Controls.Add(this.btnEvaluar);
@@ -461,5 +518,7 @@
         private ePOSOne.btnProduct.Button_WOC btnBuscar;
         private ePOSOne.btnProduct.Button_WOC btnEditar;
         private ePOSOne.btnProduct.Button_WOC btnRA;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
     }
 }

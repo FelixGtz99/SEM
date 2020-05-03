@@ -35,6 +35,9 @@ namespace SEM.Forms
             path.AddEllipse(0, 0, searchBack1.Width, searchBack1.Height);
             this.searchBack1.Region = new Region(path);
             this.searchBack3.Region = new Region(path);
+            var path2 = new System.Drawing.Drawing2D.GraphicsPath();
+            path2.AddEllipse(0, 0, helpSearch.Width, helpSearch.Height);
+            this.helpSearch.Region = new Region(path2);
 
             //panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
             //panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
@@ -42,9 +45,9 @@ namespace SEM.Forms
             pictureBox2.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
 
-            label1.Text = "Hola " + c.NOMBRE + " " + c.APELLIDO;
+            label1.Text = c.NOMBRE + " " + c.APELLIDO;
             btnVer.Visible = false; btnEvaluar.Visible = false;
-            cbEleccion.SelectedIndex =0;
+            maestrosRadio.Checked = true;
             c.SMaestro = "Ninguno we xd";
             c.SMateria = "Ninguna we xd";
             if (c.USER==0)
@@ -67,7 +70,7 @@ namespace SEM.Forms
             if (c.USER != 0)
             {
                 btnEvaluar.Visible = true;
-                if (cbEleccion.SelectedItem.ToString() == "Materia")
+                if (materiasRadio.Checked == true)
                 {
 
 
@@ -80,19 +83,22 @@ namespace SEM.Forms
 
             }
             else {
-                if (cbEleccion.SelectedItem.ToString() != "Materia")
+                //if (cbEleccion.SelectedItem.ToString() != "Materia")
+                if(materiasRadio.Checked != true)
                 {
                     btnVer.Visible = true;
                 }
             }
-            if (cbEleccion.SelectedItem.ToString()=="Docente")
+            //if (cbEleccion.SelectedItem.ToString()=="Docente")
+            if(maestrosRadio.Checked == true)
             {
                 data.DataSource = c.verMaestros(txtBuscar.Text);
                 data.Columns["Promedio"].DefaultCellStyle.Format = "N2";
                 data.Sort(this.data.Columns["maestro"], ListSortDirection.Ascending);
 
             }
-            if (cbEleccion.SelectedItem.ToString() == "Materia")
+            //if (cbEleccion.SelectedItem.ToString() == "Materia")
+            if(materiasRadio.Checked == true)
             {
                 data.DataSource = c.verMaterias(txtBuscar.Text);
                 data.Sort(this.data.Columns["materia"], ListSortDirection.Ascending);
@@ -102,7 +108,7 @@ namespace SEM.Forms
             foreach(DataGridViewColumn dgc in data.Columns)
             {
                 
-                dgc.DividerWidth = 10;
+                dgc.DividerWidth = 1;
             }
             // data.DataSource = c.getEvaluacion();
         }
@@ -139,7 +145,8 @@ namespace SEM.Forms
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            if (cbEleccion.SelectedItem.ToString().Equals("Docente"))
+            //if (cbEleccion.SelectedItem.ToString().Equals("Docente"))
+            if(maestrosRadio.Checked == true)
             {
                 if (c.SMaestro == "Ninguno we xd")
                 {
@@ -150,7 +157,8 @@ namespace SEM.Forms
                     new Evaluations(c).Show();
                 }
             }
-            if (cbEleccion.SelectedItem.ToString().Equals("Materia"))
+            //if (cbEleccion.SelectedItem.ToString().Equals("Materia"))
+            if(materiasRadio.Checked == true)
             {
                 if (c.SMateria == "Ninguna we xd")
                 {
@@ -168,7 +176,8 @@ namespace SEM.Forms
         {
             try
             {
-                if (cbEleccion.SelectedItem.ToString() == "Docente")
+                //if (cbEleccion.SelectedItem.ToString() == "Docente")
+                if(maestrosRadio.Checked == true)
                 {
                     var index = e.RowIndex;
                     DataGridViewRow SelectedRow = data.Rows[index];
@@ -205,7 +214,8 @@ namespace SEM.Forms
 
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
-            if (cbEleccion.SelectedItem.ToString().Equals("Docente"))
+            //if (cbEleccion.SelectedItem.ToString().Equals("Docente"))
+            if(maestrosRadio.Checked == true)
             {
                 if (c.SMaestro == "Ninguno we xd")
                 {
@@ -217,7 +227,8 @@ namespace SEM.Forms
                     new CreateEvaluation(c).Show();
                 }
             }
-            if (cbEleccion.SelectedItem.ToString().Equals("Materia"))
+            //if (cbEleccion.SelectedItem.ToString().Equals("Materia"))
+            if(materiasRadio.Checked == true)
             {
                 if (c.SMateria == "Ninguna we xd")
                 {

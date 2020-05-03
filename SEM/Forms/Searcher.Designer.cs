@@ -30,11 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cbEleccion = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panelCuenta = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
@@ -43,25 +42,30 @@
             this.labelCarrera = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnRegistrarD = new System.Windows.Forms.Button();
-            this.btnEvaluar = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
             this.data = new System.Windows.Forms.DataGridView();
             this.searchBack1 = new System.Windows.Forms.Label();
             this.searchBack2 = new System.Windows.Forms.Label();
             this.searchBack3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnRegistrarD = new ePOSOne.btnProduct.Button_WOC();
+            this.btnEvaluar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnVer = new ePOSOne.btnProduct.Button_WOC();
             this.btnBuscar = new ePOSOne.btnProduct.Button_WOC();
             this.btnRA = new ePOSOne.btnProduct.Button_WOC();
             this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panelCuenta.SuspendLayout();
+            this.label6 = new System.Windows.Forms.Label();
+            this.maestrosRadio = new System.Windows.Forms.RadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.materiasRadio = new System.Windows.Forms.RadioButton();
+            this.helpSearch = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -69,33 +73,21 @@
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(432, 158);
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.txtBuscar.Location = new System.Drawing.Point(484, 160);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(469, 25);
             this.txtBuscar.TabIndex = 2;
-            // 
-            // cbEleccion
-            // 
-            this.cbEleccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEleccion.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEleccion.FormattingEnabled = true;
-            this.cbEleccion.Items.AddRange(new object[] {
-            "Docente",
-            "Materia"});
-            this.cbEleccion.Location = new System.Drawing.Point(616, 226);
-            this.cbEleccion.Name = "cbEleccion";
-            this.cbEleccion.Size = new System.Drawing.Size(191, 32);
-            this.cbEleccion.TabIndex = 3;
-            this.cbEleccion.SelectedIndexChanged += new System.EventHandler(this.cbEleccion_SelectedIndexChanged);
+            this.txtBuscar.Text = "Buscar";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
             this.label4.Location = new System.Drawing.Point(409, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 24);
+            this.label4.Size = new System.Drawing.Size(135, 18);
             this.label4.TabIndex = 9;
             this.label4.Text = "Tipo de Búsqueda";
             // 
@@ -110,24 +102,16 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Búsqueda";
             // 
-            // panelCuenta
-            // 
-            this.panelCuenta.Controls.Add(this.label1);
-            this.panelCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.panelCuenta.ForeColor = System.Drawing.Color.White;
-            this.panelCuenta.Location = new System.Drawing.Point(326, 165);
-            this.panelCuenta.Name = "panelCuenta";
-            this.panelCuenta.Size = new System.Drawing.Size(763, 65);
-            this.panelCuenta.TabIndex = 6;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 3);
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.label1.Location = new System.Drawing.Point(41, 321);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 26);
+            this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
+            this.label1.Text = "Placeholder";
             // 
             // panel2
             // 
@@ -179,11 +163,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnRA);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.labelCarrera);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.panelCuenta);
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -226,45 +212,6 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "sem";
             // 
-            // btnRegistrarD
-            // 
-            this.btnRegistrarD.BackColor = System.Drawing.Color.White;
-            this.btnRegistrarD.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarD.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarD.Location = new System.Drawing.Point(1149, 605);
-            this.btnRegistrarD.Name = "btnRegistrarD";
-            this.btnRegistrarD.Size = new System.Drawing.Size(191, 62);
-            this.btnRegistrarD.TabIndex = 30;
-            this.btnRegistrarD.Text = "Registrar Docente";
-            this.btnRegistrarD.UseVisualStyleBackColor = false;
-            this.btnRegistrarD.Click += new System.EventHandler(this.btnRegistrarD_Click);
-            // 
-            // btnEvaluar
-            // 
-            this.btnEvaluar.BackColor = System.Drawing.Color.White;
-            this.btnEvaluar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEvaluar.ForeColor = System.Drawing.Color.Black;
-            this.btnEvaluar.Location = new System.Drawing.Point(1149, 404);
-            this.btnEvaluar.Name = "btnEvaluar";
-            this.btnEvaluar.Size = new System.Drawing.Size(191, 46);
-            this.btnEvaluar.TabIndex = 29;
-            this.btnEvaluar.Text = "Evaluar";
-            this.btnEvaluar.UseVisualStyleBackColor = false;
-            this.btnEvaluar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnVer
-            // 
-            this.btnVer.BackColor = System.Drawing.Color.White;
-            this.btnVer.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.ForeColor = System.Drawing.Color.Black;
-            this.btnVer.Location = new System.Drawing.Point(1149, 296);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(191, 46);
-            this.btnVer.TabIndex = 28;
-            this.btnVer.Text = "Ver";
-            this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
             // data
             // 
             this.data.AllowUserToAddRows = false;
@@ -272,7 +219,6 @@
             this.data.AllowUserToResizeColumns = false;
             this.data.AllowUserToResizeRows = false;
             this.data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.data.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.data.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -285,32 +231,42 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.data.DefaultCellStyle = dataGridViewCellStyle2;
             this.data.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data.EnableHeadersVisualStyles = false;
             this.data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.data.Location = new System.Drawing.Point(381, 277);
+            this.data.Location = new System.Drawing.Point(381, 302);
             this.data.MultiSelect = false;
             this.data.Name = "data";
-            this.data.RowHeadersVisible = false;
+            this.data.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.data.RowHeadersWidth = 15;
+            this.data.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.data.RowTemplate.DividerHeight = 10;
-            this.data.RowTemplate.Height = 45;
+            this.data.RowTemplate.Height = 90;
             this.data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data.Size = new System.Drawing.Size(741, 479);
+            this.data.Size = new System.Drawing.Size(694, 454);
             this.data.TabIndex = 27;
             // 
             // searchBack1
             // 
             this.searchBack1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.searchBack1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.searchBack1.Location = new System.Drawing.Point(409, 148);
+            this.searchBack1.Location = new System.Drawing.Point(461, 150);
             this.searchBack1.Name = "searchBack1";
             this.searchBack1.Size = new System.Drawing.Size(46, 46);
             this.searchBack1.TabIndex = 31;
@@ -320,7 +276,7 @@
             // 
             this.searchBack2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.searchBack2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.searchBack2.Location = new System.Drawing.Point(432, 148);
+            this.searchBack2.Location = new System.Drawing.Point(484, 150);
             this.searchBack2.Name = "searchBack2";
             this.searchBack2.Size = new System.Drawing.Size(469, 46);
             this.searchBack2.TabIndex = 32;
@@ -330,11 +286,100 @@
             // 
             this.searchBack3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.searchBack3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.searchBack3.Location = new System.Drawing.Point(878, 148);
+            this.searchBack3.Location = new System.Drawing.Point(930, 150);
             this.searchBack3.Name = "searchBack3";
             this.searchBack3.Size = new System.Drawing.Size(46, 46);
             this.searchBack3.TabIndex = 33;
             this.searchBack3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.Location = new System.Drawing.Point(361, -2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(3, 729);
+            this.label2.TabIndex = 34;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.Location = new System.Drawing.Point(361, 271);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(1004, 3);
+            this.label5.TabIndex = 35;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnRegistrarD
+            // 
+            this.btnRegistrarD.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarD.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnRegistrarD.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarD.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarD.Image = global::SEM.Properties.Resources.social;
+            this.btnRegistrarD.Location = new System.Drawing.Point(1081, 687);
+            this.btnRegistrarD.Name = "btnRegistrarD";
+            this.btnRegistrarD.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarD.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnRegistrarD.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnRegistrarD.Size = new System.Drawing.Size(259, 60);
+            this.btnRegistrarD.TabIndex = 38;
+            this.btnRegistrarD.Text = "Registrar Maestro";
+            this.btnRegistrarD.TextColor = System.Drawing.Color.White;
+            this.btnRegistrarD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegistrarD.UseVisualStyleBackColor = true;
+            this.btnRegistrarD.Click += new System.EventHandler(this.btnRegistrarD_Click);
+            // 
+            // btnEvaluar
+            // 
+            this.btnEvaluar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEvaluar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnEvaluar.FlatAppearance.BorderSize = 0;
+            this.btnEvaluar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEvaluar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEvaluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvaluar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvaluar.Image = global::SEM.Properties.Resources.messages;
+            this.btnEvaluar.Location = new System.Drawing.Point(1081, 373);
+            this.btnEvaluar.Name = "btnEvaluar";
+            this.btnEvaluar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnEvaluar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnEvaluar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnEvaluar.Size = new System.Drawing.Size(259, 60);
+            this.btnEvaluar.TabIndex = 37;
+            this.btnEvaluar.Text = "Evaluar";
+            this.btnEvaluar.TextColor = System.Drawing.Color.White;
+            this.btnEvaluar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEvaluar.UseVisualStyleBackColor = true;
+            this.btnEvaluar.Click += new System.EventHandler(this.btnEvaluar_Click);
+            // 
+            // btnVer
+            // 
+            this.btnVer.BorderColor = System.Drawing.Color.Transparent;
+            this.btnVer.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnVer.FlatAppearance.BorderSize = 0;
+            this.btnVer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVer.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Image = global::SEM.Properties.Resources.people;
+            this.btnVer.Location = new System.Drawing.Point(1081, 302);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnVer.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnVer.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnVer.Size = new System.Drawing.Size(259, 60);
+            this.btnVer.TabIndex = 36;
+            this.btnVer.Text = "Ver";
+            this.btnVer.TextColor = System.Drawing.Color.White;
+            this.btnVer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnBuscar
             // 
@@ -346,7 +391,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = global::SEM.Properties.Resources.search_tool_symbol;
-            this.btnBuscar.Location = new System.Drawing.Point(964, 141);
+            this.btnBuscar.Location = new System.Drawing.Point(1016, 143);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnBuscar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
@@ -354,6 +399,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(60, 60);
             this.btnBuscar.TabIndex = 19;
             this.btnBuscar.TextColor = System.Drawing.Color.White;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -375,7 +421,8 @@
             this.btnRA.Size = new System.Drawing.Size(298, 60);
             this.btnRA.TabIndex = 20;
             this.btnRA.Text = "Actividad Reciente";
-            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRA.UseVisualStyleBackColor = true;
             this.btnRA.Click += new System.EventHandler(this.btnRA_Click);
             // 
@@ -397,7 +444,8 @@
             this.btnEditar.Size = new System.Drawing.Size(298, 60);
             this.btnEditar.TabIndex = 19;
             this.btnEditar.Text = "Editar Cuenta";
-            this.btnEditar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnEditar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -427,29 +475,66 @@
             this.btnCerrar.Size = new System.Drawing.Size(298, 60);
             this.btnCerrar.TabIndex = 14;
             this.btnCerrar.Text = "Cerrar Sesión";
-            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // label2
+            // label6
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(361, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(3, 675);
-            this.label2.TabIndex = 34;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.label6.Location = new System.Drawing.Point(44, 346);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 16);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Estudiante";
             // 
-            // label5
+            // maestrosRadio
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(361, 271);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1004, 3);
-            this.label5.TabIndex = 35;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.maestrosRadio.AutoSize = true;
+            this.maestrosRadio.Location = new System.Drawing.Point(3, 24);
+            this.maestrosRadio.Name = "maestrosRadio";
+            this.maestrosRadio.Size = new System.Drawing.Size(91, 22);
+            this.maestrosRadio.TabIndex = 39;
+            this.maestrosRadio.TabStop = true;
+            this.maestrosRadio.Text = "Maestros";
+            this.maestrosRadio.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.materiasRadio);
+            this.panel3.Controls.Add(this.maestrosRadio);
+            this.panel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.panel3.Location = new System.Drawing.Point(580, 207);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(373, 61);
+            this.panel3.TabIndex = 40;
+            // 
+            // materiasRadio
+            // 
+            this.materiasRadio.AutoSize = true;
+            this.materiasRadio.Location = new System.Drawing.Point(233, 24);
+            this.materiasRadio.Name = "materiasRadio";
+            this.materiasRadio.Size = new System.Drawing.Size(87, 22);
+            this.materiasRadio.TabIndex = 40;
+            this.materiasRadio.TabStop = true;
+            this.materiasRadio.Text = "Materias";
+            this.materiasRadio.UseVisualStyleBackColor = true;
+            // 
+            // helpSearch
+            // 
+            this.helpSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpSearch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpSearch.ForeColor = System.Drawing.Color.White;
+            this.helpSearch.Location = new System.Drawing.Point(408, 161);
+            this.helpSearch.Name = "helpSearch";
+            this.helpSearch.Size = new System.Drawing.Size(25, 25);
+            this.helpSearch.TabIndex = 41;
+            this.helpSearch.Text = "?";
+            this.helpSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Searcher
             // 
@@ -457,18 +542,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.helpSearch);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnRegistrarD);
             this.Controls.Add(this.btnEvaluar);
             this.Controls.Add(this.btnVer);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.data);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.cbEleccion);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.searchBack2);
             this.Controls.Add(this.searchBack3);
@@ -480,13 +565,13 @@
             this.Text = "Searcher";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Searcher_Load);
-            this.panelCuenta.ResumeLayout(false);
-            this.panelCuenta.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,8 +579,6 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox cbEleccion;
-        private System.Windows.Forms.Panel panelCuenta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -508,9 +591,6 @@
         private ePOSOne.btnProduct.Button_WOC btnCerrar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnRegistrarD;
-        private System.Windows.Forms.Button btnEvaluar;
-        private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.DataGridView data;
         private System.Windows.Forms.Label searchBack1;
         private System.Windows.Forms.Label searchBack2;
@@ -520,5 +600,13 @@
         private ePOSOne.btnProduct.Button_WOC btnRA;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
+        private ePOSOne.btnProduct.Button_WOC btnVer;
+        private ePOSOne.btnProduct.Button_WOC btnEvaluar;
+        private ePOSOne.btnProduct.Button_WOC btnRegistrarD;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton maestrosRadio;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton materiasRadio;
+        private System.Windows.Forms.Label helpSearch;
     }
 }

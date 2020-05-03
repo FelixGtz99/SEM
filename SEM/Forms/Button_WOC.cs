@@ -62,10 +62,26 @@ namespace ePOSOne.btnProduct
 
             //Button Text
             SizeF stringSize = g.MeasureString(Text, Font);
-            g.DrawString(Text, Font, brush, 60, (Height - stringSize.Height) / 2);
+            
             if(Image != null)
             {
-                g.DrawImage(Image, 14, (Height - Image.Height)/2);
+                if (TextImageRelation == TextImageRelation.ImageBeforeText)
+                {
+                    g.DrawImage(Image, 14, (Height - Image.Height) / 2);
+                    g.DrawString(Text, Font, brush, 60, (Height - stringSize.Height) / 2);
+
+                } else if(TextImageRelation == TextImageRelation.TextBeforeImage)
+                {
+                    g.DrawImage(Image, Width-14-Image.Width, (Height - Image.Height) / 2);
+                    g.DrawString(Text, Font, brush, Width - 60 - Image.Width - stringSize.Width, (Height - stringSize.Height) / 2);
+
+                }
+
+
+            }
+            else
+            {
+                g.DrawString(Text, Font, brush, (Width - stringSize.Width) / 2, (Height - stringSize.Height) / 2);
 
             }
 

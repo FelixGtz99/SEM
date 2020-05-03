@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Searcher));
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,24 +50,27 @@
             this.searchBack3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.maestrosRadio = new System.Windows.Forms.RadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.materiasRadio = new System.Windows.Forms.RadioButton();
+            this.helpSearch = new System.Windows.Forms.Label();
+            this.helpResults = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRegistrarD = new ePOSOne.btnProduct.Button_WOC();
             this.btnEvaluar = new ePOSOne.btnProduct.Button_WOC();
             this.btnVer = new ePOSOne.btnProduct.Button_WOC();
             this.btnBuscar = new ePOSOne.btnProduct.Button_WOC();
             this.btnRA = new ePOSOne.btnProduct.Button_WOC();
             this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
-            this.label6 = new System.Windows.Forms.Label();
-            this.maestrosRadio = new System.Windows.Forms.RadioButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.materiasRadio = new System.Windows.Forms.RadioButton();
-            this.helpSearch = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -79,6 +84,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(469, 25);
             this.txtBuscar.TabIndex = 2;
             this.txtBuscar.Text = "Buscar";
+            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBuscar_KeyDown);
             // 
             // label4
             // 
@@ -87,9 +93,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
             this.label4.Location = new System.Drawing.Point(409, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 18);
+            this.label4.Size = new System.Drawing.Size(139, 18);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Tipo de Búsqueda";
+            this.label4.Text = "Tipo de Búsqueda:";
             // 
             // label3
             // 
@@ -222,45 +228,47 @@
             this.data.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.data.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data.DefaultCellStyle = dataGridViewCellStyle11;
             this.data.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data.EnableHeadersVisualStyles = false;
             this.data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.data.Location = new System.Drawing.Point(381, 302);
+            this.data.Location = new System.Drawing.Point(381, 324);
             this.data.MultiSelect = false;
             this.data.Name = "data";
             this.data.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.data.RowHeadersWidth = 15;
             this.data.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.data.RowTemplate.DividerHeight = 10;
             this.data.RowTemplate.Height = 90;
             this.data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data.Size = new System.Drawing.Size(694, 454);
+            this.data.Size = new System.Drawing.Size(694, 432);
             this.data.TabIndex = 27;
+            this.data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellClick);
+            this.data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_CellContentClick);
             // 
             // searchBack1
             // 
@@ -311,6 +319,104 @@
             this.label5.Size = new System.Drawing.Size(1004, 3);
             this.label5.TabIndex = 35;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.label6.Location = new System.Drawing.Point(44, 346);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 16);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Estudiante";
+            // 
+            // maestrosRadio
+            // 
+            this.maestrosRadio.AutoSize = true;
+            this.maestrosRadio.Checked = true;
+            this.maestrosRadio.Location = new System.Drawing.Point(3, 24);
+            this.maestrosRadio.Name = "maestrosRadio";
+            this.maestrosRadio.Size = new System.Drawing.Size(91, 22);
+            this.maestrosRadio.TabIndex = 39;
+            this.maestrosRadio.TabStop = true;
+            this.maestrosRadio.Text = "Maestros";
+            this.maestrosRadio.UseVisualStyleBackColor = true;
+            this.maestrosRadio.CheckedChanged += new System.EventHandler(this.MateriasRadio_CheckedChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.materiasRadio);
+            this.panel3.Controls.Add(this.maestrosRadio);
+            this.panel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.panel3.Location = new System.Drawing.Point(623, 207);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(330, 61);
+            this.panel3.TabIndex = 40;
+            // 
+            // materiasRadio
+            // 
+            this.materiasRadio.AutoSize = true;
+            this.materiasRadio.Location = new System.Drawing.Point(233, 24);
+            this.materiasRadio.Name = "materiasRadio";
+            this.materiasRadio.Size = new System.Drawing.Size(87, 22);
+            this.materiasRadio.TabIndex = 40;
+            this.materiasRadio.TabStop = true;
+            this.materiasRadio.Text = "Materias";
+            this.materiasRadio.UseVisualStyleBackColor = true;
+            this.materiasRadio.CheckedChanged += new System.EventHandler(this.MateriasRadio_CheckedChanged);
+            // 
+            // helpSearch
+            // 
+            this.helpSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpSearch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpSearch.ForeColor = System.Drawing.Color.White;
+            this.helpSearch.Location = new System.Drawing.Point(408, 161);
+            this.helpSearch.Name = "helpSearch";
+            this.helpSearch.Size = new System.Drawing.Size(25, 25);
+            this.helpSearch.TabIndex = 41;
+            this.helpSearch.Text = "?";
+            this.helpSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpSearch, "Introduce el nombre del maestro o materia que deseas buscar. Presiona el botón cu" +
+        "ando el campo esté vacío para mostrar todos.");
+            // 
+            // helpResults
+            // 
+            this.helpResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpResults.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpResults.ForeColor = System.Drawing.Color.White;
+            this.helpResults.Location = new System.Drawing.Point(408, 296);
+            this.helpResults.Name = "helpResults";
+            this.helpResults.Size = new System.Drawing.Size(25, 25);
+            this.helpResults.TabIndex = 42;
+            this.helpResults.Text = "?";
+            this.helpResults.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpResults, resources.GetString("helpResults.ToolTip"));
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 15000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Ayuda";
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.AutoPopDelay = 15000;
+            this.toolTip2.InitialDelay = 500;
+            this.toolTip2.ReshowDelay = 100;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(54, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            this.toolTip2.SetToolTip(this.pictureBox2, "Universidad de Sonora");
             // 
             // btnRegistrarD
             // 
@@ -400,6 +506,7 @@
             this.btnBuscar.TabIndex = 19;
             this.btnBuscar.TextColor = System.Drawing.Color.White;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip2.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -449,14 +556,6 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(54, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
             // btnCerrar
             // 
             this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
@@ -480,68 +579,13 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.label6.Location = new System.Drawing.Point(44, 346);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 16);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Estudiante";
-            // 
-            // maestrosRadio
-            // 
-            this.maestrosRadio.AutoSize = true;
-            this.maestrosRadio.Location = new System.Drawing.Point(3, 24);
-            this.maestrosRadio.Name = "maestrosRadio";
-            this.maestrosRadio.Size = new System.Drawing.Size(91, 22);
-            this.maestrosRadio.TabIndex = 39;
-            this.maestrosRadio.TabStop = true;
-            this.maestrosRadio.Text = "Maestros";
-            this.maestrosRadio.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.materiasRadio);
-            this.panel3.Controls.Add(this.maestrosRadio);
-            this.panel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.panel3.Location = new System.Drawing.Point(580, 207);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(373, 61);
-            this.panel3.TabIndex = 40;
-            // 
-            // materiasRadio
-            // 
-            this.materiasRadio.AutoSize = true;
-            this.materiasRadio.Location = new System.Drawing.Point(233, 24);
-            this.materiasRadio.Name = "materiasRadio";
-            this.materiasRadio.Size = new System.Drawing.Size(87, 22);
-            this.materiasRadio.TabIndex = 40;
-            this.materiasRadio.TabStop = true;
-            this.materiasRadio.Text = "Materias";
-            this.materiasRadio.UseVisualStyleBackColor = true;
-            // 
-            // helpSearch
-            // 
-            this.helpSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.helpSearch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.helpSearch.ForeColor = System.Drawing.Color.White;
-            this.helpSearch.Location = new System.Drawing.Point(408, 161);
-            this.helpSearch.Name = "helpSearch";
-            this.helpSearch.Size = new System.Drawing.Size(25, 25);
-            this.helpSearch.TabIndex = 41;
-            this.helpSearch.Text = "?";
-            this.helpSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.helpResults);
             this.Controls.Add(this.helpSearch);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnRegistrarD);
@@ -569,9 +613,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -608,5 +652,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton materiasRadio;
         private System.Windows.Forms.Label helpSearch;
+        private System.Windows.Forms.Label helpResults;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

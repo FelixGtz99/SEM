@@ -38,6 +38,11 @@ namespace SEM.Forms
             var path2 = new System.Drawing.Drawing2D.GraphicsPath();
             path2.AddEllipse(0, 0, helpSearch.Width, helpSearch.Height);
             this.helpSearch.Region = new Region(path2);
+            this.helpResults.Region = new Region(path2);
+
+            //Para que se borre o llene la barra de búsqueda al darle click
+            txtBuscar.GotFocus += txtBuscar_GotFocus;
+            txtBuscar.LostFocus += txtBuscar_LostFocus;
 
             //panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
             //panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
@@ -47,7 +52,7 @@ namespace SEM.Forms
 
             label1.Text = c.NOMBRE + " " + c.APELLIDO;
             btnVer.Visible = false; btnEvaluar.Visible = false;
-            maestrosRadio.Checked = true;
+            //maestrosRadio.Checked = true;
             c.SMaestro = "Ninguno we xd";
             c.SMateria = "Ninguna we xd";
             if (c.USER==0)
@@ -66,7 +71,11 @@ namespace SEM.Forms
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             btnVer.Visible = false;
-
+            string searched = "";
+            if(txtBuscar.Text != "Buscar")
+            {
+                searched = txtBuscar.Text;
+            }
             if (c.USER != 0)
             {
                 btnEvaluar.Visible = true;
@@ -92,7 +101,7 @@ namespace SEM.Forms
             //if (cbEleccion.SelectedItem.ToString()=="Docente")
             if(maestrosRadio.Checked == true)
             {
-                data.DataSource = c.verMaestros(txtBuscar.Text);
+                data.DataSource = c.verMaestros(searched);
                 data.Columns["Promedio"].DefaultCellStyle.Format = "N2";
                 data.Sort(this.data.Columns["maestro"], ListSortDirection.Ascending);
 
@@ -100,7 +109,7 @@ namespace SEM.Forms
             //if (cbEleccion.SelectedItem.ToString() == "Materia")
             if(materiasRadio.Checked == true)
             {
-                data.DataSource = c.verMaterias(txtBuscar.Text);
+                data.DataSource = c.verMaterias(searched);
                 data.Sort(this.data.Columns["materia"], ListSortDirection.Ascending);
 
             }
@@ -109,6 +118,22 @@ namespace SEM.Forms
             {
                 
                 dgc.DividerWidth = 1;
+            }
+            data.Rows[0].Cells[0].Selected = true;
+            if (maestrosRadio.Checked == true)
+            {
+                //var index = e.RowIndex;
+                //DataGridViewRow SelectedRow = data.Rows[index];
+                c.SMaestro = data.Rows[0].Cells[0].Value.ToString();
+
+
+            }
+            else
+            {
+                //var index = e.RowIndex;
+                //DataGridViewRow SelectedRow = data.Rows[index];
+                c.SMateria = data.Rows[0].Cells[0].Value.ToString();
+                Console.WriteLine("Entto aqi");
             }
             // data.DataSource = c.getEvaluacion();
         }
@@ -253,6 +278,34 @@ namespace SEM.Forms
             Application.Exit();
         }
 
-        
+        private void TxtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBuscar_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtBuscar_GotFocus(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar")
+            {
+                txtBuscar.Text = "";
+            }
+        }
+        private void txtBuscar_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar";
+            }
+            
+
+        }
+
+        private void MateriasRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            btnBuscar_Click(this, new EventArgs());
+        }
     }
 }

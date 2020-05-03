@@ -48,6 +48,7 @@ namespace SEM.Forms
             string urlImg = c.getImgM();
             if(urlImg == "null" || string.IsNullOrEmpty(urlImg) || urlImg == "no")
             {
+              //  MessageBox.Show("WHAT THE FUCK");
                 imgMaestro.ImageLocation = "https://fotos.subefotos.com/a77a9fc14733c78d00746a077a874ce5o.png";
             }
             else

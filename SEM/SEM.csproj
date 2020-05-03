@@ -311,5 +311,8 @@
   <ItemGroup>
     <None Include="icons\social.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\default.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

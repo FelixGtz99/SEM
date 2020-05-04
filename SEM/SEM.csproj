@@ -314,5 +314,8 @@
   <ItemGroup>
     <None Include="icons\default.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\search.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,12 +18,56 @@ namespace SEM.Forms
         {
             this.c = c;
             InitializeComponent();
-            data.DataSource = c.verRA();
-            if (c.USER==0)
+            //data.DataSource = c.verRA();
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            /*if (c.USER==0)
             {
                 btnLike.Visible = false;
                 btnDislike.Visible = false;
 
+            }*/
+
+            //Datos de la barra superior
+            this.ActiveControl = panel2;
+            btnClose.Height = panel2.Height;
+            btnClose.Location = new Point(this.Width - btnClose.Width, 0);
+            btnMin.Location = new Point(this.Width - btnClose.Width - btnMin.Width, 0);
+            btnMin.Height = panel2.Height;
+            panel2.Location = new Point(0, 0);
+            panel2.Width = this.Width;
+
+            //Para darle la forma circular a los tooltips
+            var path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, helpRecent.Width, helpRecent.Height);
+            this.helpRecent.Region = new Region(path);
+            this.helpData.Region = new Region(path);
+
+            //Miscelaneous
+            label1.Text = c.NOMBRE + " " + c.APELLIDO;
+            pictureBox2.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+
+            this.data.Rows.Add("Se publicó un comentario en el perfil del maestro: Luis Ochoa.", "30/04/2020");
+            this.data.Rows.Add("Se asoció la materia Ingeniería de Software 2 con el maestro: Abril Lopez.", "29/04/2020");
+            this.data.Rows.Add("Se ha añadido al maestro: Pedro Hernandez.", "28/04/2020");
+            this.data.Rows.Add("Se subipo una foto para el maestro: Alonso Perez Soltero.", "27/04/2020");
+            this.data.Rows.Add("El administrador añadió la materia Introducción al Derecho 4", "26/04/2020");
+            this.data.Rows.Add("El administrador cambió la foto del maestro: Leslie Garcia Montijo.","25/04/2020");
+            string selectedActivity = data.Rows[0].Cells[0].Value.ToString();
+            if (selectedActivity.Contains("maestro:"))
+            {
+                btnVer.Enabled = true;
+                btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
+                int begin = selectedActivity.IndexOf(':');
+                int end = selectedActivity.IndexOf('.');
+                int selectLength = end - begin - 2;
+                c.SMaestro = selectedActivity.Substring(begin + 2, selectLength);
+            }
+            else
+            {
+                btnVer.Enabled = false;
+                btnVer.ButtonColor = Color.FromArgb(130, 170, 255);
             }
         }
 
@@ -79,14 +123,59 @@ namespace SEM.Forms
             }
         }
 
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new EditAccount(c).Show();
+
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            c.USER = 0;
+            this.Hide();
+            new Login(c).Show();
+        }
+
+        private void BtnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnVer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Evaluations(c).Show();
+        }
+
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var index = e.RowIndex;
             DataGridViewRow SelectedRow = data.Rows[index];
-            c.SMateria = SelectedRow.Cells[0].Value.ToString();
-            c.SMaestro = SelectedRow.Cells[1].Value.ToString();
-            Comentario = SelectedRow.Cells[2].Value.ToString();
-            Calificacion = SelectedRow.Cells[3].Value.ToString();
+            /* c.SMateria = SelectedRow.Cells[0].Value.ToString();
+             c.SMaestro = SelectedRow.Cells[1].Value.ToString();
+             Comentario = SelectedRow.Cells[2].Value.ToString();
+             Calificacion = SelectedRow.Cells[3].Value.ToString();*/
+            string selectedActivity = SelectedRow.Cells[0].Value.ToString();
+            if (selectedActivity.Contains("maestro:"))
+            {
+                btnVer.Enabled = true;
+                btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
+                int begin = selectedActivity.IndexOf(':');
+                int end = selectedActivity.IndexOf('.');
+                int selectLength = end - begin - 2;
+                c.SMaestro = selectedActivity.Substring(begin + 2, selectLength);
+            }
+            else
+            {
+                btnVer.Enabled = false;
+                btnVer.ButtonColor = Color.FromArgb(130, 170, 255);
+            }
 
         }
     }

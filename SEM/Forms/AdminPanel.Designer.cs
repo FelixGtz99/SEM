@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.notifications = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -57,10 +55,12 @@
             this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
             this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
+            this.notifications = new System.Windows.Forms.DataGridView();
+            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.notifications)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notifications)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -114,9 +114,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.notifications);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.richTextBox2);
@@ -130,73 +131,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label2.Location = new System.Drawing.Point(44, 200);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 24);
+            this.label2.Size = new System.Drawing.Size(118, 19);
             this.label2.TabIndex = 18;
             this.label2.Text = "Notificaciones";
-            // 
-            // notifications
-            // 
-            this.notifications.AllowUserToDeleteRows = false;
-            this.notifications.AllowUserToResizeColumns = false;
-            this.notifications.AllowUserToResizeRows = false;
-            this.notifications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.notifications.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.notifications.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.notifications.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.notifications.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.notifications.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.notifications.ColumnHeadersHeight = 50;
-            this.notifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.notifications.ColumnHeadersVisible = false;
-            this.notifications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.DefaultCellStyle = dataGridViewCellStyle5;
-            this.notifications.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.notifications.Location = new System.Drawing.Point(12, 227);
-            this.notifications.MultiSelect = false;
-            this.notifications.Name = "notifications";
-            this.notifications.ReadOnly = true;
-            this.notifications.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.notifications.RowHeadersVisible = false;
-            this.notifications.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.notifications.RowTemplate.DividerHeight = 3;
-            this.notifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.notifications.ShowEditingIcon = false;
-            this.notifications.Size = new System.Drawing.Size(349, 348);
-            this.notifications.TabIndex = 17;
-            this.notifications.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Notifications";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // label8
             // 
@@ -222,15 +163,15 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.richTextBox2.BackColor = System.Drawing.Color.White;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.richTextBox2.Font = new System.Drawing.Font("Arial", 12F);
             this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.richTextBox2.Location = new System.Drawing.Point(46, 78);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(285, 54);
             this.richTextBox2.TabIndex = 12;
-            this.richTextBox2.Text = "Dr. Federico Miguel Cirett Galán";
+            this.richTextBox2.Text = "Dr. José Luis Ochoa Hernández";
             // 
             // label1
             // 
@@ -245,11 +186,11 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Arial Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.richTextBox1.Location = new System.Drawing.Point(601, 96);
+            this.richTextBox1.Location = new System.Drawing.Point(601, 104);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(675, 141);
             this.richTextBox1.TabIndex = 11;
@@ -268,7 +209,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(602, 317);
+            this.label3.Location = new System.Drawing.Point(484, 309);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 24);
             this.label3.TabIndex = 13;
@@ -276,31 +217,30 @@
             // 
             // cbMaterias
             // 
-            this.cbMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaterias.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaterias.Font = new System.Drawing.Font("Arial", 12F);
             this.cbMaterias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbMaterias.FormattingEnabled = true;
-            this.cbMaterias.Location = new System.Drawing.Point(606, 376);
+            this.cbMaterias.Location = new System.Drawing.Point(488, 368);
             this.cbMaterias.Name = "cbMaterias";
-            this.cbMaterias.Size = new System.Drawing.Size(510, 32);
+            this.cbMaterias.Size = new System.Drawing.Size(510, 26);
             this.cbMaterias.TabIndex = 14;
             this.cbMaterias.SelectedIndexChanged += new System.EventHandler(this.cbMaterias_SelectedIndexChanged);
             // 
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.Black;
-            this.line1.Location = new System.Drawing.Point(603, 463);
+            this.line1.Location = new System.Drawing.Point(485, 455);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(513, 3);
             this.line1.TabIndex = 16;
             // 
             // txtMaterias
             // 
-            this.txtMaterias.BackColor = System.Drawing.Color.White;
+            this.txtMaterias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.txtMaterias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaterias.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaterias.ForeColor = System.Drawing.Color.DimGray;
-            this.txtMaterias.Location = new System.Drawing.Point(606, 435);
+            this.txtMaterias.Location = new System.Drawing.Point(488, 427);
             this.txtMaterias.Name = "txtMaterias";
             this.txtMaterias.Size = new System.Drawing.Size(510, 25);
             this.txtMaterias.TabIndex = 15;
@@ -308,13 +248,12 @@
             // 
             // cbMaestros
             // 
-            this.cbMaestros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaestros.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaestros.Font = new System.Drawing.Font("Arial", 12F);
             this.cbMaestros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbMaestros.FormattingEnabled = true;
-            this.cbMaestros.Location = new System.Drawing.Point(606, 577);
+            this.cbMaestros.Location = new System.Drawing.Point(488, 569);
             this.cbMaestros.Name = "cbMaestros";
-            this.cbMaestros.Size = new System.Drawing.Size(510, 32);
+            this.cbMaestros.Size = new System.Drawing.Size(510, 26);
             this.cbMaestros.TabIndex = 48;
             this.cbMaestros.SelectedIndexChanged += new System.EventHandler(this.cbMaestros_SelectedIndexChanged);
             // 
@@ -323,7 +262,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(602, 518);
+            this.label4.Location = new System.Drawing.Point(484, 510);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 24);
             this.label4.TabIndex = 47;
@@ -334,7 +273,7 @@
             this.helpMaterias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.helpMaterias.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpMaterias.ForeColor = System.Drawing.Color.White;
-            this.helpMaterias.Location = new System.Drawing.Point(554, 317);
+            this.helpMaterias.Location = new System.Drawing.Point(436, 309);
             this.helpMaterias.Name = "helpMaterias";
             this.helpMaterias.Size = new System.Drawing.Size(25, 25);
             this.helpMaterias.TabIndex = 51;
@@ -346,7 +285,7 @@
             this.helpMaestros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.helpMaestros.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.helpMaestros.ForeColor = System.Drawing.Color.White;
-            this.helpMaestros.Location = new System.Drawing.Point(554, 517);
+            this.helpMaestros.Location = new System.Drawing.Point(436, 509);
             this.helpMaestros.Name = "helpMaestros";
             this.helpMaestros.Size = new System.Drawing.Size(25, 25);
             this.helpMaestros.TabIndex = 52;
@@ -378,9 +317,9 @@
             this.btnConfig.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnConfig.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
             this.btnConfig.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnConfig.Size = new System.Drawing.Size(175, 49);
+            this.btnConfig.Size = new System.Drawing.Size(259, 60);
             this.btnConfig.TabIndex = 50;
-            this.btnConfig.Text = "Configuración";
+            this.btnConfig.Text = "Editar Cuenta";
             this.btnConfig.TextColor = System.Drawing.Color.White;
             this.btnConfig.UseVisualStyleBackColor = true;
             // 
@@ -393,12 +332,12 @@
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(1135, 567);
+            this.btnEditar.Location = new System.Drawing.Point(1017, 559);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnEditar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
             this.btnEditar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnEditar.Size = new System.Drawing.Size(155, 49);
+            this.btnEditar.Size = new System.Drawing.Size(259, 60);
             this.btnEditar.TabIndex = 49;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextColor = System.Drawing.Color.White;
@@ -414,12 +353,12 @@
             this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.Location = new System.Drawing.Point(1135, 368);
+            this.btnQuitar.Location = new System.Drawing.Point(1017, 360);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnQuitar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
             this.btnQuitar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnQuitar.Size = new System.Drawing.Size(155, 49);
+            this.btnQuitar.Size = new System.Drawing.Size(259, 60);
             this.btnQuitar.TabIndex = 46;
             this.btnQuitar.Text = "Remover";
             this.btnQuitar.TextColor = System.Drawing.Color.White;
@@ -434,23 +373,96 @@
             this.btnAñadir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAñadir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAñadir.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadir.Location = new System.Drawing.Point(1135, 423);
+            this.btnAñadir.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadir.Location = new System.Drawing.Point(1017, 415);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btnAñadir.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
             this.btnAñadir.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnAñadir.Size = new System.Drawing.Size(50, 49);
+            this.btnAñadir.Size = new System.Drawing.Size(259, 60);
             this.btnAñadir.TabIndex = 45;
-            this.btnAñadir.Text = "+";
+            this.btnAñadir.Text = "Añadir";
             this.btnAñadir.TextColor = System.Drawing.Color.White;
             this.btnAñadir.UseVisualStyleBackColor = true;
+            // 
+            // notifications
+            // 
+            this.notifications.AllowUserToAddRows = false;
+            this.notifications.AllowUserToDeleteRows = false;
+            this.notifications.AllowUserToResizeColumns = false;
+            this.notifications.AllowUserToResizeRows = false;
+            this.notifications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.notifications.BackgroundColor = System.Drawing.Color.White;
+            this.notifications.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.notifications.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.notifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.notifications.ColumnHeadersVisible = false;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.DefaultCellStyle = dataGridViewCellStyle8;
+            this.notifications.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.notifications.EnableHeadersVisualStyles = false;
+            this.notifications.GridColor = System.Drawing.Color.White;
+            this.notifications.Location = new System.Drawing.Point(46, 246);
+            this.notifications.MultiSelect = false;
+            this.notifications.Name = "notifications";
+            this.notifications.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.notifications.RowHeadersWidth = 15;
+            this.notifications.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.notifications.RowTemplate.DividerHeight = 10;
+            this.notifications.RowTemplate.Height = 90;
+            this.notifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.notifications.Size = new System.Drawing.Size(315, 273);
+            this.notifications.TabIndex = 54;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.ButtonColor = System.Drawing.Color.White;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = global::SEM.Properties.Resources.signs;
+            this.btnCerrar.Location = new System.Drawing.Point(46, 126);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnCerrar.Size = new System.Drawing.Size(298, 60);
+            this.btnCerrar.TabIndex = 55;
+            this.btnCerrar.Text = "Cerrar Sesión";
+            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrar.UseVisualStyleBackColor = true;
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1366, 786);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.helpMaestros);
@@ -478,8 +490,8 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.notifications)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notifications)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,7 +508,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView notifications;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
@@ -512,6 +523,7 @@
         private System.Windows.Forms.Label helpMaterias;
         private System.Windows.Forms.Label helpMaestros;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridView notifications;
+        private ePOSOne.btnProduct.Button_WOC btnCerrar;
     }
 }

@@ -229,21 +229,38 @@ namespace SEM.Forms
             panelMaterias.Visible = false;
             panelEvaluaciones.Visible = true;
             materiaLabel.Text = c.SMateria;
-            btnEvaluate.ButtonColor = Color.FromArgb(130, 170, 255);
+            /*btnEvaluate.ButtonColor = Color.FromArgb(130, 170, 255);
             btnEvaluate.TextColor = Color.Silver;
             btnEvaluate.Enabled = false;
             btnEvaluations.ButtonColor = Color.FromArgb(130, 170, 255);
             btnEvaluations.TextColor = Color.Silver;
             btnEvaluations.Enabled = false;
             dataGridView2.DefaultCellStyle.SelectionBackColor = Color.White;
-            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.DimGray;
+            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.DimGray;*/
             dataGridView1.DataSource = c.verEvaluaciones();
             dataGridView1.Columns["id_evaluacion"].Visible = false;
-            dataGridView1.Columns[0].Width = dataGridView1.Width / 9;
+            /*dataGridView1.Columns[0].Width = dataGridView1.Width / 9;
             dataGridView1.Columns[1].Width = dataGridView1.Width * 33 / 72;
             dataGridView1.Columns[2].Width = dataGridView1.Width / 8;
             dataGridView1.Columns[3].Width = dataGridView1.Width / 9;
-            dataGridView1.Columns[4].Width = dataGridView1.Width / 9;
+            dataGridView1.Columns[4].Width = dataGridView1.Width / 9;*/
+            if(dataGridView1.Rows.Count > 0)
+            {
+                idEvaluacion = dataGridView1.Rows[0].Cells[0].Value.ToString();
+                likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
+                likeBtn.Enabled = true;
+                dislikeBtn.ButtonColor = Color.FromArgb(255,13,70);
+                dislikeBtn.Enabled = true;
+                label2.Text = "Evaluaciones de la materia:";
+            }
+            else
+            {
+                likeBtn.ButtonColor = Color.FromArgb(130, 170, 255);
+                likeBtn.Enabled = false;
+                dislikeBtn.ButtonColor = Color.FromArgb(255, 130, 170);
+                dislikeBtn.Enabled = false;
+                label2.Text = "No hay evaluaciones de la materia:";
+            }
 
         }
 
@@ -251,15 +268,16 @@ namespace SEM.Forms
         {
             panelMaterias.Visible = true;
             panelEvaluaciones.Visible = false;
-            likeBtn.TextColor = Color.Silver;
+           /* likeBtn.TextColor = Color.Silver;
             likeBtn.ButtonColor = Color.FromArgb(130, 170, 255);
             likeBtn.Enabled = false;
             dislikeBtn.ButtonColor = Color.FromArgb(255, 130, 170);
             dislikeBtn.TextColor = Color.Silver;
             dislikeBtn.Enabled = false;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DimGray;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DimGray;*/
             dataGridView2.DataSource = c.verMateriasM();
+            c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -270,14 +288,14 @@ namespace SEM.Forms
                 DataGridViewRow SelectedRow = dataGridView1.Rows[index];
                 idEvaluacion = SelectedRow.Cells[0].Value.ToString();
             
-                likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
+               /* likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
                 likeBtn.TextColor = Color.White;
                 likeBtn.Enabled = true;
                 dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
                 dislikeBtn.TextColor = Color.White;
-                dislikeBtn.Enabled = true;
-                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1, 120, 213);
-                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+                dislikeBtn.Enabled = true;*/
+                /*dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1, 120, 213);
+                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;*/
                 
             }
             catch (Exception)
@@ -286,6 +304,19 @@ namespace SEM.Forms
               
             }
             
+        }
+
+        private void BtnRA_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RA(c).Show();
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            c.USER = 0;
+            this.Hide();
+            new Login(c).Show();
         }
     }
 }

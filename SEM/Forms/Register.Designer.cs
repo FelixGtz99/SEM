@@ -267,7 +267,7 @@
             this.panel.Controls.Add(this.txtCorreo);
             this.panel.Location = new System.Drawing.Point(382, 201);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(972, 432);
+            this.panel.Size = new System.Drawing.Size(972, 483);
             this.panel.TabIndex = 14;
             // 
             // helpContraseña
@@ -446,6 +446,7 @@
             this.cbEscuela.Name = "cbEscuela";
             this.cbEscuela.Size = new System.Drawing.Size(387, 32);
             this.cbEscuela.TabIndex = 1;
+            this.cbEscuela.SelectedIndexChanged += new System.EventHandler(this.cbEscuela_SelectedIndexChanged);
             // 
             // errors
             // 

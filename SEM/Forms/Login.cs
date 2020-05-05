@@ -158,8 +158,17 @@ namespace SEM
                     errorEmail.Visible = true;
                 } else if (c.Login(txtEmail.Text, txtPass.Text) != 0)
                 {
-                    this.Hide();
-                    new Searcher(c).Show();
+                    if (c.USER == 999)
+                    {
+                        this.Hide();
+                        new AdminPanel(c).Show();
+                      
+                    }
+                    else {
+                        this.Hide();
+                        new Searcher(c).Show();
+                        
+                    }
                     SemBox sb = new SemBox("short", "¡Bienvenido de regreso!", "", "Aceptar");
                     sb.Show();
                 }

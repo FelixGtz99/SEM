@@ -77,7 +77,7 @@
             this.listMaterias.ForeColor = System.Drawing.Color.DimGray;
             this.listMaterias.FormattingEnabled = true;
             this.listMaterias.ItemHeight = 24;
-            this.listMaterias.Location = new System.Drawing.Point(28, 372);
+            this.listMaterias.Location = new System.Drawing.Point(28, 375);
             this.listMaterias.Name = "listMaterias";
             this.listMaterias.Size = new System.Drawing.Size(468, 172);
             this.listMaterias.TabIndex = 31;

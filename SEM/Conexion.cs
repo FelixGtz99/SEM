@@ -13,19 +13,21 @@ namespace SEM
 {
     public class Conexion
     {
-        private int userID = 0;
-        private String  pass = "", nombre = "", apellido = "", correo = "", carrera = "", SelectedTeacher = "", SelectedClass = "";
+        private int userID = 0, carrera=0, escuela=0;
+        private String  pass = "", nombre = "", apellido = "", correo = "",  SelectedTeacher = "", SelectedClass = "", SelectedCarrier="", SelectedSchool="";
 
         private List<Maestro> Maestros = new List<Maestro>();
         private List<Materia> Materias = new List<Materia>();
         private List<Materia> Clases = new List<Materia>();
+        private List<Carrera> Carreras = new List<Carrera>();
+        private List<Escuela> Escuelas = new List<Escuela>();
         public NpgsqlConnection con = new NpgsqlConnection();
         public int USER
         {
             get { return userID; }
             set { userID = value; }
         }
-        public string CARRERA
+        public int CARRERA
         {
             get { return carrera; }
             set { carrera = value; }
@@ -72,6 +74,13 @@ namespace SEM
             get { return Materias; }
             set { Materias = value; }
         }
+        
+        internal List<Carrera> CARRERAS { get => Carreras; set => Carreras = value; }
+        internal List<Escuela> ESCUELAS { get => Escuelas; set => Escuelas = value; }
+        public string SCarrera { get => SelectedCarrier; set => SelectedCarrier = value; }
+        public string SEscuela { get => SelectedSchool; set => SelectedSchool = value; }
+
+
         //Arranca la conexion
         public void iniciar()
         {
@@ -107,7 +116,9 @@ namespace SEM
                         apellido = reader.GetString(2);
                         correo = reader.GetString(4);
                         pass = reader.GetString(3);
-                        carrera = reader.GetString(5);
+                        escuela = reader.GetInt32(5);
+                        carrera = reader.GetInt32(6);
+                       
 
                     }
                 }
@@ -160,15 +171,16 @@ namespace SEM
 
 
         //Inserta los datos del usuario en la base de datos
-        public int RegisterUser(String Expediente, String Nombre, String Apellido, String Contraseña, String Correo, String Carrera)
+        public int RegisterUser(String Expediente, String Nombre, String Apellido, String Contraseña, String Correo)
         {
-            String query = "INSERT INTO usuarios (expediente, nombre, apellido, contraseña, correo, carrera) VALUES(@e, @n, @a, @pass, @email, @ca) ";
+            String query = "INSERT INTO usuarios (expediente, nombre, apellido, contraseña, correo, escuela, carrera) VALUES(@e, @n, @a, @pass, @email,@es, @ca) ";
             try
             {
                 userID = int.Parse(Expediente);
                 correo = Correo;
                 pass = Contraseña;
-                carrera = Carrera;
+                carrera = getIDCarrera();
+                escuela = getIDEscuela();
                 nombre = Nombre;
                 apellido = Apellido;
                 using (var cmd = new NpgsqlCommand(query, con))
@@ -179,7 +191,8 @@ namespace SEM
                     cmd.Parameters.AddWithValue("a", Apellido);
                     cmd.Parameters.AddWithValue("pass", Contraseña);
                     cmd.Parameters.AddWithValue("email", Correo);
-                    cmd.Parameters.AddWithValue("ca", Carrera);
+                    cmd.Parameters.AddWithValue("ca", carrera);
+                    cmd.Parameters.AddWithValue("es", escuela);
 
                     cmd.ExecuteNonQueryAsync();
                 }
@@ -253,11 +266,46 @@ namespace SEM
                 }
             }
         }
+        //Crea Lista de escuelas
+        public void getEscuelas()
+        {
+            Escuelas.Clear();
+            String query = "SELECT * FROM escuela ";
+            using (var cmd = new NpgsqlCommand(query, con))
+            {
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Escuela e = new Escuela(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                        Escuelas.Add(e);
+                    }
+                }
+            }
+        }
+        //Crea Lista de carreras
+        public void getCarreras()
+        {
+            Carreras.Clear();
+            String query = "SELECT * FROM carrera WHERE id_escuela=@ide";
+            using (var cmd = new NpgsqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("ide", getIDEscuela());
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Carrera c = new Carrera(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
+                        Carreras.Add(c);
+                    }
+                }
+            }
+        }
         //Obtiene Cantidad de evaluaciones para designar su id
         public int getLastEvaluacion()
         {
             int id = 0;
-            String query = "SELECT COUNT(*) FROM evaluacion";
+            String query = "SELECT MAX(*) FROM evaluacion";
             using (var cmd = new NpgsqlCommand(query, con))
             {
                 using (var reader = cmd.ExecuteReader())
@@ -295,16 +343,8 @@ namespace SEM
 
 
         }
-        //Crea un tabla con los datos de con la evaluacion***Pendiente
-        public DataTable getEvaluacion()
-        {
-            String query = "SELECT * FROM evaluacion";
-            var cmd = new NpgsqlCommand(query, con);
-            var datos = new NpgsqlDataAdapter(cmd);
-            DataTable data = new DataTable();
-            datos.Fill(data);
-            return data;
-        }
+        
+      
         public Boolean checkEvaluaciones(int idD, int idM) {
             String query = "Select * From evaluacion where id_usuario=@id AND id_docentes=@d AND id_materia= @m";
            
@@ -329,12 +369,13 @@ namespace SEM
         {
             try
             {
-                String query = "SELECT  (d.nombre || ' ' || d.apellido) as \"Maestro\", AVG(e.calificacion) as \"Promedio\", COUNT(e.calificacion) AS \"Cantidad de Evaluaciones\" FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes  AND ((d.nombre ||' '|| d.apellido) LIKE @m OR alias LIKE @m)  GROUP BY(d.id_docente) UNION ALL SELECT (d.nombre || ' ' || d.apellido) as \"Maestro\", 0 as \"Promedio\", 0 FROM docentes d WHERE d.id_docente  NOT IN (SELECT e.id_docentes FROM evaluacion e) AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m)";
+                String query = "SELECT  (d.nombre || ' ' || d.apellido) as \"Maestro\", AVG(e.calificacion) as \"Promedio\", COUNT(e.calificacion) AS \"Cantidad de Evaluaciones\" FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes  AND ((d.nombre ||' '|| d.apellido) LIKE @m OR alias LIKE @m)  GROUP BY(d.id_docente) UNION ALL SELECT (d.nombre || ' ' || d.apellido) as \"Maestro\", 0 as \"Promedio\", 0 FROM docentes d WHERE d.id_docente  NOT IN (SELECT e.id_docentes FROM evaluacion e) AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m) AND id_carrera=@idC";
                 //String query = "SELECT  (d.nombre || ' ' || d.apellido) as Maestro, AVG(e.calificacion) as Promedio, COUNT(e.calificacion) AS \"Cantidad de Evaluaciones\" FROM docentes d, evaluacion e WHERE d.id_docente=e.id_docentes  AND ((d.nombre ||' '|| d.apellido) LIKE @m OR alias LIKE @m)  GROUP BY(d.id_docente)  UNION ALL SELECT (d.nombre || ' ' || d.apellido) as Maestro, 0 as Promedio, 0 FROM docentes d WHERE d.id_docente  NOT IN (SELECT e.id_docentes FROM evaluacion e) AND ((d.nombre || d.apellido) LIKE @m OR alias LIKE @m)";
 
                 var cmd = new NpgsqlCommand(query, con);
                 Console.WriteLine(query);
                 cmd.Parameters.AddWithValue("m", "%" + m + "%");
+                cmd.Parameters.AddWithValue("idC",CARRERA);
                 var datos = new NpgsqlDataAdapter(cmd);
                 DataTable data = new DataTable();
                 Console.WriteLine(data);
@@ -352,10 +393,11 @@ namespace SEM
         //Crea todas las tablas con sus materias
         public DataTable verMaterias(String m)
         {
-            String query = "SELECT  nombre_materia as \"Materia\" FROM materia WHERE nombre_materia LIKE @m";
+            String query = "SELECT  nombre_materia as \"Materia\" FROM materia WHERE nombre_materia LIKE @m AND id_carrera=@idC";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("m", "%" + m + "%");
+            cmd.Parameters.AddWithValue("idC", CARRERA);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
             Console.WriteLine(data);
@@ -366,7 +408,7 @@ namespace SEM
         //Materias de un maestro
         public DataTable verMateriasM()
         {
-            String query = "SELECT (SELECT nombre_materia AS Materia FROM materia WHERE materia.id_materia = evaluacion.id_materia GROUP BY(id_materia)) AS \"Materia\", AVG(calificacion) AS \"Promedio\" FROM evaluacion WHERE id_docentes = @doc GROUP BY(id_materia) " +
+            String query = "SELECT (SELECT nombre_materia AS Materia FROM materia WHERE materia.id_materia = evaluacion.id_materia GROUP BY(id_materia)) AS \"Materia\", AVG(calificacion) AS \"Promedio\" FROM evaluacion WHERE id_docentes = @doc GROUP BY(id_materia)" +
                  "UNION ALL SELECT (SELECT nombre_materia AS Materia FROM materia WHERE materia.id_materia = clases.materria) AS \"Materia\", 0 AS \"Promedio\" FROM clases WHERE docente = @doc AND clases.materria NOT IN(SELECT id_materia FROM evaluacion)";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
@@ -377,20 +419,8 @@ namespace SEM
             datos.Fill(data);
             return data;
         }
-        //Crea una tabla con laas clases del maestro seleccionado
-        public DataTable verClases(int i)
-        {
-            String query = "SELECT m.nombre_materia as Materia FROM materia m, clases c WHERE m.id_materia=c.materria AND c.docente=@id";
-            var cmd = new NpgsqlCommand(query, con);
-            Console.WriteLine(query);
-            cmd.Parameters.AddWithValue("id", i);
-            var datos = new NpgsqlDataAdapter(cmd);
-            DataTable data = new DataTable();
-            Console.WriteLine(data);
-            datos.Fill(data);
-
-            return data;
-        }
+        
+      
         //Permite el cmbio de contraseña
         public void ChangePass(String c)
         {
@@ -473,6 +503,34 @@ namespace SEM
 
             return id;
         }
+        //Obtiene el id de Escuela
+        public int getIDEscuela()
+        {
+            int id = 0;
+            foreach (Escuela escuela in Escuelas)
+            {
+                if (escuela.ToString().Equals(SEscuela))
+                {
+                    id = escuela.Id;
+                }
+            }
+
+            return id;
+        }
+        public int getIDCarrera()
+        {
+            int id = 0;
+            foreach (Carrera carrera in Carreras)
+            {
+                if (carrera.ToString().Equals(SCarrera))
+                {
+                    id = carrera.ID;
+                }
+            }
+
+            return id;
+        }
+
         //obtiene el id de la materia seleccionada
         public int getIDMateria()
         {
@@ -492,7 +550,7 @@ namespace SEM
         {
             Console.WriteLine(getIDMateria());
             Console.WriteLine(getIDMaestro());
-            String query = "SELECT fecha AS \"Fecha\", comentario AS \"Comentario\", calificacion AS \"Calificacion\", likes AS \"Me gusta\", dislikes AS \"No me gusta\" FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluacion DESC";
+            String query = "SELECT id_evaluacion, fecha AS \"Fecha\", comentario AS \"Comentario\", calificacion AS \"Calificacion\", likes AS \"Me gusta\", dislikes AS \"No me gusta\" FROM evaluacion WHERE id_docentes=@idD and id_materia=@idM ORDER BY id_evaluacion DESC";
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("idD", getIDMaestro());
@@ -527,27 +585,7 @@ namespace SEM
             }
         }
         //Busca el id de la evaluacion hecha
-        public int getIDEvaluacion(String Comentario, String Calificacion)
-        {
-            Console.WriteLine("Entro al check");
-            int id = 0;
-            String query = "SELECT id_evaluacion FROM evaluacion WHERE  id_docentes=@idD AND id_materia=@idM AND comentario=@co AND calificacion=@ca";
-            var cmd = new NpgsqlCommand(query, con);
-            cmd.Parameters.AddWithValue("co", Comentario);
-            cmd.Parameters.AddWithValue("ca", Int32.Parse(Calificacion));
-            cmd.Parameters.AddWithValue("idD", getIDMaestro());
-            cmd.Parameters.AddWithValue("idM", getIDMateria());
-            using (var reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    id = reader.GetInt32(0);
-
-                }
-
-            }
-            return id;
-        }
+       
         //Buscar si el usuario voto
         public Boolean chechUserVote(int id)
         {
@@ -675,7 +713,7 @@ namespace SEM
         //ver la actividad reciente
         public DataTable verRA()
         {
-            String query = "SELECT (d.nombre || ' ' || d.apellido) as nombre, m.nombre_materia as Materia, e.comentario, e.calificacion, e.likes, e.dislikes, e.fecha FROM docentes d, evaluacion e, materia m WHERE e.id_docentes=d.id_docente AND e.id_materia=m.id_materia AND e.id_usuario!=1234 ORDER BY  e.id_evaluacion DESC limit 5";
+            String query = " SELECT notificacion as \"Actividad\", fecha as \"Fecha\" FROM \"RA\" ORDER BY  fecha DESC";
             var cmd = new NpgsqlCommand(query, con);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
@@ -686,7 +724,7 @@ namespace SEM
         //Registrar Docente
         public void guardarDocente(String nombre, String apellido, String alias, List<Materia> m) 
         {
-            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias, img) VALUES(@id, @n, @a, @alias,@img); ";
+            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias, img, id_carrera) VALUES(@id, @n, @a, @alias,@img, @idC); ";
 
             var IDD = MAESTROS.Count + 1;
 
@@ -696,6 +734,7 @@ namespace SEM
             cmd.Parameters.AddWithValue("alias", alias);
             cmd.Parameters.AddWithValue("id", IDD);
             cmd.Parameters.AddWithValue("img", "no");
+            cmd.Parameters.AddWithValue("idC", CARRERA);
             cmd.ExecuteNonQuery();
             foreach (Materia materia in m)
             {
@@ -733,7 +772,61 @@ namespace SEM
                 }
 
             }
-        }    
+        }
+        //Obtener notificaciones
+        public DataTable getNotifications()
+        {
+            String query = "SELECT notificacion FROM notificaciones ";
+            var cmd = new NpgsqlCommand(query, con);
+           // cmd.Parameters.AddWithValue("idC", getIDCarrera());
+            var datos = new NpgsqlDataAdapter(cmd);
+            DataTable data = new DataTable();
+            Console.WriteLine(data);
+            datos.Fill(data);
+            return data;
+        }
+        //EliminaMateria
+        public void deleteMateria() {
+            String query = "DELETE FROM evaluacion WHERE id_materia=@m";
+            var cmd = new NpgsqlCommand(query, con);
+            try
+            {
+                cmd.Parameters.AddWithValue("m", getIDMateria());
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            String query2 = "DELETE FROM clases WHERE materria=@m";
+            var cmd2 = new NpgsqlCommand(query2, con);
+            try
+            {
+                cmd2.Parameters.AddWithValue("m", getIDMateria());
+                cmd2.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            String query3 = "DELETE FROM materia WHERE nombre_materia=@m";
+            var cmd3 = new NpgsqlCommand(query3, con);
+            try
+            {
+                cmd3.Parameters.AddWithValue("m", SMateria);
+                cmd3.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+        //Agregar Materia
+
+       
     }
     
 }

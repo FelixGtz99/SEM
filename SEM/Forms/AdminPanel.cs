@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using SEM.items;
 namespace SEM.Forms
 {
     public partial class AdminPanel : Form
     {
-        public AdminPanel()
+        Conexion c = null;
+        public AdminPanel(Conexion c)
         {
+            this.c = c;
             InitializeComponent();
             //Datos de la barra superior
             this.ActiveControl = panel2;
@@ -32,13 +34,15 @@ namespace SEM.Forms
             this.helpMaterias.Region = new Region(path);
             this.helpMaestros.Region = new Region(path);
 
-            this.notifications.Rows.Add("El maestro José Luis Ochoa Hernández ha recibido muchos votos negativos en su perfil.");
-            this.notifications.Rows.Add("El promedio del maestro Guzmán Gerardo Alfonso Sánchez Schmitz ha bajado de 6.0.");
-            this.notifications.Rows.Add("Se ha añadido al maestro Jesús Daniel Alfaro Soto.");
-            this.notifications.Rows.Add("El maestro Alonso Pérez Soltero ha recibido muchos votos negativos en su perfil");
-            this.notifications.Rows.Add("El promedio del maestro Raquel Torres Peralta ha bajado de 6.0.");
-            this.notifications.Rows.Add("Se ha añadido al maestro René Francisco Navarro Hernández.");
-
+            notifications.DataSource = c.getNotifications();
+            //this.notifications.Rows.Add("El maestro José Luis Ochoa Hernández ha recibido muchos votos negativos en su perfil.");
+            //this.notifications.Rows.Add("El promedio del maestro Guzmán Gerardo Alfonso Sánchez Schmitz ha bajado de 6.0.");
+            //this.notifications.Rows.Add("Se ha añadido al maestro Jesús Daniel Alfaro Soto.");
+            //this.notifications.Rows.Add("El maestro Alonso Pérez Soltero ha recibido muchos votos negativos en su perfil");
+            //this.notifications.Rows.Add("El promedio del maestro Raquel Torres Peralta ha bajado de 6.0.");
+            //this.notifications.Rows.Add("Se ha añadido al maestro René Francisco Navarro Hernández.");
+            CBMaestros();
+            CBMaterias();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -49,6 +53,52 @@ namespace SEM.Forms
         private void BtnMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        public void CBMaterias()
+        {
+
+            cbMaterias.Items.Clear();
+
+            foreach (Materia materia in c.MATERIAS)
+            {
+                cbMaterias.Items.Add(materia);
+            }
+
+        }
+        public void CBMaestros()
+        {
+
+            cbMaestros.Items.Clear();
+
+            foreach (Maestro maestro in c.MAESTROS)
+            {
+                cbMaestros.Items.Add(maestro);
+            }
+
+        }
+
+        private void cbMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            c.SMateria = cbMaterias.SelectedItem.ToString();
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+          
+            c.deleteMateria();
+            c.getMaterias();
+            CBMaterias();
+        }
+
+        private void cbMaestros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            c.SMaestro = cbMaestros.SelectedItem.ToString();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new EditTeacher(c).Show();
         }
     }
 }

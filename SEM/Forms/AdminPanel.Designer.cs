@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.notifications = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.notifications = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbMaterias = new System.Windows.Forms.ComboBox();
@@ -51,12 +52,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.helpMaterias = new System.Windows.Forms.Label();
             this.helpMaestros = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnConfig = new ePOSOne.btnProduct.Button_WOC();
             this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
             this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifications)).BeginInit();
@@ -127,40 +127,76 @@
             this.panel1.Size = new System.Drawing.Size(364, 745);
             this.panel1.TabIndex = 10;
             // 
-            // richTextBox1
+            // label2
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Arial Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.richTextBox1.Location = new System.Drawing.Point(601, 96);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(675, 141);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "Ingeniería en Sistemas de Información";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(44, 200);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(152, 24);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Notificaciones";
             // 
-            // label1
+            // notifications
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(41, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MODO ADMINISTRADOR";
+            this.notifications.AllowUserToDeleteRows = false;
+            this.notifications.AllowUserToResizeColumns = false;
+            this.notifications.AllowUserToResizeRows = false;
+            this.notifications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.notifications.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.notifications.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.notifications.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.notifications.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.notifications.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.notifications.ColumnHeadersHeight = 50;
+            this.notifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.notifications.ColumnHeadersVisible = false;
+            this.notifications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.DefaultCellStyle = dataGridViewCellStyle5;
+            this.notifications.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.notifications.Location = new System.Drawing.Point(12, 227);
+            this.notifications.MultiSelect = false;
+            this.notifications.Name = "notifications";
+            this.notifications.ReadOnly = true;
+            this.notifications.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.notifications.RowHeadersVisible = false;
+            this.notifications.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.notifications.RowTemplate.DividerHeight = 3;
+            this.notifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.notifications.ShowEditingIcon = false;
+            this.notifications.Size = new System.Drawing.Size(349, 348);
+            this.notifications.TabIndex = 17;
+            this.notifications.TabStop = false;
             // 
-            // richTextBox2
+            // Column1
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.richTextBox2.Location = new System.Drawing.Point(46, 78);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(285, 54);
-            this.richTextBox2.TabIndex = 12;
-            this.richTextBox2.Text = "Dr. Federico Miguel Cirett Galán";
+            this.Column1.HeaderText = "Notifications";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // label8
             // 
@@ -184,70 +220,40 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "sem";
             // 
-            // notifications
+            // richTextBox2
             // 
-            this.notifications.AllowUserToDeleteRows = false;
-            this.notifications.AllowUserToResizeColumns = false;
-            this.notifications.AllowUserToResizeRows = false;
-            this.notifications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.notifications.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.notifications.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.notifications.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.notifications.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.notifications.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.notifications.ColumnHeadersHeight = 50;
-            this.notifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.notifications.ColumnHeadersVisible = false;
-            this.notifications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.DefaultCellStyle = dataGridViewCellStyle2;
-            this.notifications.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.notifications.Location = new System.Drawing.Point(12, 227);
-            this.notifications.MultiSelect = false;
-            this.notifications.Name = "notifications";
-            this.notifications.ReadOnly = true;
-            this.notifications.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.notifications.RowHeadersVisible = false;
-            this.notifications.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.notifications.RowTemplate.DividerHeight = 3;
-            this.notifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.notifications.ShowEditingIcon = false;
-            this.notifications.Size = new System.Drawing.Size(349, 348);
-            this.notifications.TabIndex = 17;
-            this.notifications.TabStop = false;
+            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.richTextBox2.Location = new System.Drawing.Point(46, 78);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(285, 54);
+            this.richTextBox2.TabIndex = 12;
+            this.richTextBox2.Text = "Dr. Federico Miguel Cirett Galán";
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 24);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Notificaciones";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(41, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MODO ADMINISTRADOR";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Arial Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.Black;
+            this.richTextBox1.Location = new System.Drawing.Point(601, 96);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(675, 141);
+            this.richTextBox1.TabIndex = 11;
+            this.richTextBox1.Text = "Ingeniería en Sistemas de Información";
             // 
             // pictureBox1
             // 
@@ -278,6 +284,7 @@
             this.cbMaterias.Name = "cbMaterias";
             this.cbMaterias.Size = new System.Drawing.Size(510, 32);
             this.cbMaterias.TabIndex = 14;
+            this.cbMaterias.SelectedIndexChanged += new System.EventHandler(this.cbMaterias_SelectedIndexChanged);
             // 
             // line1
             // 
@@ -309,6 +316,7 @@
             this.cbMaestros.Name = "cbMaestros";
             this.cbMaestros.Size = new System.Drawing.Size(510, 32);
             this.cbMaestros.TabIndex = 48;
+            this.cbMaestros.SelectedIndexChanged += new System.EventHandler(this.cbMaestros_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -344,6 +352,17 @@
             this.helpMaestros.TabIndex = 52;
             this.helpMaestros.Text = "?";
             this.helpMaestros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.label5.Location = new System.Drawing.Point(602, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(223, 24);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "Universidad de Sonora";
             // 
             // btnConfig
             // 
@@ -384,6 +403,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnQuitar
             // 
@@ -404,6 +424,7 @@
             this.btnQuitar.Text = "Remover";
             this.btnQuitar.TextColor = System.Drawing.Color.White;
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAñadir
             // 
@@ -424,23 +445,6 @@
             this.btnAñadir.Text = "+";
             this.btnAñadir.TextColor = System.Drawing.Color.White;
             this.btnAñadir.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label5.Location = new System.Drawing.Point(602, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 24);
-            this.label5.TabIndex = 53;
-            this.label5.Text = "Universidad de Sonora";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Notifications";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // AdminPanel
             // 

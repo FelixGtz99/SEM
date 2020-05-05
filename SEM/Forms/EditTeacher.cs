@@ -30,7 +30,7 @@ namespace SEM.Forms
             titleBox.SelectionAlignment = HorizontalAlignment.Center;
             titleBox.Text = c.SMaestro;
             listMaterias.Items.Clear();
-            //c.getClases(c.getIDMaestro());
+            c.getClases(c.getIDMaestro());
             foreach (Materia materia in c.MATERIAS)
             {
                 cbMaterias.Items.Add(materia.ToString());
@@ -59,7 +59,7 @@ namespace SEM.Forms
         private void defButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Evaluations(c).Show();
+            new AdminPanel(c).Show();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

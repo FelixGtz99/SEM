@@ -31,8 +31,10 @@ namespace SEM.Forms
             //Datos del panel de materias y evaluaciones
             panelEvaluaciones.Location = panelMaterias.Location;
             dataGridView2.DataSource = c.verMateriasM();
+            dataGridView2.Columns["Promedio"].DefaultCellStyle.Format = "N2";
 
             label1.Text = c.SMaestro;
+            toolTip2.SetToolTip(this.imgMaestro, c.SMaestro);
             /*CBMaterias();
             cbMateria.SelectedIndex = 0;
             c.SMateria = cbMateria.SelectedItem.ToString();
@@ -44,7 +46,7 @@ namespace SEM.Forms
             dataGridView1.Columns[3].Width = dataGridView1.Width / 9;
             dataGridView1.Columns[4].Width = dataGridView1.Width / 9;*/
 
-            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            escuelaPicture.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
             string urlImg = c.getImgM();
             if(urlImg == "null" || string.IsNullOrEmpty(urlImg) || urlImg == "no")
             {
@@ -56,13 +58,18 @@ namespace SEM.Forms
                 imgMaestro.ImageLocation = urlImg;
 
             }
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            escuelaPicture.SizeMode = PictureBoxSizeMode.Zoom;
 
             //Para darle la forma circular a los tooltips
             var path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, label6.Width, label6.Height);
             this.label6.Region = new Region(path);
             this.label4.Region = new Region(path);
+            var path2 = new System.Drawing.Drawing2D.GraphicsPath();
+            path2.AddEllipse(0, 0, imgMaestro.Width, imgMaestro.Height);
+            this.imgMaestro.Region = new Region(path2);
+
+
             if (c.USER==0)
 
             {
@@ -73,7 +80,7 @@ namespace SEM.Forms
             }
 
             c.getClases(c.getIDMaestro());
-
+            c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
             /*panel2.Focus();
             dataGridView1.ClearSelection();*/
         }
@@ -199,14 +206,14 @@ namespace SEM.Forms
             DataGridViewRow SelectedRow = dataGridView2.Rows[index];
             c.SMateria = SelectedRow.Cells[0].Value.ToString();
             
-            btnEvaluate.ButtonColor = Color.FromArgb(13, 70, 255);
+            /*btnEvaluate.ButtonColor = Color.FromArgb(13, 70, 255);
             btnEvaluate.TextColor = Color.White;
             btnEvaluate.Enabled = true;
             btnEvaluations.ButtonColor = Color.FromArgb(13, 70, 255);
             btnEvaluations.TextColor = Color.White;
-            btnEvaluations.Enabled = true;
-            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1, 120, 213);
-            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.White;
+            btnEvaluations.Enabled = true;*/
+            /*dataGridView2.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1, 120, 213);
+            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.White;*/
         }
 
         private void BtnEvaluate_Click(object sender, EventArgs e)

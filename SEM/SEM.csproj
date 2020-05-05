@@ -181,6 +181,8 @@
     <Compile Include="Forms\RA.Designer.cs">
       <DependentUpon>RA.cs</DependentUpon>
     </Compile>
+    <Compile Include="items\Carrera.cs" />
+    <Compile Include="items\Escuela.cs" />
     <Compile Include="items\Maestro.cs" />
     <Compile Include="items\Materia.cs" />
     <Compile Include="Menu.cs">

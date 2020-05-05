@@ -14,7 +14,7 @@ namespace SEM.Forms
     public partial class Evaluations : Form
     {
         Conexion c = null;
-        String Comentario=" ", Calificacion = " ";
+        String idEvaluacion=" ";
         public Evaluations(Conexion c)
         {
             this.c = c;
@@ -112,7 +112,7 @@ namespace SEM.Forms
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
-            if (Calificacion.Equals(" "))
+            if (idEvaluacion.Equals(" "))
             {
                 //MessageBox.Show("No has seleccionado ninguna evaluacion");
                 SemBox sb = new SemBox("shorterror", "No has seleccionado ninguna evaluación", "", "Aceptar");
@@ -120,7 +120,7 @@ namespace SEM.Forms
             }
             else
             {
-                int id = c.getIDEvaluacion(Comentario, Calificacion);
+                int id = int.Parse(idEvaluacion);
 
                 if (c.chechUserVote(id))
                 {
@@ -134,7 +134,7 @@ namespace SEM.Forms
                     c.updateLikes(c.getLikes(id), id);
                     c.updateVotos(id);
                     dataGridView1.DataSource = c.verEvaluaciones();
-
+                    dataGridView1.Columns["id_evaluacion"].Visible = false;
                 }
             }
         }
@@ -147,7 +147,7 @@ namespace SEM.Forms
 
         private void button_WOC2_Click(object sender, EventArgs e)
         {
-            if (Calificacion.Equals(" "))
+            if (idEvaluacion.Equals(" "))
             {
                 //MessageBox.Show("No has seleccionado ninguna evaluacion");
                 SemBox sb = new SemBox("shorterror", "No has seleccionado ninguna evaluación", "", "Aceptar");
@@ -155,7 +155,7 @@ namespace SEM.Forms
             }
             else
             {
-                int id = c.getIDEvaluacion(Comentario, Calificacion);
+                int id = int.Parse(idEvaluacion);
 
                 if (c.chechUserVote(id))
                 {
@@ -169,6 +169,7 @@ namespace SEM.Forms
                     c.updateDislikes(c.getDislikes(id), id);
                     c.updateVotos(id);
                     dataGridView1.DataSource = c.verEvaluaciones();
+                    dataGridView1.Columns["id_evaluacion"].Visible = false;
 
                 }
             }
@@ -237,6 +238,7 @@ namespace SEM.Forms
             dataGridView2.DefaultCellStyle.SelectionBackColor = Color.White;
             dataGridView2.DefaultCellStyle.SelectionForeColor = Color.DimGray;
             dataGridView1.DataSource = c.verEvaluaciones();
+            dataGridView1.Columns["id_evaluacion"].Visible = false;
             dataGridView1.Columns[0].Width = dataGridView1.Width / 9;
             dataGridView1.Columns[1].Width = dataGridView1.Width * 33 / 72;
             dataGridView1.Columns[2].Width = dataGridView1.Width / 8;
@@ -266,8 +268,8 @@ namespace SEM.Forms
             {
                 var index = e.RowIndex;
                 DataGridViewRow SelectedRow = dataGridView1.Rows[index];
-                Comentario = SelectedRow.Cells[1].Value.ToString();
-                Calificacion = SelectedRow.Cells[2].Value.ToString();
+                idEvaluacion = SelectedRow.Cells[0].Value.ToString();
+            
                 likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
                 likeBtn.TextColor = Color.White;
                 likeBtn.Enabled = true;

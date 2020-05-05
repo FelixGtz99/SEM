@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEM.Forms;
-
+using SEM.items;
 namespace SEM
 {
     public partial class Register : Form
@@ -66,6 +66,8 @@ namespace SEM
             path2.AddEllipse(0, 0, helpEmail.Width, helpEmail.Height);
             this.helpEmail.Region = new Region(path2);
             this.helpContraseña.Region = new Region(path2);
+            CBEscuela();
+            cbCarrera.Enabled = false;
 
             
 
@@ -88,6 +90,17 @@ namespace SEM
             {
                 Errores = Errores + Environment.NewLine + "Las contraseñas son diferentes";
             }
+            foreach (Escuela escuela in c.ESCUELAS)
+            {
+                if (c.SEscuela.Equals(escuela))
+                {
+                    if (email.EndsWith("@" + escuela.Correo))
+                               {
+                        Errores = Errores + Environment.NewLine + "El correo debe terminar en @" + escuela.Correo;
+                    }
+                }
+            }
+           
             if (c.CheckID(Experiente))
             {
                 Errores= Errores + Environment.NewLine + "Ya hay un usuario asociado a este experiente";
@@ -362,7 +375,7 @@ namespace SEM
             {
                 try
                 {
-                    c.RegisterUser(txtExpediente.Text, txtNombre.Text, txtApellido.Text, txtContraseña.Text, txtCorreo.Text, cbCarrera.SelectedItem.ToString());
+                    c.RegisterUser(txtExpediente.Text, txtNombre.Text, txtApellido.Text, txtContraseña.Text, txtCorreo.Text);
                     //MessageBox.Show("Registrado correctamente");
                     
                     this.Hide();
@@ -427,6 +440,31 @@ namespace SEM
                 btnRegistrar.TextColor = Color.Silver;
             }
         }
-        
+
+        private void cbEscuela_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            c.SEscuela = cbEscuela.SelectedItem.ToString();
+            cbCarrera.Enabled = true;
+            
+            CBCarreras();
+        }
+        public void CBEscuela() {
+            cbEscuela.Items.Clear();
+            
+            foreach (Escuela escuela in c.ESCUELAS)
+            {
+                cbEscuela.Items.Add(escuela);
+            }
+
+        }
+        public void CBCarreras() {
+            cbCarrera.Items.Clear();
+            c.getCarreras();
+            foreach (Carrera carrera in c.CARRERAS)
+            {
+                cbCarrera.Items.Add(carrera);
+            }
+
+        }
     }
 }

@@ -48,27 +48,28 @@ namespace SEM.Forms
             pictureBox2.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
 
-            this.data.Rows.Add("Se publicó un comentario en el perfil del maestro: Luis Ochoa.", "30/04/2020");
-            this.data.Rows.Add("Se asoció la materia Ingeniería de Software 2 con el maestro: Abril Lopez.", "29/04/2020");
-            this.data.Rows.Add("Se ha añadido al maestro: Pedro Hernandez.", "28/04/2020");
-            this.data.Rows.Add("Se subipo una foto para el maestro: Alonso Perez Soltero.", "27/04/2020");
-            this.data.Rows.Add("El administrador añadió la materia Introducción al Derecho 4", "26/04/2020");
-            this.data.Rows.Add("El administrador cambió la foto del maestro: Leslie Garcia Montijo.","25/04/2020");
-            string selectedActivity = data.Rows[0].Cells[0].Value.ToString();
-            if (selectedActivity.Contains("maestro:"))
-            {
-                btnVer.Enabled = true;
-                btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
-                int begin = selectedActivity.IndexOf(':');
-                int end = selectedActivity.IndexOf('.');
-                int selectLength = end - begin - 2;
-                c.SMaestro = selectedActivity.Substring(begin + 2, selectLength);
-            }
-            else
-            {
-                btnVer.Enabled = false;
-                btnVer.ButtonColor = Color.FromArgb(130, 170, 255);
-            }
+            data.DataSource = c.verRA();
+            //this.data.Rows.Add("Se publicó un comentario en el perfil del maestro: Luis Ochoa.", "30/04/2020");
+            //this.data.Rows.Add("Se asoció la materia Ingeniería de Software 2 con el maestro: Abril Lopez.", "29/04/2020");
+            //this.data.Rows.Add("Se ha añadido al maestro: Pedro Hernandez.", "28/04/2020");
+            //this.data.Rows.Add("Se subipo una foto para el maestro: Alonso Perez Soltero.", "27/04/2020");
+            //this.data.Rows.Add("El administrador añadió la materia Introducción al Derecho 4", "26/04/2020");
+            //this.data.Rows.Add("El administrador cambió la foto del maestro: Leslie Garcia Montijo.","25/04/2020");
+            //string selectedActivity = data.Rows[0].Cells[0].Value.ToString();
+            //if (selectedActivity.Contains("maestro:"))
+            //{
+            //    btnVer.Enabled = true;
+            //    btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
+            //    int begin = selectedActivity.IndexOf(':');
+            //    int end = selectedActivity.IndexOf('.');
+            //    int selectLength = end - begin - 2;
+            //    c.SMaestro = selectedActivity.Substring(begin + 2, selectLength);
+            //}
+            //else
+            //{
+            //    btnVer.Enabled = false;
+            //    btnVer.ButtonColor = Color.FromArgb(130, 170, 255);
+            //}
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -89,38 +90,38 @@ namespace SEM.Forms
 
         private void btnLike_Click(object sender, EventArgs e)
         {
-            int id = c.getIDEvaluacion(Comentario, Calificacion);
+            //int id = c.getIDEvaluacion(Comentario, Calificacion);
 
-            if (c.chechUserVote(id))
-            {
-                MessageBox.Show("No puedes votar otra vez por esta evaluacion");
-            }
-            else
-            {
+            //if (c.chechUserVote(id))
+            //{
+            //    MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+            //}
+            //else
+            //{
 
-                c.updateLikes(c.getLikes(id), id);
-                c.updateVotos(id);
-                data.DataSource = c.verRA();
+            //    c.updateLikes(c.getLikes(id), id);
+            //    c.updateVotos(id);
+            //    data.DataSource = c.verRA();
 
-            }
+            //}
         }
 
         private void btnDislike_Click(object sender, EventArgs e)
         {
-            int id = c.getIDEvaluacion(Comentario, Calificacion);
+            //int id = c.getIDEvaluacion(Comentario, Calificacion);
 
-            if (c.chechUserVote(id))
-            {
-                MessageBox.Show("No puedes votar otra vez por esta evaluacion");
-            }
-            else
-            {
+            //if (c.chechUserVote(id))
+            //{
+            //    MessageBox.Show("No puedes votar otra vez por esta evaluacion");
+            //}
+            //else
+            //{
 
-                c.updateDislikes(c.getDislikes(id), id);
-                c.updateVotos(id);
-                data.DataSource = c.verRA();
+            //    c.updateDislikes(c.getDislikes(id), id);
+            //    c.updateVotos(id);
+            //    data.DataSource = c.verRA();
 
-            }
+            //}
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)

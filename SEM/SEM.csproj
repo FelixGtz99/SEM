@@ -325,5 +325,11 @@
   <ItemGroup>
     <None Include="icons\dislike.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\edit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -317,5 +317,11 @@
   <ItemGroup>
     <None Include="icons\search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\like.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\dislike.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

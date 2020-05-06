@@ -46,6 +46,11 @@ namespace SEM
             get { return apellido; }
             set { apellido = value; }
         }
+        public byte[] imagen
+        {
+            get { return imagen; }
+            set { imagen = value; }
+        }
         public string CONTRA
         {
             get { return pass; }
@@ -122,7 +127,6 @@ namespace SEM
                         escuela = reader.GetInt32(5);
                         carrera = reader.GetInt32(6);
                        
-
                     }
                 }
             }
@@ -738,6 +742,7 @@ namespace SEM
             cmd.Parameters.AddWithValue("id", IDD);
             //cmd.Parameters.AddWithValue("img", "no");
             cmd.Parameters.AddWithValue("idC", CARRERA);
+           
             NpgsqlParameter param = cmd.CreateParameter();
             param.ParameterName = "@Image";
             param.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
@@ -784,24 +789,62 @@ namespace SEM
         }*/
         public Byte[] getImgM2()
         {
-            String query = "SELECT upload_i" +
-                "mg FROM docentes WHERE id_docente=@id";
+            String query = "SELECT upload_img FROM docentes WHERE id_docente=@id";
             var cmd = new NpgsqlCommand(query, con);
             cmd.Parameters.AddWithValue("id", getIDMaestro());
-            //byte[] productImageByte = null;
+            byte[] productImageByte = null;
+            byte[] temporal = null;
             using (var reader = cmd.ExecuteReader())
-            {
 
-                if (reader.Read())
-                {
-                    return (byte[])reader[0];
+            {
+                if (reader.Read()){
+
+                    //Convert.ToInt32(reader.GetByte(0)==null);
+                    if (reader.IsDBNull(0))
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        productImageByte =((byte[])reader[0]);
+                        return productImageByte;
+                    }
                 }
+                
                 else
                 {
+                    Console.Write("afuera");
                     return null;
                 }
 
+
             }
+        }
+        public void ChangeImage(byte[] ImgByteA)
+        {
+            String query = " UPDATE public.docentes SET upload_img = @image   WHERE id_docente = @id; ";
+            try
+            {
+                using (var cmd = new NpgsqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("id", getIDMaestro());
+                    
+                    
+                    NpgsqlParameter param = cmd.CreateParameter();
+                    param.ParameterName = "@Image";
+                    param.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
+                    param.Value = ImgByteA;
+                    Console.WriteLine("Aqui estan los bytes: " + Encoding.Default.GetString(ImgByteA));
+                    cmd.Parameters.Add(param);
+
+                    cmd.ExecuteNonQueryAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
         //Obtener notificaciones
         public DataTable getNotifications()

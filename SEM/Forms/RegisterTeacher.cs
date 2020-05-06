@@ -221,7 +221,7 @@ namespace SEM.Forms
             OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
             try
             {
-                OpenFileDialog1.Filter = "Archivos de imágen(*.jpg)|*.jpg|All Files (*.*)|*.*";
+                OpenFileDialog1.Filter = "Archivos de imágen(*.jpg)(*.jpeg)|*.jpg;*.jpeg|PNG(*.png)|*.png";
                 if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     String imagen = OpenFileDialog1.FileName;

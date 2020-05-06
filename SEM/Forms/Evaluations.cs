@@ -15,7 +15,8 @@ namespace SEM.Forms
     public partial class Evaluations : Form
     {
         Conexion c = null;
-        String idEvaluacion=" ";
+        String idEvaluacion = " ";
+        byte[] ImgByteA = null;
         public Evaluations(Conexion c)
         {
             this.c = c;
@@ -50,12 +51,12 @@ namespace SEM.Forms
             escuelaPicture.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
             //string urlImg = c.getImgM();
             byte[] imagen = c.getImgM2();
+
             if (imagen == null)
             {
                 Console.WriteLine("Faros en vinagre");
                 //  MessageBox.Show("WHAT THE FUCK");
                 //imgMaestro.ImageLocation = "https://fotos.subefotos.com/a77a9fc14733c78d00746a077a874ce5o.png";
-
 
             }
             else
@@ -82,7 +83,7 @@ namespace SEM.Forms
             this.imgMaestro.Region = new Region(path2);
 
 
-            if (c.USER==0)
+            if (c.USER == 0)
 
             {
                 likeBtn.Visible = false;
@@ -103,24 +104,24 @@ namespace SEM.Forms
         {
 
         }
-       /* public void CBMaterias()
-        {
+        /* public void CBMaterias()
+         {
 
-            cbMateria.Items.Clear();
-            c.getClases(c.getIDMaestro());
-            foreach (Materia materia in c.CLASES)
-            {
-                cbMateria.Items.Add(materia);
-            }
+             cbMateria.Items.Clear();
+             c.getClases(c.getIDMaestro());
+             foreach (Materia materia in c.CLASES)
+             {
+                 cbMateria.Items.Add(materia);
+             }
 
-        }*/
+         }*/
 
-       /* private void cbMateria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            c.SMateria = cbMateria.SelectedItem.ToString();
-        
-            dataGridView1.DataSource = c.verEvaluaciones();
-        }*/
+        /* private void cbMateria_SelectedIndexChanged(object sender, EventArgs e)
+         {
+             c.SMateria = cbMateria.SelectedItem.ToString();
+
+             dataGridView1.DataSource = c.verEvaluaciones();
+         }*/
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
@@ -218,7 +219,7 @@ namespace SEM.Forms
             var index = e.RowIndex;
             DataGridViewRow SelectedRow = dataGridView2.Rows[index];
             c.SMateria = SelectedRow.Cells[0].Value.ToString();
-            
+
             /*btnEvaluate.ButtonColor = Color.FromArgb(13, 70, 255);
             btnEvaluate.TextColor = Color.White;
             btnEvaluate.Enabled = true;
@@ -256,12 +257,12 @@ namespace SEM.Forms
             dataGridView1.Columns[2].Width = dataGridView1.Width / 8;
             dataGridView1.Columns[3].Width = dataGridView1.Width / 9;
             dataGridView1.Columns[4].Width = dataGridView1.Width / 9;*/
-            if(dataGridView1.Rows.Count > 0)
+            if (dataGridView1.Rows.Count > 0)
             {
                 idEvaluacion = dataGridView1.Rows[0].Cells[0].Value.ToString();
                 likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
                 likeBtn.Enabled = true;
-                dislikeBtn.ButtonColor = Color.FromArgb(255,13,70);
+                dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
                 dislikeBtn.Enabled = true;
                 label2.Text = "Evaluaciones de la materia:";
             }
@@ -280,14 +281,14 @@ namespace SEM.Forms
         {
             panelMaterias.Visible = true;
             panelEvaluaciones.Visible = false;
-           /* likeBtn.TextColor = Color.Silver;
-            likeBtn.ButtonColor = Color.FromArgb(130, 170, 255);
-            likeBtn.Enabled = false;
-            dislikeBtn.ButtonColor = Color.FromArgb(255, 130, 170);
-            dislikeBtn.TextColor = Color.Silver;
-            dislikeBtn.Enabled = false;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DimGray;*/
+            /* likeBtn.TextColor = Color.Silver;
+             likeBtn.ButtonColor = Color.FromArgb(130, 170, 255);
+             likeBtn.Enabled = false;
+             dislikeBtn.ButtonColor = Color.FromArgb(255, 130, 170);
+             dislikeBtn.TextColor = Color.Silver;
+             dislikeBtn.Enabled = false;
+             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
+             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DimGray;*/
             dataGridView2.DataSource = c.verMateriasM();
             c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
         }
@@ -299,23 +300,23 @@ namespace SEM.Forms
                 var index = e.RowIndex;
                 DataGridViewRow SelectedRow = dataGridView1.Rows[index];
                 idEvaluacion = SelectedRow.Cells[0].Value.ToString();
-            
-               /* likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
-                likeBtn.TextColor = Color.White;
-                likeBtn.Enabled = true;
-                dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
-                dislikeBtn.TextColor = Color.White;
-                dislikeBtn.Enabled = true;*/
+
+                /* likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
+                 likeBtn.TextColor = Color.White;
+                 likeBtn.Enabled = true;
+                 dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
+                 dislikeBtn.TextColor = Color.White;
+                 dislikeBtn.Enabled = true;*/
                 /*dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1, 120, 213);
                 dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;*/
-                
+
             }
             catch (Exception)
             {
 
-              
+
             }
-            
+
         }
 
         private void BtnRA_Click(object sender, EventArgs e)
@@ -329,6 +330,45 @@ namespace SEM.Forms
             c.USER = 0;
             this.Hide();
             new Login(c).Show();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
+            try
+            {
+                OpenFileDialog1.Filter = "Archivos de imágen (*.jpg)(*.jpeg)|*.jpg;*.jpeg|PNG(*.png)|*.png";
+                if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    String imagen = OpenFileDialog1.FileName;
+                    Console.WriteLine("Aqui estan el string de la imagen: " + imagen);
+
+                    imgMaestro.Image = Image.FromFile(imagen);
+                    imgMaestro.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    using (FileStream pgFileStream = new FileStream(imagen, FileMode.Open, FileAccess.Read))
+                    {
+
+                        using (BinaryReader pgReader = new BinaryReader(new BufferedStream(pgFileStream)))
+                        {
+                            ImgByteA = pgReader.ReadBytes(Convert.ToInt32(pgFileStream.Length));
+                            c.ChangeImage(ImgByteA);
+                            //MessageBox.Show("Guardado Correctamente");
+                            SemBox sb = new SemBox("short", "Se realizo la actualización", "", "Aceptar");
+                            sb.Show();
+                            
+                            
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+
+
+            }
         }
     }
 }

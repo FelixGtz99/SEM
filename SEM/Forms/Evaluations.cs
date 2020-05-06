@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,15 +48,26 @@ namespace SEM.Forms
             dataGridView1.Columns[4].Width = dataGridView1.Width / 9;*/
 
             escuelaPicture.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
-            string urlImg = c.getImgM();
-            if(urlImg == "null" || string.IsNullOrEmpty(urlImg) || urlImg == "no")
+            //string urlImg = c.getImgM();
+            byte[] imagen = c.getImgM2();
+            if (imagen == null)
             {
-              //  MessageBox.Show("WHAT THE FUCK");
-                imgMaestro.ImageLocation = "https://fotos.subefotos.com/a77a9fc14733c78d00746a077a874ce5o.png";
+                Console.WriteLine("Faros en vinagre");
+                //  MessageBox.Show("WHAT THE FUCK");
+                //imgMaestro.ImageLocation = "https://fotos.subefotos.com/a77a9fc14733c78d00746a077a874ce5o.png";
+
+
             }
             else
             {
-                imgMaestro.ImageLocation = urlImg;
+                using (MemoryStream productImageStream = new System.IO.MemoryStream(imagen))
+                {
+                    ImageConverter imageConverter = new System.Drawing.ImageConverter();
+                    imgMaestro.Image = imageConverter.ConvertFrom(imagen) as System.Drawing.Image;
+                }
+                //imageConverter = c.getImgM2();
+
+                Console.WriteLine("Faros en vinagre del else");
 
             }
             escuelaPicture.SizeMode = PictureBoxSizeMode.Zoom;

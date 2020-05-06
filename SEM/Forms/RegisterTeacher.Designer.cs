@@ -33,6 +33,7 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelCarrera = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,10 +60,12 @@
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
             this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelCarrera = new System.Windows.Forms.Label();
+            this.Subir = new ePOSOne.btnProduct.Button_WOC();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -123,6 +126,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(364, 727);
             this.panel1.TabIndex = 23;
+            // 
+            // labelCarrera
+            // 
+            this.labelCarrera.AutoSize = true;
+            this.labelCarrera.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCarrera.ForeColor = System.Drawing.Color.White;
+            this.labelCarrera.Location = new System.Drawing.Point(44, 314);
+            this.labelCarrera.Name = "labelCarrera";
+            this.labelCarrera.Size = new System.Drawing.Size(272, 18);
+            this.labelCarrera.TabIndex = 19;
+            this.labelCarrera.Text = "Ingeniería en Sistemas de Información";
             // 
             // pictureBox1
             // 
@@ -460,16 +474,34 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Ayuda";
             // 
-            // labelCarrera
+            // Subir
             // 
-            this.labelCarrera.AutoSize = true;
-            this.labelCarrera.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCarrera.ForeColor = System.Drawing.Color.White;
-            this.labelCarrera.Location = new System.Drawing.Point(44, 314);
-            this.labelCarrera.Name = "labelCarrera";
-            this.labelCarrera.Size = new System.Drawing.Size(272, 18);
-            this.labelCarrera.TabIndex = 19;
-            this.labelCarrera.Text = "Ingeniería en Sistemas de Información";
+            this.Subir.BorderColor = System.Drawing.Color.Transparent;
+            this.Subir.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.Subir.FlatAppearance.BorderSize = 0;
+            this.Subir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Subir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Subir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Subir.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Subir.Location = new System.Drawing.Point(1098, 242);
+            this.Subir.Name = "Subir";
+            this.Subir.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.Subir.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.Subir.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.Subir.Size = new System.Drawing.Size(148, 60);
+            this.Subir.TabIndex = 47;
+            this.Subir.Text = "Subir Foto";
+            this.Subir.TextColor = System.Drawing.Color.White;
+            this.Subir.UseVisualStyleBackColor = true;
+            this.Subir.Click += new System.EventHandler(this.Subir_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(1087, 71);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(159, 151);
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
             // 
             // RegisterTeacher
             // 
@@ -477,6 +509,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.Subir);
             this.Controls.Add(this.listMaterias);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnAñadir);
@@ -508,6 +542,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,5 +581,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label labelCarrera;
+        private ePOSOne.btnProduct.Button_WOC Subir;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

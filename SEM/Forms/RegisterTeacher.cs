@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace SEM.Forms
     {
         List<Materia> Materias = new List<Materia>();
         Conexion c = null;
+        byte[] ImgByteA = null;
         public RegisterTeacher(Conexion c)
             
         {
@@ -146,7 +148,7 @@ namespace SEM.Forms
             }
             else
             {
-                c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias);
+                c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
                 //MessageBox.Show("Guardado Correctamente");
                 SemBox sb = new SemBox("short", "Maestro registrado correctamente", "", "Aceptar");
                 sb.Show();
@@ -212,6 +214,77 @@ namespace SEM.Forms
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Subir_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
+            try
+            {
+                OpenFileDialog1.Filter = "Archivos de imágen(*.jpg)|*.jpg|All Files (*.*)|*.*";
+                if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    String imagen = OpenFileDialog1.FileName;
+                    Console.WriteLine("Aqui estan el string de la imagen: " + imagen);
+
+                    pictureBox2.Image = Image.FromFile(imagen);
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    using (FileStream pgFileStream = new FileStream(imagen, FileMode.Open, FileAccess.Read))
+                    {
+
+                        using (BinaryReader pgReader = new BinaryReader(new BufferedStream(pgFileStream)))
+                        {
+
+
+                            ImgByteA = pgReader.ReadBytes(Convert.ToInt32(pgFileStream.Length));
+                            //command.CommandText = "insert into abc (id, image) VALUES ('65', @Image)";
+
+                            //NpgsqlParameter param = command.CreateParameter();
+                            //param.ParameterName = "@Image";
+                            //param.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
+                            //param.Value = ImgByteA;
+                            //Console.WriteLine("Aqui estan los bytes: " + Encoding.Default.GetString(ImgByteA));
+                            //command.Parameters.Add(param);
+
+                            //command.Parameters.Add(new NpgsqlParameter("Image", ImgByteA));
+                            //command.Parameters.Add("@Image", NpgsqlTypes.NpgsqlDbType.Bytea).Value = ImgByteA;
+
+                            //command.ExecuteNonQuery();
+
+
+                        }
+                    }
+
+                }
+                /*string sQL = "SELECT image from abc WHERE id = 65";
+                using (var command = new NpgsqlCommand(sQL, conn))
+                {
+                    byte[] productImageByte = null;
+                    //conn.Open();
+                    var rdr = command.ExecuteReader();
+                    if (rdr.Read())
+                    {
+                        productImageByte = (byte[])rdr[0];
+                    }
+                    rdr.Close();
+                    if (productImageByte != null)
+                    {
+                        using (MemoryStream productImageStream = new System.IO.MemoryStream(productImageByte))
+                        {
+                            ImageConverter imageConverter = new System.Drawing.ImageConverter();
+                            pictureBox3.Image = imageConverter.ConvertFrom(productImageByte) as System.Drawing.Image;
+                        }
+                    }
+                }*/
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+
+
+            }
         }
     }
 }

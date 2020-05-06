@@ -8,6 +8,9 @@ using Npgsql;
 using SEM.items;
 using System.Collections;
 using SEM.Forms;
+using SEM.Forms;
+using System.IO;
+using System.Drawing;
 
 namespace SEM
 {
@@ -722,9 +725,9 @@ namespace SEM
             return data;
         }
         //Registrar Docente
-        public void guardarDocente(String nombre, String apellido, String alias, List<Materia> m) 
+        public void guardarDocente(String nombre, String apellido, String alias, List<Materia> m, byte[] ImgByteA) 
         {
-            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias, img, id_carrera) VALUES(@id, @n, @a, @alias,@img, @idC); ";
+            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias, id_carrera, upload_img) VALUES(@id, @n, @a, @alias, @idC,@Image); ";
 
             var IDD = MAESTROS.Count + 1;
 
@@ -733,8 +736,14 @@ namespace SEM
             cmd.Parameters.AddWithValue("a", apellido);
             cmd.Parameters.AddWithValue("alias", alias);
             cmd.Parameters.AddWithValue("id", IDD);
-            cmd.Parameters.AddWithValue("img", "no");
+            //cmd.Parameters.AddWithValue("img", "no");
             cmd.Parameters.AddWithValue("idC", CARRERA);
+            NpgsqlParameter param = cmd.CreateParameter();
+            param.ParameterName = "@Image";
+            param.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
+            param.Value = ImgByteA;
+            Console.WriteLine("Aqui estan los bytes: " + Encoding.Default.GetString(ImgByteA));
+            cmd.Parameters.Add(param);
             cmd.ExecuteNonQuery();
             foreach (Materia materia in m)
             {
@@ -756,7 +765,7 @@ namespace SEM
 
 
         }
-        public String getImgM() {
+        /*public String getImgM() {
             String query = "SELECT img FROM docentes WHERE id_docente=@id";
             var cmd = new NpgsqlCommand(query, con);
             cmd.Parameters.AddWithValue("id", getIDMaestro());
@@ -769,6 +778,27 @@ namespace SEM
                 else
                 {
                     return "null";
+                }
+
+            }
+        }*/
+        public Byte[] getImgM2()
+        {
+            String query = "SELECT upload_i" +
+                "mg FROM docentes WHERE id_docente=@id";
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("id", getIDMaestro());
+            //byte[] productImageByte = null;
+            using (var reader = cmd.ExecuteReader())
+            {
+
+                if (reader.Read())
+                {
+                    return (byte[])reader[0];
+                }
+                else
+                {
+                    return null;
                 }
 
             }

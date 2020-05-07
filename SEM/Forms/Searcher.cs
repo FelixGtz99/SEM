@@ -17,7 +17,11 @@ namespace SEM.Forms
         {
             InitializeComponent();
             this.c = c;
-            
+            c.getMaestros();
+            c.getMaterias();
+            c.getCarreras();
+            c.getEscuela();
+            labelCarrera.Text = c.SCarrera;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
 

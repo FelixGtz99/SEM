@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
+            this.button_WOC3 = new ePOSOne.btnProduct.Button_WOC();
+            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.notifications = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnConfig = new ePOSOne.btnProduct.Button_WOC();
             this.label7 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,15 +55,11 @@
             this.helpMaterias = new System.Windows.Forms.Label();
             this.helpMaestros = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnConfig = new ePOSOne.btnProduct.Button_WOC();
             this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
-            this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
-            this.button_WOC3 = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifications)).BeginInit();
@@ -134,6 +134,70 @@
             this.panel1.Size = new System.Drawing.Size(364, 727);
             this.panel1.TabIndex = 10;
             // 
+            // button_WOC2
+            // 
+            this.button_WOC2.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.button_WOC2.FlatAppearance.BorderSize = 0;
+            this.button_WOC2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC2.Image = global::SEM.Properties.Resources.people;
+            this.button_WOC2.Location = new System.Drawing.Point(201, 547);
+            this.button_WOC2.Name = "button_WOC2";
+            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.button_WOC2.Size = new System.Drawing.Size(60, 60);
+            this.button_WOC2.TabIndex = 57;
+            this.button_WOC2.TextColor = System.Drawing.Color.White;
+            this.button_WOC2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_WOC2.UseVisualStyleBackColor = true;
+            // 
+            // button_WOC3
+            // 
+            this.button_WOC3.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC3.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
+            this.button_WOC3.FlatAppearance.BorderSize = 0;
+            this.button_WOC3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC3.Image = global::SEM.Properties.Resources.delete;
+            this.button_WOC3.Location = new System.Drawing.Point(100, 545);
+            this.button_WOC3.Name = "button_WOC3";
+            this.button_WOC3.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC3.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
+            this.button_WOC3.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.button_WOC3.Size = new System.Drawing.Size(60, 60);
+            this.button_WOC3.TabIndex = 56;
+            this.button_WOC3.TextColor = System.Drawing.Color.White;
+            this.button_WOC3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_WOC3.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.ButtonColor = System.Drawing.Color.White;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = global::SEM.Properties.Resources.signs;
+            this.btnCerrar.Location = new System.Drawing.Point(46, 187);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnCerrar.Size = new System.Drawing.Size(259, 60);
+            this.btnCerrar.TabIndex = 55;
+            this.btnCerrar.Text = "Cerrar Sesión";
+            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            // 
             // notifications
             // 
             this.notifications.AllowUserToAddRows = false;
@@ -144,24 +208,24 @@
             this.notifications.BackgroundColor = System.Drawing.Color.White;
             this.notifications.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.notifications.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.notifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.notifications.ColumnHeadersVisible = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.DefaultCellStyle = dataGridViewCellStyle2;
             this.notifications.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.notifications.EnableHeadersVisualStyles = false;
             this.notifications.GridColor = System.Drawing.Color.White;
@@ -169,14 +233,14 @@
             this.notifications.MultiSelect = false;
             this.notifications.Name = "notifications";
             this.notifications.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.notifications.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.notifications.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.notifications.RowHeadersWidth = 15;
             this.notifications.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.notifications.RowTemplate.DividerHeight = 10;
@@ -206,6 +270,28 @@
             this.label8.Size = new System.Drawing.Size(277, 23);
             this.label8.TabIndex = 16;
             this.label8.Text = "sistema evaluador de maestros";
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.BorderColor = System.Drawing.Color.Transparent;
+            this.btnConfig.ButtonColor = System.Drawing.Color.White;
+            this.btnConfig.FlatAppearance.BorderSize = 0;
+            this.btnConfig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnConfig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfig.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig.Image = global::SEM.Properties.Resources.user_close_up;
+            this.btnConfig.Location = new System.Drawing.Point(46, 121);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnConfig.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.btnConfig.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnConfig.Size = new System.Drawing.Size(259, 60);
+            this.btnConfig.TabIndex = 50;
+            this.btnConfig.Text = "Editar Cuenta";
+            this.btnConfig.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConfig.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -293,7 +379,6 @@
             this.txtMaterias.Name = "txtMaterias";
             this.txtMaterias.Size = new System.Drawing.Size(510, 25);
             this.txtMaterias.TabIndex = 15;
-            this.txtMaterias.Text = "Materia X";
             // 
             // cbMaestros
             // 
@@ -352,28 +437,6 @@
             this.label5.TabIndex = 53;
             this.label5.Text = "Universidad de Sonora";
             // 
-            // btnConfig
-            // 
-            this.btnConfig.BorderColor = System.Drawing.Color.Transparent;
-            this.btnConfig.ButtonColor = System.Drawing.Color.White;
-            this.btnConfig.FlatAppearance.BorderSize = 0;
-            this.btnConfig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnConfig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.Image = global::SEM.Properties.Resources.user_close_up;
-            this.btnConfig.Location = new System.Drawing.Point(46, 121);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnConfig.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.btnConfig.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnConfig.Size = new System.Drawing.Size(259, 60);
-            this.btnConfig.TabIndex = 50;
-            this.btnConfig.Text = "Editar Cuenta";
-            this.btnConfig.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfig.UseVisualStyleBackColor = true;
-            // 
             // btnEditar
             // 
             this.btnEditar.BorderColor = System.Drawing.Color.Transparent;
@@ -418,6 +481,7 @@
             this.btnAñadir.TextColor = System.Drawing.Color.White;
             this.btnAñadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // button_WOC1
             // 
@@ -469,70 +533,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(175, 175);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.ButtonColor = System.Drawing.Color.White;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Image = global::SEM.Properties.Resources.signs;
-            this.btnCerrar.Location = new System.Drawing.Point(46, 187);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnCerrar.Size = new System.Drawing.Size(259, 60);
-            this.btnCerrar.TabIndex = 55;
-            this.btnCerrar.Text = "Cerrar Sesión";
-            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            // 
-            // button_WOC2
-            // 
-            this.button_WOC2.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.button_WOC2.FlatAppearance.BorderSize = 0;
-            this.button_WOC2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC2.Image = global::SEM.Properties.Resources.people;
-            this.button_WOC2.Location = new System.Drawing.Point(201, 547);
-            this.button_WOC2.Name = "button_WOC2";
-            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.button_WOC2.Size = new System.Drawing.Size(60, 60);
-            this.button_WOC2.TabIndex = 57;
-            this.button_WOC2.TextColor = System.Drawing.Color.White;
-            this.button_WOC2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_WOC2.UseVisualStyleBackColor = true;
-            // 
-            // button_WOC3
-            // 
-            this.button_WOC3.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC3.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
-            this.button_WOC3.FlatAppearance.BorderSize = 0;
-            this.button_WOC3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC3.Image = global::SEM.Properties.Resources.delete;
-            this.button_WOC3.Location = new System.Drawing.Point(100, 545);
-            this.button_WOC3.Name = "button_WOC3";
-            this.button_WOC3.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC3.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
-            this.button_WOC3.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.button_WOC3.Size = new System.Drawing.Size(60, 60);
-            this.button_WOC3.TabIndex = 56;
-            this.button_WOC3.TextColor = System.Drawing.Color.White;
-            this.button_WOC3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_WOC3.UseVisualStyleBackColor = true;
             // 
             // AdminPanel
             // 

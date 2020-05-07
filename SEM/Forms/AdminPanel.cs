@@ -17,6 +17,14 @@ namespace SEM.Forms
         {
             this.c = c;
             InitializeComponent();
+            c.getMaestros();
+            c.getMaterias();
+            c.getCarreras();
+            c.getEscuela();
+            CBMaestros();
+            CBMaterias();
+            cbMaterias.SelectedIndex = 0;
+            cbMaestros.SelectedIndex = 0;
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;
@@ -41,8 +49,7 @@ namespace SEM.Forms
             //this.notifications.Rows.Add("El maestro Alonso Pérez Soltero ha recibido muchos votos negativos en su perfil");
             //this.notifications.Rows.Add("El promedio del maestro Raquel Torres Peralta ha bajado de 6.0.");
             //this.notifications.Rows.Add("Se ha añadido al maestro René Francisco Navarro Hernández.");
-            CBMaestros();
-            CBMaterias();
+            
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -98,7 +105,15 @@ namespace SEM.Forms
         private void btnEditar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new EditTeacher(c).Show();
+            new EditTeacher(c,"admin").Show();
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            c.setMateria(txtMaterias.Text);
+            txtMaterias.Text = " ";
+            c.getMaterias();
+            CBMaterias();
         }
     }
 }

@@ -259,9 +259,9 @@
             this.labelCarrera.ForeColor = System.Drawing.Color.White;
             this.labelCarrera.Location = new System.Drawing.Point(44, 283);
             this.labelCarrera.Name = "labelCarrera";
-            this.labelCarrera.Size = new System.Drawing.Size(249, 16);
+            this.labelCarrera.Size = new System.Drawing.Size(54, 16);
             this.labelCarrera.TabIndex = 18;
-            this.labelCarrera.Text = "Ingeniería en Sistemas de Información";
+            this.labelCarrera.Text = "carrera";
             // 
             // pictureBox2
             // 

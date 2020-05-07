@@ -158,7 +158,7 @@ namespace SEM
                     errorEmail.Visible = true;
                 } else if (c.Login(txtEmail.Text, txtPass.Text) != 0)
                 {
-                    if (c.USER == 999)
+                    if (c.itsAdmin()) 
                     {
                         this.Hide();
                         new AdminPanel(c).Show();

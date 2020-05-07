@@ -8,7 +8,6 @@ using Npgsql;
 using SEM.items;
 using System.Collections;
 using SEM.Forms;
-using SEM.Forms;
 using System.IO;
 using System.Drawing;
 
@@ -171,6 +170,7 @@ namespace SEM
                     {
                         return true;
                     }
+                    reader.Close();
                 }
             }
             return false;
@@ -213,31 +213,48 @@ namespace SEM
             }
             return userID;
         }
-
+        //Get Escuela
+        public void getEscuela() {
+            String query = "SELECT e.nombre, c.nombre FROM escuela e, carrera c WHERE e.id_escuela=c.id_escuela AND c.id=@id";
+            using (var cmd=new NpgsqlCommand(query,con)) {
+                cmd.Parameters.AddWithValue("id", CARRERA);
+                using (var reader = cmd.ExecuteReader()) {
+                    if (reader.Read())
+                    {
+                        SEscuela = reader.GetString(0);
+                        SCarrera = reader.GetString(1);
+                    }
+                }
+            }
+        }
         //Crea una lista con los maestros
         public void getMaestros()
         {
             Maestros.Clear();
-            String query = "SELECT * FROM docentes ";
+            String query = "SELECT * FROM docentes WHERE id_carrera=@id";
             using (var cmd = new NpgsqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("id", CARRERA);
                 using (var reader = cmd.ExecuteReader())
                 {
+
                     while (reader.Read())
                     {
                         Maestro m = new Maestro(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
 
                         Maestros.Add(m);
                     }
+                    reader.Close();
                 }
             }
         }
         //Crea una lista con las materias
         public void getMaterias()
         {
-            String query = "SELECT id_materia, nombre_materia FROM materia ";
+            String query = "SELECT id_materia, nombre_materia FROM materia WHERE id_carrera=@id";
             using (var cmd = new NpgsqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("id", CARRERA);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -245,6 +262,7 @@ namespace SEM
                         Materia m = new Materia(reader.GetInt32(0), reader.GetString(1));
                         Materias.Add(m);
                     }
+                    reader.Close();
                 }
             }
         }
@@ -270,6 +288,7 @@ namespace SEM
                             }
                         }
                     }
+                    reader.Close();
                 }
             }
         }
@@ -287,6 +306,7 @@ namespace SEM
                         Escuela e = new Escuela(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
                         Escuelas.Add(e);
                     }
+                    reader.Close();
                 }
             }
         }
@@ -305,6 +325,7 @@ namespace SEM
                         Carrera c = new Carrera(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
                         Carreras.Add(c);
                     }
+                    reader.Close();
                 }
             }
         }
@@ -321,7 +342,9 @@ namespace SEM
                     {
                         id = reader.GetInt32(0);
                     }
+                    reader.Close();
                 }
+
             }
             return id;
         }
@@ -589,6 +612,7 @@ namespace SEM
                 {
                     return false;
                 }
+                reader.Close();
             }
         }
         //Busca el id de la evaluacion hecha
@@ -613,6 +637,7 @@ namespace SEM
                 {
                     return false;
                 }
+                reader.Close();
             }
 
         }
@@ -629,7 +654,7 @@ namespace SEM
                 {
                     likes = reader.GetInt32(0);
                 }
-
+                reader.Close();
             }
             return likes;
         }
@@ -646,7 +671,7 @@ namespace SEM
                 {
                     dislikes = reader.GetInt32(0);
                 }
-
+                reader.Close();
             }
             return dislikes;
         }
@@ -709,6 +734,7 @@ namespace SEM
                 cmd.Parameters.AddWithValue("idE", id);
 
                 cmd.ExecuteNonQuery();
+                
 
             }
             catch (Exception ex)
@@ -898,8 +924,37 @@ namespace SEM
             }
         }
         //Agregar Materia
+        public void setMateria(String Materia) {
+          
+            String query = "INSERT INTO public.materia(id_materia, nombre_materia, id_carrera) VALUES((SELECT MAX(id_materia) FROM materia)+1 ,@m , @c); ";
+            var cmd = new NpgsqlCommand(query, con);
 
-       
+            cmd.Parameters.AddWithValue("m", Materia);
+            cmd.Parameters.AddWithValue("c", CARRERA);
+            cmd.ExecuteNonQuery();
+
+        
+        }
+        //ver si es admin
+        public Boolean itsAdmin() {
+            String query = "SELECT * FROM carrera WHERE admin=@id";
+          
+            using (var cmd = new NpgsqlCommand(query, con)) {
+                cmd.Parameters.AddWithValue("id", userID);
+                using (var reader = cmd.ExecuteReader()) {
+                    if (reader.Read())
+                    {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                    
+                }
+            }
+
+        }
+
     }
     
 }

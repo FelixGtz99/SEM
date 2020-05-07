@@ -201,7 +201,7 @@ namespace SEM.Forms
         private void button_WOC1_Click_1(object sender, EventArgs e)
         {
             //this.Hide();
-            var et = new EditTeacher(c);
+            var et = new EditTeacher(c,"alumno");
             et.Shown += (o, args) => { this.Enabled = false; };
             et.FormClosed += (o, args) => {
                 this.Enabled = true;

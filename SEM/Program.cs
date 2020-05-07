@@ -17,10 +17,9 @@ namespace SEM
         static void Main()
         {
             c.iniciar();
-            c.getMaestros();
-            c.getMaterias();
-            c.getCarreras();
+            
             c.getEscuelas();
+   
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login(c));

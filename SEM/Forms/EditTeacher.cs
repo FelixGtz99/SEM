@@ -15,8 +15,10 @@ namespace SEM.Forms
     public partial class EditTeacher : Form
     {
         Conexion c = null;
-        public EditTeacher(Conexion c)
+        String pf = " ";
+        public EditTeacher(Conexion c, String pf)
         {
+            this.pf = pf;
             this.c = c;
             InitializeComponent();
             //Datos de la barra superior
@@ -59,7 +61,15 @@ namespace SEM.Forms
         private void defButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AdminPanel(c).Show();
+            if (pf.Equals("admin"))
+            {
+                
+                new AdminPanel(c).Show();
+            }
+            else {
+                new Evaluations(c).Show();
+            }
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

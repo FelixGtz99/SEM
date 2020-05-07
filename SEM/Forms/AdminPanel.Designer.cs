@@ -60,6 +60,7 @@
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button_WOC4 = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifications)).BeginInit();
@@ -534,12 +535,35 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // button_WOC4
+            // 
+            this.button_WOC4.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC4.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.button_WOC4.FlatAppearance.BorderSize = 0;
+            this.button_WOC4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC4.Image = global::SEM.Properties.Resources.plus;
+            this.button_WOC4.Location = new System.Drawing.Point(1017, 274);
+            this.button_WOC4.Name = "button_WOC4";
+            this.button_WOC4.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC4.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.button_WOC4.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.button_WOC4.Size = new System.Drawing.Size(259, 60);
+            this.button_WOC4.TabIndex = 55;
+            this.button_WOC4.Text = " ";
+            this.button_WOC4.TextColor = System.Drawing.Color.White;
+            this.button_WOC4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_WOC4.UseVisualStyleBackColor = true;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.button_WOC4);
             this.Controls.Add(this.button_WOC1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.helpMaestros);
@@ -604,5 +628,6 @@
         private ePOSOne.btnProduct.Button_WOC button_WOC1;
         private ePOSOne.btnProduct.Button_WOC button_WOC2;
         private ePOSOne.btnProduct.Button_WOC button_WOC3;
+        private ePOSOne.btnProduct.Button_WOC button_WOC4;
     }
 }

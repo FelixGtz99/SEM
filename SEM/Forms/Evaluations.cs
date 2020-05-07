@@ -21,6 +21,7 @@ namespace SEM.Forms
         {
             this.c = c;
             InitializeComponent();
+     
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;
@@ -81,7 +82,7 @@ namespace SEM.Forms
             var path2 = new System.Drawing.Drawing2D.GraphicsPath();
             path2.AddEllipse(0, 0, imgMaestro.Width, imgMaestro.Height);
             this.imgMaestro.Region = new Region(path2);
-
+            
 
             if (c.USER == 0)
 
@@ -91,8 +92,9 @@ namespace SEM.Forms
                 btnADD.Visible = false;
                 btnEvaluate.Visible = false;
             }
-
+             
             c.getClases(c.getIDMaestro());
+
             c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
             /*panel2.Focus();
             dataGridView1.ClearSelection();*/
@@ -369,6 +371,34 @@ namespace SEM.Forms
 
 
             }
+        }
+
+        private void button_WOC1_Click_2(object sender, EventArgs e)
+        {
+            if (c.checkProfileVote())
+            {
+               new SemBox("short", "Ya evaluaste este perfil", "", "Aceptar").Show();
+            }
+            else {
+                c.setProfileVote("like");
+            }
+        }
+
+        private void button_WOC2_Click_1(object sender, EventArgs e)
+        {
+            if(c.checkProfileVote())
+            {
+                new SemBox("short", "Ya evaluaste este perfil", "", "Aceptar").Show();
+            }
+            else
+            {
+                c.setProfileVote("dislike");
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -47,32 +47,32 @@
             this.panelEvaluaciones = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materiaLabel = new System.Windows.Forms.Label();
+            this.btnMaterias = new ePOSOne.btnProduct.Button_WOC();
+            this.dislikeBtn = new ePOSOne.btnProduct.Button_WOC();
+            this.likeBtn = new ePOSOne.btnProduct.Button_WOC();
             this.panelMaterias = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnADD = new ePOSOne.btnProduct.Button_WOC();
+            this.btnEvaluations = new ePOSOne.btnProduct.Button_WOC();
+            this.btnEvaluate = new ePOSOne.btnProduct.Button_WOC();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
+            this.btnRA = new ePOSOne.btnProduct.Button_WOC();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.labelCarrera = new System.Windows.Forms.Label();
             this.escuelaPicture = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.imgMaestro = new System.Windows.Forms.PictureBox();
             this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
-            this.btnMaterias = new ePOSOne.btnProduct.Button_WOC();
-            this.dislikeBtn = new ePOSOne.btnProduct.Button_WOC();
-            this.likeBtn = new ePOSOne.btnProduct.Button_WOC();
-            this.btnRA = new ePOSOne.btnProduct.Button_WOC();
-            this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
-            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnADD = new ePOSOne.btnProduct.Button_WOC();
-            this.btnEvaluations = new ePOSOne.btnProduct.Button_WOC();
-            this.btnEvaluate = new ePOSOne.btnProduct.Button_WOC();
+            this.imgMaestro = new System.Windows.Forms.PictureBox();
             this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panelEvaluaciones.SuspendLayout();
@@ -224,23 +224,23 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
@@ -248,14 +248,14 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidth = 15;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.DividerHeight = 10;
@@ -264,6 +264,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(694, 432);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // materiaLabel
             // 
@@ -275,256 +276,6 @@
             this.materiaLabel.Size = new System.Drawing.Size(91, 18);
             this.materiaLabel.TabIndex = 49;
             this.materiaLabel.Text = "Placeholder";
-            // 
-            // panelMaterias
-            // 
-            this.panelMaterias.Controls.Add(this.dataGridView2);
-            this.panelMaterias.Controls.Add(this.label3);
-            this.panelMaterias.Controls.Add(this.btnADD);
-            this.panelMaterias.Controls.Add(this.label4);
-            this.panelMaterias.Controls.Add(this.btnEvaluations);
-            this.panelMaterias.Controls.Add(this.btnEvaluate);
-            this.panelMaterias.Location = new System.Drawing.Point(364, 274);
-            this.panelMaterias.Name = "panelMaterias";
-            this.panelMaterias.Size = new System.Drawing.Size(1002, 494);
-            this.panelMaterias.TabIndex = 51;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.dataGridView2.Location = new System.Drawing.Point(17, 50);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridView2.RowHeadersWidth = 15;
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView2.RowTemplate.DividerHeight = 10;
-            this.dataGridView2.RowTemplate.Height = 90;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(694, 432);
-            this.dataGridView2.TabIndex = 50;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.label3.Location = new System.Drawing.Point(120, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 18);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Materias impartidas";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.labelUsuario);
-            this.panel3.Controls.Add(this.btnRA);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.btnVolver);
-            this.panel3.Controls.Add(this.labelCarrera);
-            this.panel3.Controls.Add(this.escuelaPicture);
-            this.panel3.Controls.Add(this.btnCerrar);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 41);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(364, 727);
-            this.panel3.TabIndex = 52;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.label5.Location = new System.Drawing.Point(44, 346);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 16);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Estudiante";
-            // 
-            // labelUsuario
-            // 
-            this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.labelUsuario.Location = new System.Drawing.Point(44, 321);
-            this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(76, 16);
-            this.labelUsuario.TabIndex = 6;
-            this.labelUsuario.Text = "Placeholder";
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.label11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label11.Location = new System.Drawing.Point(361, -2);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(3, 729);
-            this.label11.TabIndex = 34;
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelCarrera
-            // 
-            this.labelCarrera.AutoSize = true;
-            this.labelCarrera.Font = new System.Drawing.Font("Arial", 10F);
-            this.labelCarrera.ForeColor = System.Drawing.Color.White;
-            this.labelCarrera.Location = new System.Drawing.Point(44, 283);
-            this.labelCarrera.Name = "labelCarrera";
-            this.labelCarrera.Size = new System.Drawing.Size(249, 16);
-            this.labelCarrera.TabIndex = 18;
-            this.labelCarrera.Text = "Ingeniería en Sistemas de Información";
-            // 
-            // escuelaPicture
-            // 
-            this.escuelaPicture.Location = new System.Drawing.Point(54, 6);
-            this.escuelaPicture.Name = "escuelaPicture";
-            this.escuelaPicture.Size = new System.Drawing.Size(250, 250);
-            this.escuelaPicture.TabIndex = 15;
-            this.escuelaPicture.TabStop = false;
-            this.toolTip2.SetToolTip(this.escuelaPicture, "Universidad de Sonora");
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label13.Location = new System.Drawing.Point(40, 673);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(277, 23);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "sistema evaluador de maestros";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bahnschrift Light", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label14.Location = new System.Drawing.Point(94, 600);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(163, 81);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "sem";
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(361, 271);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1004, 3);
-            this.label7.TabIndex = 53;
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.label8.Location = new System.Drawing.Point(616, 233);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(420, 18);
-            this.label8.TabIndex = 54;
-            this.label8.Text = "¿Consideras que los datos de este maestro son correctos?";
-            // 
-            // toolTip2
-            // 
-            this.toolTip2.AutoPopDelay = 15000;
-            this.toolTip2.InitialDelay = 500;
-            this.toolTip2.ReshowDelay = 100;
-            // 
-            // imgMaestro
-            // 
-            this.imgMaestro.Image = global::SEM.Properties.Resources._default;
-            this.imgMaestro.InitialImage = global::SEM.Properties.Resources._default;
-            this.imgMaestro.Location = new System.Drawing.Point(422, 73);
-            this.imgMaestro.Name = "imgMaestro";
-            this.imgMaestro.Size = new System.Drawing.Size(175, 175);
-            this.imgMaestro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgMaestro.TabIndex = 48;
-            this.imgMaestro.TabStop = false;
-            // 
-            // button_WOC2
-            // 
-            this.button_WOC2.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
-            this.button_WOC2.FlatAppearance.BorderSize = 0;
-            this.button_WOC2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC2.Image = global::SEM.Properties.Resources.dislike;
-            this.button_WOC2.Location = new System.Drawing.Point(1169, 211);
-            this.button_WOC2.Name = "button_WOC2";
-            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
-            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.button_WOC2.Size = new System.Drawing.Size(60, 60);
-            this.button_WOC2.TabIndex = 56;
-            this.button_WOC2.TextColor = System.Drawing.Color.White;
-            this.button_WOC2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip2.SetToolTip(this.button_WOC2, "No es correcto");
-            this.button_WOC2.UseVisualStyleBackColor = true;
-            // 
-            // button_WOC1
-            // 
-            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.button_WOC1.FlatAppearance.BorderSize = 0;
-            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC1.Image = global::SEM.Properties.Resources.like;
-            this.button_WOC1.Location = new System.Drawing.Point(1056, 208);
-            this.button_WOC1.Name = "button_WOC1";
-            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.button_WOC1.Size = new System.Drawing.Size(60, 60);
-            this.button_WOC1.TabIndex = 55;
-            this.button_WOC1.TextColor = System.Drawing.Color.White;
-            this.button_WOC1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip2.SetToolTip(this.button_WOC1, "Es correcto");
-            this.button_WOC1.UseVisualStyleBackColor = true;
             // 
             // btnMaterias
             // 
@@ -595,74 +346,80 @@
             this.likeBtn.UseVisualStyleBackColor = true;
             this.likeBtn.Click += new System.EventHandler(this.button_WOC1_Click);
             // 
-            // btnRA
+            // panelMaterias
             // 
-            this.btnRA.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRA.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnRA.FlatAppearance.BorderSize = 0;
-            this.btnRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRA.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRA.Image = global::SEM.Properties.Resources.button;
-            this.btnRA.Location = new System.Drawing.Point(28, 471);
-            this.btnRA.Name = "btnRA";
-            this.btnRA.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnRA.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnRA.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnRA.Size = new System.Drawing.Size(298, 60);
-            this.btnRA.TabIndex = 20;
-            this.btnRA.Text = "Actividad Reciente";
-            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.btnRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRA.UseVisualStyleBackColor = true;
-            this.btnRA.Click += new System.EventHandler(this.BtnRA_Click);
+            this.panelMaterias.Controls.Add(this.dataGridView2);
+            this.panelMaterias.Controls.Add(this.label3);
+            this.panelMaterias.Controls.Add(this.btnADD);
+            this.panelMaterias.Controls.Add(this.label4);
+            this.panelMaterias.Controls.Add(this.btnEvaluations);
+            this.panelMaterias.Controls.Add(this.btnEvaluate);
+            this.panelMaterias.Location = new System.Drawing.Point(364, 274);
+            this.panelMaterias.Name = "panelMaterias";
+            this.panelMaterias.Size = new System.Drawing.Size(1002, 494);
+            this.panelMaterias.TabIndex = 51;
             // 
-            // btnVolver
+            // dataGridView2
             // 
-            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
-            this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Image = global::SEM.Properties.Resources.search;
-            this.btnVolver.Location = new System.Drawing.Point(28, 405);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnVolver.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnVolver.Size = new System.Drawing.Size(298, 60);
-            this.btnVolver.TabIndex = 19;
-            this.btnVolver.Text = "Búsqueda";
-            this.btnVolver.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.dataGridView2.Location = new System.Drawing.Point(17, 50);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView2.RowHeadersWidth = 15;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView2.RowTemplate.DividerHeight = 10;
+            this.dataGridView2.RowTemplate.Height = 90;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(694, 432);
+            this.dataGridView2.TabIndex = 50;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellClick);
             // 
-            // btnCerrar
+            // label3
             // 
-            this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Image = global::SEM.Properties.Resources.signs;
-            this.btnCerrar.Location = new System.Drawing.Point(28, 537);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnCerrar.Size = new System.Drawing.Size(298, 60);
-            this.btnCerrar.TabIndex = 14;
-            this.btnCerrar.Text = "Cerrar Sesión";
-            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.label3.Location = new System.Drawing.Point(120, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 18);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Materias impartidas";
             // 
             // btnADD
             // 
@@ -732,6 +489,252 @@
             this.btnEvaluate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEvaluate.UseVisualStyleBackColor = true;
             this.btnEvaluate.Click += new System.EventHandler(this.BtnEvaluate_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.labelUsuario);
+            this.panel3.Controls.Add(this.btnRA);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.btnVolver);
+            this.panel3.Controls.Add(this.labelCarrera);
+            this.panel3.Controls.Add(this.escuelaPicture);
+            this.panel3.Controls.Add(this.btnCerrar);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 41);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(364, 727);
+            this.panel3.TabIndex = 52;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.label5.Location = new System.Drawing.Point(44, 346);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Estudiante";
+            // 
+            // labelUsuario
+            // 
+            this.labelUsuario.AutoSize = true;
+            this.labelUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.labelUsuario.Location = new System.Drawing.Point(44, 321);
+            this.labelUsuario.Name = "labelUsuario";
+            this.labelUsuario.Size = new System.Drawing.Size(76, 16);
+            this.labelUsuario.TabIndex = 6;
+            this.labelUsuario.Text = "Placeholder";
+            // 
+            // btnRA
+            // 
+            this.btnRA.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRA.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnRA.FlatAppearance.BorderSize = 0;
+            this.btnRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRA.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRA.Image = global::SEM.Properties.Resources.button;
+            this.btnRA.Location = new System.Drawing.Point(28, 471);
+            this.btnRA.Name = "btnRA";
+            this.btnRA.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnRA.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.btnRA.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnRA.Size = new System.Drawing.Size(298, 60);
+            this.btnRA.TabIndex = 20;
+            this.btnRA.Text = "Actividad Reciente";
+            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRA.UseVisualStyleBackColor = true;
+            this.btnRA.Click += new System.EventHandler(this.BtnRA_Click);
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label11.Location = new System.Drawing.Point(361, -2);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(3, 729);
+            this.label11.TabIndex = 34;
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Image = global::SEM.Properties.Resources.search;
+            this.btnVolver.Location = new System.Drawing.Point(28, 405);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.btnVolver.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnVolver.Size = new System.Drawing.Size(298, 60);
+            this.btnVolver.TabIndex = 19;
+            this.btnVolver.Text = "Búsqueda";
+            this.btnVolver.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // labelCarrera
+            // 
+            this.labelCarrera.AutoSize = true;
+            this.labelCarrera.Font = new System.Drawing.Font("Arial", 10F);
+            this.labelCarrera.ForeColor = System.Drawing.Color.White;
+            this.labelCarrera.Location = new System.Drawing.Point(44, 283);
+            this.labelCarrera.Name = "labelCarrera";
+            this.labelCarrera.Size = new System.Drawing.Size(249, 16);
+            this.labelCarrera.TabIndex = 18;
+            this.labelCarrera.Text = "Ingeniería en Sistemas de Información";
+            // 
+            // escuelaPicture
+            // 
+            this.escuelaPicture.Location = new System.Drawing.Point(54, 6);
+            this.escuelaPicture.Name = "escuelaPicture";
+            this.escuelaPicture.Size = new System.Drawing.Size(250, 250);
+            this.escuelaPicture.TabIndex = 15;
+            this.escuelaPicture.TabStop = false;
+            this.toolTip2.SetToolTip(this.escuelaPicture, "Universidad de Sonora");
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = global::SEM.Properties.Resources.signs;
+            this.btnCerrar.Location = new System.Drawing.Point(28, 537);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnCerrar.Size = new System.Drawing.Size(298, 60);
+            this.btnCerrar.TabIndex = 14;
+            this.btnCerrar.Text = "Cerrar Sesión";
+            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.label13.Location = new System.Drawing.Point(40, 673);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(277, 23);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "sistema evaluador de maestros";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Bahnschrift Light", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.label14.Location = new System.Drawing.Point(94, 600);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(163, 81);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "sem";
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label7.Location = new System.Drawing.Point(361, 271);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(1004, 3);
+            this.label7.TabIndex = 53;
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.label8.Location = new System.Drawing.Point(616, 233);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(420, 18);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "¿Consideras que los datos de este maestro son correctos?";
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.AutoPopDelay = 15000;
+            this.toolTip2.InitialDelay = 500;
+            this.toolTip2.ReshowDelay = 100;
+            // 
+            // button_WOC2
+            // 
+            this.button_WOC2.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
+            this.button_WOC2.FlatAppearance.BorderSize = 0;
+            this.button_WOC2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC2.Image = global::SEM.Properties.Resources.dislike;
+            this.button_WOC2.Location = new System.Drawing.Point(1169, 211);
+            this.button_WOC2.Name = "button_WOC2";
+            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
+            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.button_WOC2.Size = new System.Drawing.Size(60, 60);
+            this.button_WOC2.TabIndex = 56;
+            this.button_WOC2.TextColor = System.Drawing.Color.White;
+            this.button_WOC2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip2.SetToolTip(this.button_WOC2, "No es correcto");
+            this.button_WOC2.UseVisualStyleBackColor = true;
+            this.button_WOC2.Click += new System.EventHandler(this.button_WOC2_Click_1);
+            // 
+            // button_WOC1
+            // 
+            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.button_WOC1.FlatAppearance.BorderSize = 0;
+            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC1.Image = global::SEM.Properties.Resources.like;
+            this.button_WOC1.Location = new System.Drawing.Point(1056, 208);
+            this.button_WOC1.Name = "button_WOC1";
+            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.button_WOC1.Size = new System.Drawing.Size(60, 60);
+            this.button_WOC1.TabIndex = 55;
+            this.button_WOC1.TextColor = System.Drawing.Color.White;
+            this.button_WOC1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip2.SetToolTip(this.button_WOC1, "Es correcto");
+            this.button_WOC1.UseVisualStyleBackColor = true;
+            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click_2);
+            // 
+            // imgMaestro
+            // 
+            this.imgMaestro.Image = global::SEM.Properties.Resources._default;
+            this.imgMaestro.InitialImage = global::SEM.Properties.Resources._default;
+            this.imgMaestro.Location = new System.Drawing.Point(422, 73);
+            this.imgMaestro.Name = "imgMaestro";
+            this.imgMaestro.Size = new System.Drawing.Size(175, 175);
+            this.imgMaestro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgMaestro.TabIndex = 48;
+            this.imgMaestro.TabStop = false;
             // 
             // btnRegistrar
             // 

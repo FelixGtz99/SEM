@@ -231,15 +231,17 @@ namespace SEM
         public void getMaestros()
         {
             Maestros.Clear();
-            String query = "SELECT * FROM docentes WHERE id_carrera=@id";
+            String query = "SELECT id_docente, nombre, apellido, alias FROM docentes WHERE id_carrera=@id";
             using (var cmd = new NpgsqlCommand(query, con))
             {
+               
                 cmd.Parameters.AddWithValue("id", CARRERA);
                 using (var reader = cmd.ExecuteReader())
                 {
 
                     while (reader.Read())
                     {
+                      
                         Maestro m = new Maestro(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
 
                         Maestros.Add(m);
@@ -285,10 +287,11 @@ namespace SEM
                             {
 
                                 Clases.Add(materia);
+                                Console.WriteLine(materia.ToString());
                             }
                         }
                     }
-                    reader.Close();
+                   // reader.Close();
                 }
             }
         }
@@ -530,7 +533,7 @@ namespace SEM
                     id = maestro.ID;
                 }
             }
-
+           
             return id;
         }
         //Obtiene el id de Escuela
@@ -954,7 +957,35 @@ namespace SEM
             }
 
         }
+        //ver si ya evaluo perfil
+        public Boolean checkProfileVote() {
+            String query = "SELECT * FROM votosperfil WHERE id_docente=@idD AND id_usuario=@idU";
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("idD", getIDMaestro());
+            cmd.Parameters.AddWithValue("idU", userID);
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                reader.Close();
+                return true;
+            }
+            else {
+                reader.Close();
+                return false;
+            }
+            
 
+        }
+        //Votar
+        public void setProfileVote(String voto) {
+            String query = "INSERT INTO public.votosperfil(id_docente, id_usuario, voto) VALUES(@idD, @idU, @v); ";
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("idD", getIDMaestro());
+            cmd.Parameters.AddWithValue("idU", userID);
+            cmd.Parameters.AddWithValue("v", voto);
+            cmd.ExecuteNonQuery();
+            
+        }
     }
     
 }

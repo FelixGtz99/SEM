@@ -12,8 +12,10 @@ namespace SEM.Forms
 {
     public partial class AddCareer : Form
     {
-        public AddCareer()
+        Conexion c = null;
+        public AddCareer(Conexion c)
         {
+            this.c = c;
             InitializeComponent();
             pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

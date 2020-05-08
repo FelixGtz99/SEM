@@ -253,7 +253,7 @@ namespace SEM.Forms
                 else
                 {
                     this.Hide();
-                    new CreateEvaluation(c).Show();
+                    new CreateEvaluation(c, "maestro").Show();
                 }
             }
             //if (cbEleccion.SelectedItem.ToString().Equals("Materia"))
@@ -266,7 +266,7 @@ namespace SEM.Forms
                 else
                 {
                     this.Hide();
-                    new CreateEvaluation(c).Show();
+                    new CreateEvaluation(c, "materia").Show();
                 }
             }
 

@@ -986,6 +986,23 @@ namespace SEM
             cmd.ExecuteNonQuery();
             
         }
+
+        public List<String> cbMaestros()
+        {
+            List<String> lista = new List<string>();
+            String query = "SELECT (d.nombre||' '||d.apellido) FROM docentes d, clases c  WHERE d.id_docente=c.docente AND c.materria=@idM";
+            DataSet ds = new DataSet();
+            
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("idM",getIDMateria());
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                lista.Add(reader.GetString(0));
+            }
+            reader.Close();
+            return lista;
+        }
     }
     
 }

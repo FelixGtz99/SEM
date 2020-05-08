@@ -235,7 +235,7 @@ namespace SEM.Forms
         private void BtnEvaluate_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new CreateEvaluation(c).Show();
+            new CreateEvaluation(c, "maestro").Show();
         }
 
         private void BtnEvaluations_Click(object sender, EventArgs e)

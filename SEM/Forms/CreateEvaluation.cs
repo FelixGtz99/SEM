@@ -15,7 +15,7 @@ namespace SEM.Forms
     {
         Conexion c = null;
         int n = 1;
-        public CreateEvaluation(Conexion c)
+        public CreateEvaluation(Conexion c, String d)
             
         {
             this.c = c;
@@ -41,23 +41,36 @@ namespace SEM.Forms
 
             txtComentarios.GotFocus += Comment_GotFocus;
             txtComentarios.LostFocus += Comment_LostFocus;
+            if (d.Equals("maestro"))
+            {
+                CBMaestros();
+                cbMaestro.SelectedItem = c.SMaestro;
+                CBClases();
+                cbMateria.SelectedIndex = 0;
+            }
+            if (d.Equals("materia"))
+            {
+                cbMaestro.DataSource = c.cbMaestros();
+                cbMaestro.SelectedIndex = 0;
+                CBMaterias();
+                cbMateria.SelectedItem = c.SMateria;
             
-            CBMaestros();
-            cbMaestro.SelectedIndex = n;
-            CBMaterias();
+            }
+            else {
+              
+
+            }
+            
 
         }
         public void CBMaestros()
         {
-            int x = -1;
+         
             foreach (Maestro maestro in c.MAESTROS)
             {
-                x++;
+               
                 cbMaestro.Items.Add(maestro.ToString());
-                if (maestro.ToString().Equals(c.SMaestro))
-                {
-                    n = x;
-                }
+               
             }
         }
         public int getIDMaestro()
@@ -100,7 +113,29 @@ namespace SEM.Forms
         {
 
             cbMateria.Items.Clear();
+         
+            foreach (Materia materia in c.MATERIAS)
+            {
+                cbMateria.Items.Add(materia.ToString());
+            }
+
+        }
+        public void CBClases()
+        {
+
+            cbMateria.Items.Clear();
             c.getClases(getIDMaestro());
+            foreach (Materia materia in c.CLASES)
+            {
+                cbMateria.Items.Add(materia);
+            }
+
+        }
+        public void CBClases2()
+        {
+
+            cbMaestro.Items.Clear();
+            
             foreach (Materia materia in c.CLASES)
             {
                 cbMateria.Items.Add(materia);

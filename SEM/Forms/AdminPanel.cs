@@ -23,8 +23,19 @@ namespace SEM.Forms
             c.getEscuela();
             CBMaestros();
             CBMaterias();
-            cbMaterias.SelectedIndex = 0;
-            cbMaestros.SelectedIndex = 0;
+            lbCarrera.Text = c.SCarrera;
+            lbEscuela.Text = c.SEscuela;
+            lbNombre.Text = c.NOMBRE + " " + c.APELLIDO;
+            if (cbMaterias.Items.Count!=0)
+            {   
+                cbMaterias.SelectedIndex = 0;
+            }
+            if (cbMaestros.Items.Count!=0)
+            {
+                cbMaestros.SelectedIndex = 0;
+            }
+            
+           
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;
@@ -114,6 +125,16 @@ namespace SEM.Forms
             txtMaterias.Text = " ";
             c.getMaterias();
             CBMaterias();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            c.logout();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

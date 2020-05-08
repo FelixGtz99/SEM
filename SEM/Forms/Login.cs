@@ -160,14 +160,22 @@ namespace SEM
                 {
                     if (c.itsAdmin()) 
                     {
+
                         this.Hide();
                         new AdminPanel(c).Show();
-                      
+
                     }
+                    
                     else {
-                        this.Hide();
-                        new Searcher(c).Show();
-                        
+                        if (c.CARRERA == -1)
+                        {
+                            this.Hide();
+                            new AddCareer(c).Show();
+                        }else
+                        {
+                            this.Hide();
+                            new Searcher(c).Show();
+                        }
                     }
                     SemBox sb = new SemBox("short", "¡Bienvenido de regreso!", "", "Aceptar");
                     sb.Show();

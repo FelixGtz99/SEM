@@ -329,7 +329,7 @@ namespace SEM.Forms
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-            c.USER = 0;
+            c.logout();
             this.Hide();
             new Login(c).Show();
         }

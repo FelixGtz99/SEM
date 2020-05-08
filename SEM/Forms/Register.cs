@@ -466,5 +466,10 @@ namespace SEM
             }
 
         }
+
+        private void helpEscuela_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

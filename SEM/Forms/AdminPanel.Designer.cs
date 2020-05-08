@@ -43,9 +43,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnConfig = new ePOSOne.btnProduct.Button_WOC();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.lbNombre = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.lbCarrera = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbMaterias = new System.Windows.Forms.ComboBox();
             this.line1 = new System.Windows.Forms.Label();
@@ -54,13 +54,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.helpMaterias = new System.Windows.Forms.Label();
             this.helpMaestros = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbEscuela = new System.Windows.Forms.Label();
             this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button_WOC4 = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifications)).BeginInit();
@@ -127,7 +126,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnConfig);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.richTextBox2);
+            this.panel1.Controls.Add(this.lbNombre);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 41);
@@ -198,6 +197,7 @@
             this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // notifications
             // 
@@ -305,17 +305,17 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "sem";
             // 
-            // richTextBox2
+            // lbNombre
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.White;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Font = new System.Drawing.Font("Arial", 12F);
-            this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.richTextBox2.Location = new System.Drawing.Point(46, 78);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(285, 54);
-            this.richTextBox2.TabIndex = 12;
-            this.richTextBox2.Text = "Dr. José Luis Ochoa Hernández";
+            this.lbNombre.BackColor = System.Drawing.Color.White;
+            this.lbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbNombre.Font = new System.Drawing.Font("Arial", 12F);
+            this.lbNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbNombre.Location = new System.Drawing.Point(46, 78);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(285, 54);
+            this.lbNombre.TabIndex = 12;
+            this.lbNombre.Text = "Dr. José Luis Ochoa Hernández";
             // 
             // label1
             // 
@@ -328,17 +328,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "MODO ADMINISTRADOR";
             // 
-            // richTextBox1
+            // lbCarrera
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.richTextBox1.Location = new System.Drawing.Point(601, 104);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(675, 141);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "Ingeniería en Sistemas de Información";
+            this.lbCarrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.lbCarrera.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbCarrera.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCarrera.ForeColor = System.Drawing.Color.Black;
+            this.lbCarrera.Location = new System.Drawing.Point(601, 104);
+            this.lbCarrera.Name = "lbCarrera";
+            this.lbCarrera.Size = new System.Drawing.Size(675, 141);
+            this.lbCarrera.TabIndex = 11;
+            this.lbCarrera.Text = "Ingeniería en Sistemas de Información";
+            this.lbCarrera.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label3
             // 
@@ -427,16 +428,16 @@
             this.helpMaestros.Text = "?";
             this.helpMaestros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lbEscuela
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label5.Location = new System.Drawing.Point(602, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 24);
-            this.label5.TabIndex = 53;
-            this.label5.Text = "Universidad de Sonora";
+            this.lbEscuela.AutoSize = true;
+            this.lbEscuela.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEscuela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbEscuela.Location = new System.Drawing.Point(602, 80);
+            this.lbEscuela.Name = "lbEscuela";
+            this.lbEscuela.Size = new System.Drawing.Size(223, 24);
+            this.lbEscuela.TabIndex = 53;
+            this.lbEscuela.Text = "Universidad de Sonora";
             // 
             // btnEditar
             // 
@@ -535,37 +536,14 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // button_WOC4
-            // 
-            this.button_WOC4.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC4.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.button_WOC4.FlatAppearance.BorderSize = 0;
-            this.button_WOC4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC4.Image = global::SEM.Properties.Resources.plus;
-            this.button_WOC4.Location = new System.Drawing.Point(1017, 274);
-            this.button_WOC4.Name = "button_WOC4";
-            this.button_WOC4.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC4.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.button_WOC4.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.button_WOC4.Size = new System.Drawing.Size(259, 60);
-            this.button_WOC4.TabIndex = 55;
-            this.button_WOC4.Text = " ";
-            this.button_WOC4.TextColor = System.Drawing.Color.White;
-            this.button_WOC4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_WOC4.UseVisualStyleBackColor = true;
-            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.button_WOC4);
             this.Controls.Add(this.button_WOC1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbEscuela);
             this.Controls.Add(this.helpMaestros);
             this.Controls.Add(this.helpMaterias);
             this.Controls.Add(this.btnEditar);
@@ -578,7 +556,7 @@
             this.Controls.Add(this.cbMaterias);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.lbCarrera);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.Black;
@@ -603,8 +581,8 @@
         private System.Windows.Forms.Button btnMin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox lbCarrera;
+        private System.Windows.Forms.RichTextBox lbNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -622,12 +600,11 @@
         private ePOSOne.btnProduct.Button_WOC btnConfig;
         private System.Windows.Forms.Label helpMaterias;
         private System.Windows.Forms.Label helpMaestros;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbEscuela;
         private System.Windows.Forms.DataGridView notifications;
         private ePOSOne.btnProduct.Button_WOC btnCerrar;
         private ePOSOne.btnProduct.Button_WOC button_WOC1;
         private ePOSOne.btnProduct.Button_WOC button_WOC2;
         private ePOSOne.btnProduct.Button_WOC button_WOC3;
-        private ePOSOne.btnProduct.Button_WOC button_WOC4;
     }
 }

@@ -749,8 +749,9 @@ namespace SEM
         //ver la actividad reciente
         public DataTable verRA()
         {
-            String query = " SELECT notificacion as \"Actividad\", fecha as \"Fecha\" FROM \"RA\" ORDER BY  fecha DESC";
+            String query = " SELECT notificacion as \"Actividad\", fecha as \"Fecha\" FROM \"RA\" WHERE id_carrera=@idC  ORDER BY  fecha DESC";
             var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("idC", getIDCarrera());
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
             Console.WriteLine(data);
@@ -878,9 +879,9 @@ namespace SEM
         //Obtener notificaciones
         public DataTable getNotifications()
         {
-            String query = "SELECT notificacion FROM notificaciones ";
+            String query = "SELECT notificacion FROM notificaciones WHERE id_carrera=@idC ";
             var cmd = new NpgsqlCommand(query, con);
-           // cmd.Parameters.AddWithValue("idC", getIDCarrera());
+           cmd.Parameters.AddWithValue("idC", getIDCarrera());
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
             Console.WriteLine(data);
@@ -1002,6 +1003,58 @@ namespace SEM
             }
             reader.Close();
             return lista;
+        }
+        public String getUniversidad()
+        {
+            String es = "";
+            foreach (Escuela e in ESCUELAS)
+            {
+                if (e.Id.Equals(escuela))
+                {
+
+                    es= e.ToString();
+                    
+                }
+
+            }
+            return es;
+        }
+        public void setCarrera(List<String> lista, String Carrera) {
+            int n=0;
+            String query = "SELECT MAX(id) FROM carrera";
+            var cmd = new NpgsqlCommand(query, con);
+            var reader=cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                n = reader.GetInt32(0)+1;
+            }
+            reader.Close();
+            String query2 = "INSERT INTO public.carrera(id, nombre, id_escuela, admin) VALUES(@id, @n, @idE, @idA); ";
+            var cmd2 = new NpgsqlCommand(query2, con);
+            cmd2.Parameters.AddWithValue("id",n);
+            cmd2.Parameters.AddWithValue("n", Carrera);
+            cmd2.Parameters.AddWithValue("idE", escuela);
+            cmd2.Parameters.AddWithValue("idA", USER);
+            cmd2.ExecuteNonQuery();
+            String query3 = "UPDATE public.usuarios  SET carrera =@idC WHERE expediente=@id; ";
+            var cmd3 = new NpgsqlCommand(query3, con);
+            cmd3.Parameters.AddWithValue("id", USER);
+            cmd3.Parameters.AddWithValue("idC", n);
+            cmd3.ExecuteNonQuery();
+            foreach (String m in lista)
+            {
+                String query4 = "INSERT INTO public.materia(id_materia, nombre_materia, id_carrera)VALUES((SELECT MAX(id_materia) FROM materia)+1, @n, @idC); ";
+                var cmd4 = new NpgsqlCommand(query4, con);
+        
+                cmd4.Parameters.AddWithValue("n", m);
+                cmd4.Parameters.AddWithValue("idC", n);
+                cmd4.ExecuteNonQuery();
+            }
+        }
+        public void logout() {
+            userID = 0; carrera = 0;
+                escuela = 0;
+            pass = ""; nombre = ""; apellido = ""; correo = "";
         }
     }
     

@@ -320,6 +320,7 @@
             this.toolTip1.SetToolTip(this.helpEscuela, "Selecciona la Escuela en que estudias y tu carrera. Deben estar previamente regis" +
         "trados por una persona responsable para poder registrarte. Consulta las autorida" +
         "des de tu carrera.");
+            this.helpEscuela.Click += new System.EventHandler(this.helpEscuela_Click);
             // 
             // helpExpediente
             // 

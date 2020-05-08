@@ -35,15 +35,15 @@
             this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.lbNombre = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbUniversidad = new System.Windows.Forms.Label();
+            this.lbMaterias = new System.Windows.Forms.ListBox();
             this.line1 = new System.Windows.Forms.Label();
-            this.txtMaterias = new System.Windows.Forms.TextBox();
+            this.txtCarrera = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMateria = new System.Windows.Forms.TextBox();
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.help1 = new System.Windows.Forms.Label();
@@ -106,7 +106,7 @@
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.richTextBox2);
+            this.panel1.Controls.Add(this.lbNombre);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 41);
@@ -135,6 +135,7 @@
             this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label8
             // 
@@ -158,17 +159,17 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "sem";
             // 
-            // richTextBox2
+            // lbNombre
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.White;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Font = new System.Drawing.Font("Arial", 12F);
-            this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.richTextBox2.Location = new System.Drawing.Point(46, 78);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(285, 54);
-            this.richTextBox2.TabIndex = 12;
-            this.richTextBox2.Text = "Dr. José Luis Ochoa Hernández";
+            this.lbNombre.BackColor = System.Drawing.Color.White;
+            this.lbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbNombre.Font = new System.Drawing.Font("Arial", 12F);
+            this.lbNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbNombre.Location = new System.Drawing.Point(46, 78);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(285, 54);
+            this.lbNombre.TabIndex = 12;
+            this.lbNombre.Text = "nombre";
             // 
             // label1
             // 
@@ -189,32 +190,26 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // lbUniversidad
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(616, 263);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(546, 56);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Universidad de Sonora";
+            this.lbUniversidad.AutoSize = true;
+            this.lbUniversidad.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUniversidad.ForeColor = System.Drawing.Color.Black;
+            this.lbUniversidad.Location = new System.Drawing.Point(616, 263);
+            this.lbUniversidad.Name = "lbUniversidad";
+            this.lbUniversidad.Size = new System.Drawing.Size(312, 56);
+            this.lbUniversidad.TabIndex = 14;
+            this.lbUniversidad.Text = "Universidad ";
             // 
-            // listBox1
+            // lbMaterias
             // 
-            this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Items.AddRange(new object[] {
-            "Materia 1",
-            "Materia 2",
-            "Materia 3",
-            "Materia 4",
-            "Materia 5"});
-            this.listBox1.Location = new System.Drawing.Point(699, 391);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(399, 202);
-            this.listBox1.TabIndex = 15;
+            this.lbMaterias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lbMaterias.FormattingEnabled = true;
+            this.lbMaterias.ItemHeight = 18;
+            this.lbMaterias.Location = new System.Drawing.Point(699, 391);
+            this.lbMaterias.Name = "lbMaterias";
+            this.lbMaterias.Size = new System.Drawing.Size(399, 202);
+            this.lbMaterias.TabIndex = 15;
             // 
             // line1
             // 
@@ -224,17 +219,17 @@
             this.line1.Size = new System.Drawing.Size(513, 3);
             this.line1.TabIndex = 18;
             // 
-            // txtMaterias
+            // txtCarrera
             // 
-            this.txtMaterias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.txtMaterias.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaterias.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterias.ForeColor = System.Drawing.Color.DimGray;
-            this.txtMaterias.Location = new System.Drawing.Point(643, 344);
-            this.txtMaterias.Name = "txtMaterias";
-            this.txtMaterias.Size = new System.Drawing.Size(510, 25);
-            this.txtMaterias.TabIndex = 17;
-            this.txtMaterias.Text = "Ingeniería en Sistemas de Información";
+            this.txtCarrera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.txtCarrera.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCarrera.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarrera.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCarrera.Location = new System.Drawing.Point(643, 344);
+            this.txtCarrera.Name = "txtCarrera";
+            this.txtCarrera.Size = new System.Drawing.Size(510, 25);
+            this.txtCarrera.TabIndex = 17;
+            this.txtCarrera.TextChanged += new System.EventHandler(this.txtMaterias_TextChanged);
             // 
             // label3
             // 
@@ -244,17 +239,16 @@
             this.label3.Size = new System.Drawing.Size(513, 3);
             this.label3.TabIndex = 20;
             // 
-            // textBox1
+            // txtMateria
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(643, 621);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(510, 25);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.Text = "Materia 6";
+            this.txtMateria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.txtMateria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMateria.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMateria.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMateria.Location = new System.Drawing.Point(643, 621);
+            this.txtMateria.Name = "txtMateria";
+            this.txtMateria.Size = new System.Drawing.Size(510, 25);
+            this.txtMateria.TabIndex = 19;
             // 
             // btnAñadir
             // 
@@ -276,6 +270,7 @@
             this.btnAñadir.TextColor = System.Drawing.Color.White;
             this.btnAñadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // button_WOC1
             // 
@@ -334,18 +329,18 @@
             this.Controls.Add(this.button_WOC1);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMateria);
             this.Controls.Add(this.line1);
-            this.Controls.Add(this.txtMaterias);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtCarrera);
+            this.Controls.Add(this.lbMaterias);
+            this.Controls.Add(this.lbUniversidad);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddCareer";
             this.Text = "AddCareer";
             this.panel2.ResumeLayout(false);
@@ -366,15 +361,15 @@
         private ePOSOne.btnProduct.Button_WOC btnCerrar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox lbNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label lbUniversidad;
+        private System.Windows.Forms.ListBox lbMaterias;
         private System.Windows.Forms.Label line1;
-        private System.Windows.Forms.TextBox txtMaterias;
+        private System.Windows.Forms.TextBox txtCarrera;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMateria;
         private ePOSOne.btnProduct.Button_WOC btnAñadir;
         private ePOSOne.btnProduct.Button_WOC button_WOC1;
         private System.Windows.Forms.Label help1;

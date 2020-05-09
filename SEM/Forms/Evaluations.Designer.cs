@@ -208,7 +208,7 @@
             this.panelEvaluaciones.Controls.Add(this.label6);
             this.panelEvaluaciones.Controls.Add(this.dislikeBtn);
             this.panelEvaluaciones.Controls.Add(this.likeBtn);
-            this.panelEvaluaciones.Location = new System.Drawing.Point(391, 254);
+            this.panelEvaluaciones.Location = new System.Drawing.Point(381, 271);
             this.panelEvaluaciones.Name = "panelEvaluaciones";
             this.panelEvaluaciones.Size = new System.Drawing.Size(1002, 494);
             this.panelEvaluaciones.TabIndex = 50;

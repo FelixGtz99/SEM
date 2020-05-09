@@ -776,8 +776,16 @@ namespace SEM
             NpgsqlParameter param = cmd.CreateParameter();
             param.ParameterName = "@Image";
             param.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
-            param.Value = ImgByteA;
-            Console.WriteLine("Aqui estan los bytes: " + Encoding.Default.GetString(ImgByteA));
+            if (ImgByteA != null)
+            {
+                param.Value = ImgByteA;
+
+            }
+            else
+            {
+                param.Value = DBNull.Value;
+            }
+            //Console.WriteLine("Aqui estan los bytes: " + Encoding.Default.GetString(ImgByteA));
             cmd.Parameters.Add(param);
             cmd.ExecuteNonQuery();
             foreach (Materia materia in m)

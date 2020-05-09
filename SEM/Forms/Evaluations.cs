@@ -38,6 +38,8 @@ namespace SEM.Forms
 
             label1.Text = c.SMaestro;
             toolTip2.SetToolTip(this.imgMaestro, c.SMaestro);
+            toolTip2.SetToolTip(this.escuelaPicture, c.SEscuela);
+
             /*CBMaterias();
             cbMateria.SelectedIndex = 0;
             c.SMateria = cbMateria.SelectedItem.ToString();
@@ -82,7 +84,11 @@ namespace SEM.Forms
             var path2 = new System.Drawing.Drawing2D.GraphicsPath();
             path2.AddEllipse(0, 0, imgMaestro.Width, imgMaestro.Height);
             this.imgMaestro.Region = new Region(path2);
-            
+
+            labelUsuario.Text = c.NOMBRE + " " + c.APELLIDO;
+            labelCarrera.Text = c.SCarrera;
+
+
 
             if (c.USER == 0)
 

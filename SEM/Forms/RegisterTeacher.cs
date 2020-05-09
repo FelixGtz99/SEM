@@ -40,7 +40,20 @@ namespace SEM.Forms
             this.label3.Region = new Region(path);
             this.label4.Region = new Region(path);
             this.label6.Region = new Region(path);
+            this.label8.Region = new Region(path);
+
             this.helpNombre.Region = new Region(path);
+            var path2 = new System.Drawing.Drawing2D.GraphicsPath();
+            path2.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
+            this.pictureBox2.Region = new Region(path2);
+
+            toolTip2.SetToolTip(this.pictureBox1, c.SEscuela);
+
+
+
+            labelCarrera.Text = c.SCarrera;
+            labelEstudiante.Text = c.NOMBRE + " " + c.APELLIDO;
+
             foreach (Materia materia in c.MATERIAS)
             {
                 cbMaterias.Items.Add(materia.ToString());
@@ -285,6 +298,26 @@ namespace SEM.Forms
 
 
             }
+        }
+
+        private void BtnRA_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RA(c).Show();
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            c.logout();
+
+            this.Hide();
+            new Login(c).Show();
+        }
+
+        private void Button_WOC1_Click(object sender, EventArgs e)
+        {
+            ImgByteA = null;
+            pictureBox2.Image = pictureBox2.InitialImage;
         }
     }
 }

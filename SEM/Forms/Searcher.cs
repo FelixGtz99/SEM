@@ -53,6 +53,7 @@ namespace SEM.Forms
             // panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
             pictureBox2.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            toolTip2.SetToolTip(this.pictureBox2, c.SEscuela);
 
             label1.Text = c.NOMBRE + " " + c.APELLIDO;
             btnVer.Visible = false; btnEvaluar.Visible = false;

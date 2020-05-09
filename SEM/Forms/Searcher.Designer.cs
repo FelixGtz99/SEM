@@ -42,12 +42,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnRA = new ePOSOne.btnProduct.Button_WOC();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
             this.labelCarrera = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.data = new System.Windows.Forms.DataGridView();
@@ -62,15 +58,19 @@
             this.helpResults = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnBuscar = new ePOSOne.btnProduct.Button_WOC();
             this.btnRegistrarD = new ePOSOne.btnProduct.Button_WOC();
             this.btnEvaluar = new ePOSOne.btnProduct.Button_WOC();
             this.btnVer = new ePOSOne.btnProduct.Button_WOC();
+            this.btnBuscar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnRA = new ePOSOne.btnProduct.Button_WOC();
+            this.btnEditar = new ePOSOne.btnProduct.Button_WOC();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -196,29 +196,6 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "Estudiante";
             // 
-            // btnRA
-            // 
-            this.btnRA.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRA.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnRA.FlatAppearance.BorderSize = 0;
-            this.btnRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRA.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRA.Image = global::SEM.Properties.Resources.button;
-            this.btnRA.Location = new System.Drawing.Point(28, 471);
-            this.btnRA.Name = "btnRA";
-            this.btnRA.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnRA.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnRA.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnRA.Size = new System.Drawing.Size(298, 60);
-            this.btnRA.TabIndex = 20;
-            this.btnRA.Text = "Actividad Reciente";
-            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.btnRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRA.UseVisualStyleBackColor = true;
-            this.btnRA.Click += new System.EventHandler(this.btnRA_Click);
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -228,29 +205,6 @@
             this.label2.Size = new System.Drawing.Size(3, 729);
             this.label2.TabIndex = 34;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnEditar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Image = global::SEM.Properties.Resources.user_close_up;
-            this.btnEditar.Location = new System.Drawing.Point(28, 405);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnEditar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnEditar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnEditar.Size = new System.Drawing.Size(298, 60);
-            this.btnEditar.TabIndex = 19;
-            this.btnEditar.Text = "Editar Cuenta";
-            this.btnEditar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // labelCarrera
             // 
@@ -262,38 +216,6 @@
             this.labelCarrera.Size = new System.Drawing.Size(54, 16);
             this.labelCarrera.TabIndex = 18;
             this.labelCarrera.Text = "carrera";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(54, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            this.toolTip2.SetToolTip(this.pictureBox2, "Universidad de Sonora");
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Image = global::SEM.Properties.Resources.signs;
-            this.btnCerrar.Location = new System.Drawing.Point(28, 537);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
-            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnCerrar.Size = new System.Drawing.Size(298, 60);
-            this.btnCerrar.TabIndex = 14;
-            this.btnCerrar.Text = "Cerrar Sesión";
-            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label8
             // 
@@ -487,29 +409,6 @@
             this.toolTip2.InitialDelay = 500;
             this.toolTip2.ReshowDelay = 100;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = global::SEM.Properties.Resources.search_tool_symbol;
-            this.btnBuscar.Location = new System.Drawing.Point(1016, 143);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnBuscar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnBuscar.Size = new System.Drawing.Size(60, 60);
-            this.btnBuscar.TabIndex = 19;
-            this.btnBuscar.TextColor = System.Drawing.Color.White;
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip2.SetToolTip(this.btnBuscar, "Buscar");
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // btnRegistrarD
             // 
             this.btnRegistrarD.BorderColor = System.Drawing.Color.Transparent;
@@ -579,6 +478,106 @@
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Image = global::SEM.Properties.Resources.search_tool_symbol;
+            this.btnBuscar.Location = new System.Drawing.Point(1016, 143);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnBuscar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnBuscar.Size = new System.Drawing.Size(60, 60);
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.TextColor = System.Drawing.Color.White;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip2.SetToolTip(this.btnBuscar, "Buscar");
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnRA
+            // 
+            this.btnRA.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRA.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnRA.FlatAppearance.BorderSize = 0;
+            this.btnRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRA.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRA.Image = global::SEM.Properties.Resources.button;
+            this.btnRA.Location = new System.Drawing.Point(28, 471);
+            this.btnRA.Name = "btnRA";
+            this.btnRA.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnRA.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.btnRA.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnRA.Size = new System.Drawing.Size(298, 60);
+            this.btnRA.TabIndex = 20;
+            this.btnRA.Text = "Actividad Reciente";
+            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRA.UseVisualStyleBackColor = true;
+            this.btnRA.Click += new System.EventHandler(this.btnRA_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEditar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Image = global::SEM.Properties.Resources.user_close_up;
+            this.btnEditar.Location = new System.Drawing.Point(28, 405);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnEditar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.btnEditar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnEditar.Size = new System.Drawing.Size(298, 60);
+            this.btnEditar.TabIndex = 19;
+            this.btnEditar.Text = "Editar Cuenta";
+            this.btnEditar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(54, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Image = global::SEM.Properties.Resources.signs;
+            this.btnCerrar.Location = new System.Drawing.Point(28, 537);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(81)))), ((int)(((byte)(81)))));
+            this.btnCerrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnCerrar.Size = new System.Drawing.Size(298, 60);
+            this.btnCerrar.TabIndex = 14;
+            this.btnCerrar.Text = "Cerrar Sesión";
+            this.btnCerrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,10 +611,10 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

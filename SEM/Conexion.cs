@@ -336,7 +336,7 @@ namespace SEM
         public int getLastEvaluacion()
         {
             int id = 0;
-            String query = "SELECT MAX(*) FROM evaluacion";
+            String query = "SELECT MAX(*) FROM evaluacion ";
             using (var cmd = new NpgsqlCommand(query, con))
             {
                 using (var reader = cmd.ExecuteReader())
@@ -761,23 +761,31 @@ namespace SEM
         //Registrar Docente
         public void guardarDocente(String nombre, String apellido, String alias, List<Materia> m, byte[] ImgByteA) 
         {
-            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias, id_carrera, upload_img) VALUES(@id, @n, @a, @alias, @idC,@Image); ";
+            String query = "INSERT INTO docentes(id_docente, nombre, apellido, alias, id_carrera, upload_img) VALUES((SELECT MAX(id_docente) FROM docentes), @n, @a, @alias, @idC,@Image); ";
 
-            var IDD = MAESTROS.Count + 1;
+      
 
             var cmd = new NpgsqlCommand(query, con);
             cmd.Parameters.AddWithValue("n", nombre);
             cmd.Parameters.AddWithValue("a", apellido);
             cmd.Parameters.AddWithValue("alias", alias);
-            cmd.Parameters.AddWithValue("id", IDD);
+          //  cmd.Parameters.AddWithValue("id", IDD);
             //cmd.Parameters.AddWithValue("img", "no");
             cmd.Parameters.AddWithValue("idC", CARRERA);
            
             NpgsqlParameter param = cmd.CreateParameter();
             param.ParameterName = "@Image";
             param.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Bytea;
-            param.Value = ImgByteA;
-            Console.WriteLine("Aqui estan los bytes: " + Encoding.Default.GetString(ImgByteA));
+            if (ImgByteA != null)
+            {
+                param.Value = ImgByteA;
+
+            }
+            else
+            {
+                param.Value = DBNull.Value;
+            }
+            //Console.WriteLine("Aqui estan los bytes: " + Encoding.Default.GetString(ImgByteA));
             cmd.Parameters.Add(param);
             cmd.ExecuteNonQuery();
             foreach (Materia materia in m)

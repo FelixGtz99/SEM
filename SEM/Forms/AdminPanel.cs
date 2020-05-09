@@ -116,7 +116,7 @@ namespace SEM.Forms
         private void btnEditar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new EditTeacher(c,"admin").Show();
+            new RegisterTeacher(c,"Editar").Show();
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)

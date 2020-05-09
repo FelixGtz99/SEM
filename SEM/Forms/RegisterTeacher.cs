@@ -12,15 +12,18 @@ using SEM.items;
 
 namespace SEM.Forms
 {
+    
     public partial class RegisterTeacher : Form
     {
         List<Materia> Materias = new List<Materia>();
         Conexion c = null;
         byte[] ImgByteA = null;
-        public RegisterTeacher(Conexion c)
+        String d = "";
+        public RegisterTeacher(Conexion c, String d)
             
         {
             this.c = c;
+            this.d = d;
             InitializeComponent();
             //Datos de la barra superior
             this.ActiveControl = panel2;
@@ -53,7 +56,45 @@ namespace SEM.Forms
             txtNombre.LostFocus += Nombre_LostFocus;
             txtApellido.LostFocus += Apellido_LostFocus;
             txtAlias.LostFocus += Alias_LostFocus;
+            if (d=="Editar")
+            {
+                ImgByteA = c.getImgM2();
+                if (ImgByteA == null)
+                {
+                    Console.WriteLine("Faros en vinagre");
+                    //  MessageBox.Show("WHAT THE FUCK");
+                    //imgMaestro.ImageLocation = "https://fotos.subefotos.com/a77a9fc14733c78d00746a077a874ce5o.png";
 
+                }
+                else
+                {
+                    using (MemoryStream productImageStream = new System.IO.MemoryStream(ImgByteA))
+                    {
+                        ImageConverter imageConverter = new System.Drawing.ImageConverter();
+                        imgMaestro.Image = imageConverter.ConvertFrom(ImgByteA) as System.Drawing.Image;
+                    }
+                    //imageConverter = c.getImgM2();
+
+                    Console.WriteLine("Faros en vinagre del else");
+
+                }
+                label9.Text = "Editar Maestro";
+                foreach (Maestro m in c.MAESTROS)
+                {
+                    if (m.ID.Equals(c.getIDMaestro()))
+                    {
+                        txtNombre.Text = m.NOMBRE;
+                        txtApellido.Text = m.APELLIDO;
+                        txtAlias.Text = m.ALIAS;
+                        c.getClases(c.getIDMaestro());
+                        foreach (Materia materia in c.CLASES)
+                        {
+                            listMaterias.Items.Add(materia.ToString());
+                            cbMaterias.Items.Remove(materia.ToString()); 
+                        }
+                    }
+                }
+            }
         }
 
         private void Nombre_GotFocus(object sender, EventArgs e)
@@ -148,12 +189,23 @@ namespace SEM.Forms
             }
             else
             {
-                c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
-                //MessageBox.Show("Guardado Correctamente");
-                SemBox sb = new SemBox("short", "Maestro registrado correctamente", "", "Aceptar");
-                sb.Show();
-                this.Hide();
-                new Searcher(c).Show();
+                if (d=="Editar")
+                {
+                    c.updateDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
+                    //MessageBox.Show("Guardado Correctamente");
+                    SemBox sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+                    sb.Show();
+                    this.Hide();
+                    new AdminPanel(c).Show();
+                }
+                else {
+                    c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
+                    //MessageBox.Show("Guardado Correctamente");
+                    SemBox sb = new SemBox("short", "Maestro registrado correctamente", "", "Aceptar");
+                    sb.Show();
+                    this.Hide();
+                    new Searcher(c).Show();
+                }
             }
         }
 
@@ -161,7 +213,11 @@ namespace SEM.Forms
         {
             var m = cbMaterias.SelectedItem.ToString();
             listMaterias.Items.Add(m);
+            if (d == "Editar")
+            {
 
+                c.guardarClaseDocente(c.getIDMateria(), c.getIDMaestro());
+            }
             foreach (Materia materia in c.MATERIAS)
             {
                 if (materia.ToString().Equals(m))
@@ -175,12 +231,26 @@ namespace SEM.Forms
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Searcher(c).Show();
+            if (d=="Editar")
+            {
+                this.Hide();
+                new AdminPanel(c).Show();
+            }
+            else {
+                this.Hide();
+                new Searcher(c).Show();
+            }
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            var index = listMaterias.SelectedItem.ToString();
+            c.SMateria= index;
+            if (d=="Editar")
+            {
+                
+                c.borrarClaseDocente(c.getIDMateria(), c.getIDMaestro());
+            }
             foreach (Materia materia in c.MATERIAS)
             {
                 if (materia.ToString().Equals(listMaterias.SelectedItem.ToString()))
@@ -189,8 +259,9 @@ namespace SEM.Forms
                 }
             }
             cbMaterias.Items.Add(listMaterias.SelectedItem.ToString());
-            var index = listMaterias.SelectedIndex;
-            listMaterias.Items.RemoveAt(index);
+            
+            listMaterias.Items.Remove(index);
+           
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -227,8 +298,8 @@ namespace SEM.Forms
                     String imagen = OpenFileDialog1.FileName;
                     Console.WriteLine("Aqui estan el string de la imagen: " + imagen);
 
-                    pictureBox2.Image = Image.FromFile(imagen);
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    imgMaestro.Image = Image.FromFile(imagen);
+                    imgMaestro.SizeMode = PictureBoxSizeMode.Zoom;
 
                     using (FileStream pgFileStream = new FileStream(imagen, FileMode.Open, FileAccess.Read))
                     {
@@ -285,6 +356,16 @@ namespace SEM.Forms
 
 
             }
+        }
+
+        private void button_WOC1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

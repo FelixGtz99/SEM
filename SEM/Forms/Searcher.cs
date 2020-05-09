@@ -239,7 +239,7 @@ namespace SEM.Forms
         private void btnRegistrarD_Click(object sender, EventArgs e)
         {
             this.Hide();
-           new RegisterTeacher(c).Show();
+           new RegisterTeacher(c, "Registar").Show();
         }
 
         private void btnEvaluar_Click(object sender, EventArgs e)

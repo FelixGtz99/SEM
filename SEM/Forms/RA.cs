@@ -55,21 +55,21 @@ namespace SEM.Forms
             //this.data.Rows.Add("Se subipo una foto para el maestro: Alonso Perez Soltero.", "27/04/2020");
             //this.data.Rows.Add("El administrador añadió la materia Introducción al Derecho 4", "26/04/2020");
             //this.data.Rows.Add("El administrador cambió la foto del maestro: Leslie Garcia Montijo.","25/04/2020");
-            //string selectedActivity = data.Rows[0].Cells[0].Value.ToString();
-            //if (selectedActivity.Contains("maestro:"))
-            //{
-            //    btnVer.Enabled = true;
-            //    btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
-            //    int begin = selectedActivity.IndexOf(':');
-            //    int end = selectedActivity.IndexOf('.');
-            //    int selectLength = end - begin - 2;
-            //    c.SMaestro = selectedActivity.Substring(begin + 2, selectLength);
-            //}
-            //else
-            //{
-            //    btnVer.Enabled = false;
-            //    btnVer.ButtonColor = Color.FromArgb(130, 170, 255);
-            //}
+           string selectedActivity = data.Rows[0].Cells[0].Value.ToString();
+          if (selectedActivity.Contains("maestro:"))
+            {
+                btnVer.Enabled = true;
+             btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
+               int begin = selectedActivity.IndexOf(':');
+               int end = selectedActivity.IndexOf('.');
+             int selectLength = end - begin - 2;
+              c.SMaestro = selectedActivity.Substring(begin + 2, selectLength);
+            }
+            else
+           {
+               btnVer.Enabled = false;
+               btnVer.ButtonColor = Color.FromArgb(130, 170, 255);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

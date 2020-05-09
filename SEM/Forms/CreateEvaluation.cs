@@ -240,6 +240,8 @@ namespace SEM.Forms
 
         private void CbMateria_SelectedIndexChanged(object sender, EventArgs e)
         {
+            c.SMateria = cbMateria.SelectedItem.ToString();
+            cbMaestro.DataSource = c.cbMaestros();
             this.checkFields();
         }
     }

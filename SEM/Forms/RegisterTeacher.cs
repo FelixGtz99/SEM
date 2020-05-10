@@ -17,10 +17,12 @@ namespace SEM.Forms
         List<Materia> Materias = new List<Materia>();
         Conexion c = null;
         byte[] ImgByteA = null;
-        public RegisterTeacher(Conexion c)
+        String d = "";
+        public RegisterTeacher(Conexion c, String d)
             
         {
             this.c = c;
+            this.d = d;
             InitializeComponent();
             //Datos de la barra superior
             this.ActiveControl = panel2;
@@ -44,8 +46,8 @@ namespace SEM.Forms
 
             this.helpNombre.Region = new Region(path);
             var path2 = new System.Drawing.Drawing2D.GraphicsPath();
-            path2.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
-            this.pictureBox2.Region = new Region(path2);
+            path2.AddEllipse(0, 0, imgMaestro.Width, imgMaestro.Height);
+            this.imgMaestro.Region = new Region(path2);
 
             toolTip2.SetToolTip(this.pictureBox1, c.SEscuela);
 
@@ -66,14 +68,96 @@ namespace SEM.Forms
             txtNombre.LostFocus += Nombre_LostFocus;
             txtApellido.LostFocus += Apellido_LostFocus;
             txtAlias.LostFocus += Alias_LostFocus;
+            if (d == "Editar")
+            {
+                this.BackColor = Color.FromArgb(222, 222, 222);
+                panel1.BackColor = Color.White;
+                ImgByteA = c.getImgM2();
+                if (ImgByteA != null)
+                {
+                    using(MemoryStream productImageStream = new System.IO.MemoryStream(ImgByteA))
+                    {
+                        ImageConverter imageConverter = new System.Drawing.ImageConverter();
+                        imgMaestro.Image = imageConverter.ConvertFrom(ImgByteA) as System.Drawing.Image;
+                        
+                    }
+                }
+                label9.Text = "Editar Maestro";
+                label9.BackColor = Color.FromArgb(222, 222, 222);
+                label9.ForeColor = Color.Black;
+                label10.Text = "Asegúrese de que los datos sean correctos.";
+                label10.ForeColor = Color.FromArgb(81, 81, 81);
+                labelCarrera.ForeColor = Color.Black;
+                labelEstudiante.ForeColor = Color.FromArgb(81, 81, 81);
+                label11.Text = "Administrador";
+                label11.ForeColor = Color.FromArgb(13, 70, 255);
+                labelNombre.ForeColor = Color.FromArgb(81, 81, 81);
+                labelApellido.ForeColor = Color.FromArgb(81, 81, 81);
+                lineNombre.BackColor = Color.FromArgb(81, 81, 81);
+                lineApellido.BackColor = Color.FromArgb(81, 81, 81);
+                btnRegistrar.Text = "Guardar Nombres";
+                btnRegistrar.Location = new Point(lineApellido.Location.X, btnRegistrar.Location.Y);
+                btnRegistrar.Width = 300;
 
+                label5.ForeColor = Color.FromArgb(81, 81, 81);
+                label1.Visible = false;
+                label2.Visible = false;
+                label3.Visible = false;
+                txtAlias.Visible = false;
+                txtNombre.BackColor = Color.FromArgb(222, 222, 222);
+                txtNombre.ForeColor = Color.FromArgb(100, 100, 100);
+                txtApellido.BackColor = Color.FromArgb(222, 222, 222);
+                txtApellido.ForeColor = Color.FromArgb(100, 100, 100);
+
+                btnVolver.Visible = false;
+                btnRA.ButtonColor = Color.White;
+                btnRA.OnHoverButtonColor = Color.FromArgb(207, 207, 207);
+                btnRA.TextColor = Color.FromArgb(48, 48, 48);
+                btnRA.OnHoverTextColor = Color.FromArgb(33, 33, 33);
+                btnRA.Image = SEM.Properties.Resources.backarrow;
+                btnRA.Text = "Volver";
+
+                btnCerrar.ButtonColor = Color.White;
+                btnCerrar.OnHoverButtonColor = Color.FromArgb(207, 207, 207);
+                btnCerrar.TextColor = Color.FromArgb(48, 48, 48);
+                btnCerrar.OnHoverTextColor = Color.FromArgb(33, 33, 33);
+
+
+                foreach (Maestro m in c.MAESTROS)
+                {
+                    if (m.ID.Equals(c.getIDMaestro()))
+                    {
+                        txtNombre.Text = m.NOMBRE;
+                        txtApellido.Text = m.APELLIDO;
+                        
+                        c.getClases(c.getIDMaestro());
+                        foreach(Materia materia in c.CLASES)
+                        {
+                            listMaterias.Items.Add(materia.ToString());
+                            cbMaterias.Items.Remove(materia.ToString());
+                        }
+                    }
+                }
+
+            }
         }
 
         private void Nombre_GotFocus(object sender, EventArgs e)
         {
-            lineNombre.BackColor = Color.FromArgb(13, 70, 255);
-            labelNombre.ForeColor = Color.FromArgb(13, 70, 255);
-            txtNombre.ForeColor = Color.White;
+            if (d == "Editar")
+            {
+                lineNombre.BackColor = Color.FromArgb(13, 70, 255);
+                labelNombre.ForeColor = Color.FromArgb(13, 70, 255);
+                txtNombre.ForeColor = Color.Black;
+
+            }
+            else
+            {
+                lineNombre.BackColor = Color.FromArgb(13, 70, 255);
+                labelNombre.ForeColor = Color.FromArgb(13, 70, 255);
+                txtNombre.ForeColor = Color.White;
+
+            }
             if (txtNombre.Text == "¿Cómo se llama tu maestro?")
             {
                 txtNombre.Text = "";
@@ -85,16 +169,37 @@ namespace SEM.Forms
             {
                 txtNombre.Text = "¿Cómo se llama tu maestro?";
             }
-            txtNombre.ForeColor = Color.DimGray;
-            lineNombre.BackColor = Color.White;
-            labelNombre.ForeColor = Color.White;
+            if(d == "Editar")
+            {
+                txtNombre.ForeColor = Color.FromArgb(81,81,81);
+                lineNombre.BackColor = Color.FromArgb(81,81,81);
+                labelNombre.ForeColor = Color.FromArgb(81,81,81);
+            }
+            else
+            {
+                txtNombre.ForeColor = Color.DimGray;
+                lineNombre.BackColor = Color.White;
+                labelNombre.ForeColor = Color.White;
+
+            }
         }
 
         private void Apellido_GotFocus(object sender, EventArgs e)
         {
-            lineApellido.BackColor = Color.FromArgb(13, 70, 255);
-            labelApellido.ForeColor = Color.FromArgb(13, 70, 255);
-            txtApellido.ForeColor = Color.White;
+            if (d == "Editar")
+            {
+                lineApellido.BackColor = Color.FromArgb(13, 70, 255);
+                labelApellido.ForeColor = Color.FromArgb(13, 70, 255);
+                txtApellido.ForeColor = Color.Black;
+
+            }
+            else
+            {
+                lineApellido.BackColor = Color.FromArgb(13, 70, 255);
+                labelApellido.ForeColor = Color.FromArgb(13, 70, 255);
+                txtApellido.ForeColor = Color.White;
+
+            }
             if (txtApellido.Text == "¿Cómo se apellida?")
             {
                 txtApellido.Text = "";
@@ -106,9 +211,20 @@ namespace SEM.Forms
             {
                 txtApellido.Text = "¿Cómo se apellida?";
             }
-            txtApellido.ForeColor = Color.DimGray;
-            lineApellido.BackColor = Color.White;
-            labelApellido.ForeColor = Color.White;
+            if (d == "Editar")
+            {
+                txtApellido.ForeColor = Color.FromArgb(81,81,81);
+                lineApellido.BackColor = Color.FromArgb(81,81,81);
+                labelApellido.ForeColor = Color.FromArgb(81,81,81);
+
+            }
+            else
+            {
+                txtApellido.ForeColor = Color.DimGray;
+                lineApellido.BackColor = Color.White;
+                labelApellido.ForeColor = Color.White;
+
+            }
         }
 
         private void Alias_GotFocus(object sender, EventArgs e)
@@ -161,12 +277,24 @@ namespace SEM.Forms
             }
             else
             {
-                c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
-                //MessageBox.Show("Guardado Correctamente");
-                SemBox sb = new SemBox("short", "Maestro registrado correctamente", "", "Aceptar");
-                sb.Show();
-                this.Hide();
-                new Searcher(c).Show();
+                if (d == "Editar")
+                {
+                    c.updateDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
+                    SemBox sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+                    sb.Show();
+                    this.Hide();
+                    new AdminPanel(c).Show();
+                }
+                else
+                {
+                    c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
+                    //MessageBox.Show("Guardado Correctamente");
+                    SemBox sb = new SemBox("short", "Maestro registrado correctamente", "", "Aceptar");
+                    sb.Show();
+                    this.Hide();
+                    new Searcher(c).Show();
+                }
+                
             }
         }
 
@@ -174,7 +302,10 @@ namespace SEM.Forms
         {
             var m = cbMaterias.SelectedItem.ToString();
             listMaterias.Items.Add(m);
-
+            if (d == "Editar")
+            {
+                c.guardarClaseDocente(c.getIDMateria(), c.getIDMaestro());
+            }
             foreach (Materia materia in c.MATERIAS)
             {
                 if (materia.ToString().Equals(m))
@@ -188,12 +319,27 @@ namespace SEM.Forms
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Searcher(c).Show();
+            if (d == "Editar")
+            {
+                this.Hide();
+                new AdminPanel(c).Show();
+            }
+            else
+            {
+                this.Hide();
+                new Searcher(c).Show();
+            }
+            
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            var index = listMaterias.SelectedItem.ToString();
+            c.SMateria = index;
+            if (d == "Editar")
+            {
+                c.borrarClaseDocente(c.getIDMateria(), c.getIDMaestro());
+            }
             foreach (Materia materia in c.MATERIAS)
             {
                 if (materia.ToString().Equals(listMaterias.SelectedItem.ToString()))
@@ -202,8 +348,8 @@ namespace SEM.Forms
                 }
             }
             cbMaterias.Items.Add(listMaterias.SelectedItem.ToString());
-            var index = listMaterias.SelectedIndex;
-            listMaterias.Items.RemoveAt(index);
+
+            listMaterias.Items.Remove(index);
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -240,8 +386,8 @@ namespace SEM.Forms
                     String imagen = OpenFileDialog1.FileName;
                     Console.WriteLine("Aqui estan el string de la imagen: " + imagen);
 
-                    pictureBox2.Image = Image.FromFile(imagen);
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    imgMaestro.Image = Image.FromFile(imagen);
+                    imgMaestro.SizeMode = PictureBoxSizeMode.Zoom;
 
                     using (FileStream pgFileStream = new FileStream(imagen, FileMode.Open, FileAccess.Read))
                     {
@@ -294,7 +440,8 @@ namespace SEM.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+                SemBox sb = new SemBox("longerror", "El archivo seleccionado no es un tipo de imagen válido", "","Aceptar");
+                    sb.Show();
 
 
             }
@@ -302,8 +449,17 @@ namespace SEM.Forms
 
         private void BtnRA_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new RA(c).Show();
+            if (d == "Edit")
+            {
+                this.Hide();
+                new RA(c).Show();
+            }
+            else
+            {
+                this.Hide();
+                new AdminPanel(c).Show();
+            }
+            
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -317,7 +473,7 @@ namespace SEM.Forms
         private void Button_WOC1_Click(object sender, EventArgs e)
         {
             ImgByteA = null;
-            pictureBox2.Image = pictureBox2.InitialImage;
+            imgMaestro.Image = imgMaestro.InitialImage;
         }
     }
 }

@@ -316,5 +316,8 @@
   <ItemGroup>
     <None Include="icons\addphoto.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\backarrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

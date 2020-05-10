@@ -51,7 +51,8 @@
             this.cbMaterias = new System.Windows.Forms.ComboBox();
             this.listMaterias = new System.Windows.Forms.ListBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.labelEstudiante = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -59,22 +60,21 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
+            this.imgMaestro = new System.Windows.Forms.PictureBox();
             this.Subir = new ePOSOne.btnProduct.Button_WOC();
             this.btnRA = new ePOSOne.btnProduct.Button_WOC();
             this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
             this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
-            this.label8 = new System.Windows.Forms.Label();
-            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
-            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMaestro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -344,24 +344,38 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Ayuda";
             // 
-            // panel3
+            // label8
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.labelEstudiante);
-            this.panel3.Controls.Add(this.btnRA);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.btnVolver);
-            this.panel3.Controls.Add(this.labelCarrera);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.btnCerrar);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 41);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(364, 727);
-            this.panel3.TabIndex = 49;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.label8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(391, 223);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 25);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "?";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.label8, "Elige un archivo en formato png o jpg con una resolución mínima de 175*175 pixele" +
+        "s para la foto.");
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.labelEstudiante);
+            this.panel1.Controls.Add(this.btnRA);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.btnVolver);
+            this.panel1.Controls.Add(this.labelCarrera);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(364, 727);
+            this.panel1.TabIndex = 49;
             // 
             // label11
             // 
@@ -438,24 +452,45 @@
             this.label7.TabIndex = 51;
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // toolTip2
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(54, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.toolTip2.AutoPopDelay = 15000;
+            this.toolTip2.InitialDelay = 500;
+            this.toolTip2.ReshowDelay = 100;
             // 
-            // pictureBox2
+            // button_WOC1
             // 
-            this.pictureBox2.Image = global::SEM.Properties.Resources._default;
-            this.pictureBox2.InitialImage = global::SEM.Properties.Resources._default;
-            this.pictureBox2.Location = new System.Drawing.Point(422, 73);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(175, 175);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
+            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
+            this.button_WOC1.FlatAppearance.BorderSize = 0;
+            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC1.Image = global::SEM.Properties.Resources.delete;
+            this.button_WOC1.Location = new System.Drawing.Point(652, 199);
+            this.button_WOC1.Name = "button_WOC1";
+            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
+            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.button_WOC1.Size = new System.Drawing.Size(60, 60);
+            this.button_WOC1.TabIndex = 53;
+            this.button_WOC1.TextColor = System.Drawing.Color.White;
+            this.button_WOC1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip2.SetToolTip(this.button_WOC1, "Eliminar foto.");
+            this.button_WOC1.UseVisualStyleBackColor = true;
+            this.button_WOC1.Click += new System.EventHandler(this.Button_WOC1_Click);
+            // 
+            // imgMaestro
+            // 
+            this.imgMaestro.Image = global::SEM.Properties.Resources._default;
+            this.imgMaestro.InitialImage = global::SEM.Properties.Resources._default;
+            this.imgMaestro.Location = new System.Drawing.Point(422, 73);
+            this.imgMaestro.Name = "imgMaestro";
+            this.imgMaestro.Size = new System.Drawing.Size(175, 175);
+            this.imgMaestro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgMaestro.TabIndex = 20;
+            this.imgMaestro.TabStop = false;
             // 
             // Subir
             // 
@@ -526,6 +561,14 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(54, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnCerrar
             // 
             this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
@@ -548,6 +591,29 @@
             this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
+            // btnQuitar
+            // 
+            this.btnQuitar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnQuitar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
+            this.btnQuitar.FlatAppearance.BorderSize = 0;
+            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitar.Image = global::SEM.Properties.Resources.delete;
+            this.btnQuitar.Location = new System.Drawing.Point(1168, 409);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnQuitar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
+            this.btnQuitar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnQuitar.Size = new System.Drawing.Size(170, 49);
+            this.btnQuitar.TabIndex = 45;
+            this.btnQuitar.Text = "Remover";
+            this.btnQuitar.TextColor = System.Drawing.Color.White;
+            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAñadir
             // 
@@ -595,72 +661,6 @@
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(391, 223);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 25);
-            this.label8.TabIndex = 52;
-            this.label8.Text = "?";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toolTip1.SetToolTip(this.label8, "Elige un archivo en formato png o jpg con una resolución mínima de 175*175 pixele" +
-        "s para la foto.");
-            // 
-            // toolTip2
-            // 
-            this.toolTip2.AutoPopDelay = 15000;
-            this.toolTip2.InitialDelay = 500;
-            this.toolTip2.ReshowDelay = 100;
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnQuitar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
-            this.btnQuitar.FlatAppearance.BorderSize = 0;
-            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.Image = global::SEM.Properties.Resources.delete;
-            this.btnQuitar.Location = new System.Drawing.Point(1168, 409);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnQuitar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
-            this.btnQuitar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnQuitar.Size = new System.Drawing.Size(170, 49);
-            this.btnQuitar.TabIndex = 45;
-            this.btnQuitar.Text = "Remover";
-            this.btnQuitar.TextColor = System.Drawing.Color.White;
-            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuitar.UseVisualStyleBackColor = true;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
-            // button_WOC1
-            // 
-            this.button_WOC1.BorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
-            this.button_WOC1.FlatAppearance.BorderSize = 0;
-            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC1.Image = global::SEM.Properties.Resources.delete;
-            this.button_WOC1.Location = new System.Drawing.Point(652, 199);
-            this.button_WOC1.Name = "button_WOC1";
-            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
-            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.button_WOC1.Size = new System.Drawing.Size(60, 60);
-            this.button_WOC1.TabIndex = 53;
-            this.button_WOC1.TextColor = System.Drawing.Color.White;
-            this.button_WOC1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip2.SetToolTip(this.button_WOC1, "Eliminar foto.");
-            this.button_WOC1.UseVisualStyleBackColor = true;
-            this.button_WOC1.Click += new System.EventHandler(this.Button_WOC1_Click);
-            // 
             // RegisterTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,10 +669,10 @@
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.button_WOC1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.imgMaestro);
             this.Controls.Add(this.Subir);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.listMaterias);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnAñadir);
@@ -700,10 +700,10 @@
             this.Text = "RegisterTeacher";
             this.Load += new System.EventHandler(this.RegisterTeacher_Load);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMaestro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -736,8 +736,8 @@
         private System.Windows.Forms.ListBox listMaterias;
         private System.Windows.Forms.ToolTip toolTip1;
         private ePOSOne.btnProduct.Button_WOC Subir;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox imgMaestro;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labelEstudiante;
         private ePOSOne.btnProduct.Button_WOC btnRA;

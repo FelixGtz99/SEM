@@ -123,12 +123,29 @@ namespace SEM.Forms
                 
                 dgc.DividerWidth = 1;
             }
-            data.Rows[0].Cells[0].Selected = true;
+            try
+            {
+                data.Rows[0].Cells[0].Selected = true;
+            }
+            catch (Exception)
+            {
+
+            }
+           
             if (maestrosRadio.Checked == true)
             {
                 //var index = e.RowIndex;
                 //DataGridViewRow SelectedRow = data.Rows[index];
-                c.SMaestro = data.Rows[0].Cells[0].Value.ToString();
+                try
+                {
+                    c.SMaestro = data.Rows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception)
+                {
+
+                  
+                }
+               
 
 
             }
@@ -136,7 +153,16 @@ namespace SEM.Forms
             {
                 //var index = e.RowIndex;
                 //DataGridViewRow SelectedRow = data.Rows[index];
-                c.SMateria = data.Rows[0].Cells[0].Value.ToString();
+                try
+                {
+                    c.SMateria = data.Rows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception)
+                {
+
+                  
+                }
+              
                 Console.WriteLine("Entto aqi");
             }
             // data.DataSource = c.getEvaluacion();

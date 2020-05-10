@@ -139,5 +139,10 @@ namespace SEM.Forms
         {
 
         }
+
+        private void button_WOC1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

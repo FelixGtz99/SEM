@@ -505,6 +505,7 @@
             this.button_WOC1.TextColor = System.Drawing.Color.White;
             this.button_WOC1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_WOC1.UseVisualStyleBackColor = true;
+            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click);
             // 
             // btnQuitar
             // 

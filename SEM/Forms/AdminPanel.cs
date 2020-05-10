@@ -46,7 +46,10 @@ namespace SEM.Forms
             panel2.Width = this.Width;
 
             //Datos de la imagen y los tooltips
-            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+          
+                    pictureBox1.ImageLocation = c.getlogo();
+              
+            
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             var path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, helpMaterias.Width, helpMaterias.Height);
@@ -116,7 +119,7 @@ namespace SEM.Forms
         private void btnEditar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new EditTeacher(c,"admin").Show();
+            new RegisterTeacher(c,"Editar").Show();
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
@@ -133,6 +136,11 @@ namespace SEM.Forms
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_WOC1_Click(object sender, EventArgs e)
         {
 
         }

@@ -14,7 +14,7 @@ namespace SEM.Forms
     public partial class CreateEvaluation : Form
     {
         Conexion c = null;
-        int n = 1;
+      
         public CreateEvaluation(Conexion c, String d)
             
         {
@@ -31,7 +31,8 @@ namespace SEM.Forms
 
             var path = new System.Drawing.Drawing2D.GraphicsPath();
 
-            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox1.ImageLocation = c.getlogo() ;
+            labelCarrera.Text = c.getUniversidad();
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             path.AddEllipse(0, 0, label6.Width, label6.Height);
             this.label6.Region = new Region(path);
@@ -43,17 +44,23 @@ namespace SEM.Forms
             txtComentarios.LostFocus += Comment_LostFocus;
             if (d.Equals("maestro"))
             {
+               
                 CBMaestros();
                 cbMaestro.SelectedItem = c.SMaestro;
                 CBClases();
-                cbMateria.SelectedIndex = 0;
+                //cbMateria.SelectedIndex = 0;
             }
             if (d.Equals("materia"))
             {
-                cbMaestro.DataSource = c.cbMaestros();
-                cbMaestro.SelectedIndex = 0;
                 CBMaterias();
-                cbMateria.SelectedItem = c.SMateria;
+                CBMaestros();
+                
+                cbMateria.SelectedItem=c.SMateria;
+                //CBMaestros();
+               
+                //cbMaestro.SelectedIndex = 0;
+                //
+                //cbMateria.SelectedItem = c.SMateria;
             
             }
             else {
@@ -131,17 +138,17 @@ namespace SEM.Forms
             }
 
         }
-        public void CBClases2()
-        {
+        //public void CBClases2()
+        //{
 
-            cbMaestro.Items.Clear();
+        //    cbMaestro.Items.Clear();
             
-            foreach (Materia materia in c.CLASES)
-            {
-                cbMateria.Items.Add(materia);
-            }
+        //    foreach (Materia materia in c.CLASES)
+        //    {
+        //        cbMateria.Items.Add(materia);
+        //    }
 
-        }
+        //}
         private void CreateEvaluation_Load(object sender, EventArgs e)
         {
 
@@ -180,7 +187,11 @@ namespace SEM.Forms
 
         private void cbMaestro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CBMaterias();
+            c.SMaestro = cbMaestro.SelectedItem.ToString();
+            CBClases();
+            cbMateria.SelectedIndex = 0;
+            cbMaestro.SelectedItem = c.SMateria;
+            
             this.checkFields();
         }
 
@@ -240,6 +251,10 @@ namespace SEM.Forms
 
         private void CbMateria_SelectedIndexChanged(object sender, EventArgs e)
         {
+        
+            //cbMaestro.DataSource = c.cbMaestros();
+            cbMateria.SelectedItem = c.SMateria;
+            c.SMateria = cbMateria.SelectedItem.ToString();
             this.checkFields();
         }
     }

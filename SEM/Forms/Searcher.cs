@@ -51,7 +51,7 @@ namespace SEM.Forms
             //panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
             //panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
             // panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
-            pictureBox2.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox2.ImageLocation = c.getlogo();
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             toolTip2.SetToolTip(this.pictureBox2, c.SEscuela);
 
@@ -124,12 +124,29 @@ namespace SEM.Forms
                 
                 dgc.DividerWidth = 1;
             }
-            data.Rows[0].Cells[0].Selected = true;
+            try
+            {
+                data.Rows[0].Cells[0].Selected = true;
+            }
+            catch (Exception)
+            {
+
+            }
+           
             if (maestrosRadio.Checked == true)
             {
                 //var index = e.RowIndex;
                 //DataGridViewRow SelectedRow = data.Rows[index];
-                c.SMaestro = data.Rows[0].Cells[0].Value.ToString();
+                try
+                {
+                    c.SMaestro = data.Rows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception)
+                {
+
+                  
+                }
+               
 
 
             }
@@ -137,7 +154,16 @@ namespace SEM.Forms
             {
                 //var index = e.RowIndex;
                 //DataGridViewRow SelectedRow = data.Rows[index];
-                c.SMateria = data.Rows[0].Cells[0].Value.ToString();
+                try
+                {
+                    c.SMateria = data.Rows[0].Cells[0].Value.ToString();
+                }
+                catch (Exception)
+                {
+
+                  
+                }
+              
                 Console.WriteLine("Entto aqi");
             }
             // data.DataSource = c.getEvaluacion();
@@ -240,7 +266,7 @@ namespace SEM.Forms
         private void btnRegistrarD_Click(object sender, EventArgs e)
         {
             this.Hide();
-           new RegisterTeacher(c).Show();
+           new RegisterTeacher(c, "Registar").Show();
         }
 
         private void btnEvaluar_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace SEM.Forms
     public partial class CreateEvaluation : Form
     {
         Conexion c = null;
-        int n = 1;
+      
         public CreateEvaluation(Conexion c, String d)
             
         {
@@ -31,7 +31,8 @@ namespace SEM.Forms
 
             var path = new System.Drawing.Drawing2D.GraphicsPath();
 
-            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox1.ImageLocation = c.getlogo() ;
+            labelCarrera.Text = c.getUniversidad();
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             path.AddEllipse(0, 0, label6.Width, label6.Height);
             this.label6.Region = new Region(path);

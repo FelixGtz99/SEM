@@ -49,7 +49,8 @@ namespace SEM.Forms
             dataGridView1.Columns[3].Width = dataGridView1.Width / 9;
             dataGridView1.Columns[4].Width = dataGridView1.Width / 9;*/
 
-            escuelaPicture.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            escuelaPicture.ImageLocation = c.getlogo();
+            labelCarrera.Text = c.getUniversidad();
             //string urlImg = c.getImgM();
             byte[] imagen = c.getImgM2();
 

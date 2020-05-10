@@ -34,6 +34,11 @@ namespace SEM
             get { return carrera; }
             set { carrera = value; }
         }
+        public int ESCUELA
+        {
+            get { return escuela; }
+            set { escuela = value; }
+        }
         public string NOMBRE
         {
             get { return nombre; }
@@ -308,7 +313,7 @@ namespace SEM
                 {
                     while (reader.Read())
                     {
-                        Escuela e = new Escuela(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                        Escuela e = new Escuela(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
                         Escuelas.Add(e);
                     }
                     reader.Close();
@@ -751,9 +756,9 @@ namespace SEM
         //ver la actividad reciente
         public DataTable verRA()
         {
-            String query = " SELECT notificacion as \"Actividad\", fecha as \"Fecha\" FROM \"RA\" WHERE id_carrera=@idC  ORDER BY  fecha DESC";
+            String query = " SELECT notificacion AS \"Actividad\"  , fecha AS \"Fecha\" FROM public.\"RA\" WHERE id_carrera=@idC  ORDER BY  fecha DESC";
             var cmd = new NpgsqlCommand(query, con);
-            cmd.Parameters.AddWithValue("idC", getIDCarrera());
+            cmd.Parameters.AddWithValue("idC", CARRERA);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
             Console.WriteLine(data);
@@ -1125,12 +1130,21 @@ namespace SEM
                 escuela = 0;
             pass = ""; nombre = ""; apellido = ""; correo = "";
         }
-        //Actualizar maestro
-        public void updateMaestro() { 
-        
-        
+        //Logo de la escuela
+        public String getlogo()
+        {
+            String logo = "";
+            foreach (Escuela e in ESCUELAS)
+            {
+                if (e.Id == ESCUELA)
+                {
+                   logo = e.Logo;
+                }
+            }
+            return logo;
         }
-        
+
+
     }
     
 }

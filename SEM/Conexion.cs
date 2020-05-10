@@ -966,7 +966,7 @@ namespace SEM
         }
         //EliminaMateria
         public void deleteMateria() {
-            System.Windows.Forms.MessageBox.Show(getIDMateria().ToString());
+      
             String query = "DELETE FROM evaluacion WHERE id_materia=@m";
             var cmd = new NpgsqlCommand(query, con);
             try
@@ -977,7 +977,8 @@ namespace SEM
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-             
+                throw;
+
             }
             String query2 = "DELETE FROM clases WHERE materria=@m";
             var cmd2 = new NpgsqlCommand(query2, con);
@@ -989,7 +990,8 @@ namespace SEM
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-               
+                throw;
+
             }
             String query3 = "DELETE FROM materia WHERE nombre_materia=@m";
             var cmd3 = new NpgsqlCommand(query3, con);
@@ -1001,7 +1003,8 @@ namespace SEM
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                
+                throw;
+
             }
         }
         //Agregar Materia

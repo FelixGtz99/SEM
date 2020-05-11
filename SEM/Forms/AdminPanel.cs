@@ -106,9 +106,10 @@ namespace SEM.Forms
         private void btnQuitar_Click(object sender, EventArgs e)
         {
            
-                c.deleteMateria();
+            c.deleteMateria();
             c.getMaterias();
             CBMaterias();
+            cbMaterias.SelectedIndex = 0;
         }
 
         private void cbMaestros_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,6 +149,8 @@ namespace SEM.Forms
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             c.logout();
+            this.Hide();
+            new Login(c).Show();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)

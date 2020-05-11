@@ -250,6 +250,7 @@
             this.txtAlias.Size = new System.Drawing.Size(387, 19);
             this.txtAlias.TabIndex = 34;
             this.txtAlias.Text = "¿Tiene algún apodo?";
+            this.txtAlias.TextChanged += new System.EventHandler(this.txtAlias_TextChanged);
             // 
             // label2
             // 

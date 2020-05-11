@@ -59,6 +59,7 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.namePanel = new System.Windows.Forms.Panel();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.btnRA = new ePOSOne.btnProduct.Button_WOC();
             this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.btnGuardar = new ePOSOne.btnProduct.Button_WOC();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.changePassPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -455,6 +455,17 @@
             this.namePanel.TabIndex = 65;
             this.namePanel.Visible = false;
             // 
+            // txtApellido
+            // 
+            this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellido.Font = new System.Drawing.Font("Arial", 12F);
+            this.txtApellido.ForeColor = System.Drawing.Color.DimGray;
+            this.txtApellido.Location = new System.Drawing.Point(47, 168);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(387, 19);
+            this.txtApellido.TabIndex = 56;
+            // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
@@ -495,6 +506,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(387, 19);
             this.txtNombre.TabIndex = 31;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // label13
             // 
@@ -663,17 +675,6 @@
             this.btnGuardar.TextColor = System.Drawing.Color.Silver;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtApellido.ForeColor = System.Drawing.Color.DimGray;
-            this.txtApellido.Location = new System.Drawing.Point(47, 168);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(387, 19);
-            this.txtApellido.TabIndex = 56;
             // 
             // EditAdmin
             // 

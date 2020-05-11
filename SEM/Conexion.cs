@@ -1145,7 +1145,34 @@ namespace SEM
             cmd.Parameters.AddWithValue("mat", txtNew);
             cmd.Parameters.AddWithValue("idM", getIDMateria());
             cmd.ExecuteNonQuery();
-        }  
+        }
+
+        public void updateNombre(String name) {
+            String query = "UPDATE public.usuarios SET nombre=@name WHERE expediente=@id; ";
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("id", USER);
+            cmd.Parameters.AddWithValue("name", name);
+            cmd.ExecuteNonQuery();
+        
+        }
+        public void updateCorreo(String correo)
+        {
+            String query = "UPDATE public.usuarios SET correo=@correo WHERE expediente=@id; ";
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("id", USER);
+            cmd.Parameters.AddWithValue("correo", correo);
+            cmd.ExecuteNonQuery();
+        }
+        public void updateApellido(String apellido)
+        {
+            String query = "UPDATE public.usuarios SET apellido=@apellido WHERE expediente=@id; ";
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("id", USER);
+            cmd.Parameters.AddWithValue("apellido", apellido);
+            cmd.ExecuteNonQuery();
+        }
+
+
     }
     
 }

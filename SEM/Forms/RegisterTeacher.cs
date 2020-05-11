@@ -480,5 +480,10 @@ namespace SEM.Forms
         {
 
         }
+
+        private void txtAlias_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

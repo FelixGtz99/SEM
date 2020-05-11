@@ -16,7 +16,7 @@ namespace SEM.Forms
         Conexion c = null;
         public EditAdmin(Conexion c)
         {
-         
+
             InitializeComponent();
             this.c = c;
             //Datos de la barra superior
@@ -35,6 +35,8 @@ namespace SEM.Forms
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             labelOldCorreo.Text = c.CORREO;
+            labelEstudiante.Text = c.NOMBRE + " " + c.APELLIDO;
+            labelCarrera.Text = c.SCarrera;
             btnChangeNombre_Click(this, new EventArgs());
             //panelOpciones.Location = new Point((this.Width / 2 - panelOpciones.Width / 2), (this.Height / 2 - panelOpciones.Height / 2));
             //panelBorrar.Location = new Point((this.Width / 2 - panelBorrar.Width / 2), (this.Height / 2 - panelBorrar.Height / 2));
@@ -45,8 +47,7 @@ namespace SEM.Forms
             //panelCarrera.Visible = false;
             //btnVolver.Location = new Point((this.Width-btnVolver.Width), (this.Height/2+panelOpciones.Height/2));
 
-            //pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
-            //pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+           pictureBox1.ImageLocation = c.getlogo();
             
             //forma circular en los labels de ayuda
             var path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -319,43 +320,70 @@ namespace SEM.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (c.CONTRA == txtPass.Text)
+            Boolean error = false;
+             if (c.CONTRA == txtPass.Text)
             {
-                if (txtPass.Text == txtCPass.Text)
+                if (!String.IsNullOrEmpty(txtNewContra.Text)  && !String.IsNullOrEmpty(txtCPass.Text))
                 {
-                    //MessageBox.Show("No puede ser la misma contraseña");
-                    SemBox sb = new SemBox("shorterror", "No puede ser la misma contraseña", "", "Aceptar");
-                    sb.Show();
-                }
-                else
-                {
-                    String check = validarContra(txtNewContra.Text);
-                    if (check == " ")
+
+
+                    if (txtPass.Text == txtCPass.Text)
                     {
-                        try
-                        {
-                           // c.SCarrera = cbCarrera.SelectedItem.ToString();
-                            c.setNewCarrera();
-                            c.ChangePass(txtNewContra.Text);
-                            this.Hide();
-                            //MessageBox.Show("Cambios hechos correctamente");
-                            new Searcher(c).Show();
-                            SemBox sb = new SemBox("short", "Se han guardado los cambios", "", "Aceptar");
-                            sb.Show();
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
+                        //MessageBox.Show("No puede ser la misma contraseña");
+                     new SemBox("shorterror", "No puede ser la misma contraseña", "", "Aceptar").Show();
                     }
                     else
                     {
-                        //MessageBox.Show(check);
-                        SemBox sb = new SemBox("longerror", "Error al guardar", check, "Aceptar");
-                        sb.Show();
-                    }
+                        String check = validarContra(txtNewContra.Text);
+                        if (check == " ")
+                        {
+                            try
+                            {
+                                // c.SCarrera = cbCarrera.SelectedItem.ToString();
 
+                                c.ChangePass(txtNewContra.Text);
+                                this.Hide();
+                                //MessageBox.Show("Cambios hechos correctamente");
+                               
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            error = true;
+                            //MessageBox.Show(check);
+                            new SemBox("longerror", "Error al guardar", check, "Aceptar").Show() ;
+                            //sb.Show();
+                            
+                        }
+
+                    }
                 }
+                if (!String.IsNullOrEmpty(txtNombre.Text))
+                {
+                    c.updateNombre(txtNombre.Text);
+                    c.NOMBRE = txtNombre.Text;
+                }
+                if (!String.IsNullOrEmpty(txtApellido.Text))
+                {
+                    c.updateApellido(txtApellido.Text);
+                    c.APELLIDO = txtApellido.Text;
+                }
+                if (!String.IsNullOrEmpty(txtCorreo.Text))
+                {
+                    c.updateCorreo(txtCorreo.Text);
+                    c.CORREO = txtCorreo.Text;
+                }
+                if (!error)
+                {
+                    new AdminPanel(c).Show();
+                    SemBox sb = new SemBox("short", "Se han guardado los cambios", "", "Aceptar");
+                    sb.Show();
+                }
+               
             }
             else
             {
@@ -582,6 +610,11 @@ namespace SEM.Forms
 
             this.Hide();
             new Login(c).Show();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,8 +34,8 @@ namespace SEM.Forms
             c.getCarreras();
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            lbCarrera.Text = c.CORREO;
-            
+            labelOldCorreo.Text = c.CORREO;
+            btnChangeNombre_Click(this, new EventArgs());
             //panelOpciones.Location = new Point((this.Width / 2 - panelOpciones.Width / 2), (this.Height / 2 - panelOpciones.Height / 2));
             //panelBorrar.Location = new Point((this.Width / 2 - panelBorrar.Width / 2), (this.Height / 2 - panelBorrar.Height / 2));
             //panelContra.Location = new Point((this.Width / 2 - panelContra.Width / 2), (this.Height / 2 - panelContra.Height / 2));
@@ -50,20 +50,22 @@ namespace SEM.Forms
             
             //forma circular en los labels de ayuda
             var path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddEllipse(0, 0, helpCarrera.Width, helpCarrera.Height);
-            this.helpCarrera.Region = new Region(path);
+            path.AddEllipse(0, 0, helpContraseña.Width, helpContraseña.Height);
+            //this.helpCarrera.Region = new Region(path);
             this.helpConfirm.Region = new Region(path);
             this.helpContraseña.Region = new Region(path);
-            this.helpDelete.Region = new Region(path);
+            this.helpCorreo.Region = new Region(path);
+            this.helpName.Region = new Region(path);
+           // this.helpDelete.Region = new Region(path);
 
 
             //visibilidad de las opciones
-            changePassPanel.Visible = false;
-            changeCareerPanel.Visible = false;
-            deletePanel.Visible = false;
+            //changePassPanel.Visible = false;
+           // changeCareerPanel.Visible = false;
+           // deletePanel.Visible = false;
 
             //eventos para que se desaparezca el texto
-            txtNewContra.GotFocus += NewContra_GotFocus;
+           /* txtNewContra.GotFocus += NewContra_GotFocus;
             txtCPass.GotFocus += ConfirmNewPass_GotFocus;
             //cbCarrera.GotFocus += Carrera_GotFocus;
             txtPass.GotFocus += ConfirmPass1_GotFocus;
@@ -72,7 +74,7 @@ namespace SEM.Forms
             txtCPass.LostFocus += ConfirmNewPass_LostFocus;
             //cbCarrera.LostFocus += Carrera_LostFocus;
             txtPass.LostFocus += ConfirmPass1_LostFocus;
-            textBox1.LostFocus += ConfirmPass2_LostFocus;
+            textBox1.LostFocus += ConfirmPass2_LostFocus;*/
 
         }
 
@@ -118,28 +120,28 @@ namespace SEM.Forms
         }
         private void Carrera_GotFocus(object sender, EventArgs e)
         {
-            labelNorreo.ForeColor = Color.FromArgb(13, 70, 255);
+            //labelNorreo.ForeColor = Color.FromArgb(13, 70, 255);
 
         }
         private void Carrera_LostFocus(object sender, EventArgs e)
         {
-            labelNorreo.ForeColor = Color.White;
+            //labelNorreo.ForeColor = Color.White;
 
         }
 
         private void ConfirmPass1_GotFocus(object sender, EventArgs e)
         {
-            label12.BackColor = Color.FromArgb(13, 70, 255);
+            /*label12.BackColor = Color.FromArgb(13, 70, 255);
             //labelContraseña.ForeColor = Color.FromArgb(13, 70, 255);
             txtPass.ForeColor = Color.White;
             if (txtPass.Text == "placeholder")
             {
                 txtPass.Text = "";
-            }
+            }*/
         }
         private void ConfirmPass1_LostFocus(object sender, EventArgs e)
         {
-            label12.BackColor = Color.White;
+            /*label12.BackColor = Color.White;
             //labelContraseña.ForeColor = Color.FromArgb(13, 70, 255);
             txtPass.ForeColor = Color.DimGray;
            /* if (txtPass.Text == "placeholder")
@@ -149,17 +151,17 @@ namespace SEM.Forms
         }
         private void ConfirmPass2_GotFocus(object sender, EventArgs e)
         {
-            label15.BackColor = Color.FromArgb(13, 70, 255);
+           /* label15.BackColor = Color.FromArgb(13, 70, 255);
             //labelContraseña.ForeColor = Color.FromArgb(13, 70, 255);
             textBox1.ForeColor = Color.White;
             if (textBox1.Text == "placeholder")
             {
                 textBox1.Text = "";
-            }
+            }*/
         }
         private void ConfirmPass2_LostFocus(object sender, EventArgs e)
         {
-            label15.BackColor = Color.White;
+            /*label15.BackColor = Color.White;
             //labelContraseña.ForeColor = Color.FromArgb(13, 70, 255);
             textBox1.ForeColor = Color.DimGray;
             /* if (txtPass.Text == "placeholder")
@@ -365,7 +367,7 @@ namespace SEM.Forms
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == c.CONTRA)
+           /* if (textBox1.Text == c.CONTRA)
             {
                 try
                 {
@@ -391,7 +393,7 @@ namespace SEM.Forms
                 //MessageBox.Show("Contraseña Incorrecta");
                 SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
                 sb.Show();
-            }
+            }*/
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -454,94 +456,20 @@ namespace SEM.Forms
 
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (labelACarrera.Visible == false)
-            {
-                labelACarrera.Visible = true;
-                helpCarrera.Visible = true;
-                lbCarrera.Visible = true;
-                labelNorreo.Visible = true;
-                //cbCarrera.Visible = true;
-                
-            }
-            else
-            {
-                labelACarrera.Visible = false;
-                helpCarrera.Visible = false;
-                lbCarrera.Visible = false;
-                labelNorreo.Visible = false;
-                //cbCarrera.Visible = false;
-            }    
-        }
+        
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            /*if (labelContraseña.Visible == false)
-            {
-                labelContraseña.Visible = true;
-                txtNewContra.Visible = true;
-                label18.Visible = true;
-                helpContraseña.Visible = true;
-                txtCPass.Visible = true;
-                labelConfirmar.Visible = true;
-                lineConfirmar.Visible = true;
-                btnChangeCarrera.Location = new Point(65, 248);
-                changeCareerPanel.Location = new Point(34, 324);
-            }
-            else
-            {
-                labelContraseña.Visible = false;
-                txtNewContra.Visible = false;
-                label18.Visible = false;
-                helpContraseña.Visible = false;
-                txtCPass.Visible = false;
-                labelConfirmar.Visible = false;
-                lineConfirmar.Visible = false;
-                btnChangeCarrera.Location = new Point(63, 187);
-                changeCareerPanel.Location = new Point(34, 275);
-            }*/
-            
-            //blineChangePass.BackColor = Color.FromArgb(13, 70, 255);
-            if(changePassPanel.Visible == false)
-            {
-                btnChangePass.Text = "- Cambiar contraseña";
-                changePassPanel.Visible = true;
-                changePassPanel.Parent = panel3;
-                changePassPanel.Location = new Point(row4.Location.X, row4.Location.Y + row4.Height);
-                blineChangePass.Location = new Point(blineChangePass.Location.X, blineChangePass.Location.Y + changePassPanel.Height);
-                //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                row4.Location = new Point(row4.Location.X, row4.Location.Y + changePassPanel.Height);
-                //row4.Location = new Point(row4.Location.X, row4.Location.Y + changePassPanel.Height);
-                //changeCareerPanel.Location = new Point(changeCareerPanel.Location.X, changeCareerPanel.Location.Y + changePassPanel.Height);
-               // deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y +changePassPanel.Height);
-
-
-            }
-            else
-            {
-                btnChangePass.Text = "+ Cambiar contraseña";
-                changePassPanel.Visible = false;
-                changePassPanel.Parent = panel3;
-                changePassPanel.Location = new Point(row3.Location.X, row3.Location.Y + row3.Height);
-                blineChangePass.Location = new Point(blineChangePass.Location.X, blineChangePass.Location.Y - changePassPanel.Height);
-                //row2.Location = new Point(row2.Location.X, row2.Location.Y - changePassPanel.Height);
-                row4.Location = new Point(row4.Location.X, row4.Location.Y - changePassPanel.Height);
-                //row4.Location = new Point(row4.Location.X, row4.Location.Y - changePassPanel.Height);
-                //changeCareerPanel.Location = new Point(changeCareerPanel.Location.X, changeCareerPanel.Location.Y - changePassPanel.Height);
-                //deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height);
-            }
-            //changePassPanel.BringToFront();
+            btnChangePass.BackColor = Color.FromArgb(13, 98, 255);
+            btnChangePass.ForeColor = Color.White;
+            btnChangeNombre.BackColor = Color.FromArgb(222, 222, 222);
+            btnChangeNombre.ForeColor = Color.FromArgb(81, 81, 81);
+            btnChangeCorreo.BackColor = Color.FromArgb(222, 222, 222);
+            btnChangeCorreo.ForeColor = Color.FromArgb(81, 81, 81);
+            changePassPanel.Location = changePassPanel.Location;
+            changePassPanel.Visible = true;
+            changeEmailPanel.Visible = false;
+            namePanel.Visible = false;
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -556,36 +484,16 @@ namespace SEM.Forms
 
         private void BtnChangeCarrera_Click(object sender, EventArgs e)
         {
-            if (changeCareerPanel.Visible == false)
-            {
-                btnChangeCorreo.Text = "- Cambiar correo";
-                changeCareerPanel.Visible = true;
-                changeCareerPanel.Parent = panel3;
-                changeCareerPanel.Location = new Point(row2.Location.X, row2.Location.Y + row2.Height);
-                blineChangeCareer.Location = new Point(blineChangeCareer.Location.X, blineChangeCareer.Location.Y + changeCareerPanel.Height);
-                //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                row3.Location = new Point(row3.Location.X, row3.Location.Y + changeCareerPanel.Height + 7);
-                row4.Location = new Point(row4.Location.X, row4.Location.Y + changeCareerPanel.Height+7);
-               // row4.Location = new Point(row4.Location.X, row4.Location.Y + changeCareerPanel.Height+7);
-                changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y + changeCareerPanel.Height);
-               // deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y + changePassPanel.Height+7);
-
-
-            }
-            else
-            {
-                btnChangeCorreo.Text = "+ Cambiar correo";
-                changeCareerPanel.Visible = false;
-                changeCareerPanel.Parent = panel3;
-                changeCareerPanel.Location = new Point(row2.Location.X, row2.Location.Y + row2.Height);
-                blineChangeCareer.Location = new Point(blineChangeCareer.Location.X, blineChangeCareer.Location.Y - changeCareerPanel.Height);
-                //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                row3.Location = new Point(row3.Location.X, row3.Location.Y - changeCareerPanel.Height-7);
-                row4.Location = new Point(row4.Location.X, row4.Location.Y - changeCareerPanel.Height-7);
-                //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y - changeCareerPanel.Height);
-               // deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height-7);
-
-            }
+            btnChangeCorreo.BackColor = Color.FromArgb(13, 98, 255);
+            btnChangeCorreo.ForeColor = Color.White;
+            btnChangePass.BackColor = Color.FromArgb(222, 222, 222);
+            btnChangePass.ForeColor = Color.FromArgb(81, 81, 81);
+            btnChangeNombre.BackColor = Color.FromArgb(222, 222, 222);
+            btnChangeNombre.ForeColor = Color.FromArgb(81, 81, 81);
+            changeEmailPanel.Location = changePassPanel.Location;
+            changeEmailPanel.Visible = true;
+            changePassPanel.Visible = false;
+            namePanel.Visible = false;
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -616,7 +524,7 @@ namespace SEM.Forms
 
         private void TextBox1_TextChanged_1(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+           /* if (textBox1.Text == "")
             {
                 btnEliminar.Enabled = false;
                 btnEliminar.ButtonColor = Color.FromArgb(255,130, 170);
@@ -627,7 +535,7 @@ namespace SEM.Forms
                 btnEliminar.Enabled = true;
                 btnEliminar.ButtonColor = Color.FromArgb(255,13, 70);
                 btnEliminar.TextColor = Color.White;
-            }
+            }*/
         }
 
         private void changePassPanel_Paint(object sender, PaintEventArgs e)
@@ -642,12 +550,38 @@ namespace SEM.Forms
 
         private void btnChangeNombre_Click(object sender, EventArgs e)
         {
+            btnChangeNombre.BackColor = Color.FromArgb(13, 98, 255);
+            btnChangeNombre.ForeColor = Color.White;
+            btnChangePass.BackColor = Color.FromArgb(222,222,222);
+            btnChangePass.ForeColor = Color.FromArgb(81,81,81);
+            btnChangeCorreo.BackColor = Color.FromArgb(222,222,222);
+            btnChangeCorreo.ForeColor = Color.FromArgb(81,81,81);
+            namePanel.Location = changePassPanel.Location;
+            namePanel.Visible = true;
+            changePassPanel.Visible = false;
+            changeEmailPanel.Visible = false;
+
+
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void Label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnRA_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminPanel(c).Show();
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            c.logout();
+
+            this.Hide();
+            new Login(c).Show();
         }
     }
 }

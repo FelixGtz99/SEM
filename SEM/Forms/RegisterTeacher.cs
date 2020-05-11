@@ -452,12 +452,12 @@ namespace SEM.Forms
             if (d == "Edit")
             {
                 this.Hide();
-                new RA(c).Show();
+                new AdminPanel(c).Show(); 
             }
             else
             {
                 this.Hide();
-                new AdminPanel(c).Show();
+                new RA(c).Show();
             }
             
         }
@@ -474,6 +474,11 @@ namespace SEM.Forms
         {
             ImgByteA = null;
             imgMaestro.Image = imgMaestro.InitialImage;
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -11,10 +11,10 @@ using SEM.items;
 
 namespace SEM.Forms
 {
-    public partial class EditAccount : Form
+    public partial class EditAdmin : Form
     {
         Conexion c = null;
-        public EditAccount(Conexion c)
+        public EditAdmin(Conexion c)
         {
          
             InitializeComponent();
@@ -34,12 +34,8 @@ namespace SEM.Forms
             c.getCarreras();
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            lbCarrera.Text = c.SCarrera;
-            foreach (Carrera car in c.CARRERAS)
-            {
-                cbCarrera.Items.Add(car.ToString());
-              
-            }
+            lbCarrera.Text = c.CORREO;
+            
             //panelOpciones.Location = new Point((this.Width / 2 - panelOpciones.Width / 2), (this.Height / 2 - panelOpciones.Height / 2));
             //panelBorrar.Location = new Point((this.Width / 2 - panelBorrar.Width / 2), (this.Height / 2 - panelBorrar.Height / 2));
             //panelContra.Location = new Point((this.Width / 2 - panelContra.Width / 2), (this.Height / 2 - panelContra.Height / 2));
@@ -69,12 +65,12 @@ namespace SEM.Forms
             //eventos para que se desaparezca el texto
             txtNewContra.GotFocus += NewContra_GotFocus;
             txtCPass.GotFocus += ConfirmNewPass_GotFocus;
-            cbCarrera.GotFocus += Carrera_GotFocus;
+            //cbCarrera.GotFocus += Carrera_GotFocus;
             txtPass.GotFocus += ConfirmPass1_GotFocus;
             textBox1.GotFocus += ConfirmPass2_GotFocus;
             txtNewContra.LostFocus += NewContra_LostFocus;
             txtCPass.LostFocus += ConfirmNewPass_LostFocus;
-            cbCarrera.LostFocus += Carrera_LostFocus;
+            //cbCarrera.LostFocus += Carrera_LostFocus;
             txtPass.LostFocus += ConfirmPass1_LostFocus;
             textBox1.LostFocus += ConfirmPass2_LostFocus;
 
@@ -122,12 +118,12 @@ namespace SEM.Forms
         }
         private void Carrera_GotFocus(object sender, EventArgs e)
         {
-            labelNCarrera.ForeColor = Color.FromArgb(13, 70, 255);
+            labelNorreo.ForeColor = Color.FromArgb(13, 70, 255);
 
         }
         private void Carrera_LostFocus(object sender, EventArgs e)
         {
-            labelNCarrera.ForeColor = Color.White;
+            labelNorreo.ForeColor = Color.White;
 
         }
 
@@ -336,7 +332,7 @@ namespace SEM.Forms
                     {
                         try
                         {
-                            c.SCarrera = cbCarrera.SelectedItem.ToString();
+                           // c.SCarrera = cbCarrera.SelectedItem.ToString();
                             c.setNewCarrera();
                             c.ChangePass(txtNewContra.Text);
                             this.Hide();
@@ -416,35 +412,35 @@ namespace SEM.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (deletePanel.Visible == false)
-            {
-                button1.Text = "- Eliminar cuenta";
-                deletePanel.Visible = true;
-                deletePanel.Parent = panel3;
-                deletePanel.Location = new Point(row4.Location.X, row4.Location.Y + row4.Height);
-                blineDelete.Location = new Point(blineDelete.Location.X, blineDelete.Location.Y + deletePanel.Height);
-                //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                //row3.Location = new Point(row3.Location.X, row3.Location.Y + changeCareerPanel.Height + 7);
-                //row4.Location = new Point(row4.Location.X, row4.Location.Y + changeCareerPanel.Height + 7);
-                //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y + changeCareerPanel.Height);
-                //deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y + changePassPanel.Height + 7);
+        //    if (deletePanel.Visible == false)
+        //    {
+        //        button1.Text = "- Eliminar cuenta";
+        //        deletePanel.Visible = true;
+        //        deletePanel.Parent = panel3;
+        //        deletePanel.Location = new Point(row4.Location.X, row4.Location.Y + row4.Height);
+        //        blineDelete.Location = new Point(blineDelete.Location.X, blineDelete.Location.Y + deletePanel.Height);
+        //        //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
+        //        //row3.Location = new Point(row3.Location.X, row3.Location.Y + changeCareerPanel.Height + 7);
+        //        //row4.Location = new Point(row4.Location.X, row4.Location.Y + changeCareerPanel.Height + 7);
+        //        //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y + changeCareerPanel.Height);
+        //        //deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y + changePassPanel.Height + 7);
 
 
-            }
-            else
-            {
-                button1.Text = "+ Eliminar cuenta";
-                deletePanel.Visible = false;
-                deletePanel.Parent = panel3;
-                deletePanel.Location = new Point(row4.Location.X, row4.Location.Y + row4.Height);
-                blineDelete.Location = new Point(blineDelete.Location.X, blineDelete.Location.Y - deletePanel.Height);
-                //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                //row3.Location = new Point(row3.Location.X, row3.Location.Y - changeCareerPanel.Height - 7);
-                //row4.Location = new Point(row4.Location.X, row4.Location.Y - changeCareerPanel.Height - 7);
-                //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y - changeCareerPanel.Height);
-                //deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height - 7);
+        //    }
+        //    else
+        //    {
+        //        button1.Text = "+ Eliminar cuenta";
+        //        deletePanel.Visible = false;
+        //        deletePanel.Parent = panel3;
+        //        deletePanel.Location = new Point(row4.Location.X, row4.Location.Y + row4.Height);
+        //        blineDelete.Location = new Point(blineDelete.Location.X, blineDelete.Location.Y - deletePanel.Height);
+        //        //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
+        //        //row3.Location = new Point(row3.Location.X, row3.Location.Y - changeCareerPanel.Height - 7);
+        //        //row4.Location = new Point(row4.Location.X, row4.Location.Y - changeCareerPanel.Height - 7);
+        //        //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y - changeCareerPanel.Height);
+        //        //deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height - 7);
 
-            }
+        //    }
 
         }
 
@@ -475,8 +471,8 @@ namespace SEM.Forms
                 labelACarrera.Visible = true;
                 helpCarrera.Visible = true;
                 lbCarrera.Visible = true;
-                labelNCarrera.Visible = true;
-                cbCarrera.Visible = true;
+                labelNorreo.Visible = true;
+                //cbCarrera.Visible = true;
                 
             }
             else
@@ -484,8 +480,8 @@ namespace SEM.Forms
                 labelACarrera.Visible = false;
                 helpCarrera.Visible = false;
                 lbCarrera.Visible = false;
-                labelNCarrera.Visible = false;
-                cbCarrera.Visible = false;
+                labelNorreo.Visible = false;
+                //cbCarrera.Visible = false;
             }    
         }
 
@@ -522,13 +518,13 @@ namespace SEM.Forms
                 btnChangePass.Text = "- Cambiar contraseña";
                 changePassPanel.Visible = true;
                 changePassPanel.Parent = panel3;
-                changePassPanel.Location = new Point(row1.Location.X, row1.Location.Y + row1.Height);
+                changePassPanel.Location = new Point(row4.Location.X, row4.Location.Y + row4.Height);
                 blineChangePass.Location = new Point(blineChangePass.Location.X, blineChangePass.Location.Y + changePassPanel.Height);
-                row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                row3.Location = new Point(row3.Location.X, row3.Location.Y + changePassPanel.Height);
+                //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
                 row4.Location = new Point(row4.Location.X, row4.Location.Y + changePassPanel.Height);
-                changeCareerPanel.Location = new Point(changeCareerPanel.Location.X, changeCareerPanel.Location.Y + changePassPanel.Height);
-                deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y + changePassPanel.Height);
+                //row4.Location = new Point(row4.Location.X, row4.Location.Y + changePassPanel.Height);
+                //changeCareerPanel.Location = new Point(changeCareerPanel.Location.X, changeCareerPanel.Location.Y + changePassPanel.Height);
+               // deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y +changePassPanel.Height);
 
 
             }
@@ -537,13 +533,13 @@ namespace SEM.Forms
                 btnChangePass.Text = "+ Cambiar contraseña";
                 changePassPanel.Visible = false;
                 changePassPanel.Parent = panel3;
-                changePassPanel.Location = new Point(row1.Location.X, row1.Location.Y + row1.Height);
+                changePassPanel.Location = new Point(row3.Location.X, row3.Location.Y + row3.Height);
                 blineChangePass.Location = new Point(blineChangePass.Location.X, blineChangePass.Location.Y - changePassPanel.Height);
-                row2.Location = new Point(row2.Location.X, row2.Location.Y - changePassPanel.Height);
-                row3.Location = new Point(row3.Location.X, row3.Location.Y - changePassPanel.Height);
+                //row2.Location = new Point(row2.Location.X, row2.Location.Y - changePassPanel.Height);
                 row4.Location = new Point(row4.Location.X, row4.Location.Y - changePassPanel.Height);
-                changeCareerPanel.Location = new Point(changeCareerPanel.Location.X, changeCareerPanel.Location.Y - changePassPanel.Height);
-                deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height);
+                //row4.Location = new Point(row4.Location.X, row4.Location.Y - changePassPanel.Height);
+                //changeCareerPanel.Location = new Point(changeCareerPanel.Location.X, changeCareerPanel.Location.Y - changePassPanel.Height);
+                //deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height);
             }
             //changePassPanel.BringToFront();
         }
@@ -562,22 +558,23 @@ namespace SEM.Forms
         {
             if (changeCareerPanel.Visible == false)
             {
-                btnChangeCarrera.Text = "- Cambiar carrera";
+                btnChangeCorreo.Text = "- Cambiar correo";
                 changeCareerPanel.Visible = true;
                 changeCareerPanel.Parent = panel3;
                 changeCareerPanel.Location = new Point(row2.Location.X, row2.Location.Y + row2.Height);
                 blineChangeCareer.Location = new Point(blineChangeCareer.Location.X, blineChangeCareer.Location.Y + changeCareerPanel.Height);
                 //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                row3.Location = new Point(row3.Location.X, row3.Location.Y + changeCareerPanel.Height+7);
+                row3.Location = new Point(row3.Location.X, row3.Location.Y + changeCareerPanel.Height + 7);
                 row4.Location = new Point(row4.Location.X, row4.Location.Y + changeCareerPanel.Height+7);
-                //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y + changeCareerPanel.Height);
-                deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y + changePassPanel.Height+7);
+               // row4.Location = new Point(row4.Location.X, row4.Location.Y + changeCareerPanel.Height+7);
+                changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y + changeCareerPanel.Height);
+               // deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y + changePassPanel.Height+7);
 
 
             }
             else
             {
-                btnChangeCarrera.Text = "+ Cambiar carrera";
+                btnChangeCorreo.Text = "+ Cambiar correo";
                 changeCareerPanel.Visible = false;
                 changeCareerPanel.Parent = panel3;
                 changeCareerPanel.Location = new Point(row2.Location.X, row2.Location.Y + row2.Height);
@@ -586,7 +583,7 @@ namespace SEM.Forms
                 row3.Location = new Point(row3.Location.X, row3.Location.Y - changeCareerPanel.Height-7);
                 row4.Location = new Point(row4.Location.X, row4.Location.Y - changeCareerPanel.Height-7);
                 //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y - changeCareerPanel.Height);
-                deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height-7);
+               // deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height-7);
 
             }
         }
@@ -631,6 +628,26 @@ namespace SEM.Forms
                 btnEliminar.ButtonColor = Color.FromArgb(255,13, 70);
                 btnEliminar.TextColor = Color.White;
             }
+        }
+
+        private void changePassPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void EditAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChangeNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

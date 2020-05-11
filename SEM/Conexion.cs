@@ -50,6 +50,11 @@ namespace SEM
             get { return apellido; }
             set { apellido = value; }
         }
+        public string CORREO
+        {
+            get { return correo; }
+            set { correo = value; }
+        }
         public byte[] imagen
         {
             get { return imagen; }
@@ -334,6 +339,7 @@ namespace SEM
                     {
                         Carrera c = new Carrera(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
                         Carreras.Add(c);
+                        Console.WriteLine(c.ToString());
                     }
                     reader.Close();
                 }
@@ -622,7 +628,7 @@ namespace SEM
                 {
                     return false;
                 }
-                reader.Close();
+              
             }
         }
         //Busca el id de la evaluacion hecha
@@ -641,13 +647,15 @@ namespace SEM
                 if (reader.Read())
                 {
                     return true;
+                    
 
                 }
                 else
                 {
                     return false;
+                
                 }
-                reader.Close();
+               
             }
 
         }
@@ -1148,6 +1156,15 @@ namespace SEM
             return logo;
         }
 
+        //
+        public void setNewCarrera() {
+            String query = "UPDATE public.usuarios SET correo =@c WHERE expediente=@id ; ";
+            var cmd = new NpgsqlCommand(query, con);
+
+            cmd.Parameters.AddWithValue("c", getIDCarrera());
+            cmd.Parameters.AddWithValue("id", userID);
+            cmd.ExecuteNonQuery();
+        }
 
     }
     

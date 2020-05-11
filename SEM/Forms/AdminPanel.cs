@@ -144,5 +144,11 @@ namespace SEM.Forms
         {
 
         }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new EditAdmin(c).Show();
+        }
     }
 }

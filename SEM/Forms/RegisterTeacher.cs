@@ -35,7 +35,7 @@ namespace SEM.Forms
 
             listMaterias.HorizontalScrollbar = true;
 
-            pictureBox1.ImageLocation = "https://i0.wp.com/umap.org/wp-content/uploads/2018/08/Logo_unison.png?fit=500%2C500";
+            pictureBox1.ImageLocation = c.getlogo();
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             var path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, label6.Width, label3.Height);

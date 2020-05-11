@@ -105,8 +105,8 @@ namespace SEM.Forms
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-          
-            c.deleteMateria();
+           
+                c.deleteMateria();
             c.getMaterias();
             CBMaterias();
         }
@@ -124,10 +124,25 @@ namespace SEM.Forms
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            c.setMateria(txtMaterias.Text);
-            txtMaterias.Text = " ";
-            c.getMaterias();
-            CBMaterias();
+            if (btnAñadir.Text == "Editar")
+            {
+                c.updateMateria(txtMaterias.Text);
+                c.getMaterias();
+                CBMaterias();
+                txtMaterias.Text = " ";
+            }
+            else
+            {
+                if (txtMaterias.Text!=" ")
+                {
+                    c.setMateria(txtMaterias.Text);
+                   
+                    c.getMaterias();
+                    CBMaterias();
+                    txtMaterias.Text = " ";
+                }
+               
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -142,13 +157,23 @@ namespace SEM.Forms
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
-
+            var materia = cbMaterias.SelectedItem.ToString();
+            c.SMateria = materia;
+            txtMaterias.Text = materia;
+            btnAñadir.Text = "Editar";
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
             this.Hide();
             new EditAdmin(c).Show();
+        }
+
+        private void button_WOC4_Click(object sender, EventArgs e)
+        {
+            c.deleteMateria();
+            c.getMaterias();
+            CBMaterias();
         }
     }
 }

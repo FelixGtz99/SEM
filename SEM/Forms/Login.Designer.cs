@@ -51,9 +51,17 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panelogin = new System.Windows.Forms.Panel();
+            this.panelAnonimo = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbEscuela = new System.Windows.Forms.ComboBox();
+            this.cbCarrera = new System.Windows.Forms.ComboBox();
             this.panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelogin.SuspendLayout();
+            this.panelAnonimo.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -62,7 +70,7 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEmail.Location = new System.Drawing.Point(154, 268);
+            this.txtEmail.Location = new System.Drawing.Point(40, 59);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(389, 25);
             this.txtEmail.TabIndex = 0;
@@ -75,7 +83,7 @@
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPass.Location = new System.Drawing.Point(154, 387);
+            this.txtPass.Location = new System.Drawing.Point(40, 195);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(389, 25);
@@ -88,7 +96,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(150, 222);
+            this.label1.Location = new System.Drawing.Point(36, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 24);
             this.label1.TabIndex = 3;
@@ -99,7 +107,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(150, 341);
+            this.label2.Location = new System.Drawing.Point(39, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 24);
             this.label2.TabIndex = 4;
@@ -107,18 +115,12 @@
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.errorPass);
-            this.panel.Controls.Add(this.errorEmail);
+            this.panel.Controls.Add(this.panelAnonimo);
+            this.panel.Controls.Add(this.panelogin);
             this.panel.Controls.Add(this.label3);
             this.panel.Controls.Add(this.btnAnonimo);
             this.panel.Controls.Add(this.btnRegistrar);
             this.panel.Controls.Add(this.btnLogin1);
-            this.panel.Controls.Add(this.line2);
-            this.panel.Controls.Add(this.line1);
-            this.panel.Controls.Add(this.label1);
-            this.panel.Controls.Add(this.label2);
-            this.panel.Controls.Add(this.txtPass);
-            this.panel.Controls.Add(this.txtEmail);
             this.panel.Location = new System.Drawing.Point(682, 49);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(685, 718);
@@ -129,7 +131,7 @@
             this.errorPass.AutoSize = true;
             this.errorPass.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
-            this.errorPass.Location = new System.Drawing.Point(151, 428);
+            this.errorPass.Location = new System.Drawing.Point(40, 226);
             this.errorPass.Name = "errorPass";
             this.errorPass.Size = new System.Drawing.Size(91, 18);
             this.errorPass.TabIndex = 14;
@@ -141,7 +143,7 @@
             this.errorEmail.AutoSize = true;
             this.errorEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(13)))), ((int)(((byte)(70)))));
-            this.errorEmail.Location = new System.Drawing.Point(151, 309);
+            this.errorEmail.Location = new System.Drawing.Point(40, 110);
             this.errorEmail.Name = "errorEmail";
             this.errorEmail.Size = new System.Drawing.Size(91, 18);
             this.errorEmail.TabIndex = 13;
@@ -225,7 +227,7 @@
             // line2
             // 
             this.line2.BackColor = System.Drawing.Color.White;
-            this.line2.Location = new System.Drawing.Point(151, 415);
+            this.line2.Location = new System.Drawing.Point(41, 213);
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(392, 3);
             this.line2.TabIndex = 7;
@@ -233,7 +235,7 @@
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.White;
-            this.line1.Location = new System.Drawing.Point(151, 296);
+            this.line1.Location = new System.Drawing.Point(37, 87);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(392, 3);
             this.line1.TabIndex = 6;
@@ -352,6 +354,75 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // panelogin
+            // 
+            this.panelogin.Controls.Add(this.errorPass);
+            this.panelogin.Controls.Add(this.label1);
+            this.panelogin.Controls.Add(this.errorEmail);
+            this.panelogin.Controls.Add(this.txtEmail);
+            this.panelogin.Controls.Add(this.line1);
+            this.panelogin.Controls.Add(this.label2);
+            this.panelogin.Controls.Add(this.line2);
+            this.panelogin.Controls.Add(this.txtPass);
+            this.panelogin.Location = new System.Drawing.Point(121, 150);
+            this.panelogin.Name = "panelogin";
+            this.panelogin.Size = new System.Drawing.Size(466, 281);
+            this.panelogin.TabIndex = 15;
+            // 
+            // panelAnonimo
+            // 
+            this.panelAnonimo.Controls.Add(this.cbCarrera);
+            this.panelAnonimo.Controls.Add(this.cbEscuela);
+            this.panelAnonimo.Controls.Add(this.label9);
+            this.panelAnonimo.Controls.Add(this.label10);
+            this.panelAnonimo.Location = new System.Drawing.Point(124, 150);
+            this.panelAnonimo.Name = "panelAnonimo";
+            this.panelAnonimo.Size = new System.Drawing.Size(466, 281);
+            this.panelAnonimo.TabIndex = 16;
+            this.panelAnonimo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAnonimo_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(36, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 24);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Escuela";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(43, 157);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(82, 24);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Carrera";
+            // 
+            // cbEscuela
+            // 
+            this.cbEscuela.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.cbEscuela.FormattingEnabled = true;
+            this.cbEscuela.Location = new System.Drawing.Point(47, 64);
+            this.cbEscuela.Name = "cbEscuela";
+            this.cbEscuela.Size = new System.Drawing.Size(318, 33);
+            this.cbEscuela.TabIndex = 5;
+            this.cbEscuela.SelectedIndexChanged += new System.EventHandler(this.cbEscuela_SelectedIndexChanged);
+            // 
+            // cbCarrera
+            // 
+            this.cbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.cbCarrera.FormattingEnabled = true;
+            this.cbCarrera.Location = new System.Drawing.Point(47, 201);
+            this.cbCarrera.Name = "cbCarrera";
+            this.cbCarrera.Size = new System.Drawing.Size(318, 33);
+            this.cbCarrera.TabIndex = 6;
+            this.cbCarrera.SelectedIndexChanged += new System.EventHandler(this.cbCarrera_SelectedIndexChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +443,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelogin.ResumeLayout(false);
+            this.panelogin.PerformLayout();
+            this.panelAnonimo.ResumeLayout(false);
+            this.panelAnonimo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -401,5 +476,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label errorPass;
         private System.Windows.Forms.Label errorEmail;
+        private System.Windows.Forms.Panel panelogin;
+        private System.Windows.Forms.Panel panelAnonimo;
+        private System.Windows.Forms.ComboBox cbCarrera;
+        private System.Windows.Forms.ComboBox cbEscuela;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

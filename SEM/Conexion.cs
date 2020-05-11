@@ -225,6 +225,7 @@ namespace SEM
         }
         //Get Escuela
         public void getEscuela() {
+            Escuelas.Clear();
             String query = "SELECT e.nombre, c.nombre FROM escuela e, carrera c WHERE e.id_escuela=c.id_escuela AND c.id=@id";
             using (var cmd=new NpgsqlCommand(query,con)) {
                 cmd.Parameters.AddWithValue("id", CARRERA);
@@ -974,47 +975,19 @@ namespace SEM
         }
         //EliminaMateria
         public void deleteMateria() {
-      
-            String query = "DELETE FROM evaluacion WHERE id_materia=@m";
-            var cmd = new NpgsqlCommand(query, con);
-            try
-            {
-                cmd.Parameters.AddWithValue("m", getIDMateria());
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-
-            }
-            String query2 = "DELETE FROM clases WHERE materria=@m";
-            var cmd2 = new NpgsqlCommand(query2, con);
-            try
-            {
-                cmd2.Parameters.AddWithValue("m", getIDMateria());
-                cmd2.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-
-            }
-            String query3 = "DELETE FROM materia WHERE nombre_materia=@m";
+       
+            
+            Console.WriteLine("dm" + SMateria);
+            String query3 = "DELETE FROM public.materia WHERE nombre_materia=@m";
             var cmd3 = new NpgsqlCommand(query3, con);
-            try
-            {
+           
+            
                 cmd3.Parameters.AddWithValue("m", SMateria);
                 cmd3.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-
-            }
+           
         }
+        
+    
         //Agregar Materia
         public void setMateria(String Materia) {
           
@@ -1165,7 +1138,14 @@ namespace SEM
             cmd.Parameters.AddWithValue("id", userID);
             cmd.ExecuteNonQuery();
         }
+        public void updateMateria(String txtNew) {
+            String query = "UPDATE public.materia SET nombre_materia =@mat WHERE id_materia=@idM; ";
+            var cmd = new NpgsqlCommand(query, con);
 
+            cmd.Parameters.AddWithValue("mat", txtNew);
+            cmd.Parameters.AddWithValue("idM", getIDMateria());
+            cmd.ExecuteNonQuery();
+        }  
     }
     
 }

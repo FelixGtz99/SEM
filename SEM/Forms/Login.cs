@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEM.Forms;
+using SEM.items;
 namespace SEM
 {
     public partial class Login : Form
@@ -20,6 +21,7 @@ namespace SEM
 
             this.c = c;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            panelAnonimo.Visible = false;
       //que pex
             //Datos de la barra superior
             this.ActiveControl = panel2;
@@ -33,6 +35,7 @@ namespace SEM
             panel.Height = this.Height - panel2.Height;
             panel.Width = this.Width / 2;
             panel.Location = new Point(this.Width/2, panel2.Height);
+           
             //Datos del panel de Información
             panel1.Height = this.Height - panel2.Height;
             panel1.Width = this.Width / 2;
@@ -117,81 +120,99 @@ namespace SEM
 
         private void BtnLogin1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtPass.Text) || txtPass.Text == "placeholder")
+            if (panelogin.Visible==true)
             {
-                errorPass.Text = "Introduce una contraseña";
-                line2.BackColor = Color.FromArgb(255, 13, 70);
-                label2.ForeColor = Color.FromArgb(255, 13, 70);
-                errorPass.Visible = true;
-                if (string.IsNullOrWhiteSpace(txtEmail.Text))
+
+
+                if (string.IsNullOrWhiteSpace(txtPass.Text) || txtPass.Text == "placeholder")
                 {
-                    line1.BackColor = Color.FromArgb(255, 13, 70);
-                    label1.ForeColor = Color.FromArgb(255, 13, 70);
-                    errorEmail.Text = "Introduce un correo electrónico";
-                    errorEmail.Visible = true;
-                }
-                else if (!c.CheckEmail(txtEmail.Text))
-                {
-                    line1.BackColor = Color.FromArgb(255, 13, 70);
-                    label1.ForeColor = Color.FromArgb(255, 13, 70);
-                    errorEmail.Text = "Correo electrónico no registrado";
-                    errorEmail.Visible = true;
-                }
-            }
-            else
-            {
-                errorPass.Visible = false;
-                if (string.IsNullOrWhiteSpace(txtEmail.Text))
-                {
-                    line1.BackColor = Color.FromArgb(255, 13, 70);
-                    label1.ForeColor = Color.FromArgb(255, 13, 70);
-                    errorEmail.Text = "Introduce un correo electrónico";
-                    txtPass.Text = "";
-                    errorEmail.Visible = true;
-                }
-                else if (!c.CheckEmail(txtEmail.Text))
-                {
-                    line1.BackColor = Color.FromArgb(255, 13, 70);
-                    label1.ForeColor = Color.FromArgb(255, 13, 70);
-                    errorEmail.Text = "Correo electrónico no registrado";
-                    txtPass.Text = "";
-                    errorEmail.Visible = true;
-                } else if (c.Login(txtEmail.Text, txtPass.Text) != 0)
-                {
-                    if (c.itsAdmin()) 
+                    errorPass.Text = "Introduce una contraseña";
+                    line2.BackColor = Color.FromArgb(255, 13, 70);
+                    label2.ForeColor = Color.FromArgb(255, 13, 70);
+                    errorPass.Visible = true;
+                    if (string.IsNullOrWhiteSpace(txtEmail.Text))
                     {
-
-                        this.Hide();
-                        new AdminPanel(c).Show();
-
+                        line1.BackColor = Color.FromArgb(255, 13, 70);
+                        label1.ForeColor = Color.FromArgb(255, 13, 70);
+                        errorEmail.Text = "Introduce un correo electrónico";
+                        errorEmail.Visible = true;
                     }
-                    
-                    else {
-                        if (c.CARRERA == -1)
-                        {
-                            this.Hide();
-                            new AddCareer(c).Show();
-                        }else
-                        {
-                            this.Hide();
-                            new Searcher(c).Show();
-                        }
+                    else if (!c.CheckEmail(txtEmail.Text))
+                    {
+                        line1.BackColor = Color.FromArgb(255, 13, 70);
+                        label1.ForeColor = Color.FromArgb(255, 13, 70);
+                        errorEmail.Text = "Correo electrónico no registrado";
+                        errorEmail.Visible = true;
                     }
-                    SemBox sb = new SemBox("short", "¡Bienvenido de regreso!", "", "Aceptar");
-                    sb.Show();
                 }
                 else
                 {
-                    line1.BackColor = Color.FromArgb(255, 13, 70);
-                    label1.ForeColor = Color.FromArgb(255, 13, 70);
-                    errorEmail.Text = "Correo y contraseña no coinciden";
-                    errorEmail.Visible = true;
-                    txtPass.Text = "";
-                }
+                    errorPass.Visible = false;
+                    if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                    {
+                        line1.BackColor = Color.FromArgb(255, 13, 70);
+                        label1.ForeColor = Color.FromArgb(255, 13, 70);
+                        errorEmail.Text = "Introduce un correo electrónico";
+                        txtPass.Text = "";
+                        errorEmail.Visible = true;
+                    }
+                    else if (!c.CheckEmail(txtEmail.Text))
+                    {
+                        line1.BackColor = Color.FromArgb(255, 13, 70);
+                        label1.ForeColor = Color.FromArgb(255, 13, 70);
+                        errorEmail.Text = "Correo electrónico no registrado";
+                        txtPass.Text = "";
+                        errorEmail.Visible = true;
+                    }
+                    else if (c.Login(txtEmail.Text, txtPass.Text) != 0)
+                    {
+                        if (c.itsAdmin())
+                        {
+
+                            this.Hide();
+                            new AdminPanel(c).Show();
+
+                        }
+
+                        else
+                        {
+                            if (c.CARRERA == -1)
+                            {
+                                this.Hide();
+                                new AddCareer(c).Show();
+                            }
+                            else
+                            {
+                                this.Hide();
+                                new Searcher(c).Show();
+                            }
+                        }
+                        SemBox sb = new SemBox("short", "¡Bienvenido de regreso!", "", "Aceptar");
+                        sb.Show();
+                    }
+                    else
+                    {
+                        line1.BackColor = Color.FromArgb(255, 13, 70);
+                        label1.ForeColor = Color.FromArgb(255, 13, 70);
+                        errorEmail.Text = "Correo y contraseña no coinciden";
+                        errorEmail.Visible = true;
+                        txtPass.Text = "";
+                    }
+               
             }
-            
-            
-            
+
+
+            }
+            else
+            {
+                c.USER = 0;
+               // c.SCarrera= cbCarrera.SelectedItem.ToString();
+               // c.SEscuela = cbEscuela.SelectedItem.ToString();
+                this.Hide();
+                new Searcher(c).Show();
+
+
+            }
 
             /*if (c.Login(txtEmail.Text, txtPass.Text) != 0)
             {
@@ -217,9 +238,26 @@ namespace SEM
 
         private void BtnAnonimo_Click(object sender, EventArgs e)
         {
-            c.USER = 0;
-            this.Hide();
-            new Searcher(c).Show();
+            if (panelAnonimo.Visible == false)
+            {
+                panelogin.Visible = false;
+                panelAnonimo.Visible = true;
+                cbCarrera.Enabled = false;
+                btnAnonimo.Text = "Ingresar registrado";
+                btnLogin1.Enabled = false;
+                foreach (Escuela item in c.ESCUELAS)
+                {
+                    cbEscuela.Items.Add(item.ToString());
+                }
+            }
+            else {
+                panelogin.Visible = true;
+                panelAnonimo.Visible = false;
+                btnAnonimo.Text = "Ingresar Anonimo";
+
+            }
+
+            
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -238,6 +276,29 @@ namespace SEM
             {
                 BtnLogin1_Click(this, new EventArgs());
             }
+        }
+
+        private void cbEscuela_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            c.SEscuela = cbEscuela.SelectedItem.ToString();
+            cbCarrera.Enabled = true;
+            c.getCarreras();
+            cbCarrera.Items.Clear();
+            foreach (Carrera item in c.CARRERAS)
+            {
+                cbCarrera.Items.Add(item.ToString());
+            }
+        }
+
+        private void panelAnonimo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            c.SCarrera = cbCarrera.SelectedItem.ToString();
+            btnLogin1.Enabled = true;
         }
     }
 }

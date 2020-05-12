@@ -206,6 +206,8 @@ namespace SEM
             else
             {
                 c.USER = 0;
+                c.CARRERA = c.getIDCarrera();
+                c.ESCUELA = c.getIDEscuela();
                // c.SCarrera= cbCarrera.SelectedItem.ToString();
                // c.SEscuela = cbEscuela.SelectedItem.ToString();
                 this.Hide();

@@ -20,6 +20,8 @@ namespace SEM
             this.c = c;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            c.getEscuelas();
+            c.getCarreras();
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;
@@ -374,7 +376,8 @@ namespace SEM
                 {
                     c.RegisterUser(txtExpediente.Text, txtNombre.Text, txtApellido.Text, txtContraseña.Text, txtCorreo.Text);
                     //MessageBox.Show("Registrado correctamente");
-                    
+                    c.SCarrera = cbCarrera.SelectedItem.ToString();
+                   
                     this.Hide();
                     new Searcher(c).Show();
                     SemBox sb = new SemBox("long", "¡Bienvenido a SEM!",

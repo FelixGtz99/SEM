@@ -102,7 +102,7 @@ namespace SEM.Forms
              
             c.getClases(c.getIDMaestro());
 
-            c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
+          //  c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
             /*panel2.Focus();
             dataGridView1.ClearSelection();*/
         }

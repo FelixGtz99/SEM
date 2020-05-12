@@ -193,6 +193,7 @@ namespace SEM
             String query = "INSERT INTO usuarios (expediente, nombre, apellido, contraseña, correo, escuela, carrera) VALUES(@e, @n, @a, @pass, @email,@es, @ca) ";
             try
             {
+                Console.WriteLine(getIDCarrera().ToString());
                 userID = int.Parse(Expediente);
                 correo = Correo;
                 pass = Contraseña;

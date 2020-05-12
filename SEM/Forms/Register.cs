@@ -134,10 +134,7 @@ namespace SEM
             {
                 Errores = Errores + Environment.NewLine + "La contraseña debe de tener al menos 2 numeros";
             }
-            if (!email.StartsWith("a"+Experiente) || !(email.EndsWith("@unison.mx") || email.EndsWith("@alumnos.unison.mx")))
-            {
-                Errores = Errores + Environment.NewLine + "Correo no valido";
-            }
+         
             if (nombre.Any(char.IsDigit) || Apellido.Any(char.IsDigit))
             {
                 Errores = Errores + Environment.NewLine + "Los nombres o apellidos no debe de contener numeros";

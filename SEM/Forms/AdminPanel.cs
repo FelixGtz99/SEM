@@ -21,6 +21,7 @@ namespace SEM.Forms
             c.getMaterias();
             c.getCarreras();
             c.getEscuela();
+            c.getEscuelas();
             CBMaestros();
             CBMaterias();
             lbCarrera.Text = c.SCarrera;
@@ -55,7 +56,7 @@ namespace SEM.Forms
             path.AddEllipse(0, 0, helpMaterias.Width, helpMaterias.Height);
             this.helpMaterias.Region = new Region(path);
             this.helpMaestros.Region = new Region(path);
-
+           
             notifications.DataSource = c.getNotifications();
             //this.notifications.Rows.Add("El maestro José Luis Ochoa Hernández ha recibido muchos votos negativos en su perfil.");
             //this.notifications.Rows.Add("El promedio del maestro Guzmán Gerardo Alfonso Sánchez Schmitz ha bajado de 6.0.");
@@ -177,6 +178,21 @@ namespace SEM.Forms
             c.deleteMateria();
             c.getMaterias();
             CBMaterias();
+        }
+
+        private void button_WOC3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_WOC2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notifications_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

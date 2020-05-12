@@ -967,7 +967,7 @@ namespace SEM
         {
             String query = "SELECT notificacion FROM notificaciones WHERE id_carrera=@idC ";
             var cmd = new NpgsqlCommand(query, con);
-           cmd.Parameters.AddWithValue("idC", getIDCarrera());
+           cmd.Parameters.AddWithValue("idC", CARRERA);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
             Console.WriteLine(data);

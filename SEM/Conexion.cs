@@ -1173,6 +1173,13 @@ namespace SEM
             cmd.ExecuteNonQuery();
         }
 
+        public void deleteNotificacion(String notificacion)
+        {
+            String query = "DELETE FROM public.notificaciones WHERE notificacion =@not";
+            var cmd = new NpgsqlCommand(query, con);
+            cmd.Parameters.AddWithValue("not", notificacion);
+            cmd.ExecuteNonQuery();
+        }
 
     }
     

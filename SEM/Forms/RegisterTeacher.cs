@@ -70,6 +70,8 @@ namespace SEM.Forms
             txtAlias.LostFocus += Alias_LostFocus;
             if (d == "Editar")
             {
+                label7.Visible = false;
+                label13.Visible = false;
                 this.BackColor = Color.FromArgb(222, 222, 222);
                 panel1.BackColor = Color.White;
                 ImgByteA = c.getImgM2();
@@ -449,7 +451,7 @@ namespace SEM.Forms
 
         private void BtnRA_Click(object sender, EventArgs e)
         {
-            if (d == "Edit")
+            if (d == "Editar")
             {
                 this.Hide();
                 new AdminPanel(c).Show(); 

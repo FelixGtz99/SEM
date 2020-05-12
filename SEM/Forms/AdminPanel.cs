@@ -13,6 +13,7 @@ namespace SEM.Forms
     public partial class AdminPanel : Form
     {
         Conexion c = null;
+        String notif;
         public AdminPanel(Conexion c)
         {
             this.c = c;
@@ -125,15 +126,10 @@ namespace SEM.Forms
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            if (btnAñadir.Text == "Editar")
-            {
-                c.updateMateria(txtMaterias.Text);
-                c.getMaterias();
-                CBMaterias();
-                txtMaterias.Text = " ";
-            }
-            else
-            {
+            
+                
+            
+            
                 if (txtMaterias.Text!=" ")
                 {
                     c.setMateria(txtMaterias.Text);
@@ -143,7 +139,7 @@ namespace SEM.Forms
                     txtMaterias.Text = " ";
                 }
                
-            }
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -163,7 +159,9 @@ namespace SEM.Forms
             var materia = cbMaterias.SelectedItem.ToString();
             c.SMateria = materia;
             txtMaterias.Text = materia;
-            btnAñadir.Text = "Editar";
+            btnAñadir.Visible = false;
+            editPanel.Visible = true;
+            editPanel.Location = new Point(1017, 415);
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
@@ -177,6 +175,69 @@ namespace SEM.Forms
             c.deleteMateria();
             c.getMaterias();
             CBMaterias();
+        }
+
+        private void Notifications_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var index = e.RowIndex;
+                DataGridViewRow SelectedRow = notifications.Rows[index];
+                /* c.SMateria = SelectedRow.Cells[0].Value.ToString();
+                 c.SMaestro = SelectedRow.Cells[1].Value.ToString();
+                 Comentario = SelectedRow.Cells[2].Value.ToString();
+                 Calificacion = SelectedRow.Cells[3].Value.ToString();*/
+                string selectedActivity = SelectedRow.Cells[0].Value.ToString();
+                notif = SelectedRow.Cells[0].Value.ToString();
+                if (selectedActivity.Contains("maestro:"))
+                {
+                    btnVer.Enabled = true;
+                    btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
+                    int begin = selectedActivity.IndexOf(':');
+                    int end = selectedActivity.IndexOf('.');
+                    int selectLength = end - begin - 2;
+                    c.SMaestro = selectedActivity.Substring(begin + 2, selectLength);
+                }
+                else
+                {
+                    btnVer.Enabled = false;
+                    btnVer.ButtonColor = Color.FromArgb(130, 170, 255);
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+        }
+
+        private void BtnVer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RegisterTeacher(c, "Editar");
+        }
+
+        private void BtnEliminarnotif_Click(object sender, EventArgs e)
+        {
+            c.deleteNotificacion(notif);
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            c.updateMateria(txtMaterias.Text);
+            c.getMaterias();
+            CBMaterias();
+            txtMaterias.Text = " ";
+            editPanel.Visible = false;
+            btnAñadir.Visible = true;
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            editPanel.Visible = false;
+            btnAñadir.Visible = true;
         }
     }
 }

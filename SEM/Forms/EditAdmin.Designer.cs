@@ -68,13 +68,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelEstudiante = new System.Windows.Forms.Label();
+            this.btnRA = new ePOSOne.btnProduct.Button_WOC();
             this.label5 = new System.Windows.Forms.Label();
             this.labelCarrera = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnRA = new ePOSOne.btnProduct.Button_WOC();
-            this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
             this.btnGuardar = new ePOSOne.btnProduct.Button_WOC();
             this.changePassPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -341,7 +341,6 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(322, 19);
             this.txtPass.TabIndex = 69;
-            this.txtPass.Text = "placeholder";
             this.txtPass.TextChanged += new System.EventHandler(this.TxtPass_TextChanged_1);
             // 
             // label9
@@ -382,7 +381,7 @@
             this.changeEmailPanel.Controls.Add(this.txtCorreo);
             this.changeEmailPanel.Controls.Add(this.helpCorreo);
             this.changeEmailPanel.Controls.Add(this.label4);
-            this.changeEmailPanel.Location = new System.Drawing.Point(567, 494);
+            this.changeEmailPanel.Location = new System.Drawing.Point(554, 410);
             this.changeEmailPanel.Name = "changeEmailPanel";
             this.changeEmailPanel.Size = new System.Drawing.Size(480, 210);
             this.changeEmailPanel.TabIndex = 65;
@@ -556,6 +555,29 @@
             this.labelEstudiante.TabIndex = 6;
             this.labelEstudiante.Text = "Placeholder";
             // 
+            // btnRA
+            // 
+            this.btnRA.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRA.ButtonColor = System.Drawing.Color.White;
+            this.btnRA.FlatAppearance.BorderSize = 0;
+            this.btnRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRA.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRA.Image = global::SEM.Properties.Resources.backarrow;
+            this.btnRA.Location = new System.Drawing.Point(28, 471);
+            this.btnRA.Name = "btnRA";
+            this.btnRA.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnRA.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.btnRA.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnRA.Size = new System.Drawing.Size(298, 60);
+            this.btnRA.TabIndex = 20;
+            this.btnRA.Text = "Volver";
+            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRA.UseVisualStyleBackColor = true;
+            this.btnRA.Click += new System.EventHandler(this.BtnRA_Click);
+            // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -585,51 +607,6 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label15.Location = new System.Drawing.Point(40, 673);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(277, 23);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "sistema evaluador de maestros";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bahnschrift Light", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label16.Location = new System.Drawing.Point(94, 600);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(163, 81);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "sem";
-            // 
-            // btnRA
-            // 
-            this.btnRA.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRA.ButtonColor = System.Drawing.Color.White;
-            this.btnRA.FlatAppearance.BorderSize = 0;
-            this.btnRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRA.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRA.Image = global::SEM.Properties.Resources.backarrow;
-            this.btnRA.Location = new System.Drawing.Point(28, 471);
-            this.btnRA.Name = "btnRA";
-            this.btnRA.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnRA.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.btnRA.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnRA.Size = new System.Drawing.Size(298, 60);
-            this.btnRA.TabIndex = 20;
-            this.btnRA.Text = "Volver";
-            this.btnRA.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRA.UseVisualStyleBackColor = true;
-            this.btnRA.Click += new System.EventHandler(this.BtnRA_Click);
-            // 
             // btnCerrar
             // 
             this.btnCerrar.BorderColor = System.Drawing.Color.Transparent;
@@ -652,6 +629,28 @@
             this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.label15.Location = new System.Drawing.Point(40, 673);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(277, 23);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "sistema evaluador de maestros";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Bahnschrift Light", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.label16.Location = new System.Drawing.Point(94, 600);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(163, 81);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "sem";
             // 
             // btnGuardar
             // 

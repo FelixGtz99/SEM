@@ -37,6 +37,8 @@ namespace SEM.Forms
             labelOldCorreo.Text = c.CORREO;
             labelEstudiante.Text = c.NOMBRE + " " + c.APELLIDO;
             labelCarrera.Text = c.SCarrera;
+            pictureBox1.ImageLocation = c.getlogo();
+
             btnChangeNombre_Click(this, new EventArgs());
             //panelOpciones.Location = new Point((this.Width / 2 - panelOpciones.Width / 2), (this.Height / 2 - panelOpciones.Height / 2));
             //panelBorrar.Location = new Point((this.Width / 2 - panelBorrar.Width / 2), (this.Height / 2 - panelBorrar.Height / 2));

@@ -13,6 +13,7 @@ namespace SEM.Forms
     public partial class AdminPanel : Form
     {
         Conexion c = null;
+        String noti = " ";
         public AdminPanel(Conexion c)
         {
             this.c = c;
@@ -182,7 +183,8 @@ namespace SEM.Forms
 
         private void button_WOC3_Click(object sender, EventArgs e)
         {
-
+            c.deleteNotification(noti);
+            notifications.DataSource = c.getNotifications();
         }
 
         private void button_WOC2_Click(object sender, EventArgs e)
@@ -193,6 +195,13 @@ namespace SEM.Forms
         private void notifications_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void notifications_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var index = e.RowIndex;
+            DataGridViewRow SelectedRow = notifications.Rows[index];
+           noti = SelectedRow.Cells[0].Value.ToString();
         }
     }
 }

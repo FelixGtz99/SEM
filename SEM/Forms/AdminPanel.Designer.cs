@@ -251,6 +251,7 @@
             this.notifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.notifications.Size = new System.Drawing.Size(305, 233);
             this.notifications.TabIndex = 54;
+            this.notifications.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.notifications_CellClick);
             this.notifications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.notifications_CellContentClick);
             // 
             // label2

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEM.items;
+
 namespace SEM.Forms
 {
     public partial class AdminPanel : Form
@@ -22,6 +23,7 @@ namespace SEM.Forms
             c.getMaterias();
             c.getCarreras();
             c.getEscuela();
+            c.getEscuelas();
             CBMaestros();
             CBMaterias();
             lbCarrera.Text = c.SCarrera;
@@ -64,7 +66,14 @@ namespace SEM.Forms
             //this.notifications.Rows.Add("El maestro Alonso Pérez Soltero ha recibido muchos votos negativos en su perfil");
             //this.notifications.Rows.Add("El promedio del maestro Raquel Torres Peralta ha bajado de 6.0.");
             //this.notifications.Rows.Add("Se ha añadido al maestro René Francisco Navarro Hernández.");
-            
+            if (notifications.Rows.Count > 0)
+            {
+                Notifications_CellClick(this.notifications, new DataGridViewCellEventArgs(0, 0));
+                btnVer.Enabled = true;
+                btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
+                btnEliminarnotif.Enabled = true;
+                btnEliminarnotif.ButtonColor = Color.FromArgb(255, 13, 70);
+            }
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

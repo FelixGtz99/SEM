@@ -422,7 +422,7 @@ namespace SEM
                 var cmd = new NpgsqlCommand(query, con);
                 Console.WriteLine(query);
                 cmd.Parameters.AddWithValue("m", "%" + m + "%");
-                cmd.Parameters.AddWithValue("idC", getIDCarrera()) ;
+                cmd.Parameters.AddWithValue("idC", CARRERA) ;
                 var datos = new NpgsqlDataAdapter(cmd);
                 DataTable data = new DataTable();
                 Console.WriteLine(data);
@@ -967,7 +967,7 @@ namespace SEM
         {
             String query = "SELECT notificacion FROM notificaciones WHERE id_carrera=@idC ";
             var cmd = new NpgsqlCommand(query, con);
-           cmd.Parameters.AddWithValue("idC", getIDCarrera());
+           cmd.Parameters.AddWithValue("idC", CARRERA);
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
             Console.WriteLine(data);
@@ -1120,11 +1120,17 @@ namespace SEM
         public String getlogo()
         {
             String logo = "";
-            foreach (Escuela e in ESCUELAS)
+            String query = "SELECT logo FROM escuela WHERE id_escuela=@ide";
+            using (var cmd = new NpgsqlCommand(query, con))
             {
-                if (e.Id == ESCUELA)
+                cmd.Parameters.AddWithValue("ide", getIDEscuela());
+                using (var reader = cmd.ExecuteReader())
                 {
-                   logo = e.Logo;
+                    if (reader.Read())
+                    {
+                        logo = reader.GetString(0);
+                    }
+                    reader.Close();
                 }
             }
             return logo;

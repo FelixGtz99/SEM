@@ -21,6 +21,7 @@ namespace SEM.Forms
             c.getMaterias();
             c.getCarreras();
             c.getEscuela();
+            c.getEscuelas();
             labelCarrera.Text = c.SCarrera;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
@@ -51,6 +52,7 @@ namespace SEM.Forms
             //panel.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 - panel.Height/2 ));
             //panelCuenta.Location = new Point((this.Width - panelCuenta.Width), 0);
             // panelUniversidad.Location = new Point((this.Width / 2 - panel.Width / 2), (this.Height / 2 + panel.Height/8));
+            Console.WriteLine("logo"+c.getlogo());
             pictureBox2.ImageLocation = c.getlogo();
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             toolTip2.SetToolTip(this.pictureBox2, c.SEscuela);

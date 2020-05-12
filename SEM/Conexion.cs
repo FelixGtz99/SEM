@@ -1120,11 +1120,17 @@ namespace SEM
         public String getlogo()
         {
             String logo = "";
-            foreach (Escuela e in ESCUELAS)
+            String query = "SELECT logo FROM escuela WHERE id_escuela=@ide";
+            using (var cmd = new NpgsqlCommand(query, con))
             {
-                if (e.Id == ESCUELA)
+                cmd.Parameters.AddWithValue("ide", getIDEscuela());
+                using (var reader = cmd.ExecuteReader())
                 {
-                   logo = e.Logo;
+                    if (reader.Read())
+                    {
+                        logo = reader.GetString(0);
+                    }
+                    reader.Close();
                 }
             }
             return logo;

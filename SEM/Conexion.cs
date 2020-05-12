@@ -351,7 +351,7 @@ namespace SEM
         public int getLastEvaluacion()
         {
             int id = 0;
-            String query = "SELECT MAX(*) FROM evaluacion ";
+            String query = "SELECT MAX(id_evaluacion) FROM evaluacion ";
             using (var cmd = new NpgsqlCommand(query, con))
             {
                 using (var reader = cmd.ExecuteReader())

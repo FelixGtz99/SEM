@@ -209,7 +209,7 @@ c.deleteNotification(noti);
                     c.SMaestro = noti.Substring(begin + 2, selectLength);
                     this.Hide();
                     new RegisterTeacher(c, "Editar").Show();
-                } else if{
+                } else 
                     if (noti.Contains("maestro:"))
                     {
 

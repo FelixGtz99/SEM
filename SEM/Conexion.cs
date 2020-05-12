@@ -444,7 +444,7 @@ namespace SEM
             var cmd = new NpgsqlCommand(query, con);
             Console.WriteLine(query);
             cmd.Parameters.AddWithValue("m", "%" + m + "%");
-            cmd.Parameters.AddWithValue("idC", getIDCarrera()) ;
+            cmd.Parameters.AddWithValue("idC", CARRERA) ;
             var datos = new NpgsqlDataAdapter(cmd);
             DataTable data = new DataTable();
             Console.WriteLine(data);

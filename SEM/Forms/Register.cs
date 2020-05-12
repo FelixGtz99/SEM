@@ -20,6 +20,8 @@ namespace SEM
             this.c = c;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            c.getEscuelas();
+            c.getCarreras();
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;

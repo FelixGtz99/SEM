@@ -350,7 +350,7 @@ namespace SEM
         public int getLastEvaluacion()
         {
             int id = 0;
-            String query = "SELECT MAX(*) FROM evaluacion ";
+            String query = "SELECT MAX(id_evaluacion) FROM evaluacion ";
             using (var cmd = new NpgsqlCommand(query, con))
             {
                 using (var reader = cmd.ExecuteReader())
@@ -1138,7 +1138,7 @@ namespace SEM
 
         //
         public void setNewCarrera() {
-            String query = "UPDATE public.usuarios SET correo =@c WHERE expediente=@id ; ";
+            String query = "UPDATE public.usuarios SET carrera=@c WHERE expediente=@id ; ";
             var cmd = new NpgsqlCommand(query, con);
 
             cmd.Parameters.AddWithValue("c", getIDCarrera());

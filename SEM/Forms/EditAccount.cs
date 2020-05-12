@@ -321,6 +321,8 @@ namespace SEM.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            c.SCarrera = cbCarrera.SelectedItem.ToString();
+            Boolean guardado = true;
             if (c.CONTRA == txtPass.Text)
             {
                 if (txtPass.Text == txtCPass.Text)
@@ -331,32 +333,46 @@ namespace SEM.Forms
                 }
                 else
                 {
-                    String check = validarContra(txtNewContra.Text);
-                    if (check == " ")
+                    if (txtNewContra.Text != "placeholder" && txtCPass.Text != "placeholder")
                     {
-                        try
+
+
+                        String check = validarContra(txtNewContra.Text);
+                        if (check == " ")
                         {
-                            c.SCarrera = cbCarrera.SelectedItem.ToString();
-                            c.setNewCarrera();
-                            c.ChangePass(txtNewContra.Text);
-                            this.Hide();
-                            //MessageBox.Show("Cambios hechos correctamente");
-                            new Searcher(c).Show();
-                            SemBox sb = new SemBox("short", "Se han guardado los cambios", "", "Aceptar");
+                            try
+                            {
+
+                                c.ChangePass(txtNewContra.Text);
+                                this.Hide();
+                                //MessageBox.Show("Cambios hechos correctamente");
+                                new Searcher(c).Show();
+                                guardado = true;
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                            }
+                        }
+                        else
+                        {
+                            //MessageBox.Show(check);
+                            guardado = false;
+                            SemBox sb = new SemBox("longerror", "Error al guardar", check, "Aceptar");
                             sb.Show();
                         }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
                     }
-                    else
+                    if (c.getIDCarrera() != c.CARRERA && guardado)
                     {
-                        //MessageBox.Show(check);
-                        SemBox sb = new SemBox("longerror", "Error al guardar", check, "Aceptar");
+
+                        c.setNewCarrera();
+                    }
+                    if (guardado)
+                    {
+                        SemBox sb = new SemBox("short", "Se han guardado los cambios", "", "Aceptar");
                         sb.Show();
                     }
-
                 }
             }
             else

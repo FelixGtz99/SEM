@@ -101,8 +101,11 @@ namespace SEM.Forms
             }
              
             c.getClases(c.getIDMaestro());
-
-            c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
+            if (dataGridView2.Rows.Count > 0)
+            {
+                c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
+            }
+            
             /*panel2.Focus();
             dataGridView1.ClearSelection();*/
         }
@@ -299,7 +302,11 @@ namespace SEM.Forms
              dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
              dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DimGray;*/
             dataGridView2.DataSource = c.verMateriasM();
-            c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
+            if(dataGridView2.Rows.Count > 2)
+            {
+                c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
+            }
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

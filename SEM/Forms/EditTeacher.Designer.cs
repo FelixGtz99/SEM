@@ -73,23 +73,23 @@
             // 
             // listMaterias
             // 
-            this.listMaterias.Font = new System.Drawing.Font("Arial", 16F);
+            this.listMaterias.Font = new System.Drawing.Font("Arial", 12F);
             this.listMaterias.ForeColor = System.Drawing.Color.DimGray;
             this.listMaterias.FormattingEnabled = true;
-            this.listMaterias.ItemHeight = 24;
+            this.listMaterias.ItemHeight = 18;
             this.listMaterias.Location = new System.Drawing.Point(28, 375);
             this.listMaterias.Name = "listMaterias";
-            this.listMaterias.Size = new System.Drawing.Size(468, 172);
+            this.listMaterias.Size = new System.Drawing.Size(468, 166);
             this.listMaterias.TabIndex = 31;
             // 
             // cbMaterias
             // 
-            this.cbMaterias.Font = new System.Drawing.Font("Arial", 16F);
+            this.cbMaterias.Font = new System.Drawing.Font("Arial", 12F);
             this.cbMaterias.ForeColor = System.Drawing.Color.DimGray;
             this.cbMaterias.FormattingEnabled = true;
             this.cbMaterias.Location = new System.Drawing.Point(28, 239);
             this.cbMaterias.Name = "cbMaterias";
-            this.cbMaterias.Size = new System.Drawing.Size(468, 32);
+            this.cbMaterias.Size = new System.Drawing.Size(468, 26);
             this.cbMaterias.TabIndex = 32;
             // 
             // titleBox

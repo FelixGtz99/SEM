@@ -129,8 +129,9 @@ namespace SEM.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new RegisterTeacher(c,"Editar").Show();
+            this.Hide();
+
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
@@ -228,13 +229,19 @@ namespace SEM.Forms
 
         private void BtnVer_Click(object sender, EventArgs e)
         {
+
+            new RegisterTeacher(c, "Editar").Show();
+            
             this.Hide();
-            new RegisterTeacher(c, "Editar");
+            //MessageBox.Show(c.SMaestro);
+            
         }
 
         private void BtnEliminarnotif_Click(object sender, EventArgs e)
         {
             c.deleteNotificacion(notif);
+            notifications.DataSource = c.getNotifications();
+            notifications.Refresh();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -242,7 +249,7 @@ namespace SEM.Forms
             c.updateMateria(txtMaterias.Text);
             c.getMaterias();
             CBMaterias();
-            txtMaterias.Text = " ";
+            txtMaterias.Text = "";
             editPanel.Visible = false;
             btnAñadir.Visible = true;
         }
@@ -251,6 +258,7 @@ namespace SEM.Forms
         {
             editPanel.Visible = false;
             btnAñadir.Visible = true;
+            txtMaterias.Text = "";
         }
     }
 }

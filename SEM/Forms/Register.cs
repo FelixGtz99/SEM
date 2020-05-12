@@ -374,9 +374,10 @@ namespace SEM
             {
                 try
                 {
+                    c.SCarrera = cbCarrera.SelectedItem.ToString();
                     c.RegisterUser(txtExpediente.Text, txtNombre.Text, txtApellido.Text, txtContraseña.Text, txtCorreo.Text);
                     //MessageBox.Show("Registrado correctamente");
-                    c.SCarrera = cbCarrera.SelectedItem.ToString();
+                 
                    
                     this.Hide();
                     new Searcher(c).Show();

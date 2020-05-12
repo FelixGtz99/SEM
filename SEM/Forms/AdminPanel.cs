@@ -202,6 +202,8 @@ namespace SEM.Forms
                 {
                     btnVer.Enabled = true;
                     btnVer.ButtonColor = Color.FromArgb(13, 70, 255);
+                    btnEliminarnotif.Enabled = true;
+                    btnEliminarnotif.ButtonColor = Color.FromArgb(255, 13, 70);
                     int begin = selectedActivity.IndexOf(':');
                     int end = selectedActivity.IndexOf('.');
                     int selectLength = end - begin - 2;
@@ -211,6 +213,8 @@ namespace SEM.Forms
                 {
                     btnVer.Enabled = false;
                     btnVer.ButtonColor = Color.FromArgb(130, 170, 255);
+                    btnEliminarnotif.Enabled = false;
+                    btnEliminarnotif.ButtonColor = Color.FromArgb(255, 130, 170);
                 }
 
             }

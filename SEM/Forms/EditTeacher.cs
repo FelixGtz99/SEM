@@ -60,7 +60,8 @@ namespace SEM.Forms
 
         private void defButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
+            /*this.Hide();
             if (pf.Equals("admin"))
             {
                 
@@ -68,8 +69,8 @@ namespace SEM.Forms
             }
             else {
                 new Evaluations(c).Show();
-            }
-            
+            }*/
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

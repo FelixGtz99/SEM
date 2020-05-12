@@ -766,7 +766,7 @@ namespace SEM
         //ver la actividad reciente
         public DataTable verRA()
         {
-            String query = " SELECT notificacion AS \"Actividad\"  , fecha AS \"Fecha\" FROM public.\"RA\" WHERE id_carrera=@idC  ORDER BY  fecha DESC";
+            String query = " SELECT notificacion AS \"Actividad\"  , fecha AS \"Fecha\" FROM public.\"RA\" WHERE id_carrera=@idC  ORDER BY  fecha DESC LIMIT 50";
             var cmd = new NpgsqlCommand(query, con);
             cmd.Parameters.AddWithValue("idC", CARRERA);
             var datos = new NpgsqlDataAdapter(cmd);

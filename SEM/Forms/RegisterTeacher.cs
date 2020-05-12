@@ -449,7 +449,7 @@ namespace SEM.Forms
 
         private void BtnRA_Click(object sender, EventArgs e)
         {
-            if (d == "Edit")
+            if (d == "Editar")
             {
                 this.Hide();
                 new AdminPanel(c).Show(); 

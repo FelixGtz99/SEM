@@ -183,13 +183,52 @@ namespace SEM.Forms
 
         private void button_WOC3_Click(object sender, EventArgs e)
         {
-            c.deleteNotification(noti);
+            try
+            {
+c.deleteNotification(noti);
             notifications.DataSource = c.getNotifications();
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            
         }
 
         private void button_WOC2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (noti.Contains("maestro:"))
+                {
 
+                    int begin = noti.IndexOf(':');
+                    int end = noti.IndexOf('.');
+                    int selectLength = end - begin - 2;
+                    c.SMaestro = noti.Substring(begin + 2, selectLength);
+                    this.Hide();
+                    new RegisterTeacher(c, "Editar").Show();
+                } else if{
+                    if (noti.Contains("maestro:"))
+                    {
+
+                        int begin = noti.IndexOf(':');
+                        int end = noti.IndexOf('.');
+                        int selectLength = end - begin - 2;
+                        c.SMateria = noti.Substring(begin + 2, selectLength);
+                        this.Hide();
+                        cbMaterias.SelectedItem = c.SMateria;
+                    }
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+                
+            }
         }
 
         private void notifications_CellContentClick(object sender, DataGridViewCellEventArgs e)

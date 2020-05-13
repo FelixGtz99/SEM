@@ -87,8 +87,15 @@ namespace SEM.Forms
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Searcher(c).Show();
+            var Searcher = new Searcher(c);
+            //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            Searcher.Shown += (o, args) => { this.Hide();};
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Searcher.Show();
+            /*this.Hide();
+            new Searcher(c).Show();*/
         }
 
         private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -134,16 +141,30 @@ namespace SEM.Forms
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new EditAccount(c).Show();
+            var EditAccount = new EditAccount(c);
+            //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            EditAccount.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { EditAccount.Enabled = false; };
+            //sb.FormClosed += (o, args) => { EditAccount.Enabled = true; };
+            EditAccount.Show();
+            /*this.Hide();
+            new EditAccount(c).Show();*/
 
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             c.logout();
-            this.Hide();
-            new Login(c).Show();
+            var Login = new Login(c);
+            //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide();  };
+
+            //sb.Shown += (o, args) => { Login.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Login.Enabled = true; };
+            Login.Show();
+            /*this.Hide();
+            new Login(c).Show();*/
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -158,8 +179,15 @@ namespace SEM.Forms
 
         private void BtnVer_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Evaluations(c).Show();
+            var Evaluations = new Evaluations(c);
+           // var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            Evaluations.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Evaluations.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Evaluations.Enabled = true; };
+            Evaluations.Show();
+            /*this.Hide();
+            new Evaluations(c).Show();*/
         }
 
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -282,10 +282,17 @@ namespace SEM.Forms
                 if (d == "Editar")
                 {
                     c.updateDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
-                    SemBox sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+                    var AdminPanel = new AdminPanel(c);
+                    var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+                    AdminPanel.Shown += (o, args) => { this.Hide(); sb.Show(); };
+
+                    sb.Shown += (o, args) => { AdminPanel.Enabled = false; };
+                    sb.FormClosed += (o, args) => { AdminPanel.Enabled = true; };
+                    AdminPanel.Show();
+                    /*SemBox sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
                     sb.Show();
                     this.Hide();
-                    new AdminPanel(c).Show();
+                    new AdminPanel(c).Show();*/
                 }
                 else
                 {
@@ -330,13 +337,27 @@ namespace SEM.Forms
         {
             if (d == "Editar")
             {
-                this.Hide();
-                new AdminPanel(c).Show();
+                var AdminPanel = new AdminPanel(c);
+                //var sb = new SemBox("long", "Se han guardado los cambios", "Debes iniciar sesión de nuevo para que se muestren.", "Aceptar");
+                AdminPanel.Shown += (o, args) => { this.Hide(); };
+
+                //sb.Shown += (o, args) => { AdminPanel.Enabled = false; };
+                //sb.FormClosed += (o, args) => { AdminPanel.Enabled = true; };
+                AdminPanel.Show();
+                /*this.Hide();
+                new AdminPanel(c).Show();*/
             }
             else
             {
-                this.Hide();
-                new Searcher(c).Show();
+                var Searcher = new Searcher(c);
+                //var sb = new SemBox("long", "Se han guardado los cambios", "Debes iniciar sesión de nuevo para que se muestren.", "Aceptar");
+                Searcher.Shown += (o, args) => { this.Hide(); };
+
+                //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                Searcher.Show();
+                /*this.Hide();
+                new Searcher(c).Show();*/
             }
             
         }
@@ -460,13 +481,27 @@ namespace SEM.Forms
         {
             if (d == "Editar")
             {
-                this.Hide();
-                new AdminPanel(c).Show(); 
+                var AdminPanel = new AdminPanel(c);
+                //var sb = new SemBox("long", "Se han guardado los cambios", "Debes iniciar sesión de nuevo para que se muestren.", "Aceptar");
+                AdminPanel.Shown += (o, args) => { this.Hide(); };
+
+                //sb.Shown += (o, args) => { AdminPanel.Enabled = false; };
+                //sb.FormClosed += (o, args) => { AdminPanel.Enabled = true; };
+                AdminPanel.Show();
+                /*this.Hide();
+                new AdminPanel(c).Show();*/ 
             }
             else
             {
-                this.Hide();
-                new RA(c).Show();
+                var RA = new RA(c);
+                //var sb = new SemBox("long", "Se han guardado los cambios", "Debes iniciar sesión de nuevo para que se muestren.", "Aceptar");
+                RA.Shown += (o, args) => { this.Hide(); };
+
+                //sb.Shown += (o, args) => { RA.Enabled = false; };
+                //sb.FormClosed += (o, args) => { RA.Enabled = true; };
+                RA.Show();
+                /*this.Hide();
+                new RA(c).Show();*/
             }
             
         }
@@ -475,8 +510,16 @@ namespace SEM.Forms
         {
             c.logout();
 
-            this.Hide();
-            new Login(c).Show();
+            var Login = new Login(c);
+            //var sb = new SemBox("long", "Se han guardado los cambios", "Debes iniciar sesión de nuevo para que se muestren.", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide();  };
+
+            //sb.Shown += (o, args) => { Login.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Login.Enabled = true; };
+            Login.Show();
+
+            /*this.Hide();
+            new Login(c).Show();*/
         }
 
         private void Button_WOC1_Click(object sender, EventArgs e)

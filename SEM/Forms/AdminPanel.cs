@@ -129,6 +129,7 @@ namespace SEM.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            c.SMaestro = cbMaestros.SelectedItem.ToString();
             var RegisterTeacher = new RegisterTeacher(c, "Editar");
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             RegisterTeacher.Shown += (o, args) => { this.Hide(); };

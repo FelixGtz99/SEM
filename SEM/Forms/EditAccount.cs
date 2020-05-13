@@ -374,8 +374,9 @@ namespace SEM.Forms
                     }
                     if (guardado)
                     {
+                        c.logout();
                         var Login = new Login(c);
-                        var sb = new SemBox("long", "Se han guardado los cambios", "Serás redirigido al menú de inicio para que se puedan mostrar", "Aceptar");
+                        var sb = new SemBox("long", "Se han guardado los cambios", "Debes iniciar sesión de nuevo para que se muestren.", "Aceptar");
                         Login.Shown += (o, args) => { this.Hide(); sb.Show(); };
 
                         sb.Shown += (o, args) => { Login.Enabled = false; };

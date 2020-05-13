@@ -180,9 +180,15 @@ namespace SEM.Forms
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             c.logout();
-            
-            this.Hide();
-            new Login(c).Show();
+            var Login = new Login(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Login.Show();
+            /*this.Hide();
+            new Login(c).Show();*/
 
         }
 
@@ -193,8 +199,15 @@ namespace SEM.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new EditAccount(c).Show();
+            var EditAccount = new EditAccount(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            EditAccount.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            EditAccount.Show();
+            /*this.Hide();
+            new EditAccount(c).Show();*/
         }
 
         private void Searcher_Load(object sender, EventArgs e)
@@ -212,8 +225,15 @@ namespace SEM.Forms
                     MessageBox.Show("No has seleccionado ningun maestro");
                 }
                 else {
-                    this.Hide();
-                    new Evaluations(c).Show();
+                    var Evaluations = new Evaluations(c);
+                    //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+                    Evaluations.Shown += (o, args) => { this.Hide(); };
+
+                    //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                    //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                    Evaluations.Show();
+                    /*this.Hide();
+                    new Evaluations(c).Show();*/
                 }
             }
             //if (cbEleccion.SelectedItem.ToString().Equals("Materia"))
@@ -261,14 +281,28 @@ namespace SEM.Forms
 
         private void btnRA_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new RA(c).Show();
+            var RA = new RA(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            RA.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            RA.Show();
+            /*this.Hide();
+            new RA(c).Show();*/
         }
 
         private void btnRegistrarD_Click(object sender, EventArgs e)
         {
-            this.Hide();
-           new RegisterTeacher(c, "Registar").Show();
+            var RegisterTeacher = new RegisterTeacher(c,"Registar");
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            RegisterTeacher.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            RegisterTeacher.Show();
+            /*this.Hide();
+           new RegisterTeacher(c, "Registar").Show();*/
         }
 
         private void btnEvaluar_Click(object sender, EventArgs e)
@@ -282,8 +316,15 @@ namespace SEM.Forms
                 }
                 else
                 {
-                    this.Hide();
-                    new CreateEvaluation(c, "maestro").Show();
+                    var CreateEvaluation = new CreateEvaluation(c,"maestro");
+                    //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+                    CreateEvaluation.Shown += (o, args) => { this.Hide(); };
+
+                    //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                    //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                    CreateEvaluation.Show();
+                    /*this.Hide();
+                    new CreateEvaluation(c, "maestro").Show();*/
                 }
             }
             //if (cbEleccion.SelectedItem.ToString().Equals("Materia"))
@@ -295,8 +336,15 @@ namespace SEM.Forms
                 }
                 else
                 {
-                    this.Hide();
-                    new CreateEvaluation(c, "materia").Show();
+                    var CreateEvaluation = new CreateEvaluation(c, "materia");
+                    //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+                    CreateEvaluation.Shown += (o, args) => { this.Hide(); };
+
+                    //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                    //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                    CreateEvaluation.Show();
+                    /*this.Hide();
+                    new CreateEvaluation(c, "materia").Show();*/
                 }
             }
 

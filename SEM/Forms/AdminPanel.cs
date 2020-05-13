@@ -129,8 +129,15 @@ namespace SEM.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            new RegisterTeacher(c,"Editar").Show();
-            this.Hide();
+            var RegisterTeacher = new RegisterTeacher(c, "Editar");
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            RegisterTeacher.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            RegisterTeacher.Show();
+            /*new RegisterTeacher(c,"Editar").Show();
+            this.Hide();*/
 
         }
 
@@ -155,8 +162,15 @@ namespace SEM.Forms
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             c.logout();
-            this.Hide();
-            new Login(c).Show();
+            var Login = new Login(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Login.Show();
+            /*this.Hide();
+            new Login(c).Show();*/
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -176,8 +190,15 @@ namespace SEM.Forms
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new EditAdmin(c).Show();
+            var EditAdmin = new EditAdmin(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            EditAdmin.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            EditAdmin.Show();
+            /*this.Hide();
+            new EditAdmin(c).Show();*/
         }
 
         private void button_WOC4_Click(object sender, EventArgs e)
@@ -229,12 +250,18 @@ namespace SEM.Forms
 
         private void BtnVer_Click(object sender, EventArgs e)
         {
+            var RegisterTeacher = new RegisterTeacher(c,"Editar");
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            RegisterTeacher.Shown += (o, args) => { this.Hide(); };
 
-            new RegisterTeacher(c, "Editar").Show();
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            RegisterTeacher.Show();
+            /*new RegisterTeacher(c, "Editar").Show();
             
-            this.Hide();
+            this.Hide();*/
             //MessageBox.Show(c.SMaestro);
-            
+
         }
 
         private void BtnEliminarnotif_Click(object sender, EventArgs e)

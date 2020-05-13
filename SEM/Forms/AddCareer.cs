@@ -31,9 +31,16 @@ namespace SEM.Forms
         private void Button_WOC1_Click(object sender, EventArgs e)
         {
             c.setCarrera(materias, txtCarrera.Text);
-            new SemBox("short", "Carrera agregada correctamente", "", "Aceptar").Show();
+            var AdminPanel = new AdminPanel(c);
+            var sb = new SemBox("short", "Carrera agregada correctamente", "", "Aceptar");
+            AdminPanel.Shown += (o, args) => { this.Hide(); sb.Show(); };
+
+            sb.Shown += (o, args) => { AdminPanel.Enabled = false; };
+            sb.FormClosed += (o, args) => { AdminPanel.Enabled = true; };
+            AdminPanel.Show();
+            /*new SemBox("short", "Carrera agregada correctamente", "", "Aceptar").Show();
             this.Hide();
-            new Searcher(c).Show();
+            new Searcher(c).Show();*/
         }
 
         private void txtMaterias_TextChanged(object sender, EventArgs e)
@@ -56,6 +63,13 @@ namespace SEM.Forms
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             c.logout();
+            var Login = new Login(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Login.Show();
         }
     }
 }

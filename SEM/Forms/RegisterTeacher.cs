@@ -291,10 +291,17 @@ namespace SEM.Forms
                 {
                     c.guardarDocente(txtNombre.Text, txtApellido.Text, txtAlias.Text, Materias, ImgByteA);
                     //MessageBox.Show("Guardado Correctamente");
-                    SemBox sb = new SemBox("short", "Maestro registrado correctamente", "", "Aceptar");
-                    sb.Show();
+                    var sb = new SemBox("short", "Maestro registrado correctamente", "", "Aceptar");
+
+                    var Searcher = new Searcher(c);
+                    Searcher.Shown += (o, args) => { this.Hide(); sb.Show(); };
+                    sb.Shown += (o,args) => { Searcher.Enabled = false; } ;
+                    sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                    //Terminos.FormClosed += (o, args) => { this.Enabled = true; };
+                    Searcher.Show();
+                    /*sb.Show();
                     this.Hide();
-                    new Searcher(c).Show();
+                    new Searcher(c).Show();*/
                 }
                 
             }

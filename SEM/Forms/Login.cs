@@ -168,9 +168,15 @@ namespace SEM
                     {
                         if (c.itsAdmin())
                         {
+                            var AdminPanel = new AdminPanel(c);
+                            var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+                            AdminPanel.Shown += (o, args) => { this.Hide(); sb.Show(); };
 
-                            this.Hide();
-                            new AdminPanel(c).Show();
+                            sb.Shown += (o, args) => { AdminPanel.Enabled = false; };
+                            sb.FormClosed += (o, args) => { AdminPanel.Enabled = true; };
+                            AdminPanel.Show();
+                            /*this.Hide();
+                            new AdminPanel(c).Show();*/
 
                         }
 
@@ -178,17 +184,31 @@ namespace SEM
                         {
                             if (c.CARRERA == -1)
                             {
-                                this.Hide();
-                                new AddCareer(c).Show();
+                                var AddCareer = new AddCareer(c);
+                                //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+                                AddCareer.Shown += (o, args) => { this.Hide();  };
+
+                                /*sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                                sb.FormClosed += (o, args) => { Searcher.Enabled = true; };*/
+                                AddCareer.Show();
+                                /*this.Hide();
+                                new AddCareer(c).Show();*/
                             }
                             else
                             {
-                                this.Hide();
-                                new Searcher(c).Show();
+                                var Searcher = new Searcher(c);
+                                var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+                                Searcher.Shown += (o, args) => { this.Hide(); sb.Show(); };
+                                
+                                sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                                sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                                Searcher.Show();
+                                /*this.Hide();
+                                new Searcher(c).Show();*/
                             }
                         }
-                        SemBox sb = new SemBox("short", "¡Bienvenido de regreso!", "", "Aceptar");
-                        sb.Show();
+                        /*SemBox sb = new SemBox("short", "¡Bienvenido de regreso!", "", "Aceptar");
+                        sb.Show();*/
                     }
                     else
                     {
@@ -208,10 +228,17 @@ namespace SEM
                 c.USER = 0;
                 c.CARRERA = c.getIDCarrera();
                 c.ESCUELA = c.getIDEscuela();
-               // c.SCarrera= cbCarrera.SelectedItem.ToString();
-               // c.SEscuela = cbEscuela.SelectedItem.ToString();
-                this.Hide();
-                new Searcher(c).Show();
+                // c.SCarrera= cbCarrera.SelectedItem.ToString();
+                // c.SEscuela = cbEscuela.SelectedItem.ToString();
+                var Searcher = new Searcher(c);
+                //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+                Searcher.Shown += (o, args) => { this.Hide();  };
+
+                /*sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                sb.FormClosed += (o, args) => { Searcher.Enabled = true; };*/
+                Searcher.Show();
+                /*this.Hide();
+                    new Searcher(c).Show();*/
 
 
             }
@@ -234,8 +261,15 @@ namespace SEM
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Register(c).Show();
+            var Register = new Register(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            Register.Shown += (o, args) => { this.Hide();  };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Register.Show();
+            /*this.Hide();
+            new Register(c).Show();*/
         }
 
         private void BtnAnonimo_Click(object sender, EventArgs e)
@@ -255,7 +289,7 @@ namespace SEM
             else {
                 panelogin.Visible = true;
                 panelAnonimo.Visible = false;
-                btnAnonimo.Text = "Ingresar Anonimo";
+                btnAnonimo.Text = "Ingresar Anónimo";
 
             }
 

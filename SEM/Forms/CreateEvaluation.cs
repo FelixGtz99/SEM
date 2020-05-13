@@ -168,10 +168,17 @@ namespace SEM.Forms
                 {
                     c.guardarEvaluacion(iDM, iDMat, txtComentarios.Text, tbCalificacion.Value);
                     //MessageBox.Show("Completado");
-                    SemBox sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
-                    this.Hide();
-                    new Searcher(c).Show();
-                    sb.Show();
+                    var Searcher = new Searcher(c);
+                    var sb =  new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
+                    Searcher.Shown += (o, args) => { this.Hide(); sb.Show(); };
+
+                    sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                    sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                    Searcher.Show();
+                    /*SemBox sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
+                        this.Hide();
+                        new Searcher(c).Show();
+                        sb.Show();*/
                 }
 
             }
@@ -197,8 +204,15 @@ namespace SEM.Forms
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Searcher(c).Show();
+            var Searcher = new Searcher(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            Searcher.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Searcher.Show();
+            /*this.Hide();
+            new Searcher(c).Show();*/
         }
 
         private void BtnMin_Click(object sender, EventArgs e)

@@ -227,9 +227,10 @@ namespace SEM.Forms
                     btnEliminarnotif.Enabled = true;
                     btnEliminarnotif.ButtonColor = Color.FromArgb(255, 13, 70);
                     int begin = selectedActivity.IndexOf(':');
-                    int end = selectedActivity.IndexOf('.');
+                    int end = selectedActivity.Count()-1;
                     int selectLength = end - begin - 2;
                     c.SMaestro = selectedActivity.Substring(begin + 2, selectLength);
+                    
                 }
                 else
                 {

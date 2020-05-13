@@ -73,6 +73,7 @@
             this.btnADD = new ePOSOne.btnProduct.Button_WOC();
             this.btnEvaluations = new ePOSOne.btnProduct.Button_WOC();
             this.btnEvaluate = new ePOSOne.btnProduct.Button_WOC();
+            this.helpVoto = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panelEvaluaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -200,6 +201,7 @@
             // 
             // panelEvaluaciones
             // 
+            this.panelEvaluaciones.Controls.Add(this.helpVoto);
             this.panelEvaluaciones.Controls.Add(this.dataGridView1);
             this.panelEvaluaciones.Controls.Add(this.materiaLabel);
             this.panelEvaluaciones.Controls.Add(this.btnMaterias);
@@ -207,7 +209,7 @@
             this.panelEvaluaciones.Controls.Add(this.label6);
             this.panelEvaluaciones.Controls.Add(this.dislikeBtn);
             this.panelEvaluaciones.Controls.Add(this.likeBtn);
-            this.panelEvaluaciones.Location = new System.Drawing.Point(381, 271);
+            this.panelEvaluaciones.Location = new System.Drawing.Point(381, 262);
             this.panelEvaluaciones.Name = "panelEvaluaciones";
             this.panelEvaluaciones.Size = new System.Drawing.Size(1002, 494);
             this.panelEvaluaciones.TabIndex = 50;
@@ -464,6 +466,7 @@
             this.label8.Size = new System.Drawing.Size(420, 18);
             this.label8.TabIndex = 54;
             this.label8.Text = "¿Consideras que los datos de este maestro son correctos?";
+            this.label8.Visible = false;
             // 
             // toolTip2
             // 
@@ -503,6 +506,7 @@
             this.button_WOC2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip2.SetToolTip(this.button_WOC2, "No es correcto");
             this.button_WOC2.UseVisualStyleBackColor = true;
+            this.button_WOC2.Visible = false;
             this.button_WOC2.Click += new System.EventHandler(this.button_WOC2_Click_1);
             // 
             // button_WOC1
@@ -526,6 +530,7 @@
             this.button_WOC1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip2.SetToolTip(this.button_WOC1, "Es correcto");
             this.button_WOC1.UseVisualStyleBackColor = true;
+            this.button_WOC1.Visible = false;
             this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click_2);
             // 
             // btnMaterias
@@ -735,6 +740,20 @@
             this.btnEvaluate.UseVisualStyleBackColor = true;
             this.btnEvaluate.Click += new System.EventHandler(this.BtnEvaluate_Click);
             // 
+            // helpVoto
+            // 
+            this.helpVoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.helpVoto.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.helpVoto.ForeColor = System.Drawing.Color.White;
+            this.helpVoto.Location = new System.Drawing.Point(823, 174);
+            this.helpVoto.Name = "helpVoto";
+            this.helpVoto.Size = new System.Drawing.Size(25, 25);
+            this.helpVoto.TabIndex = 52;
+            this.helpVoto.Text = "?";
+            this.helpVoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.helpVoto, "Ya realizaste tu voto en esta evaluación.");
+            this.helpVoto.Visible = false;
+            // 
             // Evaluations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -813,5 +832,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private ePOSOne.btnProduct.Button_WOC button_WOC1;
         private ePOSOne.btnProduct.Button_WOC button_WOC2;
+        private System.Windows.Forms.Label helpVoto;
     }
 }

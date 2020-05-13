@@ -82,6 +82,7 @@ namespace SEM.Forms
             path.AddEllipse(0, 0, label6.Width, label6.Height);
             this.label6.Region = new Region(path);
             this.label4.Region = new Region(path);
+            this.helpVoto.Region = new Region(path);
             var path2 = new System.Drawing.Drawing2D.GraphicsPath();
             path2.AddEllipse(0, 0, imgMaestro.Width, imgMaestro.Height);
             this.imgMaestro.Region = new Region(path2);
@@ -89,7 +90,17 @@ namespace SEM.Forms
             labelUsuario.Text = c.NOMBRE + " " + c.APELLIDO;
             labelCarrera.Text = c.SCarrera;
 
-
+            if (!c.checkProfileVote())
+            {
+                label8.Visible = true;
+                button_WOC1.Visible = true;
+                button_WOC2.Visible = true;
+            }
+            else
+            {
+                label8.Visible = true;
+                label8.Text = "Ya has evaluado el perfil de este maestro.";
+            }
 
             if (c.USER == 0)
 
@@ -98,16 +109,21 @@ namespace SEM.Forms
                 dislikeBtn.Visible = false;
                 btnADD.Visible = false;
                 btnEvaluate.Visible = false;
+                label8.Visible = false;
+                button_WOC1.Visible = false;
+                button_WOC2.Visible = false;
             }
              
             c.getClases(c.getIDMaestro());
             if (dataGridView2.Rows.Count > 0)
             {
                 c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
+
             }
             
             /*panel2.Focus();
             dataGridView1.ClearSelection();*/
+            
         }
 
 
@@ -166,8 +182,15 @@ namespace SEM.Forms
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Searcher(c).Show();
+            var Searcher = new Searcher(c);
+            //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            Searcher.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Searcher.Show();
+            /*this.Hide();
+            new Searcher(c).Show();*/
         }
 
         private void button_WOC2_Click(object sender, EventArgs e)
@@ -244,8 +267,16 @@ namespace SEM.Forms
 
         private void BtnEvaluate_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new CreateEvaluation(c, "maestro").Show();
+            var CreateEvaluation = new CreateEvaluation(c,"maestro");
+            //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            CreateEvaluation.Shown += (o, args) => { this.Hide();};
+
+            //sb.Shown += (o, args) => { CreateEvaluation.Enabled = false; };
+            //sb.FormClosed += (o, args) => { CreateEvaluation.Enabled = true; };
+            CreateEvaluation.Show();
+            /*this.Hide();
+            new CreateEvaluation(c, "maestro").Show();*/
+
         }
 
         private void BtnEvaluations_Click(object sender, EventArgs e)
@@ -277,6 +308,28 @@ namespace SEM.Forms
                 dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
                 dislikeBtn.Enabled = true;
                 label2.Text = "Evaluaciones de la materia:";
+                int id = int.Parse(idEvaluacion);
+
+                if (c.chechUserVote(id))
+                {
+                    likeBtn.Enabled = false;
+                    likeBtn.ButtonColor = Color.FromArgb(130, 170, 255);
+                    dislikeBtn.Enabled = false;
+                    dislikeBtn.ButtonColor = Color.FromArgb(255, 130, 170);
+                    toolTip2.SetToolTip(this.likeBtn, "Ya votaste por esta evaluación.");
+                    toolTip2.SetToolTip(this.dislikeBtn, "Ya votaste por esta evaluación.");
+                    helpVoto.Visible = true;
+                }
+                else
+                {
+                    likeBtn.Enabled = true;
+                    likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
+                    dislikeBtn.Enabled = true;
+                    dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
+                    toolTip2.SetToolTip(this.likeBtn, "Voto positivo.");
+                    toolTip2.SetToolTip(this.dislikeBtn, "Voto negativo.");
+                    helpVoto.Visible = false;
+                }
             }
             else
             {
@@ -286,6 +339,7 @@ namespace SEM.Forms
                 dislikeBtn.Enabled = false;
                 label2.Text = "No hay evaluaciones de la materia:";
             }
+            
 
         }
 
@@ -316,7 +370,28 @@ namespace SEM.Forms
                 var index = e.RowIndex;
                 DataGridViewRow SelectedRow = dataGridView1.Rows[index];
                 idEvaluacion = SelectedRow.Cells[0].Value.ToString();
+                int id = int.Parse(idEvaluacion);
 
+                if (c.chechUserVote(id))
+                {
+                    likeBtn.Enabled = false;
+                    likeBtn.ButtonColor = Color.FromArgb(130, 170, 255);
+                    dislikeBtn.Enabled = false;
+                    dislikeBtn.ButtonColor = Color.FromArgb(255, 130, 170);
+                    toolTip2.SetToolTip(this.likeBtn, "Ya votaste por esta evaluación.");
+                    toolTip2.SetToolTip(this.dislikeBtn, "Ya votaste por esta evaluación.");
+                    helpVoto.Visible = true;
+                }
+                else
+                {
+                    likeBtn.Enabled = true;
+                    likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
+                    dislikeBtn.Enabled = true;
+                    dislikeBtn.ButtonColor = Color.FromArgb(255, 13, 70);
+                    toolTip2.SetToolTip(this.likeBtn, "Voto positivo.");
+                    toolTip2.SetToolTip(this.dislikeBtn, "Voto negativo.");
+                    helpVoto.Visible = false;
+                }
                 /* likeBtn.ButtonColor = Color.FromArgb(13, 70, 255);
                  likeBtn.TextColor = Color.White;
                  likeBtn.Enabled = true;
@@ -337,15 +412,29 @@ namespace SEM.Forms
 
         private void BtnRA_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new RA(c).Show();
+            var RA = new RA(c);
+            //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            RA.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { RA.Enabled = false; };
+            //sb.FormClosed += (o, args) => { RA.Enabled = true; };
+            RA.Show();
+            /*this.Hide();
+            new RA(c).Show();*/
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             c.logout();
-            this.Hide();
-            new Login(c).Show();
+            var Login = new Login(c);
+           // var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Login.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Login.Enabled = true; };
+            Login.Show();
+            /*this.Hide();
+            new Login(c).Show();*/
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -395,6 +484,9 @@ namespace SEM.Forms
             }
             else {
                 c.setProfileVote("like");
+                label8.Text = "Ya has evaluado el perfil de este maestro.";
+                button_WOC1.Visible = false;
+                button_WOC2.Visible = false;
             }
         }
 
@@ -407,6 +499,9 @@ namespace SEM.Forms
             else
             {
                 c.setProfileVote("dislike");
+                label8.Text = "Ya has evaluado el perfil de este maestro.";
+                button_WOC1.Visible = false;
+                button_WOC2.Visible = false;
             }
         }
 

@@ -40,7 +40,7 @@ namespace SEM
             //panel.Height = this.Height * 10 / 17;
             panel.Width = this.Width * 3 / 4;
             //panel.Location = new Point(panel1.Width, this.Height * 10/36);
-           // panel.Height = this.Height * 483 / 786;
+           /// panel.Height = this.Height * 483 / 786;
             /*checkBox1.Location = new Point(this.Height * 664 / 768-panel2.Height, this.Width * 757 / 1366);
             linkLabel1.Location = new Point(this.Height * 666 / 768-panel2.Height, this.Width * 884 / 1366);
             btnRegistrar.Location = new Point(this.Height * 697 / 768-panel2.Height, this.Width * 757 / 1366);*/

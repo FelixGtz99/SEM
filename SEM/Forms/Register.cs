@@ -37,9 +37,14 @@ namespace SEM
             
             
             //Datos del panel de Actividad
-            panel.Height = this.Height * 10 / 17;
+            //panel.Height = this.Height * 10 / 17;
             panel.Width = this.Width * 3 / 4;
-            panel.Location = new Point(panel1.Width, this.Height * 10/36);
+            //panel.Location = new Point(panel1.Width, this.Height * 10/36);
+           // panel.Height = this.Height * 483 / 786;
+            /*checkBox1.Location = new Point(this.Height * 664 / 768-panel2.Height, this.Width * 757 / 1366);
+            linkLabel1.Location = new Point(this.Height * 666 / 768-panel2.Height, this.Width * 884 / 1366);
+            btnRegistrar.Location = new Point(this.Height * 697 / 768-panel2.Height, this.Width * 757 / 1366);*/
+
             //Eventos de los campos de texto
             this.cbEscuela.GotFocus += Escuela_GotFocus;
             this.cbCarrera.GotFocus += Carrera_GotFocus;
@@ -361,8 +366,15 @@ namespace SEM
 
         private void BtnLogin1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Login(c).Show();
+            var Login = new Login(c);
+            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Login.Show();
+            /*this.Hide();
+            new Login(c).Show();*/
         }
 
         
@@ -377,9 +389,23 @@ namespace SEM
                     c.SCarrera = cbCarrera.SelectedItem.ToString();
                     c.RegisterUser(txtExpediente.Text, txtNombre.Text, txtApellido.Text, txtContraseña.Text, txtCorreo.Text);
                     //MessageBox.Show("Registrado correctamente");
-                    
-                   
-                    this.Hide();
+
+                    var Searcher = new Searcher(c);
+                    var sb = new SemBox("long", "¡Bienvenido a SEM!",
+                        "Hola, bienvenido al Sistema Evaluador de Maestros\r\n" +
+                        "aquí podrás evaluar los distintos maestros con los\r\n" +
+                        "que hayas llevado clases con el objetivo de ayudar\r\n" +
+                        "a otros estudiantes en su toma de decisiones, y\r\n" +
+                        "claro, tú también serás ayudado. SEM es completamente\r\n" +
+                        "anónimo, no te preocupes porque te puedan delatar.\r\n" +
+                        "Solo recuerda en todo momento mantener el respeto.", "Aceptar");
+
+                    Searcher.Shown += (o, args) => { this.Hide(); sb.Show(); };
+
+                    sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                    sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                    Searcher.Show();
+                    /*this.Hide();
                     new Searcher(c).Show();
                     SemBox sb = new SemBox("long", "¡Bienvenido a SEM!",
                         "Hola, bienvenido al Sistema Evaluador de Maestros\r\n" +
@@ -389,7 +415,7 @@ namespace SEM
                         "claro, tú también serás ayudado. SEM es completamente\r\n" +
                         "anónimo, no te preocupes porque te puedan delatar.\r\n" +
                         "Solo recuerda en todo momento mantener el respeto.", "Aceptar");
-                    sb.Show();
+                    sb.Show();*/
                 }
                 catch (Exception ex)
                 {

@@ -267,7 +267,7 @@
             this.panel.Controls.Add(this.txtCorreo);
             this.panel.Location = new System.Drawing.Point(382, 201);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(972, 483);
+            this.panel.Size = new System.Drawing.Size(972, 457);
             this.panel.TabIndex = 14;
             // 
             // helpContraseña

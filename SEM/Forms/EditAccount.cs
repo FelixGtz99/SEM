@@ -321,7 +321,11 @@ namespace SEM.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            c.SCarrera = cbCarrera.SelectedItem.ToString();
+            if (cbCarrera.SelectedIndex != -1)
+            {
+                c.SCarrera = cbCarrera.SelectedItem.ToString();
+
+            }
             Boolean guardado = true;
             if (c.CONTRA == txtPass.Text)
             {
@@ -370,8 +374,15 @@ namespace SEM.Forms
                     }
                     if (guardado)
                     {
-                        SemBox sb = new SemBox("short", "Se han guardado los cambios", "", "Aceptar");
-                        sb.Show();
+                        var Login = new Login(c);
+                        var sb = new SemBox("long", "Se han guardado los cambios", "Serás redirigido al menú de inicio para que se puedan mostrar", "Aceptar");
+                        Login.Shown += (o, args) => { this.Hide(); sb.Show(); };
+
+                        sb.Shown += (o, args) => { Login.Enabled = false; };
+                        sb.FormClosed += (o, args) => { Login.Enabled = true; };
+                        Login.Show();
+                        /*SemBox sb = new SemBox("short", "Se han guardado los cambios", "Serás redirigido al menú de inicio para que se puedan mostrar", "Aceptar");
+                        sb.Show();*/
                     }
                 }
             }
@@ -391,13 +402,22 @@ namespace SEM.Forms
                 {
                     c.DeleteUser();
                     //MessageBox.Show("Usuario eliminado correctamente");
-                    this.Hide();
+                    var Login = new Login(c);
+                    var sb = new SemBox("long", "Has eliminado tu cuenta",
+                        "¡Te vamos a extrañar!\r\n" +
+                        "Considera regresar alguna vez.",
+                        "Aceptar");
+                    Login.Shown += (o, args) => { this.Hide(); sb.Show(); };
+                    sb.Shown += (o, args) => { Login.Enabled = false; };
+                    sb.FormClosed += (o, args) => { Login.Enabled = true; };
+                    Login.Show();
+                    /*this.Hide();
                     new Login(c).Show();
                     SemBox sb = new SemBox("long", "Has eliminado tu cuenta",
                         "¡Te vamos a extrañar!\r\n" +
                         "Considera regresar alguna vez.",
                         "Aceptar");
-                    sb.Show();
+                    sb.Show();*/
                 }
                 catch (Exception ex)
                 {
@@ -416,8 +436,15 @@ namespace SEM.Forms
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Searcher(c).Show();
+            var Searcher = new Searcher(c);
+            //var sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
+            Searcher.Shown += (o, args) => { this.Hide();  };
+
+            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+            Searcher.Show();
+            /*this.Hide();
+            new Searcher(c).Show();*/
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

@@ -43,6 +43,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.helpDelete = new System.Windows.Forms.Label();
+            this.btnEliminar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.changeCareerPanel = new System.Windows.Forms.Panel();
             this.labelACarrera = new System.Windows.Forms.Label();
             this.lbCarrera = new System.Windows.Forms.Label();
@@ -65,6 +67,7 @@
             this.tlineChangeCareer = new System.Windows.Forms.Label();
             this.blineChangeCareer = new System.Windows.Forms.Label();
             this.row3 = new System.Windows.Forms.Panel();
+            this.btnGuardar = new ePOSOne.btnProduct.Button_WOC();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -74,9 +77,6 @@
             this.tlineDelete = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnGuardar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnEliminar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnVolver = new ePOSOne.btnProduct.Button_WOC();
             this.panel1.SuspendLayout();
             this.changePassPanel.SuspendLayout();
             this.deletePanel.SuspendLayout();
@@ -259,6 +259,50 @@
             this.toolTip1.SetToolTip(this.helpDelete, "Eliminar tu cuenta es permanente y no podrás crear otra cuenta con el mismo corre" +
         "o electrónico. Pero tus evaluaciones y aportaciones a SEM seguirán activas.");
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(170)))));
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.Location = new System.Drawing.Point(488, 53);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
+            this.btnEliminar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnEliminar.Size = new System.Drawing.Size(382, 48);
+            this.btnEliminar.TabIndex = 47;
+            this.btnEliminar.Text = "Eliminar Cuenta Permanentemente";
+            this.btnEliminar.TextColor = System.Drawing.Color.Silver;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(28, 510);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnVolver.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnVolver.Size = new System.Drawing.Size(298, 60);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.TextColor = System.Drawing.Color.White;
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // changeCareerPanel
             // 
             this.changeCareerPanel.Controls.Add(this.labelACarrera);
@@ -334,6 +378,7 @@
             this.cbCarrera.Name = "cbCarrera";
             this.cbCarrera.Size = new System.Drawing.Size(387, 32);
             this.cbCarrera.TabIndex = 40;
+            this.cbCarrera.SelectedIndexChanged += new System.EventHandler(this.cbCarrera_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -519,6 +564,29 @@
             this.row3.Size = new System.Drawing.Size(952, 130);
             this.row3.TabIndex = 84;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
+            this.btnGuardar.Enabled = false;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(547, 63);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnGuardar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnGuardar.Size = new System.Drawing.Size(298, 60);
+            this.btnGuardar.TabIndex = 72;
+            this.btnGuardar.Text = "Guardar Cambios";
+            this.btnGuardar.TextColor = System.Drawing.Color.Silver;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -617,73 +685,6 @@
             this.label9.Size = new System.Drawing.Size(672, 68);
             this.label9.TabIndex = 25;
             this.label9.Text = "Configuración de cuenta";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
-            this.btnGuardar.Enabled = false;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(547, 63);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnGuardar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnGuardar.Size = new System.Drawing.Size(298, 60);
-            this.btnGuardar.TabIndex = 72;
-            this.btnGuardar.Text = "Guardar Cambios";
-            this.btnGuardar.TextColor = System.Drawing.Color.Silver;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(170)))));
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.Location = new System.Drawing.Point(488, 53);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(5)))), ((int)(((byte)(57)))));
-            this.btnEliminar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnEliminar.Size = new System.Drawing.Size(382, 48);
-            this.btnEliminar.TabIndex = 47;
-            this.btnEliminar.Text = "Eliminar Cuenta Permanentemente";
-            this.btnEliminar.TextColor = System.Drawing.Color.Silver;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BorderColor = System.Drawing.Color.Transparent;
-            this.btnVolver.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(28, 510);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnVolver.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnVolver.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnVolver.Size = new System.Drawing.Size(298, 60);
-            this.btnVolver.TabIndex = 14;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.TextColor = System.Drawing.Color.White;
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // EditAccount
             // 

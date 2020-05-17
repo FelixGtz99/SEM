@@ -371,6 +371,8 @@ namespace SEM.Forms
                     {
 
                         c.setNewCarrera();
+                        c.SCarrera = cbCarrera.SelectedItem.ToString();
+                       
                     }
                     if (guardado)
                     {
@@ -675,6 +677,11 @@ namespace SEM.Forms
                 btnEliminar.ButtonColor = Color.FromArgb(255,13, 70);
                 btnEliminar.TextColor = Color.White;
             }
+        }
+
+        private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

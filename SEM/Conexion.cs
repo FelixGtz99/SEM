@@ -1140,7 +1140,7 @@ namespace SEM
         public void setNewCarrera() {
             String query = "UPDATE public.usuarios SET carrera=@c WHERE expediente=@id ; ";
             var cmd = new NpgsqlCommand(query, con);
-
+            
             cmd.Parameters.AddWithValue("c", getIDCarrera());
             cmd.Parameters.AddWithValue("id", userID);
             cmd.ExecuteNonQuery();

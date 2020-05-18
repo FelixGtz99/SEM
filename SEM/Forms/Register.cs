@@ -32,10 +32,8 @@ namespace SEM
             btnMin.Height = panel2.Height;
             panel2.Location = new Point(0, 0);
             panel2.Width = this.Width;
-            //Datos del panel de Información
-            panel1.Height = this.Height - panel2.Height;
-            panel1.Width = this.Width / 4;
-            panel1.Location = new Point(0, panel2.Height);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            
             
             
             //Datos del panel de Actividad
@@ -368,6 +366,7 @@ namespace SEM
 
         private void BtnLogin1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var Login = new Login(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             Login.Shown += (o, args) => { this.Hide(); };
@@ -377,12 +376,14 @@ namespace SEM
             Login.Show();
             /*this.Hide();
             new Login(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         
 
         private void Button_WOC1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             String check = validarCampos(txtCorreo.Text, txtExpediente.Text, txtContraseña.Text, cbCarrera.SelectedItem.ToString(), txtNombre.Text, txtApellido.Text);
             if (check == " ")
             {
@@ -432,6 +433,7 @@ namespace SEM
                 sb.Show();
                 //MessageBox.Show(check);
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

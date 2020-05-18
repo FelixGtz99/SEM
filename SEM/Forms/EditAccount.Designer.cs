@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditAccount));
             this.changePassPanel = new System.Windows.Forms.Panel();
             this.labelContraseña = new System.Windows.Forms.Label();
             this.labelConfirmar = new System.Windows.Forms.Label();
@@ -714,8 +715,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditAccount";
-            this.Text = "SEM";
+            this.Text = "SEM - Cuenta";
             this.Load += new System.EventHandler(this.EditAccount_Load);
             this.changePassPanel.ResumeLayout(false);
             this.changePassPanel.PerformLayout();

@@ -33,9 +33,13 @@ namespace SEM.Forms
 
             var path = new System.Drawing.Drawing2D.GraphicsPath();
 
-            pictureBox1.ImageLocation = c.getlogo() ;
-            labelCarrera.Text = c.getUniversidad();
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            escuelaPicture.ImageLocation = c.getlogo();
+            escuelaPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            // imgMaestro.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+
+            labelUsuario.Text = c.NOMBRE + " " + c.APELLIDO;
+            label17.Text = c.SCarrera;
             path.AddEllipse(0, 0, label6.Width, label6.Height);
             this.label6.Region = new Region(path);
             this.label3.Region = new Region(path);
@@ -158,6 +162,7 @@ namespace SEM.Forms
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             try
             {
                 var iDM = getIDMaestro();
@@ -191,6 +196,7 @@ namespace SEM.Forms
                 SemBox sb = new SemBox("long", "Ha ocurrido un error",ex.Message, "Aceptar");
                 sb.Show();
             }
+            Cursor.Current = Cursors.Arrow;
 
         }
 
@@ -206,6 +212,7 @@ namespace SEM.Forms
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var Searcher = new Searcher(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             Searcher.Shown += (o, args) => { this.Hide(); };
@@ -215,6 +222,7 @@ namespace SEM.Forms
             Searcher.Show();
             /*this.Hide();
             new Searcher(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -272,6 +280,37 @@ namespace SEM.Forms
             cbMateria.SelectedItem = c.SMateria;
             c.SMateria = cbMateria.SelectedItem.ToString();
             this.checkFields();
+        }
+
+        private void BtnRA_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            var RA = new RA(c);
+            //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            RA.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { RA.Enabled = false; };
+            //sb.FormClosed += (o, args) => { RA.Enabled = true; };
+            RA.Show();
+            /*this.Hide();
+            new RA(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            c.logout();
+            var Login = new Login(c);
+            // var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Login.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Login.Enabled = true; };
+            Login.Show();
+            /*this.Hide();
+            new Login(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
     }
 }

@@ -78,6 +78,7 @@ namespace SEM.Forms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             btnVer.Visible = false;
             string searched = "";
             if(txtBuscar.Text != "Buscar")
@@ -170,6 +171,7 @@ namespace SEM.Forms
                 Console.WriteLine("Entto aqi");
             }
             // data.DataSource = c.getEvaluacion();
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void cbEleccion_SelectedIndexChanged(object sender, EventArgs e)
@@ -180,6 +182,7 @@ namespace SEM.Forms
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.logout();
             var Login = new Login(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
@@ -190,6 +193,7 @@ namespace SEM.Forms
             Login.Show();
             /*this.Hide();
             new Login(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
 
         }
 
@@ -200,6 +204,7 @@ namespace SEM.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var EditAccount = new EditAccount(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             EditAccount.Shown += (o, args) => { this.Hide(); };
@@ -209,6 +214,7 @@ namespace SEM.Forms
             EditAccount.Show();
             /*this.Hide();
             new EditAccount(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void Searcher_Load(object sender, EventArgs e)
@@ -218,6 +224,7 @@ namespace SEM.Forms
 
         private void btnVer_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             //if (cbEleccion.SelectedItem.ToString().Equals("Docente"))
             if(maestrosRadio.Checked == true)
             {
@@ -249,7 +256,7 @@ namespace SEM.Forms
                  
                 }
             }
-
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -282,6 +289,7 @@ namespace SEM.Forms
 
         private void btnRA_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var RA = new RA(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             RA.Shown += (o, args) => { this.Hide(); };
@@ -291,10 +299,12 @@ namespace SEM.Forms
             RA.Show();
             /*this.Hide();
             new RA(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnRegistrarD_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var RegisterTeacher = new RegisterTeacher(c,"Registar");
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             RegisterTeacher.Shown += (o, args) => { this.Hide(); };
@@ -304,10 +314,12 @@ namespace SEM.Forms
             RegisterTeacher.Show();
             /*this.Hide();
            new RegisterTeacher(c, "Registar").Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnEvaluar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             //if (cbEleccion.SelectedItem.ToString().Equals("Docente"))
             if(maestrosRadio.Checked == true)
             {
@@ -348,7 +360,7 @@ namespace SEM.Forms
                     new CreateEvaluation(c, "materia").Show();*/
                 }
             }
-
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -388,7 +400,9 @@ namespace SEM.Forms
 
         private void MateriasRadio_CheckedChanged(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             btnBuscar_Click(this, new EventArgs());
+            Cursor.Current = Cursors.Arrow;
         }
     }
 }

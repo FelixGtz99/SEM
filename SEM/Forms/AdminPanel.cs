@@ -60,6 +60,14 @@ namespace SEM.Forms
             this.helpMaestros.Region = new Region(path);
 
             notifications.DataSource = c.getNotifications();
+
+
+            foreach (DataGridViewColumn column in notifications.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+
             //this.notifications.Rows.Add("El maestro José Luis Ochoa Hernández ha recibido muchos votos negativos en su perfil.");
             //this.notifications.Rows.Add("El promedio del maestro Guzmán Gerardo Alfonso Sánchez Schmitz ha bajado de 6.0.");
             //this.notifications.Rows.Add("Se ha añadido al maestro Jesús Daniel Alfaro Soto.");
@@ -115,11 +123,16 @@ namespace SEM.Forms
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-           
-            c.deleteMateria();
-            c.getMaterias();
-            CBMaterias();
-            cbMaterias.SelectedIndex = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            if(cbMaterias.SelectedIndex != -1)
+            {
+                c.deleteMateria();
+                c.getMaterias();
+                CBMaterias();
+                cbMaterias.SelectedIndex = 0;
+
+            }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void cbMaestros_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,22 +142,27 @@ namespace SEM.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            c.SMaestro = cbMaestros.SelectedItem.ToString();
-            var RegisterTeacher = new RegisterTeacher(c, "Editar");
-            //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
-            RegisterTeacher.Shown += (o, args) => { this.Hide(); };
+            Cursor.Current = Cursors.WaitCursor;
+            if(cbMaestros.SelectedIndex != -1)
+            {
+                c.SMaestro = cbMaestros.SelectedItem.ToString();
+                var RegisterTeacher = new RegisterTeacher(c, "Editar");
+                //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
+                RegisterTeacher.Shown += (o, args) => { this.Hide(); };
 
-            //sb.Shown += (o, args) => { Searcher.Enabled = false; };
-            //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
-            RegisterTeacher.Show();
-            /*new RegisterTeacher(c,"Editar").Show();
-            this.Hide();*/
+                //sb.Shown += (o, args) => { Searcher.Enabled = false; };
+                //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
+                RegisterTeacher.Show();
+                /*new RegisterTeacher(c,"Editar").Show();
+                this.Hide();*/
 
+            }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            
+            Cursor.Current = Cursors.WaitCursor;
                 
             
             
@@ -156,12 +174,13 @@ namespace SEM.Forms
                     CBMaterias();
                     txtMaterias.Text = " ";
                 }
-               
-            
+
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.logout();
             var Login = new Login(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
@@ -172,6 +191,7 @@ namespace SEM.Forms
             Login.Show();
             /*this.Hide();
             new Login(c).Show();*/
+            Cursor.Current = Cursors.WaitCursor;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -181,16 +201,24 @@ namespace SEM.Forms
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
-            var materia = cbMaterias.SelectedItem.ToString();
-            c.SMateria = materia;
-            txtMaterias.Text = materia;
-            btnAñadir.Visible = false;
-            editPanel.Visible = true;
-            editPanel.Location = new Point(1017, 415);
+            
+            Cursor.Current = Cursors.WaitCursor;
+            if (cbMaterias.SelectedIndex != -1)
+            {
+                var materia = cbMaterias.SelectedItem.ToString();
+                c.SMateria = materia;
+                txtMaterias.Text = materia;
+                btnAñadir.Visible = false;
+                editPanel.Visible = true;
+                editPanel.Location = new Point(1017, 415);
+            }
+            
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var EditAdmin = new EditAdmin(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             EditAdmin.Shown += (o, args) => { this.Hide(); };
@@ -200,6 +228,7 @@ namespace SEM.Forms
             EditAdmin.Show();
             /*this.Hide();
             new EditAdmin(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void button_WOC4_Click(object sender, EventArgs e)
@@ -252,6 +281,7 @@ namespace SEM.Forms
 
         private void BtnVer_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var RegisterTeacher = new RegisterTeacher(c,"Editar");
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             RegisterTeacher.Shown += (o, args) => { this.Hide(); };
@@ -263,31 +293,37 @@ namespace SEM.Forms
             
             this.Hide();*/
             //MessageBox.Show(c.SMaestro);
-
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnEliminarnotif_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.deleteNotificacion(notif);
             notifications.DataSource = c.getNotifications();
             notifications.Refresh();
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.updateMateria(txtMaterias.Text);
             c.getMaterias();
             CBMaterias();
             txtMaterias.Text = "";
             editPanel.Visible = false;
             btnAñadir.Visible = true;
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             editPanel.Visible = false;
             btnAñadir.Visible = true;
             txtMaterias.Text = "";
+            Cursor.Current = Cursors.WaitCursor;
         }
     }
 }

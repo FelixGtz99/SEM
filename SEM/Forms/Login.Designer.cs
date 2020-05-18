@@ -441,7 +441,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SEM";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.panelAnonimo.ResumeLayout(false);

@@ -19,6 +19,8 @@ namespace SEM.Forms
          
             InitializeComponent();
             this.c = c;
+            this.Height = 900;
+            this.Width = 1440;
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;
@@ -33,7 +35,7 @@ namespace SEM.Forms
             panel1.Location = new Point(0, panel2.Height);
             c.getCarreras();
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+           // this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             lbCarrera.Text = c.SCarrera;
             foreach (Carrera car in c.CARRERAS)
             {
@@ -680,6 +682,16 @@ namespace SEM.Forms
         }
 
         private void cbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditAccount_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

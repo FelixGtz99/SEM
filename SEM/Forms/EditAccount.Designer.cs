@@ -412,6 +412,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1366, 41);
             this.panel2.TabIndex = 24;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnMin
             // 
@@ -699,6 +700,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditAccount";
             this.Text = "EditAccount";
+            this.Load += new System.EventHandler(this.EditAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.changePassPanel.ResumeLayout(false);

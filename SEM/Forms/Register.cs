@@ -18,7 +18,9 @@ namespace SEM
         {
             InitializeComponent();
             this.c = c;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Height = 900;
+            this.Width = 1440;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             c.getEscuelas();
             c.getCarreras();

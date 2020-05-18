@@ -373,6 +373,7 @@ namespace SEM
             var IDE = getLastEvaluacion() + 1;
             Console.WriteLine(idD.ToString());
             Console.WriteLine(idM.ToString());
+            Console.WriteLine(Comen);
 
             var cmd = new NpgsqlCommand(query, con);
 

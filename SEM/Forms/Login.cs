@@ -20,7 +20,9 @@ namespace SEM
             InitializeComponent();
 
             this.c = c;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            //this.Size = Screen.PrimaryScreen.WorkingArea.Size*.75;
+            this.Height = 900;
+            this.Width = 1440;
             panelAnonimo.Visible = false;
       //que pex
             //Datos de la barra superior

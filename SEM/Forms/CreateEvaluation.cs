@@ -18,6 +18,8 @@ namespace SEM.Forms
         public CreateEvaluation(Conexion c, String d)
             
         {
+            this.Height = 900;
+            this.Width = 1440;
             this.c = c;
             InitializeComponent();
             //Datos de la barra superior

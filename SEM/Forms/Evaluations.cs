@@ -21,7 +21,8 @@ namespace SEM.Forms
         {
             this.c = c;
             InitializeComponent();
-     
+            this.Height = 900;
+            this.Width = 1440;
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;

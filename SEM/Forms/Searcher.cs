@@ -24,8 +24,9 @@ namespace SEM.Forms
             c.getEscuelas();
             labelCarrera.Text = c.SCarrera;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-
+            //  this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Height = 900;
+            this.Width = 1440;
             //Datos de la barra superior
             this.ActiveControl = panel2;
             btnClose.Height = panel2.Height;

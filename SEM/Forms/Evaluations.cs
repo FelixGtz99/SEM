@@ -77,6 +77,8 @@ namespace SEM.Forms
 
             }
             escuelaPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            imgMaestro.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
 
             //Para darle la forma circular a los tooltips
             var path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -154,6 +156,7 @@ namespace SEM.Forms
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (idEvaluacion.Equals(" "))
             {
                 //MessageBox.Show("No has seleccionado ninguna evaluacion");
@@ -179,10 +182,12 @@ namespace SEM.Forms
                     dataGridView1.Columns["id_evaluacion"].Visible = false;
                 }
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var Searcher = new Searcher(c);
             //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
             Searcher.Shown += (o, args) => { this.Hide(); };
@@ -192,10 +197,12 @@ namespace SEM.Forms
             Searcher.Show();
             /*this.Hide();
             new Searcher(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void button_WOC2_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (idEvaluacion.Equals(" "))
             {
                 //MessageBox.Show("No has seleccionado ninguna evaluacion");
@@ -222,6 +229,7 @@ namespace SEM.Forms
 
                 }
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -236,6 +244,7 @@ namespace SEM.Forms
 
         private void button_WOC1_Click_1(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             //this.Hide();
             var et = new EditTeacher(c,"alumno");
             et.Shown += (o, args) => { this.Enabled = false; };
@@ -247,7 +256,7 @@ namespace SEM.Forms
             };
             et.Show();
             //new EditTeacher(c).Show();
-
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -282,6 +291,7 @@ namespace SEM.Forms
 
         private void BtnEvaluations_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             panelEvaluaciones.Location = panelMaterias.Location;
             panelMaterias.Visible = false;
             panelEvaluaciones.Visible = true;
@@ -340,12 +350,13 @@ namespace SEM.Forms
                 dislikeBtn.Enabled = false;
                 label2.Text = "No hay evaluaciones de la materia:";
             }
-            
 
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnMaterias_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             panelMaterias.Visible = true;
             panelEvaluaciones.Visible = false;
             /* likeBtn.TextColor = Color.Silver;
@@ -361,7 +372,7 @@ namespace SEM.Forms
             {
                 c.SMateria = dataGridView2.Rows[0].Cells[0].Value.ToString();
             }
-            
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -413,6 +424,7 @@ namespace SEM.Forms
 
         private void BtnRA_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var RA = new RA(c);
             //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
             RA.Shown += (o, args) => { this.Hide(); };
@@ -422,10 +434,12 @@ namespace SEM.Forms
             RA.Show();
             /*this.Hide();
             new RA(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.logout();
             var Login = new Login(c);
            // var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
@@ -436,6 +450,7 @@ namespace SEM.Forms
             Login.Show();
             /*this.Hide();
             new Login(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -479,6 +494,7 @@ namespace SEM.Forms
 
         private void button_WOC1_Click_2(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (c.checkProfileVote())
             {
                new SemBox("short", "Ya evaluaste este perfil", "", "Aceptar").Show();
@@ -489,11 +505,13 @@ namespace SEM.Forms
                 button_WOC1.Visible = false;
                 button_WOC2.Visible = false;
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void button_WOC2_Click_1(object sender, EventArgs e)
         {
-            if(c.checkProfileVote())
+            Cursor.Current = Cursors.WaitCursor;
+            if (c.checkProfileVote())
             {
                 new SemBox("short", "Ya evaluaste este perfil", "", "Aceptar").Show();
             }
@@ -504,11 +522,14 @@ namespace SEM.Forms
                 button_WOC1.Visible = false;
                 button_WOC2.Visible = false;
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        
     }
 }

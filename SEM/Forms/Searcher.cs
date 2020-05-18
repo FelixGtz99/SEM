@@ -56,6 +56,7 @@ namespace SEM.Forms
             Console.WriteLine("logo"+c.getlogo());
             pictureBox2.ImageLocation = c.getlogo();
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             toolTip2.SetToolTip(this.pictureBox2, c.SEscuela);
 
             label1.Text = c.NOMBRE + " " + c.APELLIDO;

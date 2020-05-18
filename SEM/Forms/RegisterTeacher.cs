@@ -39,6 +39,8 @@ namespace SEM.Forms
 
             pictureBox1.ImageLocation = c.getlogo();
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             var path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, label6.Width, label3.Height);
             this.label3.Region = new Region(path);
@@ -259,6 +261,7 @@ namespace SEM.Forms
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             String Errores = " ";
             if (txtNombre.Text.Length == 0 || txtApellido.Text.Length == 0)
             {
@@ -314,10 +317,12 @@ namespace SEM.Forms
                 }
                 
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var m = cbMaterias.SelectedItem.ToString();
             listMaterias.Items.Add(m);
             if (d == "Editar")
@@ -332,11 +337,12 @@ namespace SEM.Forms
                 }
             }
             cbMaterias.Items.Remove(m);
-        
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (d == "Editar")
             {
                 var AdminPanel = new AdminPanel(c);
@@ -361,11 +367,13 @@ namespace SEM.Forms
                 /*this.Hide();
                 new Searcher(c).Show();*/
             }
+            Cursor.Current = Cursors.Arrow;
             
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var index = listMaterias.SelectedItem.ToString();
             c.SMateria = index;
             if (d == "Editar")
@@ -382,6 +390,7 @@ namespace SEM.Forms
             cbMaterias.Items.Add(listMaterias.SelectedItem.ToString());
 
             listMaterias.Items.Remove(index);
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -409,7 +418,9 @@ namespace SEM.Forms
 
         private void Subir_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
+            Cursor.Current = Cursors.Arrow;
             try
             {
                 OpenFileDialog1.Filter = "Archivos de imágen(*.jpg)(*.jpeg)|*.jpg;*.jpeg|PNG(*.png)|*.png";
@@ -481,6 +492,7 @@ namespace SEM.Forms
 
         private void BtnRA_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (d == "Editar")
             {
                 var AdminPanel = new AdminPanel(c);
@@ -505,11 +517,12 @@ namespace SEM.Forms
                 /*this.Hide();
                 new RA(c).Show();*/
             }
-            
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.logout();
 
             var Login = new Login(c);
@@ -522,12 +535,15 @@ namespace SEM.Forms
 
             /*this.Hide();
             new Login(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void Button_WOC1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             ImgByteA = null;
             imgMaestro.Image = imgMaestro.InitialImage;
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)

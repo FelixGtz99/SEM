@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterTeacher));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -61,8 +62,6 @@
             this.labelCarrera = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
@@ -71,10 +70,12 @@
             this.btnQuitar = new ePOSOne.btnProduct.Button_WOC();
             this.btnAñadir = new ePOSOne.btnProduct.Button_WOC();
             this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMaestro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -362,6 +363,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.labelEstudiante);
             this.panel1.Controls.Add(this.btnRA);
@@ -370,8 +372,6 @@
             this.panel1.Controls.Add(this.labelCarrera);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label16);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
@@ -498,28 +498,6 @@
             this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label15.Location = new System.Drawing.Point(40, 673);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(277, 23);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "sistema evaluador de maestros";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bahnschrift Light", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label16.Location = new System.Drawing.Point(94, 600);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(163, 81);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "sem";
             // 
             // label7
             // 
@@ -663,6 +641,15 @@
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SEM.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(60, 613);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(221, 88);
+            this.pictureBox2.TabIndex = 58;
+            this.pictureBox2.TabStop = false;
+            // 
             // RegisterTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -698,14 +685,16 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterTeacher";
-            this.Text = "RegisterTeacher";
+            this.Text = "SEM - Maestros";
             this.Load += new System.EventHandler(this.RegisterTeacher_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMaestro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -748,12 +737,11 @@
         private System.Windows.Forms.Label labelCarrera;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ePOSOne.btnProduct.Button_WOC btnCerrar;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolTip toolTip2;
         private ePOSOne.btnProduct.Button_WOC btnQuitar;
         private ePOSOne.btnProduct.Button_WOC button_WOC1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -50,7 +50,13 @@ namespace SEM.Forms
             pictureBox2.ImageLocation = c.getlogo();
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
 
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
             data.DataSource = c.verRA();
+            foreach (DataGridViewColumn column in data.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             //this.data.Rows.Add("Se publicó un comentario en el perfil del maestro: Luis Ochoa.", "30/04/2020");
             //this.data.Rows.Add("Se asoció la materia Ingeniería de Software 2 con el maestro: Abril Lopez.", "29/04/2020");
             //this.data.Rows.Add("Se ha añadido al maestro: Pedro Hernandez.", "28/04/2020");
@@ -89,6 +95,7 @@ namespace SEM.Forms
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var Searcher = new Searcher(c);
             //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
             Searcher.Shown += (o, args) => { this.Hide();};
@@ -98,6 +105,7 @@ namespace SEM.Forms
             Searcher.Show();
             /*this.Hide();
             new Searcher(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -143,6 +151,7 @@ namespace SEM.Forms
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var EditAccount = new EditAccount(c);
             //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
             EditAccount.Shown += (o, args) => { this.Hide(); };
@@ -152,11 +161,12 @@ namespace SEM.Forms
             EditAccount.Show();
             /*this.Hide();
             new EditAccount(c).Show();*/
-
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.logout();
             var Login = new Login(c);
             //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
@@ -167,6 +177,7 @@ namespace SEM.Forms
             Login.Show();
             /*this.Hide();
             new Login(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -181,6 +192,7 @@ namespace SEM.Forms
 
         private void BtnVer_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var Evaluations = new Evaluations(c);
            // var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
             Evaluations.Shown += (o, args) => { this.Hide(); };
@@ -190,6 +202,7 @@ namespace SEM.Forms
             Evaluations.Show();
             /*this.Hide();
             new Evaluations(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void data_CellClick(object sender, DataGridViewCellEventArgs e)

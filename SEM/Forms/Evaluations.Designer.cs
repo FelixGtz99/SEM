@@ -224,7 +224,7 @@
             this.panelEvaluaciones.Controls.Add(this.label6);
             this.panelEvaluaciones.Controls.Add(this.dislikeBtn);
             this.panelEvaluaciones.Controls.Add(this.likeBtn);
-            this.panelEvaluaciones.Location = new System.Drawing.Point(332, 283);
+            this.panelEvaluaciones.Location = new System.Drawing.Point(381, 253);
             this.panelEvaluaciones.Name = "panelEvaluaciones";
             this.panelEvaluaciones.Size = new System.Drawing.Size(1002, 494);
             this.panelEvaluaciones.TabIndex = 50;
@@ -511,7 +511,6 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.panelEvaluaciones);
             this.panel3.Controls.Add(this.labelUsuario);
             this.panel3.Controls.Add(this.btnRA);
             this.panel3.Controls.Add(this.label11);
@@ -750,6 +749,7 @@
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.button_WOC2);
             this.Controls.Add(this.button_WOC1);
+            this.Controls.Add(this.panelEvaluaciones);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel3);

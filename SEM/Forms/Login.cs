@@ -23,6 +23,7 @@ namespace SEM
             //this.Size = Screen.PrimaryScreen.WorkingArea.Size*.75;
             this.Height = 900;
             this.Width = 1440;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             panelAnonimo.Visible = false;
       //que pex
             //Datos de la barra superior
@@ -122,6 +123,7 @@ namespace SEM
 
         private void BtnLogin1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (panelogin.Visible==true)
             {
 
@@ -259,10 +261,12 @@ namespace SEM
                 SemBox sb = new SemBox("longerror", "Datos incorrectos", "Parece que tu correo o\r\ntu contraseña son\r\nerróneos. Intenta de nuevo", "Aceptar");
                 sb.Show();
             }*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var Register = new Register(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
             Register.Shown += (o, args) => { this.Hide();  };
@@ -272,10 +276,12 @@ namespace SEM
             Register.Show();
             /*this.Hide();
             new Register(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnAnonimo_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (panelAnonimo.Visible == false)
             {
                 panelogin.Visible = false;
@@ -295,7 +301,7 @@ namespace SEM
 
             }
 
-            
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnMin_Click(object sender, EventArgs e)

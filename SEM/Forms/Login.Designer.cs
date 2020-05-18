@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,24 +45,24 @@
             this.line1 = new System.Windows.Forms.Label();
             this.line2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAnonimo = new ePOSOne.btnProduct.Button_WOC();
-            this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLogin1 = new ePOSOne.btnProduct.Button_WOC();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAnonimo = new ePOSOne.btnProduct.Button_WOC();
+            this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLogin1 = new ePOSOne.btnProduct.Button_WOC();
             this.panel.SuspendLayout();
             this.panelAnonimo.SuspendLayout();
             this.panelogin.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -250,6 +251,106 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "¿Aún no tienes una cuenta?";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(2, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(681, 726);
+            this.panel1.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(38, 554);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(422, 36);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "» ¡Prepárate para tus clases!";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(38, 482);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(582, 36);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "» ¡Descubre qué opinan los estudiantes!";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(38, 414);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(376, 36);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "» ¡Evalúa a tus maestros!";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Controls.Add(this.btnMin);
+            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1368, 41);
+            this.panel2.TabIndex = 8;
+            // 
+            // btnMin
+            // 
+            this.btnMin.BackColor = System.Drawing.Color.Black;
+            this.btnMin.FlatAppearance.BorderSize = 0;
+            this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMin.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMin.ForeColor = System.Drawing.Color.White;
+            this.btnMin.Location = new System.Drawing.Point(1129, 4);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(55, 35);
+            this.btnMin.TabIndex = 4;
+            this.btnMin.TabStop = false;
+            this.btnMin.Text = "_";
+            this.btnMin.UseVisualStyleBackColor = false;
+            this.btnMin.Click += new System.EventHandler(this.BtnMin_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Black;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1191, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(55, 35);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.TabStop = false;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SEM.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(107, 110);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(442, 176);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnAnonimo
             // 
             this.btnAnonimo.BorderColor = System.Drawing.Color.Transparent;
@@ -313,120 +414,6 @@
             this.btnLogin1.UseVisualStyleBackColor = true;
             this.btnLogin1.Click += new System.EventHandler(this.BtnLogin1_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(2, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 726);
-            this.panel1.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label8.Location = new System.Drawing.Point(128, 241);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(395, 33);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "sistema evaluador de maestros";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(38, 554);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(422, 36);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "» ¡Prepárate para tus clases!";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(38, 482);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(582, 36);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "» ¡Descubre qué opinan los estudiantes!";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(38, 414);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(376, 36);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "» ¡Evalúa a tus maestros!";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(196, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 115);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "sem";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.btnMin);
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Location = new System.Drawing.Point(2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1368, 41);
-            this.panel2.TabIndex = 8;
-            // 
-            // btnMin
-            // 
-            this.btnMin.BackColor = System.Drawing.Color.Black;
-            this.btnMin.FlatAppearance.BorderSize = 0;
-            this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMin.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMin.ForeColor = System.Drawing.Color.White;
-            this.btnMin.Location = new System.Drawing.Point(1129, 4);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(55, 35);
-            this.btnMin.TabIndex = 4;
-            this.btnMin.TabStop = false;
-            this.btnMin.Text = "_";
-            this.btnMin.UseVisualStyleBackColor = false;
-            this.btnMin.Click += new System.EventHandler(this.BtnMin_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Black;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Lucida Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1191, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(55, 35);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.TabStop = false;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,6 +425,7 @@
             this.Controls.Add(this.panel);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SEM";
@@ -450,6 +438,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -475,8 +464,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label errorPass;
         private System.Windows.Forms.Label errorEmail;
         private System.Windows.Forms.Panel panelogin;
@@ -485,5 +472,6 @@
         private System.Windows.Forms.ComboBox cbEscuela;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

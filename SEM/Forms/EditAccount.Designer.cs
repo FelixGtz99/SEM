@@ -692,14 +692,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1366, 948);
+            this.ClientSize = new System.Drawing.Size(1366, 788);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditAccount";
-            this.Text = "EditAccount";
+            this.Text = "SEM";
             this.Load += new System.EventHandler(this.EditAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

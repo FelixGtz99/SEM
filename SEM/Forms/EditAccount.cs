@@ -29,10 +29,7 @@ namespace SEM.Forms
             btnMin.Height = panel2.Height;
             panel2.Location = new Point(0, 0);
             panel2.Width = this.Width;
-            //Datos del panel de Información
-            panel1.Height = this.Height - panel2.Height;
-            panel1.Width = this.Width / 4;
-            panel1.Location = new Point(0, panel2.Height);
+            
             c.getCarreras();
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
            // this.Size = Screen.PrimaryScreen.WorkingArea.Size;
@@ -80,6 +77,19 @@ namespace SEM.Forms
             txtPass.LostFocus += ConfirmPass1_LostFocus;
             textBox1.LostFocus += ConfirmPass2_LostFocus;
 
+            escuelaPicture.ImageLocation = c.getlogo();
+            labelCarrera.Text = c.getUniversidad();
+            escuelaPicture.SizeMode = PictureBoxSizeMode.Zoom;
+           // imgMaestro.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
+            labelUsuario.Text = c.NOMBRE + " " + c.APELLIDO;
+            labelCarrera.Text = c.SCarrera;
+
+            changePassPanel.Location = changeCareerPanel.Location;
+            deletePanel.Location = changeCareerPanel.Location;
+
+            this.BtnChangeCarrera_Click(this, new EventArgs());
         }
 
         private void NewContra_GotFocus(object sender, EventArgs e)
@@ -323,6 +333,7 @@ namespace SEM.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (cbCarrera.SelectedIndex != -1)
             {
                 c.SCarrera = cbCarrera.SelectedItem.ToString();
@@ -397,10 +408,12 @@ namespace SEM.Forms
                 SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
                 sb.Show();
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (textBox1.Text == c.CONTRA)
             {
                 try
@@ -437,10 +450,12 @@ namespace SEM.Forms
                 SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
                 sb.Show();
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var Searcher = new Searcher(c);
             //var sb = new SemBox("short", "Evaluación realizada con éxito", "", "Aceptar");
             Searcher.Shown += (o, args) => { this.Hide();  };
@@ -450,6 +465,7 @@ namespace SEM.Forms
             Searcher.Show();
             /*this.Hide();
             new Searcher(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -464,7 +480,7 @@ namespace SEM.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (deletePanel.Visible == false)
+            /*if (deletePanel.Visible == false)
             {
                 button1.Text = "- Eliminar cuenta";
                 deletePanel.Visible = true;
@@ -492,7 +508,14 @@ namespace SEM.Forms
                 //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y - changeCareerPanel.Height);
                 //deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height - 7);
 
-            }
+            }*/
+            btnChangeCarrera.BackColor = Color.FromArgb(48, 48, 48);
+            btnChangePass.BackColor = Color.FromArgb(48, 48, 48);
+            button1.BackColor = Color.FromArgb(255, 13, 98);
+            changeCareerPanel.Visible = false;
+            row3.Visible = false;
+            changePassPanel.Visible = false;
+            deletePanel.Visible = true;
 
         }
 
@@ -563,9 +586,9 @@ namespace SEM.Forms
                 btnChangeCarrera.Location = new Point(63, 187);
                 changeCareerPanel.Location = new Point(34, 275);
             }*/
-            
+
             //blineChangePass.BackColor = Color.FromArgb(13, 70, 255);
-            if(changePassPanel.Visible == false)
+            /*if(changePassPanel.Visible == false)
             {
                 btnChangePass.Text = "- Cambiar contraseña";
                 changePassPanel.Visible = true;
@@ -592,7 +615,14 @@ namespace SEM.Forms
                 row4.Location = new Point(row4.Location.X, row4.Location.Y - changePassPanel.Height);
                 changeCareerPanel.Location = new Point(changeCareerPanel.Location.X, changeCareerPanel.Location.Y - changePassPanel.Height);
                 deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height);
-            }
+            }*/
+            btnChangeCarrera.BackColor = Color.FromArgb(48, 48, 48);
+            btnChangePass.BackColor = Color.FromArgb(13, 98, 255);
+            button1.BackColor = Color.FromArgb(48, 48, 48);
+            changeCareerPanel.Visible = false;
+            row3.Visible = true;
+            changePassPanel.Visible = true;
+            deletePanel.Visible = false;
             //changePassPanel.BringToFront();
         }
 
@@ -608,35 +638,13 @@ namespace SEM.Forms
 
         private void BtnChangeCarrera_Click(object sender, EventArgs e)
         {
-            if (changeCareerPanel.Visible == false)
-            {
-                btnChangeCarrera.Text = "- Cambiar carrera";
-                changeCareerPanel.Visible = true;
-                changeCareerPanel.Parent = panel3;
-                changeCareerPanel.Location = new Point(row2.Location.X, row2.Location.Y + row2.Height);
-                blineChangeCareer.Location = new Point(blineChangeCareer.Location.X, blineChangeCareer.Location.Y + changeCareerPanel.Height);
-                //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                row3.Location = new Point(row3.Location.X, row3.Location.Y + changeCareerPanel.Height+7);
-                row4.Location = new Point(row4.Location.X, row4.Location.Y + changeCareerPanel.Height+7);
-                //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y + changeCareerPanel.Height);
-                deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y + changePassPanel.Height+7);
-
-
-            }
-            else
-            {
-                btnChangeCarrera.Text = "+ Cambiar carrera";
-                changeCareerPanel.Visible = false;
-                changeCareerPanel.Parent = panel3;
-                changeCareerPanel.Location = new Point(row2.Location.X, row2.Location.Y + row2.Height);
-                blineChangeCareer.Location = new Point(blineChangeCareer.Location.X, blineChangeCareer.Location.Y - changeCareerPanel.Height);
-                //row2.Location = new Point(row2.Location.X, row2.Location.Y + changePassPanel.Height);
-                row3.Location = new Point(row3.Location.X, row3.Location.Y - changeCareerPanel.Height-7);
-                row4.Location = new Point(row4.Location.X, row4.Location.Y - changeCareerPanel.Height-7);
-                //changePassPanel.Location = new Point(changePassPanel.Location.X, changePassPanel.Location.Y - changeCareerPanel.Height);
-                deletePanel.Location = new Point(deletePanel.Location.X, deletePanel.Location.Y - changePassPanel.Height-7);
-
-            }
+            btnChangeCarrera.BackColor = Color.FromArgb(13, 98, 255);
+            btnChangePass.BackColor = Color.FromArgb(48, 48, 48);
+            button1.BackColor = Color.FromArgb(48, 48, 48);
+            changeCareerPanel.Visible = true;
+            row3.Visible = true;
+            changePassPanel.Visible = false;
+            deletePanel.Visible = false;
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -694,6 +702,37 @@ namespace SEM.Forms
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnRA_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            var RA = new RA(c);
+            //var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            RA.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { RA.Enabled = false; };
+            //sb.FormClosed += (o, args) => { RA.Enabled = true; };
+            RA.Show();
+            /*this.Hide();
+            new RA(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            c.logout();
+            var Login = new Login(c);
+            // var sb = new SemBox("short", "Maestro editado correctamente", "", "Aceptar");
+            Login.Shown += (o, args) => { this.Hide(); };
+
+            //sb.Shown += (o, args) => { Login.Enabled = false; };
+            //sb.FormClosed += (o, args) => { Login.Enabled = true; };
+            Login.Show();
+            /*this.Hide();
+            new Login(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
     }
 }

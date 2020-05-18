@@ -50,6 +50,8 @@ namespace SEM.Forms
             //btnVolver.Location = new Point((this.Width-btnVolver.Width), (this.Height/2+panelOpciones.Height/2));
 
            pictureBox1.ImageLocation = c.getlogo();
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             
             //forma circular en los labels de ayuda
             var path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -322,6 +324,7 @@ namespace SEM.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Boolean error = false;
              if (c.CONTRA == txtPass.Text)
             {
@@ -381,9 +384,16 @@ namespace SEM.Forms
                 }
                 if (!error)
                 {
-                    new AdminPanel(c).Show();
+                    var AdminPanel = new AdminPanel(c);
+                    var sb = new SemBox("short", "Se han guardado los cambios", "", "Aceptar");
+                    AdminPanel.Shown += (o, args) => { this.Hide(); sb.Show(); };
+
+                    sb.Shown += (o, args) => { AdminPanel.Enabled = false; };
+                    sb.FormClosed += (o, args) => { AdminPanel.Enabled = true; };
+                    AdminPanel.Show();
+                    /*new AdminPanel(c).Show();
                     SemBox sb = new SemBox("short", "Se han guardado los cambios", "", "Aceptar");
-                    sb.Show();
+                    sb.Show();*/
                 }
                
             }
@@ -393,6 +403,7 @@ namespace SEM.Forms
                 SemBox sb = new SemBox("shorterror", "Contraseña incorrecta", "", "Aceptar");
                 sb.Show();
             }
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -602,16 +613,25 @@ namespace SEM.Forms
 
         private void BtnRA_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new AdminPanel(c).Show();
+            Cursor.Current = Cursors.WaitCursor;
+            var AdminPanel = new AdminPanel(c);
+            AdminPanel.Shown += (o, args) => { this.Hide(); };
+            AdminPanel.Show();
+            /*this.Hide();
+            new AdminPanel(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.logout();
-
-            this.Hide();
-            new Login(c).Show();
+            var Login = new Login(c);
+            Login.Shown += (o, args) => { this.Hide(); };
+            Login.Show();
+            /*this.Hide();
+            new Login(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)

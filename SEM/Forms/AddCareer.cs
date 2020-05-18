@@ -20,6 +20,7 @@ namespace SEM.Forms
             InitializeComponent();
             pictureBox1.ImageLocation = c.getlogo();
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             var path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, help1.Width, help1.Height);
             this.help1.Region = new Region(path);
@@ -30,6 +31,7 @@ namespace SEM.Forms
 
         private void Button_WOC1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.setCarrera(materias, txtCarrera.Text);
             var AdminPanel = new AdminPanel(c);
             var sb = new SemBox("short", "Carrera agregada correctamente", "", "Aceptar");
@@ -41,6 +43,7 @@ namespace SEM.Forms
             /*new SemBox("short", "Carrera agregada correctamente", "", "Aceptar").Show();
             this.Hide();
             new Searcher(c).Show();*/
+            Cursor.Current = Cursors.Arrow;
         }
 
         private void txtMaterias_TextChanged(object sender, EventArgs e)
@@ -50,6 +53,7 @@ namespace SEM.Forms
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             var m = txtMateria.Text;
             if (!m.Equals(""))
             {
@@ -57,11 +61,12 @@ namespace SEM.Forms
                 lbMaterias.Items.Add(m);
                 txtMateria.Text = "";
             }
-          
+            Cursor.Current = Cursors.Arrow; 
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             c.logout();
             var Login = new Login(c);
             //var sb = new SemBox("short", "¡Bienvenido de Regreso!", "", "Aceptar");
@@ -70,6 +75,7 @@ namespace SEM.Forms
             //sb.Shown += (o, args) => { Searcher.Enabled = false; };
             //sb.FormClosed += (o, args) => { Searcher.Enabled = true; };
             Login.Show();
+            Cursor.Current = Cursors.Arrow;
         }
     }
 }

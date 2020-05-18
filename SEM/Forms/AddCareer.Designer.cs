@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new ePOSOne.btnProduct.Button_WOC();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,9 +47,14 @@
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.help1 = new System.Windows.Forms.Label();
             this.help2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.carreraLabel = new System.Windows.Forms.Label();
+            this.materiaLabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -103,15 +107,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lbNombre);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(364, 727);
+            this.panel1.Size = new System.Drawing.Size(364, 708);
             this.panel1.TabIndex = 11;
             // 
             // btnCerrar
@@ -136,28 +139,6 @@
             this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label8.Location = new System.Drawing.Point(44, 681);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(277, 23);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "sistema evaluador de maestros";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift Light", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.label7.Location = new System.Drawing.Point(98, 608);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(163, 81);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "sem";
             // 
             // lbNombre
             // 
@@ -184,7 +165,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(797, 74);
+            this.pictureBox1.Location = new System.Drawing.Point(387, 74);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 175);
             this.pictureBox1.TabIndex = 13;
@@ -195,7 +176,7 @@
             this.lbUniversidad.AutoSize = true;
             this.lbUniversidad.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUniversidad.ForeColor = System.Drawing.Color.Black;
-            this.lbUniversidad.Location = new System.Drawing.Point(616, 263);
+            this.lbUniversidad.Location = new System.Drawing.Point(577, 128);
             this.lbUniversidad.Name = "lbUniversidad";
             this.lbUniversidad.Size = new System.Drawing.Size(312, 56);
             this.lbUniversidad.TabIndex = 14;
@@ -206,7 +187,7 @@
             this.lbMaterias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lbMaterias.FormattingEnabled = true;
             this.lbMaterias.ItemHeight = 18;
-            this.lbMaterias.Location = new System.Drawing.Point(699, 391);
+            this.lbMaterias.Location = new System.Drawing.Point(699, 364);
             this.lbMaterias.Name = "lbMaterias";
             this.lbMaterias.Size = new System.Drawing.Size(399, 202);
             this.lbMaterias.TabIndex = 15;
@@ -214,7 +195,7 @@
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.Black;
-            this.line1.Location = new System.Drawing.Point(640, 372);
+            this.line1.Location = new System.Drawing.Point(640, 345);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(513, 3);
             this.line1.TabIndex = 18;
@@ -225,7 +206,7 @@
             this.txtCarrera.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCarrera.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarrera.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCarrera.Location = new System.Drawing.Point(643, 344);
+            this.txtCarrera.Location = new System.Drawing.Point(643, 317);
             this.txtCarrera.Name = "txtCarrera";
             this.txtCarrera.Size = new System.Drawing.Size(510, 25);
             this.txtCarrera.TabIndex = 17;
@@ -299,12 +280,14 @@
             this.help1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
             this.help1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.help1.ForeColor = System.Drawing.Color.White;
-            this.help1.Location = new System.Drawing.Point(583, 344);
+            this.help1.Location = new System.Drawing.Point(583, 317);
             this.help1.Name = "help1";
             this.help1.Size = new System.Drawing.Size(25, 25);
             this.help1.TabIndex = 52;
             this.help1.Text = "?";
             this.help1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.help1, "Este es el nombre de la carrera que va a registrar. Asegúrese de que esté complet" +
+        "o y bien escrito.");
             // 
             // help2
             // 
@@ -317,13 +300,53 @@
             this.help2.TabIndex = 53;
             this.help2.Text = "?";
             this.help2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.help2, "Aquí puede añadir materias al sistema de acuerdo a su plan de estudios. Las podrá" +
+        " cambiar después si es necesario.");
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 15000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Ayuda";
+            // 
+            // carreraLabel
+            // 
+            this.carreraLabel.AutoSize = true;
+            this.carreraLabel.Location = new System.Drawing.Point(640, 285);
+            this.carreraLabel.Name = "carreraLabel";
+            this.carreraLabel.Size = new System.Drawing.Size(62, 18);
+            this.carreraLabel.TabIndex = 54;
+            this.carreraLabel.Text = "Carrera";
+            // 
+            // materiaLabel
+            // 
+            this.materiaLabel.AutoSize = true;
+            this.materiaLabel.Location = new System.Drawing.Point(640, 583);
+            this.materiaLabel.Name = "materiaLabel";
+            this.materiaLabel.Size = new System.Drawing.Size(61, 18);
+            this.materiaLabel.TabIndex = 55;
+            this.materiaLabel.Text = "Materia";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SEM.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(46, 589);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(221, 88);
+            this.pictureBox2.TabIndex = 56;
+            this.pictureBox2.TabStop = false;
             // 
             // AddCareer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1366, 749);
+            this.Controls.Add(this.materiaLabel);
+            this.Controls.Add(this.carreraLabel);
             this.Controls.Add(this.help2);
             this.Controls.Add(this.help1);
             this.Controls.Add(this.button_WOC1);
@@ -347,6 +370,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,8 +383,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel1;
         private ePOSOne.btnProduct.Button_WOC btnCerrar;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox lbNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -374,5 +396,9 @@
         private ePOSOne.btnProduct.Button_WOC button_WOC1;
         private System.Windows.Forms.Label help1;
         private System.Windows.Forms.Label help2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label carreraLabel;
+        private System.Windows.Forms.Label materiaLabel;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

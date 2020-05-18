@@ -333,7 +333,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SEM.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(46, 589);
+            this.pictureBox2.Location = new System.Drawing.Point(60, 613);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(221, 88);
             this.pictureBox2.TabIndex = 56;

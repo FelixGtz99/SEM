@@ -45,7 +45,11 @@
             this.line1 = new System.Windows.Forms.Label();
             this.line2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnAnonimo = new ePOSOne.btnProduct.Button_WOC();
+            this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLogin1 = new ePOSOne.btnProduct.Button_WOC();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,16 +57,12 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAnonimo = new ePOSOne.btnProduct.Button_WOC();
-            this.btnRegistrar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLogin1 = new ePOSOne.btnProduct.Button_WOC();
             this.panel.SuspendLayout();
             this.panelAnonimo.SuspendLayout();
             this.panelogin.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -251,6 +251,69 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "¿Aún no tienes una cuenta?";
             // 
+            // btnAnonimo
+            // 
+            this.btnAnonimo.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnAnonimo.FlatAppearance.BorderSize = 0;
+            this.btnAnonimo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnonimo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnonimo.Location = new System.Drawing.Point(357, 606);
+            this.btnAnonimo.Name = "btnAnonimo";
+            this.btnAnonimo.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnAnonimo.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnAnonimo.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnAnonimo.Size = new System.Drawing.Size(311, 60);
+            this.btnAnonimo.TabIndex = 6;
+            this.btnAnonimo.Text = "Ingreso Anónimo";
+            this.btnAnonimo.TextColor = System.Drawing.Color.White;
+            this.btnAnonimo.UseVisualStyleBackColor = true;
+            this.btnAnonimo.Click += new System.EventHandler(this.BtnAnonimo_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(22, 606);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnRegistrar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnRegistrar.Size = new System.Drawing.Size(311, 60);
+            this.btnRegistrar.TabIndex = 5;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextColor = System.Drawing.Color.White;
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
+            // 
+            // btnLogin1
+            // 
+            this.btnLogin1.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.btnLogin1.FlatAppearance.BorderSize = 0;
+            this.btnLogin1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin1.Location = new System.Drawing.Point(154, 455);
+            this.btnLogin1.Name = "btnLogin1";
+            this.btnLogin1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
+            this.btnLogin1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.btnLogin1.Size = new System.Drawing.Size(390, 60);
+            this.btnLogin1.TabIndex = 4;
+            this.btnLogin1.Text = "Ingresar";
+            this.btnLogin1.TextColor = System.Drawing.Color.White;
+            this.btnLogin1.UseVisualStyleBackColor = true;
+            this.btnLogin1.Click += new System.EventHandler(this.BtnLogin1_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -262,6 +325,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 726);
             this.panel1.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SEM.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(107, 110);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(442, 176);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -342,78 +414,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SEM.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(107, 110);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(442, 176);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnAnonimo
-            // 
-            this.btnAnonimo.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnAnonimo.FlatAppearance.BorderSize = 0;
-            this.btnAnonimo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnonimo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnonimo.Location = new System.Drawing.Point(357, 606);
-            this.btnAnonimo.Name = "btnAnonimo";
-            this.btnAnonimo.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnAnonimo.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnAnonimo.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnAnonimo.Size = new System.Drawing.Size(311, 60);
-            this.btnAnonimo.TabIndex = 6;
-            this.btnAnonimo.Text = "Ingreso Anónimo";
-            this.btnAnonimo.TextColor = System.Drawing.Color.White;
-            this.btnAnonimo.UseVisualStyleBackColor = true;
-            this.btnAnonimo.Click += new System.EventHandler(this.BtnAnonimo_Click);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnRegistrar.FlatAppearance.BorderSize = 0;
-            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(22, 606);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnRegistrar.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnRegistrar.Size = new System.Drawing.Size(311, 60);
-            this.btnRegistrar.TabIndex = 5;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.TextColor = System.Drawing.Color.White;
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
-            // 
-            // btnLogin1
-            // 
-            this.btnLogin1.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
-            this.btnLogin1.FlatAppearance.BorderSize = 0;
-            this.btnLogin1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin1.Location = new System.Drawing.Point(154, 455);
-            this.btnLogin1.Name = "btnLogin1";
-            this.btnLogin1.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnLogin1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(57)))), ((int)(((byte)(227)))));
-            this.btnLogin1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.btnLogin1.Size = new System.Drawing.Size(390, 60);
-            this.btnLogin1.TabIndex = 4;
-            this.btnLogin1.Text = "Ingresar";
-            this.btnLogin1.TextColor = System.Drawing.Color.White;
-            this.btnLogin1.UseVisualStyleBackColor = true;
-            this.btnLogin1.Click += new System.EventHandler(this.BtnLogin1_Click);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,8 +437,8 @@
             this.panelogin.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
